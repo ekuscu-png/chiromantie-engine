@@ -1,4 +1,8 @@
 {
+  "framework": null,
+  "buildCommand": "echo 'Reine Python-Serverless-Function, kein Build-Schritt noetig'",
+  "installCommand": "echo 'Kein npm install noetig'",
+  "outputDirectory": "public",
   "functions": {
     "api/index.py": {
       "includeFiles": "api/**"
