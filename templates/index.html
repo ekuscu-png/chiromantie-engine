@@ -4,211 +4,263 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lese-Konsole — Chiromantie &amp; Physiognomik</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
-    --surface: #E7E0CE;
-    --surface-raised: #FBF8EF;
-    --surface-sunken: #DCD3B9;
-    --ink: #23202B;
-    --ink-soft: #5B5468;
-    --ink-faint: #8B8496;
-    --line: #C7BC9E;
-    --accent: #8F5F27;
-    --accent-strong: #6E4A1E;
-    --accent-soft: #E7D2AC;
-    --accent-ink: #FBF8EF;
-    --match: #4C6B57;
-    --match-soft: #DCE4DC;
-    --danger: #8C3B2E;
-    --danger-soft: #F0DCD6;
-    --face-accent: #5B4A8F;
-    --face-soft: #E2DCF0;
+    --bg: #0B0910;
+    --bg-glow-1: #1C1230;
+    --bg-glow-2: #241A16;
+    --bg-raised: #15111C;
+    --bg-sunken: #1D1726;
+    --ink: #EDE3D0;
+    --ink-soft: #B4A6C4;
+    --ink-faint: #6F6480;
+    --line: #322943;
+    --line-soft: #241E30;
+    --gold: #C9A05C;
+    --gold-strong: #E4C388;
+    --gold-soft: rgba(201, 160, 92, 0.12);
+    --violet: #9078B8;
+    --violet-strong: #B29FDA;
+    --violet-soft: rgba(144, 120, 184, 0.14);
+    --emerald: #6B9C7C;
+    --emerald-soft: rgba(107, 156, 124, 0.14);
+    --danger: #C97562;
+    --danger-soft: rgba(201, 117, 98, 0.14);
   }
   * { box-sizing: border-box; }
+  html { background: var(--bg); }
   body {
     margin: 0;
-    background: var(--surface);
+    background:
+      radial-gradient(ellipse 60rem 40rem at 15% -10%, var(--bg-glow-1) 0%, transparent 60%),
+      radial-gradient(ellipse 50rem 36rem at 105% 10%, var(--bg-glow-2) 0%, transparent 55%),
+      var(--bg);
+    background-attachment: fixed;
     color: var(--ink);
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
   }
-  .wrap { max-width: 68rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
-  header.masthead {
-    padding: 2rem 0 1.75rem;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 1.5rem;
+  .wrap { max-width: 66rem; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .glyph { color: var(--gold); opacity: 0.75; }
+
+  header.masthead { text-align: center; padding-bottom: 2.5rem; margin-bottom: 2.25rem; position: relative; }
+  header.masthead::after {
+    content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+    width: 5.5rem; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line) 20%, var(--gold) 50%, var(--line) 80%, transparent);
   }
   .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
+    font-family: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.34em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 0.6rem;
+    color: var(--gold);
+    margin: 0 0 1.1rem;
   }
   h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic;
+    font-family: 'Cinzel', Georgia, serif;
     font-weight: 600;
-    font-size: clamp(1.9rem, 4vw + 1rem, 2.9rem);
-    margin: 0 0 0.5rem;
+    letter-spacing: 0.05em;
+    font-size: clamp(2.1rem, 3.4vw + 1rem, 3.1rem);
+    margin: 0 0 0.9rem;
+    color: var(--ink);
   }
-  .lede { max-width: 56ch; color: var(--ink-soft); font-size: 1rem; margin: 0; }
+  .lede {
+    max-width: 42rem; margin: 0 auto; color: var(--ink-soft);
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 500;
+    font-size: 1.28rem; line-height: 1.55;
+  }
   .notice {
-    margin-top: 1rem;
-    padding: 0.85rem 1rem;
-    background: var(--accent-soft);
-    border: 1px solid var(--accent);
-    border-radius: 0.35rem;
-    font-size: 0.85rem;
-    color: var(--accent-strong);
-    max-width: 62ch;
+    margin: 1.5rem auto 0; max-width: 42rem;
+    padding: 0.8rem 1.1rem;
+    background: var(--gold-soft);
+    border: 1px solid var(--line);
+    border-radius: 0.25rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem; letter-spacing: 0.02em;
+    color: var(--ink-soft);
   }
+
   .tabs {
-    display: flex; gap: 0.5rem; margin-bottom: 1.75rem;
-    border-bottom: 1px solid var(--line);
+    display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2.5rem;
   }
   .tab-btn {
-    font: inherit; font-size: 0.92rem; font-weight: 600; cursor: pointer;
-    background: none; border: none; padding: 0.75rem 0.25rem;
-    color: var(--ink-faint); border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
+    font: inherit; cursor: pointer; background: none; border: none; padding: 0 0 0.9rem;
+    font-family: 'Cinzel', Georgia, serif; font-size: 0.86rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-faint); border-bottom: 1px solid transparent; position: relative;
   }
-  .tab-btn[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
-  .tab-btn.face-tab[aria-selected="true"] { border-bottom-color: var(--face-accent); }
+  .tab-btn .tab-sub {
+    display: block; margin-top: 0.35rem; font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic; font-weight: 500; letter-spacing: 0; text-transform: none; font-size: 0.92rem;
+    color: var(--ink-faint);
+  }
+  .tab-btn[aria-selected="true"] { color: var(--gold-strong); border-bottom-color: var(--gold); }
+  .tab-btn[aria-selected="true"] .tab-sub { color: var(--ink-soft); }
+  .tab-btn.face-tab[aria-selected="true"] { color: var(--violet-strong); border-bottom-color: var(--violet); }
+
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
-  main { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
-  @media (min-width: 900px) { main { grid-template-columns: minmax(0, 22rem) 1fr; align-items: start; } }
+
+  main { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 900px) { main { grid-template-columns: minmax(0, 21rem) 1fr; align-items: start; } }
+
   section.panel {
-    background: var(--surface-raised);
+    background: var(--bg-raised);
     border: 1px solid var(--line);
-    border-radius: 0.4rem;
-    padding: 1.25rem;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
   }
   .panel + .panel { margin-top: 1.1rem; }
   h2.group-title {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--ink-faint);
-    margin: 0 0 0.9rem;
+    color: var(--gold);
+    margin: 0 0 1.1rem;
   }
-  .field { margin-bottom: 1rem; }
+  .tab-face h2.group-title { color: var(--violet-strong); }
+
+  .field { margin-bottom: 1.15rem; }
   .field:last-child { margin-bottom: 0; }
-  label.field-label { display: block; font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.35rem; }
-  .field-hint { font-size: 0.78rem; color: var(--ink-faint); margin-top: 0.3rem; }
+  label.field-label { display: block; font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.4rem; }
+  .field-hint { font-size: 0.78rem; color: var(--ink-faint); margin-top: 0.4rem; line-height: 1.5; }
+
   input[type="password"], input[type="text"], input[type="number"] {
     width: 100%; font: inherit; font-size: 0.9rem; color: var(--ink);
-    background: var(--surface-sunken); border: 1px solid var(--line);
-    border-radius: 0.3rem; padding: 0.65rem 0.75rem; min-height: 2.6rem;
+    background: var(--bg-sunken); border: 1px solid var(--line);
+    border-radius: 0.3rem; padding: 0.7rem 0.85rem; min-height: 2.7rem;
   }
+  input:focus { outline: none; border-color: var(--gold); }
+  .tab-face input:focus { border-color: var(--violet); }
+
   .upload-box {
     border: 1px dashed var(--line);
-    border-radius: 0.35rem;
-    background: var(--surface-sunken);
-    padding: 0.9rem;
+    border-radius: 0.4rem;
+    background: var(--bg-sunken);
+    padding: 1rem;
     text-align: center;
     cursor: pointer;
     position: relative;
-    min-height: 8rem;
+    min-height: 8.5rem;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
+    transition: border-color 0.15s ease;
   }
+  .upload-box:hover { border-color: var(--gold); }
+  .tab-face .upload-box:hover { border-color: var(--violet); }
   .upload-box input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
-  .upload-box img { max-width: 100%; max-height: 9rem; border-radius: 0.25rem; }
-  .upload-box .placeholder { color: var(--ink-faint); font-size: 0.84rem; }
+  .upload-box img { max-width: 100%; max-height: 9.5rem; border-radius: 0.3rem; }
+  .upload-box .placeholder { color: var(--ink-faint); font-size: 0.84rem; font-style: italic; font-family: 'Cormorant Garamond', Georgia, serif; }
+
   button.evaluate {
-    display: block; width: 100%; margin-top: 1.4rem; padding: 0.95rem 1rem;
-    min-height: 3rem; background: var(--accent); color: var(--accent-ink);
-    border: none; border-radius: 0.35rem; font: inherit; font-size: 1rem;
+    display: block; width: 100%; margin-top: 1.5rem; padding: 1rem 1rem;
+    min-height: 3.1rem; background: linear-gradient(180deg, var(--gold-strong), var(--gold));
+    color: #1B1408;
+    border: none; border-radius: 0.35rem;
+    font-family: 'Cinzel', Georgia, serif; font-size: 0.86rem; letter-spacing: 0.14em; text-transform: uppercase;
     font-weight: 600; cursor: pointer;
+    box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(201, 160, 92, 0.55);
   }
-  button.evaluate:hover { background: var(--accent-strong); }
-  button.evaluate:disabled { opacity: 0.55; cursor: default; }
-  button.evaluate.face-btn { background: var(--face-accent); }
-  button.evaluate.face-btn:hover { background: #473b73; }
+  button.evaluate:hover { filter: brightness(1.08); }
+  button.evaluate:disabled { opacity: 0.5; cursor: default; filter: none; box-shadow: none; }
+  button.evaluate.face-btn { background: linear-gradient(180deg, var(--violet-strong), var(--violet)); color: #150E22; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(144, 120, 184, 0.55); }
+
   .results .summary {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--ink-faint);
-    margin: 0 0 1rem;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-faint);
+    margin: 0 0 1.1rem;
   }
-  .placeholder-text { color: var(--ink-faint); font-size: 0.94rem; }
+  .placeholder-text { color: var(--ink-faint); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.05rem; }
+
   .error-box {
-    background: var(--danger-soft); border: 1px solid var(--danger); color: var(--danger);
+    background: var(--danger-soft); border: 1px solid var(--danger); color: #E8AFA1;
     border-radius: 0.35rem; padding: 0.85rem 1rem; font-size: 0.88rem; margin-bottom: 1rem;
   }
   .comparison-box {
-    background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 0.35rem;
-    padding: 0.85rem 1rem; font-size: 0.9rem; color: var(--accent-strong); margin-bottom: 1.4rem;
+    background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 0.35rem;
+    padding: 0.9rem 1.1rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
+    font-size: 1.02rem; color: var(--gold-strong); margin-bottom: 1.5rem;
   }
-  .hand-block + .hand-block { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+
+  .hand-block + .hand-block { margin-top: 1.8rem; padding-top: 1.6rem; border-top: 1px solid var(--line-soft); }
   .hand-title {
-    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600;
-    font-size: 1.4rem; margin: 0 0 0.7rem;
+    font-family: 'Cinzel', Georgia, serif; font-weight: 600; letter-spacing: 0.03em;
+    font-size: 1.15rem; margin: 0 0 0.9rem; color: var(--ink);
   }
+
   .section-heading {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--ink-faint); margin: 1.4rem 0 0.7rem;
+    font-family: 'Cinzel', Georgia, serif; font-size: 0.66rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-faint); margin: 1.6rem 0 0.9rem;
   }
   .section-heading:first-child { margin-top: 0; }
-  .domain-block + .domain-block { margin-top: 1rem; }
+
+  .domain-block + .domain-block { margin-top: 1.1rem; }
   .domain-name {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--match); margin: 0 0 0.5rem;
+    text-transform: uppercase; color: var(--emerald); margin: 0 0 0.6rem;
   }
-  .domain-name.face { color: var(--face-accent); }
+  .domain-name.face { color: var(--violet-strong); }
+
   .rule-card {
-    border-left: 3px solid var(--match); background: var(--match-soft);
-    border-radius: 0 0.3rem 0.3rem 0; padding: 0.75rem 0.9rem;
+    border-left: 2px solid var(--emerald); background: var(--emerald-soft);
+    border-radius: 0 0.3rem 0.3rem 0; padding: 0.8rem 1rem;
   }
-  .rule-card.face { border-left-color: var(--face-accent); background: var(--face-soft); }
-  .rule-card + .rule-card { margin-top: 0.55rem; }
-  .rule-card .rule-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--ink-faint); margin-bottom: 0.3rem; }
+  .rule-card.face { border-left-color: var(--violet); background: var(--violet-soft); }
+  .rule-card + .rule-card { margin-top: 0.6rem; }
+  .rule-card .rule-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--ink-faint); margin-bottom: 0.35rem; }
+
   .direct-card {
-    border-left: 3px solid var(--line); background: var(--surface-sunken);
-    border-radius: 0 0.3rem 0.3rem 0; padding: 0.7rem 0.9rem;
+    border-left: 2px solid var(--line); background: var(--bg-sunken);
+    border-radius: 0 0.3rem 0.3rem 0; padding: 0.75rem 1rem;
   }
   .direct-card + .direct-card { margin-top: 0.5rem; }
   .direct-card .direct-label {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.04em;
-    color: var(--face-accent); margin-bottom: 0.3rem; text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.06em;
+    color: var(--violet-strong); margin-bottom: 0.3rem; text-transform: uppercase;
   }
-  details.raw {
-    margin-top: 1rem; border-top: 1px dashed var(--line); padding-top: 0.8rem;
-  }
-  details.raw summary { cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-faint); }
+
+  details.raw { margin-top: 1.2rem; border-top: 1px dashed var(--line); padding-top: 0.9rem; }
+  details.raw summary { cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--ink-faint); }
   pre.raw-json {
-    background: var(--surface-sunken); border-radius: 0.3rem; padding: 0.75rem;
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; overflow-x: auto;
-    margin-top: 0.6rem; white-space: pre-wrap; word-break: break-word;
+    background: var(--bg-sunken); border-radius: 0.3rem; padding: 0.85rem;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.73rem; overflow-x: auto;
+    margin-top: 0.6rem; white-space: pre-wrap; word-break: break-word; color: var(--ink-soft);
   }
-  .confidence-note { font-size: 0.84rem; color: var(--ink-soft); font-style: italic; margin-top: 0.6rem; }
+  .confidence-note {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
+    font-size: 0.98rem; color: var(--ink-soft); margin-top: 0.9rem;
+  }
+
   .spinner {
-    display: inline-block; width: 1rem; height: 1rem; border: 2px solid var(--accent-ink);
+    display: inline-block; width: 1rem; height: 1rem; border: 2px solid rgba(0,0,0,0.4);
     border-top-color: transparent; border-radius: 50%; animation: spin 0.7s linear infinite;
     vertical-align: -2px; margin-right: 0.5rem;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
+
   footer.note {
-    margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
-    font-size: 0.78rem; color: var(--ink-faint); max-width: 62ch;
+    margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line-soft);
+    text-align: center;
+    font-size: 0.78rem; color: var(--ink-faint); max-width: 44rem; margin-left: auto; margin-right: auto;
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="masthead">
-    <p class="eyebrow">Regel-Engine &middot; KI-Foto-Analyse</p>
+    <p class="eyebrow"><span class="glyph">✦</span>&nbsp; Regel-Engine &middot; KI-Foto-Analyse &nbsp;<span class="glyph">✦</span></p>
     <h1>Lese-Konsole</h1>
-    <p class="lede">Chiromantie (Hand) und Physiognomik (Gesicht) — Foto hochladen, Claude extrahiert die Merkmale, die Regel-Engines werten sie gegen die Wissensdatenbanken aus.</p>
+    <p class="lede">Chiromantie und Physiognomik — ein Foto genügt, Claude liest die Merkmale, die Regel-Engines befragen die Wissensdatenbanken.</p>
     <p class="notice">Fotos werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert.</p>
   </header>
 
   <div class="tabs" role="tablist">
-    <button class="tab-btn" id="tab-btn-hand" role="tab" aria-selected="true" aria-controls="tab-hand">Chiromantie (Hand)</button>
-    <button class="tab-btn face-tab" id="tab-btn-face" role="tab" aria-selected="false" aria-controls="tab-face">Physiognomik (Gesicht)</button>
+    <button class="tab-btn" id="tab-btn-hand" role="tab" aria-selected="true" aria-controls="tab-hand">Chiromantie<span class="tab-sub">die Hand</span></button>
+    <button class="tab-btn face-tab" id="tab-btn-face" role="tab" aria-selected="false" aria-controls="tab-face">Physiognomik<span class="tab-sub">das Gesicht</span></button>
   </div>
 
   <div class="tab-panel active" id="tab-hand" role="tabpanel" aria-labelledby="tab-btn-hand">
@@ -239,7 +291,7 @@
         <section class="panel">
           <h2 class="group-title">Ergebnis</h2>
           <div id="output">
-            <p class="placeholder-text">Mindestens ein Foto hochladen und "Analysieren" drücken.</p>
+            <p class="placeholder-text">Mindestens ein Foto hochladen und „Analysieren“ drücken.</p>
           </div>
         </section>
       </div>
@@ -272,7 +324,7 @@
         <section class="panel">
           <h2 class="group-title">Ergebnis</h2>
           <div id="face-output">
-            <p class="placeholder-text">Foto hochladen und "Analysieren" drücken.</p>
+            <p class="placeholder-text">Foto hochladen und „Analysieren“ drücken.</p>
           </div>
         </section>
       </div>
@@ -280,6 +332,7 @@
   </div>
 
   <footer class="note">
+    <span class="glyph">✦</span><br><br>
     Diese Deutungen sind traditionell (Mian Xiang, Samudrika Shastra, westliche Chiromantie/Physiognomik) und
     wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion, nicht als medizinischer,
     psychologischer oder finanzieller Rat. Sie erlauben keine Rückschlüsse auf Herkunft, Ethnie oder Charakter-Urteile
