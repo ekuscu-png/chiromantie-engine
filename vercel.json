@@ -1,14 +1,8 @@
 {
-  "framework": null,
-  "buildCommand": "echo 'Reine Python-Serverless-Function, kein Build-Schritt noetig'",
-  "installCommand": "echo 'Kein npm install noetig'",
-  "outputDirectory": "public",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/index.py": {
-      "includeFiles": "api/**"
+    "app.py": {
+      "maxDuration": 60
     }
-  },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index.py" }
-  ]
+  }
 }

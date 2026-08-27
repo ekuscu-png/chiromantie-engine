@@ -1,5 +1,6 @@
 import base64
 import json
+import os
 from pathlib import Path
 
 from flask import Flask, jsonify, render_template, request
@@ -139,7 +140,7 @@ def analyze_hand_image(client: anthropic.Anthropic, image_bytes: bytes, media_ty
     return json.loads(text)
 
 
-app = Flask(__name__, template_folder=str(BASE_DIR / "templates"))
+app = Flask(__name__)
 
 
 @app.get("/")
@@ -208,3 +209,8 @@ def analyze():
         result["comparison"] = comparison
 
     return jsonify(result)
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", "5000"))
+    app.run(host="127.0.0.1", port=port, debug=True)
