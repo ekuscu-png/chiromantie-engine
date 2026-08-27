@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Handlese-Konsole — KI-Analyse</title>
+<title>Lese-Konsole — Chiromantie &amp; Physiognomik</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
   :root {
@@ -22,6 +22,8 @@
     --match-soft: #DCE4DC;
     --danger: #8C3B2E;
     --danger-soft: #F0DCD6;
+    --face-accent: #5B4A8F;
+    --face-soft: #E2DCF0;
   }
   * { box-sizing: border-box; }
   body {
@@ -35,7 +37,7 @@
   header.masthead {
     padding: 2rem 0 1.75rem;
     border-bottom: 1px solid var(--line);
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
   .eyebrow {
     font-family: 'IBM Plex Mono', monospace;
@@ -63,6 +65,20 @@
     color: var(--accent-strong);
     max-width: 62ch;
   }
+  .tabs {
+    display: flex; gap: 0.5rem; margin-bottom: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .tab-btn {
+    font: inherit; font-size: 0.92rem; font-weight: 600; cursor: pointer;
+    background: none; border: none; padding: 0.75rem 0.25rem;
+    color: var(--ink-faint); border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab-btn[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+  .tab-btn.face-tab[aria-selected="true"] { border-bottom-color: var(--face-accent); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
   main { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
   @media (min-width: 900px) { main { grid-template-columns: minmax(0, 22rem) 1fr; align-items: start; } }
   section.panel {
@@ -83,7 +99,8 @@
   .field { margin-bottom: 1rem; }
   .field:last-child { margin-bottom: 0; }
   label.field-label { display: block; font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.35rem; }
-  input[type="password"], input[type="text"] {
+  .field-hint { font-size: 0.78rem; color: var(--ink-faint); margin-top: 0.3rem; }
+  input[type="password"], input[type="text"], input[type="number"] {
     width: 100%; font: inherit; font-size: 0.9rem; color: var(--ink);
     background: var(--surface-sunken); border: 1px solid var(--line);
     border-radius: 0.3rem; padding: 0.65rem 0.75rem; min-height: 2.6rem;
@@ -111,6 +128,8 @@
   }
   button.evaluate:hover { background: var(--accent-strong); }
   button.evaluate:disabled { opacity: 0.55; cursor: default; }
+  button.evaluate.face-btn { background: var(--face-accent); }
+  button.evaluate.face-btn:hover { background: #473b73; }
   .results .summary {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--ink-faint);
     margin: 0 0 1rem;
@@ -129,17 +148,33 @@
     font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600;
     font-size: 1.4rem; margin: 0 0 0.7rem;
   }
+  .section-heading {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-faint); margin: 1.4rem 0 0.7rem;
+  }
+  .section-heading:first-child { margin-top: 0; }
   .domain-block + .domain-block { margin-top: 1rem; }
   .domain-name {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--match); margin: 0 0 0.5rem;
   }
+  .domain-name.face { color: var(--face-accent); }
   .rule-card {
     border-left: 3px solid var(--match); background: var(--match-soft);
     border-radius: 0 0.3rem 0.3rem 0; padding: 0.75rem 0.9rem;
   }
+  .rule-card.face { border-left-color: var(--face-accent); background: var(--face-soft); }
   .rule-card + .rule-card { margin-top: 0.55rem; }
   .rule-card .rule-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--ink-faint); margin-bottom: 0.3rem; }
+  .direct-card {
+    border-left: 3px solid var(--line); background: var(--surface-sunken);
+    border-radius: 0 0.3rem 0.3rem 0; padding: 0.7rem 0.9rem;
+  }
+  .direct-card + .direct-card { margin-top: 0.5rem; }
+  .direct-card .direct-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.04em;
+    color: var(--face-accent); margin-bottom: 0.3rem; text-transform: uppercase;
+  }
   details.raw {
     margin-top: 1rem; border-top: 1px dashed var(--line); padding-top: 0.8rem;
   }
@@ -166,47 +201,89 @@
 <div class="wrap">
   <header class="masthead">
     <p class="eyebrow">Regel-Engine &middot; KI-Foto-Analyse</p>
-    <h1>Handlese-Konsole</h1>
-    <p class="lede">Foto hochladen, Claude extrahiert die Handmerkmale, die Regel-Engine wertet sie aus. Läuft lokal auf deinem Rechner.</p>
+    <h1>Lese-Konsole</h1>
+    <p class="lede">Chiromantie (Hand) und Physiognomik (Gesicht) — Foto hochladen, Claude extrahiert die Merkmale, die Regel-Engines werten sie gegen die Wissensdatenbanken aus.</p>
     <p class="notice">Fotos werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert.</p>
   </header>
 
-  <main>
-    <div class="controls">
-      <section class="panel">
-        <h2 class="group-title">Fotos</h2>
-        <div class="field">
-          <label class="field-label">Linke Hand (passiv)</label>
-          <label class="upload-box" id="left_box">
-            <input type="file" id="left_image" accept="image/*">
-            <span class="placeholder" id="left_placeholder">Foto auswählen …</span>
-          </label>
-        </div>
-        <div class="field">
-          <label class="field-label">Rechte Hand (aktiv)</label>
-          <label class="upload-box" id="right_box">
-            <input type="file" id="right_image" accept="image/*">
-            <span class="placeholder" id="right_placeholder">Foto auswählen …</span>
-          </label>
-        </div>
-      </section>
+  <div class="tabs" role="tablist">
+    <button class="tab-btn" id="tab-btn-hand" role="tab" aria-selected="true" aria-controls="tab-hand">Chiromantie (Hand)</button>
+    <button class="tab-btn face-tab" id="tab-btn-face" role="tab" aria-selected="false" aria-controls="tab-face">Physiognomik (Gesicht)</button>
+  </div>
 
-      <button class="evaluate" id="run">Analysieren</button>
-    </div>
+  <div class="tab-panel active" id="tab-hand" role="tabpanel" aria-labelledby="tab-btn-hand">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Fotos</h2>
+          <div class="field">
+            <label class="field-label">Linke Hand (passiv)</label>
+            <label class="upload-box" id="left_box">
+              <input type="file" id="left_image" accept="image/*">
+              <span class="placeholder" id="left_placeholder">Foto auswählen …</span>
+            </label>
+          </div>
+          <div class="field">
+            <label class="field-label">Rechte Hand (aktiv)</label>
+            <label class="upload-box" id="right_box">
+              <input type="file" id="right_image" accept="image/*">
+              <span class="placeholder" id="right_placeholder">Foto auswählen …</span>
+            </label>
+          </div>
+        </section>
 
-    <div class="results">
-      <section class="panel">
-        <h2 class="group-title">Ergebnis</h2>
-        <div id="output">
-          <p class="placeholder-text">Mindestens ein Foto hochladen und "Analysieren" drücken.</p>
-        </div>
-      </section>
-    </div>
-  </main>
+        <button class="evaluate" id="run">Analysieren</button>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="output">
+            <p class="placeholder-text">Mindestens ein Foto hochladen und "Analysieren" drücken.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="tab-panel" id="tab-face" role="tabpanel" aria-labelledby="tab-btn-face">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Foto</h2>
+          <div class="field">
+            <label class="field-label">Gesicht (Frontal, neutraler Ausdruck)</label>
+            <label class="upload-box" id="face_box">
+              <input type="file" id="face_image" accept="image/*">
+              <span class="placeholder" id="face_placeholder">Foto auswählen …</span>
+            </label>
+          </div>
+          <div class="field">
+            <label class="field-label" for="face_age">Alter (optional)</label>
+            <input type="number" id="face_age" min="1" max="120" placeholder="z.B. 34">
+            <p class="field-hint">Ordnet dich der klassischen Lebensphasen-Deutung zu (Stirn-, Augen-, Nasen-Phase, ...).</p>
+          </div>
+        </section>
+
+        <button class="evaluate face-btn" id="run-face">Analysieren</button>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="face-output">
+            <p class="placeholder-text">Foto hochladen und "Analysieren" drücken.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
 
   <footer class="note">
-    Diese Deutungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und
-    Selbstreflexion, nicht als medizinischer, psychologischer oder finanzieller Rat.
+    Diese Deutungen sind traditionell (Mian Xiang, Samudrika Shastra, westliche Chiromantie/Physiognomik) und
+    wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion, nicht als medizinischer,
+    psychologischer oder finanzieller Rat. Sie erlauben keine Rückschlüsse auf Herkunft, Ethnie oder Charakter-Urteile
+    über Dritte.
   </footer>
 </div>
 
@@ -233,6 +310,24 @@
   }
   wireUpload("left_image", "left_box", "left_placeholder");
   wireUpload("right_image", "right_box", "right_placeholder");
+  wireUpload("face_image", "face_box", "face_placeholder");
+
+  function wireTabs() {
+    const tabs = [
+      { btn: document.getElementById("tab-btn-hand"), panel: document.getElementById("tab-hand") },
+      { btn: document.getElementById("tab-btn-face"), panel: document.getElementById("tab-face") },
+    ];
+    tabs.forEach((tab) => {
+      tab.btn.addEventListener("click", () => {
+        tabs.forEach((t) => {
+          const active = t === tab;
+          t.btn.setAttribute("aria-selected", String(active));
+          t.panel.classList.toggle("active", active);
+        });
+      });
+    });
+  }
+  wireTabs();
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -267,6 +362,41 @@
     return html;
   }
 
+  function renderFace(data) {
+    let html = "";
+
+    if (data.direct_interpretations && data.direct_interpretations.length) {
+      html += '<h3 class="section-heading">Merkmal für Merkmal</h3>';
+      data.direct_interpretations.forEach((d) => {
+        html += `<div class="direct-card"><div class="direct-label">${escapeHtml(d.section)}</div><div>${escapeHtml(d.text)}</div></div>`;
+      });
+    }
+
+    html += `<p class="summary" style="margin-top:1.4rem">${data.matches.length} von ${data.rule_count} Kombinationsregeln ausgelöst</p>`;
+    if (data.matches.length > 0) {
+      const byDomain = {};
+      const order = [];
+      data.matches.forEach((m) => {
+        if (!byDomain[m.domain]) { byDomain[m.domain] = []; order.push(m.domain); }
+        byDomain[m.domain].push(m);
+      });
+      order.forEach((d) => {
+        const label2 = byDomain[d][0].domain_label;
+        html += `<div class="domain-block"><h4 class="domain-name face">${escapeHtml(label2)}</h4>`;
+        byDomain[d].forEach((m) => {
+          html += `<div class="rule-card face"><div class="rule-id">${escapeHtml(m.id)}</div><div>${escapeHtml(m.text)}</div></div>`;
+        });
+        html += "</div>";
+      });
+    }
+
+    if (data.extracted && data.extracted.confidence_notes) {
+      html += `<p class="confidence-note">${escapeHtml(data.extracted.confidence_notes)}</p>`;
+    }
+    html += `<details class="raw"><summary>Rohdaten (extrahierte Merkmale)</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data.extracted, null, 2))}</pre></details>`;
+    return html;
+  }
+
   document.getElementById("run").addEventListener("click", async () => {
     const button = document.getElementById("run");
     const output = document.getElementById("output");
@@ -297,6 +427,38 @@
       if (data.left) html += renderHand("Linke Hand (passiv)", data.left);
       if (data.right) html += renderHand("Rechte Hand (aktiv)", data.right);
       output.innerHTML = html;
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Analysieren";
+    }
+  });
+
+  document.getElementById("run-face").addEventListener("click", async () => {
+    const button = document.getElementById("run-face");
+    const output = document.getElementById("face-output");
+    const faceFile = document.getElementById("face_image").files[0];
+    const age = document.getElementById("face_age").value.trim();
+
+    if (!faceFile) { output.innerHTML = '<div class="error-box">Bitte ein Gesichtsfoto hochladen.</div>'; return; }
+
+    const formData = new FormData();
+    formData.append("face_image", faceFile);
+    if (age) formData.append("age", age);
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Analysiere …';
+    output.innerHTML = '<p class="placeholder-text">Foto wird an Claude gesendet und ausgewertet …</p>';
+
+    try {
+      const res = await fetch("/api/analyze-face", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      output.innerHTML = renderFace(data);
     } catch (err) {
       output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
     } finally {

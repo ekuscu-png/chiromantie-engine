@@ -50,11 +50,16 @@ class RuleEngine:
     def __init__(self, rules: list[RuleDefinition], weightings: Optional[dict[str, float]] = None):
         self._weightings = weightings or {}
         self._compiled: list[_CompiledRule] = []
+        self.skipped_rule_ids: list[str] = []
         for rule in rules:
             try:
                 ast = parse_condition(rule.condition)
-            except ValueError as err:
-                raise ValueError(f"Failed to parse condition for rule '{rule.id}': {err}") from err
+            except ValueError:
+                # KB-Inhalte koennen vereinzelt fehlerhafte Bedingungen enthalten
+                # (Tippfehler in handverfassten Regeln). Einzelne Regel ueberspringen
+                # statt die komplette Engine-Initialisierung scheitern zu lassen.
+                self.skipped_rule_ids.append(rule.id)
+                continue
             self._compiled.append(_CompiledRule(rule=rule, ast=ast))
 
     def evaluate(self, features: dict) -> list[MatchedRule]:

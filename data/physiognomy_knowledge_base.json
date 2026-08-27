@@ -1,0 +1,3663 @@
+{
+  "meta": {
+    "version": "2.0.0-master",
+    "language": "de",
+    "created": "2026-08-27",
+    "description": "Master-Wissensdatenbank für Physiognomik-App. Deutlich erweiterte Version mit vollständiger 100-Jahr Age Map, 5 Wu Guan, 3 San Ting, TCM Zonen, 100+ Muttermal-Positionen, 200+ Kombinationsregeln, FACS-Detail.",
+    "structure_overview": {
+      "traditions": 5,
+      "face_shapes": 12,
+      "age_positions": 100,
+      "moles_positions": 108,
+      "compound_rules": 200,
+      "facs_action_units": 44,
+      "compatibility_pairs": 25,
+      "twelve_palaces": 12,
+      "five_officials": 5,
+      "three_courts": 3
+    },
+    "weightings": {
+      "face_shape": 3.0,
+      "five_officials": 2.9,
+      "twelve_palaces_relevant": 2.8,
+      "three_courts_balance": 2.6,
+      "nose_wealth": 2.5,
+      "eyes_character": 2.5,
+      "eyebrows": 2.0,
+      "mouth_lips": 1.8,
+      "chin": 1.6,
+      "ears": 1.5,
+      "wrinkles_moles": 1.2,
+      "color_texture": 1.0
+    },
+    "disclaimer": "Diese Deutungen sind traditionell (Mian Xiang, Samudrika Shastra, Lavater) und wissenschaftlich nicht validiert (Ausnahme: FACS). Sie dienen der Unterhaltung und Selbstreflexion. Sie erlauben KEINE Rückschlüsse auf Herkunft, Ethnie, Kriminalität, sexuelle Orientierung oder Intelligenz."
+  },
+  "three_courts_san_ting": {
+    "description": "Klassisches Grundsystem der Mian Xiang: Gesicht in drei Höfe. Analyse beginnt IMMER mit dem Balance-Verhältnis der drei Höfe.",
+    "upper_court_shang_ting": {
+      "chinese": "上停 Shàng Tíng",
+      "region": "Haaransatz bis Augenbrauen",
+      "life_phase": "Kindheit und Jugend (15-30 Jahre)",
+      "elements": "Karma der Vorfahren, Bildung, mentale Anlagen",
+      "positive": "Voll, breit, glatt, hell, ohne Marken → gute Herkunft, gute Bildung, klarer Verstand, Karriere-Start unterstützt",
+      "negative": "Eingesunken, dunkel, mit Falten, schmal → schwierige Jugend, unklarer Bildungsweg, familiäre Belastung",
+      "reading_priority": "Wenn Shang Ting dominant → Person lebt aus dem Kopf, aus Ideen, aus Karriere-Ambition"
+    },
+    "middle_court_zhong_ting": {
+      "chinese": "中停 Zhōng Tíng",
+      "region": "Augenbrauen bis Nasenspitze",
+      "life_phase": "Reife (30-50 Jahre)",
+      "elements": "Wille, Selbst, Vermögen, Macht, Ehe",
+      "positive": "Voll, hoch, klar, Nase gerade → starke Persönlichkeit, Wohlstand, gute Ehe",
+      "negative": "Flach, schief, Nase gekrümmt → wechselhafte Karriere, Beziehungsprobleme, Selbstwertthemen",
+      "reading_priority": "Wenn Zhong Ting dominant → aktives Leben, Kämpfer, Macher, materiell orientiert"
+    },
+    "lower_court_xia_ting": {
+      "chinese": "下停 Xià Tíng",
+      "region": "Nasenspitze bis Kinn",
+      "life_phase": "Alter (50+ Jahre)",
+      "elements": "Emotionen, Beziehungen, Nachwuchs, Vermögen im Alter",
+      "positive": "Voll, rund, gutes Kinn, sanfte Konturen → glückliches Alter, Familie, Wohlstand",
+      "negative": "Spitz, schmal, hohl → einsames Alter, Beziehungsverluste, Erschöpfung",
+      "reading_priority": "Wenn Xia Ting dominant → sinnlicher, gefühlsorientierter, spätblühender Typ"
+    },
+    "balance_analysis": {
+      "all_three_equal": "Klassisches Ideal: ausgewogenes Leben durch alle Phasen — der 'harmonische Mensch'.",
+      "upper_dominant_only": "Karriere-Höhepunkt früh, aber Alter unsicher.",
+      "middle_dominant_only": "Höhepunkt in der Lebensmitte, viel Kampf, Verlust im Alter möglich.",
+      "lower_dominant_only": "Spätes Glück, harte frühe Jahre.",
+      "upper_and_middle_dominant": "Karriere-Person, kann Vermögen aufbauen, aber Familie kommt zu kurz.",
+      "middle_and_lower_dominant": "Praktischer Macher, gutes Familienleben, weniger intellektuelle Ausrichtung.",
+      "upper_and_lower_dominant": "Intellektuell und spirituell, mittleres Leben oft chaotisch."
+    }
+  },
+  "five_officials_wu_guan": {
+    "description": "Die fünf Ministerien des Gesichts. Jeder Bereich ist ein 'Amt', das eine Lebensfunktion verwaltet.",
+    "eyebrows_bao_shou_guan": {
+      "chinese": "保壽官 Bǎo Shòu Guān",
+      "translation": "Amt der Langlebigkeit und Schutz",
+      "location": "Augenbrauen",
+      "domain": "Langlebigkeit, Geschwister-Palast, Emotionen",
+      "ideal_form": "Länger als die Augen, klar geformt, seidig glänzend, weder zu dick noch zu dünn, gleichmäßiges Wachstum",
+      "flawed_form": "Kurz, unterbrochen, spärlich, kraus, extrem buschig",
+      "positive_life_impact": "Gute Beziehungen zu Geschwistern und Peers, emotionale Stabilität, Langlebigkeit",
+      "negative_life_impact": "Familien-Konflikte, emotionale Labilität, kürzeres Leben (klassisch)"
+    },
+    "eyes_jian_cha_guan": {
+      "chinese": "監察官 Jiān Chá Guān",
+      "translation": "Amt der Überwachung und Beurteilung",
+      "location": "Augen",
+      "domain": "Charakter, Weisheit, Urteilskraft, aktuelle Lebensenergie",
+      "ideal_form": "Klar, leuchtend, mit deutlichem schwarzen und weißen Anteil, mandelförmig, ruhiger Blick",
+      "flawed_form": "Trüb, verwässert, Sanpaku, zerstreut, hart, rot, blutunterlaufen",
+      "positive_life_impact": "Gute Urteilskraft, Charakter-Stärke, Erfolg durch klare Entscheidungen",
+      "negative_life_impact": "Fehlentscheidungen, Unruhe, Vertrauensverluste"
+    },
+    "nose_shen_bian_guan": {
+      "chinese": "審辨官 Shěn Biàn Guān",
+      "translation": "Amt der Prüfung und Unterscheidung",
+      "location": "Nase",
+      "domain": "Selbst, Vermögen, Karriere im mittleren Alter",
+      "ideal_form": "Gerade, hoch, fleischig, mit rundem Nasenkopf, vollen Nasenflügeln, verdeckten Nasenlöchern",
+      "flawed_form": "Krumm, flach, spitz, hohle Nasenflügel, sichtbare Nasenlöcher",
+      "positive_life_impact": "Wohlstand, klarer Wille, Selbstbewusstsein, Karriere-Erfolg 41-50",
+      "negative_life_impact": "Vermögensverluste, schwaches Selbst, Karriere-Rückschläge"
+    },
+    "ears_cai_ting_guan": {
+      "chinese": "採聽官 Cǎi Tīng Guān",
+      "translation": "Amt des Hörens und Sammelns",
+      "location": "Ohren",
+      "domain": "Kindheit, Weisheit, Vermögen (klassisch), Langlebigkeit",
+      "ideal_form": "Groß, dick, mit vollen Ohrläppchen, klar konturierter innerer Struktur, hell",
+      "flawed_form": "Klein, dünn, ohne Ohrläppchen, unregelmäßig, dunkel",
+      "positive_life_impact": "Gute Kindheit, Weisheit, Wohlstand im Alter, Langlebigkeit",
+      "negative_life_impact": "Schwierige Kindheit, hartes Leben, Kampf um Wohlstand"
+    },
+    "mouth_chu_na_guan": {
+      "chinese": "出納官 Chū Nà Guān",
+      "translation": "Amt des Ausgehens und Einnehmens",
+      "location": "Mund",
+      "domain": "Kommunikation, Vermögen im Alter, Genuss, Nahrung/Wohlstand-Fluss",
+      "ideal_form": "Gut proportioniert, symmetrisch, feste Lippen, klare Konturen, natürlich rot",
+      "flawed_form": "Schief, dünn, verkniffen, herabhängende Mundwinkel, blass",
+      "positive_life_impact": "Kommunikationstalent, guter Umgang mit Geld und Essen, Wohlstand im Alter",
+      "negative_life_impact": "Konflikte durch Worte, Verlust von Ressourcen, Alter mit Mangel"
+    }
+  },
+  "twelve_palaces_detailed": {
+    "1_ming_gong_life_palace": {
+      "chinese": "命宮",
+      "translation": "Palast des Lebens / Schicksals-Palast",
+      "location": "Zwischen den Augenbrauen (Yin Tang 印堂)",
+      "primary_domain": "Grundcharakter, Lebensschicksal, Karma des aktuellen Lebens",
+      "reading_focus": "IMMER zuerst lesen — dieser Palast setzt den Ton für alle anderen",
+      "positive_signs": [
+        "Breit (mindestens 1.5 Fingerbreiten)",
+        "Glatt und ohne Falten",
+        "Hell und leicht rosa/gold schimmernd",
+        "Ohne Muttermale oder Narben",
+        "Keine vertikalen Zornesfalten"
+      ],
+      "negative_signs": [
+        "Sehr schmal (unter 1 Fingerbreite)",
+        "Vertikale Zornesfalten (11er)",
+        "Dunkle Verfärbung",
+        "Muttermal oder Narbe",
+        "Eingesunken oder eingedellt"
+      ],
+      "interpretations": {
+        "wide_bright": "Weite Perspektive, klarer Lebensweg, wenige Blockaden im Karma.",
+        "narrow": "Engstirnigkeit, Fokus auf Details, viele selbstgemachte Hindernisse.",
+        "vertical_lines": "Grübelei, Sorge, Karriere-Kämpfe im Zeitraum um Alter 28.",
+        "mole": "Karma-Belastung, oft familiäre Muster; kann als Warnung dienen.",
+        "sunken": "Aktuell schwierige Phase (Blockade), Alter 28 kritisch."
+      }
+    },
+    "2_cai_bo_gong_wealth_palace": {
+      "chinese": "財帛宮",
+      "translation": "Palast des Vermögens",
+      "location": "Nasenspitze und beide Nasenflügel",
+      "primary_domain": "Geld, Wohlstand, Vermögensaufbau, Ersparnisse",
+      "reading_focus": "Wichtigster Palast für Karriere/Finanz-Fragen",
+      "positive_signs": [
+        "Nasenspitze rund und fleischig ('Buddha-Nase')",
+        "Volle, gerundete Nasenflügel",
+        "Nasenlöcher nicht direkt sichtbar (verdeckt)",
+        "Klare, gesunde Farbe",
+        "Keine Muttermale auf der Nasenspitze"
+      ],
+      "negative_signs": [
+        "Spitze, knochige Nase",
+        "Schmale, eingezogene Nasenflügel",
+        "Sichtbare Nasenlöcher (nach vorn)",
+        "Muttermale, besonders auf Flügeln",
+        "Rote Adern, dunkle Verfärbung"
+      ],
+      "interpretations": {
+        "ideal": "Wohlstand ab Alter 40, Fähigkeit Geld zu halten, gute Investitionen.",
+        "pointed_nose": "Kann Geld verdienen, aber verliert schnell.",
+        "visible_nostrils": "Verschwenderisch, offene Hand, kann nicht sparen.",
+        "mole_on_wing": "Vermögensverlust, oft durch andere Menschen.",
+        "mole_on_tip": "Skandale um Geld, Vorsicht bei Investitionen."
+      }
+    },
+    "3_xiong_di_gong_siblings_palace": {
+      "chinese": "兄弟宮",
+      "translation": "Palast der Geschwister",
+      "location": "Beide Augenbrauen",
+      "primary_domain": "Geschwister, Freunde, Peers, enge Gleichgestellte",
+      "positive_signs": [
+        "Länger als die Augen",
+        "Klar und einheitlich geformt",
+        "Seidig glänzend",
+        "Symmetrisch (beide gleich)"
+      ],
+      "negative_signs": [
+        "Kurz und spärlich",
+        "Asymmetrisch",
+        "Kraus oder wild",
+        "Unterbrechungen oder Narben"
+      ],
+      "interpretations": {
+        "long_full": "Viele gute Geschwister-/Peer-Beziehungen, Netzwerk stark.",
+        "short_thin": "Einsam, wenige echte Freunde.",
+        "asymmetric": "Konflikt mit Geschwistern, oft mit einer Seite dominant.",
+        "break_in_brow": "Verlust eines Geschwisters oder engen Freundes."
+      }
+    },
+    "4_tian_zhai_gong_property_palace": {
+      "chinese": "田宅宮",
+      "translation": "Palast des Landbesitzes",
+      "location": "Bereich zwischen Auge und Augenbraue (Oberlid)",
+      "primary_domain": "Immobilien, Erbe, Wohnsituation, materieller Besitz",
+      "positive_signs": [
+        "Breiter Abstand zwischen Auge und Braue",
+        "Voll und glatt",
+        "Hell, keine Verfärbung"
+      ],
+      "negative_signs": [
+        "Schmaler Abstand",
+        "Muttermal in der Zone",
+        "Dunkle Verfärbung"
+      ],
+      "interpretations": {
+        "wide_full": "Erbe möglich, mehrere Immobilien im Leben, stabiles Zuhause.",
+        "narrow": "Wenig Besitz, häufige Umzüge, kein Erbe.",
+        "mole": "Streit um Erbe, Immobilien-Verlust möglich."
+      }
+    },
+    "5_nan_nü_gong_children_palace": {
+      "chinese": "男女宮",
+      "translation": "Palast der Söhne und Töchter",
+      "location": "Unter dem Auge (Tränensack-Bereich)",
+      "primary_domain": "Fruchtbarkeit, Kinder, Nachkommen, Kreativität",
+      "positive_signs": [
+        "Voll und leicht erhaben",
+        "Frei von dunklen Ringen",
+        "Sanft rosa"
+      ],
+      "negative_signs": [
+        "Dunkle Ringe (Yin Tang)",
+        "Eingesunken",
+        "Muttermal",
+        "Rote Verfärbung"
+      ],
+      "interpretations": {
+        "full_glowing": "Fruchtbarkeit hoch, Freude an Kindern, oft mehrere Kinder.",
+        "dark_circles": "Fruchtbarkeitsprobleme (klassisch), Erschöpfung, Nierenschwäche (TCM).",
+        "mole": "Sorge um Kinder, gesundheitliche Herausforderungen bei Nachkommen."
+      }
+    },
+    "6_nu_pu_gong_subordinates_palace": {
+      "chinese": "奴僕宮",
+      "translation": "Palast der Untergebenen / Helfer",
+      "location": "Untere Wangen bis Kinnbereich",
+      "primary_domain": "Team, Angestellte, Untergebene, Loyalität",
+      "positive_signs": [
+        "Voll und rund",
+        "Klar konturiert",
+        "Keine Falten oder Muttermale"
+      ],
+      "negative_signs": [
+        "Schmal und dünn",
+        "Zurückweichend",
+        "Muttermal"
+      ],
+      "interpretations": {
+        "full": "Führung mit Loyalität, gutes Team, Unterstützung im Alter.",
+        "thin": "Wenig Unterstützung, Team-Konflikte, oft alleine.",
+        "receding": "Autoritätsprobleme mit Untergebenen."
+      }
+    },
+    "7_fu_qi_gong_marriage_palace": {
+      "chinese": "夫妻宮",
+      "translation": "Palast des Ehepartners",
+      "location": "Äußere Augenwinkel (Yu Wei 魚尾)",
+      "primary_domain": "Ehe, Partnerschaft, romantische Beziehungen",
+      "positive_signs": [
+        "Glatt und hell",
+        "Keine tiefen Falten (Krähenfüße)",
+        "Voll und leicht erhaben"
+      ],
+      "negative_signs": [
+        "Tiefe Krähenfüße (mehrere Falten)",
+        "Muttermal",
+        "Dunkle Verfärbung",
+        "Eingesunken"
+      ],
+      "interpretations": {
+        "smooth": "Harmonische Ehe, romantisches Leben stabil.",
+        "many_crows_feet": "Beziehungs-Traumata, Untreue, Trennungen.",
+        "mole": "Skandal oder Verlust des Partners.",
+        "asymmetric": "Ungleichgewicht in der Beziehung (linke/rechte Seite unterschiedlich)."
+      }
+    },
+    "8_ji_e_gong_health_palace": {
+      "chinese": "疾厄宮",
+      "translation": "Palast der Krankheit / Gesundheit",
+      "location": "Nasenwurzel zwischen den Augen (Shan Gen 山根)",
+      "primary_domain": "Konstitution, Gesundheit, Krankheiten, Vitalität",
+      "positive_signs": [
+        "Voll und hoch",
+        "Ohne horizontale Falten",
+        "Klare Farbe"
+      ],
+      "negative_signs": [
+        "Sehr niedrig oder eingesunken",
+        "Horizontale Falten",
+        "Muttermal",
+        "Dunkle Verfärbung"
+      ],
+      "interpretations": {
+        "high_full": "Starke Konstitution, wenige Krankheiten, klare Vitalität.",
+        "low_sunken": "Schwache Konstitution, chronische Beschwerden, Kämpfe im mittleren Alter (40-45).",
+        "horizontal_line": "Ehe-Krise oder große Krankheit um Alter 41.",
+        "mole": "Chronische Gesundheitsbelastung."
+      }
+    },
+    "9_qian_yi_gong_travel_palace": {
+      "chinese": "遷移宮",
+      "translation": "Palast des Umzugs und Reisens",
+      "location": "Schläfen (Yi Ma 驛馬)",
+      "primary_domain": "Reisen, Migration, Ortswechsel, Auslandsbeziehungen",
+      "positive_signs": [
+        "Voll und hell",
+        "Klar",
+        "Keine Adern sichtbar"
+      ],
+      "negative_signs": [
+        "Eingesunken",
+        "Rote Adern",
+        "Dunkle Flecken",
+        "Muttermal"
+      ],
+      "interpretations": {
+        "full_bright": "Auslandserfolg, Reise-Glück, Migration bringt Wohlstand.",
+        "sunken": "Bleiben zu Hause besser, Reisen bringen Verluste.",
+        "red_veins": "Gefährliche Reisen, Warnung vor Unfällen unterwegs.",
+        "mole": "Reise-Katastrophe möglich."
+      }
+    },
+    "10_guan_lu_gong_career_palace": {
+      "chinese": "官祿宮",
+      "translation": "Palast der Karriere / des Amtes",
+      "location": "Stirnmitte, oberer Bereich",
+      "primary_domain": "Beruf, Ehre, Reputation, öffentliche Stellung",
+      "positive_signs": [
+        "Voll und glatt",
+        "Ohne Falten",
+        "Hell mit leicht goldenem Schimmer"
+      ],
+      "negative_signs": [
+        "Zurückweichend",
+        "Muttermal oder Narbe",
+        "Dunkle Verfärbung",
+        "Tiefe Falten"
+      ],
+      "interpretations": {
+        "ideal": "Führungsposition, öffentlicher Erfolg, gutes Ansehen.",
+        "dark": "Karriere-Blockade aktuell, Warnung vor Rufschädigung.",
+        "mole": "Schwierigkeiten mit Vorgesetzten, oft Karriere-Skandale."
+      }
+    },
+    "11_fu_de_gong_fortune_palace": {
+      "chinese": "福德宮",
+      "translation": "Palast des Glücks und der Tugend",
+      "location": "Augenbrauen-Enden bis Schläfen (obere Wangenknochen-Bereich)",
+      "primary_domain": "Glück, spirituelles Karma, innerer Frieden",
+      "positive_signs": [
+        "Voll und rund",
+        "Klare Haut",
+        "Keine Marken"
+      ],
+      "negative_signs": [
+        "Eingesunken",
+        "Fahle Farbe",
+        "Muttermal"
+      ],
+      "interpretations": {
+        "full": "Gutes Karma, spirituelle Gnade, inneres Glück unabhängig von Umständen.",
+        "sunken": "Unruhe, spirituelle Krise, wenig Frieden."
+      }
+    },
+    "12_fu_mu_gong_parents_palace": {
+      "chinese": "父母宮",
+      "translation": "Palast der Eltern",
+      "location": "Obere Stirn, außen (linker Bereich = Vater, rechter = Mutter)",
+      "primary_domain": "Vater und Mutter, Vorfahren, familiäre Herkunft",
+      "positive_signs": [
+        "Voll und glatt",
+        "Ohne Marken",
+        "Klare Farbe"
+      ],
+      "negative_signs": [
+        "Eingesunken",
+        "Muttermal",
+        "Narbe",
+        "Sehr blass"
+      ],
+      "interpretations": {
+        "full": "Gute Eltern-Beziehung, Unterstützung, gutes Erbe.",
+        "left_flawed": "Vater-Beziehung schwierig oder früher Verlust des Vaters.",
+        "right_flawed": "Mutter-Beziehung schwierig oder früher Verlust der Mutter.",
+        "both_flawed": "Waise oder komplett fehlende familiäre Unterstützung."
+      }
+    }
+  },
+  "age_map_complete_100_years": {
+    "description": "Jedes einzelne Lebensjahr hat einen exakten Punkt im Gesicht. Diese Karte zeigt alle 100 Positionen.",
+    "principle": "Zustand des Gesichtsbereichs im entsprechenden Alter zeigt die Qualität dieses Lebensjahrs an. Muttermale, Falten, dunkle Verfärbungen an einem Punkt = Herausforderungen in diesem Lebensjahr.",
+    "reading_instruction": "Für die App: User gibt Alter ein, App zeigt den entsprechenden Gesichtsbereich vergrößert an und analysiert Farbe, Textur, Marken dieses spezifischen Punktes.",
+    "positions": {
+      "1": {
+        "region": "Left ear top (Tian Lun 天輪)",
+        "domain": "Geburt, Neugeborenes"
+      },
+      "2": {
+        "region": "Left ear top rim",
+        "domain": "Säuglingsphase"
+      },
+      "3": {
+        "region": "Left ear top rim inner",
+        "domain": "Erste Bindung"
+      },
+      "4": {
+        "region": "Left ear middle rim",
+        "domain": "Krabbelalter"
+      },
+      "5": {
+        "region": "Left ear middle",
+        "domain": "Kleinkind"
+      },
+      "6": {
+        "region": "Left ear middle rim outer",
+        "domain": "Sprachbeginn"
+      },
+      "7": {
+        "region": "Left ear bottom/lobe area",
+        "domain": "Vorschule"
+      },
+      "8": {
+        "region": "Right ear top",
+        "domain": "Grundschule Start"
+      },
+      "9": {
+        "region": "Right ear top rim",
+        "domain": "Erste Schuljahre"
+      },
+      "10": {
+        "region": "Right ear top inner",
+        "domain": "Freundschaften"
+      },
+      "11": {
+        "region": "Right ear middle rim",
+        "domain": "Grundschule Mitte"
+      },
+      "12": {
+        "region": "Right ear middle",
+        "domain": "Grundschule Ende"
+      },
+      "13": {
+        "region": "Right ear middle rim outer",
+        "domain": "Übergang"
+      },
+      "14": {
+        "region": "Right ear bottom/lobe",
+        "domain": "Pubertät Beginn"
+      },
+      "15": {
+        "region": "Forehead hairline center (Huǒ Xīng 火星)",
+        "domain": "Pubertät, Charakter-Formung"
+      },
+      "16": {
+        "region": "Forehead hairline left of center (Tiān Zhōng 天中)",
+        "domain": "Identitätsfindung"
+      },
+      "17": {
+        "region": "Forehead hairline right of center",
+        "domain": "Rebellion"
+      },
+      "18": {
+        "region": "Forehead hairline left inner",
+        "domain": "Volljährigkeit nähert sich"
+      },
+      "19": {
+        "region": "Forehead hairline right inner",
+        "domain": "Berufswahl"
+      },
+      "20": {
+        "region": "Forehead upper center (Tiān Tíng 天庭)",
+        "domain": "Junger Erwachsener"
+      },
+      "21": {
+        "region": "Forehead upper left",
+        "domain": "Selbstständigkeit"
+      },
+      "22": {
+        "region": "Forehead upper right",
+        "domain": "Ausbildung / Studium"
+      },
+      "23": {
+        "region": "Forehead upper-mid left",
+        "domain": "Erste Karriere-Schritte"
+      },
+      "24": {
+        "region": "Forehead upper-mid right",
+        "domain": "Erste Beziehungen ernst"
+      },
+      "25": {
+        "region": "Forehead mid center (Sī Kōng 司空)",
+        "domain": "Konsolidierung"
+      },
+      "26": {
+        "region": "Forehead mid left",
+        "domain": "Karriere-Wahl"
+      },
+      "27": {
+        "region": "Forehead mid right",
+        "domain": "Persönliche Reifung"
+      },
+      "28": {
+        "region": "Between eyebrows (Yìn Táng 印堂)",
+        "domain": "Große Weichenstellung — Karriere/Ehe"
+      },
+      "29": {
+        "region": "Between brows lower-left (Shān Lín 山林)",
+        "domain": "Karrieresprung"
+      },
+      "30": {
+        "region": "Between brows lower-right",
+        "domain": "Familiengründung"
+      },
+      "31": {
+        "region": "Left eyebrow head (Fán Xiá 繁霞)",
+        "domain": "Übergang zur Vollreife"
+      },
+      "32": {
+        "region": "Left eyebrow middle (Cǎi Xiá 彩霞)",
+        "domain": "Kreativer Höhepunkt"
+      },
+      "33": {
+        "region": "Left eyebrow tail (Zǐ Qì 紫氣)",
+        "domain": "Konsolidierung Beziehungen"
+      },
+      "34": {
+        "region": "Right eyebrow tail",
+        "domain": "Karriere-Vertiefung"
+      },
+      "35": {
+        "region": "Right eyebrow middle (Tài Yáng 太陽)",
+        "domain": "Peak-Karriere"
+      },
+      "36": {
+        "region": "Right eyebrow head",
+        "domain": "Verantwortungs-Übernahme"
+      },
+      "37": {
+        "region": "Left eye inner corner (Tài Yīn 太陰)",
+        "domain": "Emotionale Reife"
+      },
+      "38": {
+        "region": "Left eye upper lid (Zhōng Yáng 中陽)",
+        "domain": "Beziehung stabilisiert"
+      },
+      "39": {
+        "region": "Left eye outer corner",
+        "domain": "Ehe-Test 1"
+      },
+      "40": {
+        "region": "Right eye outer corner (Shǎo Yáng 少陽)",
+        "domain": "Wendepunkt Ehe"
+      },
+      "41": {
+        "region": "Nose root (Shān Gēn 山根)",
+        "domain": "Gesundheits-Test, Karriere-Peak beginnt"
+      },
+      "42": {
+        "region": "Nose bridge upper (Jīng Shè 精舍)",
+        "domain": "Vermögensaufbau intensiv"
+      },
+      "43": {
+        "region": "Nose bridge middle (Guāng Diàn 光殿)",
+        "domain": "Investitionen"
+      },
+      "44": {
+        "region": "Nose bridge lower (Nián Shàng 年上)",
+        "domain": "Familien-Wohlstand"
+      },
+      "45": {
+        "region": "Nose center (Shòu Shàng 壽上)",
+        "domain": "Langlebigkeits-Marker"
+      },
+      "46": {
+        "region": "Left cheekbone / nose upper wing (Quán 顴 links)",
+        "domain": "Autorität, Macht"
+      },
+      "47": {
+        "region": "Right cheekbone",
+        "domain": "Macht in Berufsfeld"
+      },
+      "48": {
+        "region": "Nose tip (Zhǔn Tóu 準頭)",
+        "domain": "Vermögens-Peak"
+      },
+      "49": {
+        "region": "Left nostril / nose wing (Lán Tái 蘭台)",
+        "domain": "Geld halten"
+      },
+      "50": {
+        "region": "Right nostril / nose wing (Tíng Wèi 廷尉)",
+        "domain": "Investitions-Erfolg"
+      },
+      "51": {
+        "region": "Philtrum upper (Rén Zhōng 人中)",
+        "domain": "Fruchtbarkeits-Marker"
+      },
+      "52": {
+        "region": "Philtrum left",
+        "domain": "Familien-Erweiterung"
+      },
+      "53": {
+        "region": "Philtrum right",
+        "domain": "Enkel-Beginn"
+      },
+      "54": {
+        "region": "Philtrum lower left (Xiān Kù 仙庫)",
+        "domain": "Familien-Legat"
+      },
+      "55": {
+        "region": "Philtrum lower right",
+        "domain": "Rentenphase-Vorbereitung"
+      },
+      "56": {
+        "region": "Upper lip left (Shí Cāng 食倉)",
+        "domain": "Genuss, Wohlstand"
+      },
+      "57": {
+        "region": "Upper lip right",
+        "domain": "Kommunikations-Reife"
+      },
+      "58": {
+        "region": "Left mouth corner",
+        "domain": "Familie erweitert"
+      },
+      "59": {
+        "region": "Right mouth corner",
+        "domain": "Öffentliche Anerkennung"
+      },
+      "60": {
+        "region": "Center of mouth (Shuǐ Xīng 水星)",
+        "domain": "60. Geburtstag — Zeit der Ernte"
+      },
+      "61": {
+        "region": "Lower lip left (Chéng Jiāng 承漿)",
+        "domain": "Ruhestand Beginn"
+      },
+      "62": {
+        "region": "Lower lip right",
+        "domain": "Familien-Zeit"
+      },
+      "63": {
+        "region": "Below lower lip left (Dì Kù 地庫)",
+        "domain": "Wohlstands-Konservierung"
+      },
+      "64": {
+        "region": "Below lower lip right",
+        "domain": "Alterspflege beginnt"
+      },
+      "65": {
+        "region": "Chin upper center (Pí Chí 陂池)",
+        "domain": "Emotionaler Rückblick"
+      },
+      "66": {
+        "region": "Chin left side",
+        "domain": "Familien-Legat"
+      },
+      "67": {
+        "region": "Chin right side",
+        "domain": "Weisheits-Übergabe"
+      },
+      "68": {
+        "region": "Chin center",
+        "domain": "Ruhestand-Konsolidierung"
+      },
+      "69": {
+        "region": "Chin bottom center",
+        "domain": "Alter-Zufriedenheit"
+      },
+      "70": {
+        "region": "Chin bottom left",
+        "domain": "Enkel-Freude"
+      },
+      "71": {
+        "region": "Chin bottom right",
+        "domain": "Vorbereitungs-Phase"
+      },
+      "72": {
+        "region": "Left jaw corner (Nú Pú 奴僕)",
+        "domain": "Familie um sich"
+      },
+      "73": {
+        "region": "Right jaw corner",
+        "domain": "Nachlass-Regelung"
+      },
+      "74": {
+        "region": "Left jaw side",
+        "domain": "Späte Reise"
+      },
+      "75": {
+        "region": "Right jaw side",
+        "domain": "Vermächtnis"
+      },
+      "76": {
+        "region": "Left lower cheek",
+        "domain": "Späte Weisheit"
+      },
+      "77": {
+        "region": "Right lower cheek",
+        "domain": "Familien-Zentrum"
+      },
+      "78": {
+        "region": "Left cheek edge",
+        "domain": "Enkel-Beziehungen"
+      },
+      "79": {
+        "region": "Right cheek edge",
+        "domain": "Gemeinschaft"
+      },
+      "80": {
+        "region": "Left upper cheek edge",
+        "domain": "Späte Reflexion"
+      },
+      "81": {
+        "region": "Right upper cheek edge",
+        "domain": "Weitergabe"
+      },
+      "82": {
+        "region": "Left forehead edge",
+        "domain": "Karma-Blick zurück"
+      },
+      "83": {
+        "region": "Right forehead edge",
+        "domain": "Weisheit-Übergabe"
+      },
+      "84": {
+        "region": "Left temple edge",
+        "domain": "Reise-Erinnerung"
+      },
+      "85": {
+        "region": "Right temple edge",
+        "domain": "Familien-Legat"
+      },
+      "86": {
+        "region": "Left forehead outer",
+        "domain": "Erinnerung Vorfahren"
+      },
+      "87": {
+        "region": "Right forehead outer",
+        "domain": "Weitergabe an Enkel"
+      },
+      "88": {
+        "region": "Left forehead upper edge",
+        "domain": "Tugend-Beispiel"
+      },
+      "89": {
+        "region": "Right forehead upper edge",
+        "domain": "Familien-Traditionen"
+      },
+      "90": {
+        "region": "Left hairline outer",
+        "domain": "Vorfahren-Verbindung"
+      },
+      "91": {
+        "region": "Right hairline outer",
+        "domain": "Enkel-Segen"
+      },
+      "92": {
+        "region": "Left temple mid",
+        "domain": "Reise ins Alter"
+      },
+      "93": {
+        "region": "Right temple mid",
+        "domain": "Reflektion Kraft"
+      },
+      "94": {
+        "region": "Left temple lower",
+        "domain": "Wende zum Ende"
+      },
+      "95": {
+        "region": "Right temple lower",
+        "domain": "Alle Kinder versorgt"
+      },
+      "96": {
+        "region": "Left cheek high",
+        "domain": "Ehrenposition Familie"
+      },
+      "97": {
+        "region": "Right cheek high",
+        "domain": "Weisheits-Autorität"
+      },
+      "98": {
+        "region": "Left cheek edge lower",
+        "domain": "Bereitung"
+      },
+      "99": {
+        "region": "Right cheek edge lower",
+        "domain": "Der Kreis schließt sich"
+      },
+      "100": {
+        "region": "Chin very center (Nu Pu / Zǐ Nǚ Xià Ké)",
+        "domain": "Vollständige Reife"
+      }
+    }
+  },
+  "tcm_organ_zones": {
+    "description": "Traditionelle Chinesische Medizin ordnet jedem Gesichtsbereich ein Organ zu. Zustand des Bereichs zeigt Zustand des Organs.",
+    "usage": "NICHT als medizinische Diagnose, aber als Reflexions-Anhaltspunkt für Selbstpflege verwendbar.",
+    "zones": {
+      "forehead_upper": {
+        "organ": "Blase / Nieren",
+        "signs": "Falten = Wasser-Ungleichgewicht",
+        "care": "Mehr Wasser, weniger Salz"
+      },
+      "forehead_middle": {
+        "organ": "Dünndarm / Nervensystem",
+        "signs": "Akne = Verdauung, Sorge",
+        "care": "Ballaststoffe, Stress-Reduktion"
+      },
+      "temples": {
+        "organ": "Gallenblase / Nieren",
+        "signs": "Adern sichtbar = Anspannung",
+        "care": "Fett-Konsum reduzieren"
+      },
+      "between_brows": {
+        "organ": "Leber",
+        "signs": "Falten = Frustration, gestaute Leber-Energie",
+        "care": "Grünes Gemüse, Alkohol reduzieren"
+      },
+      "under_eyes": {
+        "organ": "Nieren",
+        "signs": "Dunkle Ringe = Nieren-Yin-Mangel, Erschöpfung",
+        "care": "Ausreichend Schlaf, Stress reduzieren"
+      },
+      "eyes_whites": {
+        "organ": "Leber",
+        "signs": "Rötung/Gelb = Leber-Stress",
+        "care": "Detox, Alkohol pausieren"
+      },
+      "cheeks_upper": {
+        "organ": "Lunge",
+        "signs": "Rötung = Lungen-Hitze, Rauchen, Allergien",
+        "care": "Atemübungen, Luftqualität"
+      },
+      "cheeks_lower": {
+        "organ": "Magen",
+        "signs": "Akne/Rötung = Verdauungshitze, scharfes Essen",
+        "care": "Milde Kost, warme Getränke"
+      },
+      "nose_tip": {
+        "organ": "Herz",
+        "signs": "Rötung/Adern = Herz-Hitze, Blutdruck",
+        "care": "Herz-freundlich essen, Bewegung"
+      },
+      "nose_bridge": {
+        "organ": "Bauchspeicheldrüse / Milz",
+        "signs": "Verfärbung = Zucker-Stoffwechsel",
+        "care": "Zucker reduzieren"
+      },
+      "nose_wings": {
+        "organ": "Bronchien",
+        "signs": "Akne = Atemwege belastet",
+        "care": "Luftreiniger, Ingwer"
+      },
+      "philtrum": {
+        "organ": "Uterus / Fortpflanzung",
+        "signs": "Farbe zeigt Zyklus-Gesundheit",
+        "care": "Reproduktions-Gesundheit"
+      },
+      "upper_lip": {
+        "organ": "Magen",
+        "signs": "Falten senkrecht = Magen-Erschöpfung",
+        "care": "Regelmäßige Mahlzeiten"
+      },
+      "lower_lip": {
+        "organ": "Darm",
+        "signs": "Aufgesprungen = Darm-Trockenheit",
+        "care": "Hydration, Ballaststoffe"
+      },
+      "mouth_corners": {
+        "organ": "Milz",
+        "signs": "Risse = Milz-Schwäche",
+        "care": "Warme, gekochte Nahrung"
+      },
+      "chin_center": {
+        "organ": "Uterus / Hormone",
+        "signs": "Akne = Hormonzyklus",
+        "care": "Hormonbalance"
+      },
+      "chin_sides": {
+        "organ": "Hormone / Nieren",
+        "signs": "Akne = Hormon-Ungleichgewicht",
+        "care": "Stress reduzieren"
+      },
+      "jawline": {
+        "organ": "Nieren / Nebennieren",
+        "signs": "Spannung = Chronischer Stress",
+        "care": "Ruhe, Adaptogene"
+      }
+    }
+  },
+  "face_shapes_extended": {
+    "oval": {
+      "name_de": "Oval / Ei-Form",
+      "criteria": "Breite Stirn > Kinn, sanfte Rundungen, Länge > Breite",
+      "frequency": "Sehr häufig, klassisch als 'ideal' empfunden",
+      "personality_short": "Diplomatisch, sensibel, künstlerisch",
+      "personality_long": "Das ovale Gesicht ist die klassische Ideal-Form. Menschen mit ovalen Gesichtern gelten als natürlich diplomatisch und ausgleichend. Sie sind meist sozial versiert, sensibel für die Stimmung anderer und haben ein starkes ästhetisches Empfinden. Der Innenraum ist oft von einem Bedürfnis nach Harmonie geprägt — Konflikte werden gemieden, was Stärke (Diplomatie) und Schwäche (Konfliktvermeidung) zugleich ist. Kreativität ist meist ausgeprägt, insbesondere in Bereichen die Ästhetik und Kommunikation kombinieren.",
+      "career_matches_detail": {
+        "highly_suitable": [
+          "Beratung",
+          "Kunst",
+          "Kommunikation",
+          "Diplomatie",
+          "PR",
+          "Coaching",
+          "Journalismus",
+          "Design"
+        ],
+        "less_suitable": [
+          "Extremsport",
+          "Kampfsport",
+          "Kriseneinsatz",
+          "Harte Verhandlungen"
+        ]
+      },
+      "wealth_pattern": "Steter Zuwachs, oft durch Beziehungen und Netzwerk, nicht durch harten Kampf. Wohlstand ab Alter 35-45.",
+      "relationships_pattern": "Sucht Harmonie, romantisch, kann sich in emotionaler Balance verlieren. Bester Partner: Erde oder Wasser.",
+      "health_pattern": "Meist gute Konstitution, aber emotional-psychosomatische Empfindlichkeit (Kopfschmerzen bei Stress).",
+      "element": "metal",
+      "compatible_shapes": [
+        "round",
+        "long_narrow"
+      ],
+      "challenging_shapes": [
+        "triangular_wide_jaw"
+      ]
+    },
+    "round": {
+      "name_de": "Rund",
+      "criteria": "Breite ≈ Länge, weiche Konturen, volle Wangen",
+      "frequency": "Sehr häufig, besonders in Kindheit/Jugend, oft Wu-Xing 'Wasser'",
+      "personality_short": "Warmherzig, gesellig, gemütlich, optimistisch",
+      "personality_long": "Runde Gesichter zeigen den 'Wasser-Typ' der klassischen Fünf-Elemente-Lehre: fließend, anpassungsfähig, warmherzig. Diese Menschen sind natürliche Gastgeber, familienorientiert und legen Wert auf Gemütlichkeit. Sie sind meist optimistisch, verzeihen leicht und suchen Frieden. Die Schattenseite: Bequemlichkeit, Konfliktscheu und Neigung zum Aufschieben. In Führungspositionen sind sie durch Wärme statt Autorität überzeugend.",
+      "career_matches_detail": {
+        "highly_suitable": [
+          "Gastronomie",
+          "Pflege",
+          "Vertrieb",
+          "Familienunternehmen",
+          "Kinderpädagogik",
+          "Therapie",
+          "Landwirtschaft"
+        ],
+        "less_suitable": [
+          "Militär",
+          "Krisenmanagement",
+          "Extremer Wettbewerb"
+        ]
+      },
+      "wealth_pattern": "Wohlstand baut sich langsam auf, oft durch Familienunternehmen oder etablierte Traditionen.",
+      "relationships_pattern": "Sehr loyal, will Familie gründen, verzeiht Partnern viel. Bester Partner: Feuer oder Holz (aktivierende Energie).",
+      "health_pattern": "Tendenz zu Übergewicht, Blutzucker, Herz-Kreislauf im Alter beachten.",
+      "element": "water",
+      "compatible_shapes": [
+        "square",
+        "oval"
+      ],
+      "challenging_shapes": [
+        "diamond",
+        "sharp_triangular"
+      ]
+    },
+    "square": {
+      "name_de": "Quadratisch",
+      "criteria": "Breite Stirn = breite Kiefer, kantige Züge, feste Struktur",
+      "frequency": "Häufig, besonders bei männlichen Gesichtern, klassisch 'Erde-Typ'",
+      "personality_short": "Praktisch, willensstark, führungsstark, ausdauernd",
+      "personality_long": "Das quadratische Gesicht ist der klassische 'Erde-Typ': stabil, verlässlich, praktisch. Diese Menschen sind das Rückgrat vieler Organisationen — nicht die glamourösen Ideen-Menschen, aber die, die Dinge zu Ende bringen. Sie schätzen Regeln, Struktur und Verlässlichkeit. Ihre Ausdauer ist außergewöhnlich, ihre Sturheit ebenfalls. In Beziehungen sind sie treu und beschützend, aber wenig romantisch. Kreativität äußert sich in praktischen Formen (Handwerk, Ingenieurwesen).",
+      "career_matches_detail": {
+        "highly_suitable": [
+          "Militär",
+          "Sport",
+          "Bau",
+          "Produktion",
+          "Führung",
+          "Ingenieurwesen",
+          "Handwerk",
+          "Sicherheit"
+        ],
+        "less_suitable": [
+          "Kreative Beliebigkeit",
+          "Sehr flexible Rollen"
+        ]
+      },
+      "wealth_pattern": "Solider, langsamer Aufbau. Wohlstand durch harte Arbeit und Beständigkeit, weniger durch Glück.",
+      "relationships_pattern": "Verlässlich, treu, wenig romantisch. Bester Partner: Wasser oder Metall.",
+      "health_pattern": "Robuste Konstitution, aber Achtung auf muskuloskelettale Belastung durch Überarbeitung.",
+      "element": "earth",
+      "compatible_shapes": [
+        "round",
+        "rectangular"
+      ],
+      "challenging_shapes": [
+        "triangular_wide_jaw",
+        "diamond"
+      ]
+    },
+    "rectangular": {
+      "name_de": "Rechteckig / länglich",
+      "criteria": "Länger als breit, quadratische Kiefer und Stirn",
+      "personality_short": "Diszipliniert, strategisch, ambitioniert",
+      "personality_long": "Rechteckige Gesichter zeigen den 'Holz-Typ': aufstrebend, planvoll, führungswillig. Diese Menschen denken in Systemen, planen langfristig und setzen sich hohe Ziele. Sie kombinieren die Praktikabilität des Erde-Typs mit der Ambition des Holz-Typs. In Führungspositionen zeigen sie klare Strategie, hohe Anforderungen an sich und andere, und den Willen zur Weiterentwicklung. Die Schattenseite: Perfektionismus und emotionale Distanz.",
+      "career_matches_detail": {
+        "highly_suitable": [
+          "Politik",
+          "Konzernführung",
+          "Recht",
+          "Wissenschaft",
+          "Unternehmensberatung",
+          "Ingenieurwesen"
+        ],
+        "less_suitable": [
+          "Kreativ-Freelance",
+          "Improvisations-Berufe"
+        ]
+      },
+      "wealth_pattern": "Systematischer Aufbau durch Strategie. Wohlstand meist beeindruckend, aber emotionale Kosten.",
+      "relationships_pattern": "Anspruchsvoll, sucht Ebenbürtigkeit. Bester Partner: Feuer (belebende Energie) oder Wasser.",
+      "health_pattern": "Muss auf Burnout achten. Herz-Kreislauf-Belastung durch Überarbeitung.",
+      "element": "wood",
+      "compatible_shapes": [
+        "heart",
+        "long_narrow"
+      ],
+      "challenging_shapes": [
+        "round",
+        "pear"
+      ]
+    },
+    "heart": {
+      "name_de": "Herzförmig",
+      "criteria": "Breite Stirn, spitz zulaufendes Kinn, oft mit Widow's Peak",
+      "personality_short": "Kreativ, intuitiv, sensibel, charmant",
+      "personality_long": "Herzförmige Gesichter kombinieren intellektuelle Breite (Stirn) mit emotionaler Fokussierung (spitzes Kinn). Diese Menschen sind meist kreativ, intuitiv und emotional komplex. Sie ziehen andere durch Charme an, sind aber selbst emotional volatil. In Kunst und Design brillant, in Routineberufen unglücklich. Sie brauchen Bühne, Ausdruck und Anerkennung. Die Schattenseite: Wankelmut, Empfindlichkeit, Selbstzweifel und emotionaler Erschöpfung.",
+      "career_matches_detail": {
+        "highly_suitable": [
+          "Kunst",
+          "Design",
+          "Werbung",
+          "Content Creation",
+          "Schauspiel",
+          "Musik",
+          "Mode"
+        ],
+        "less_suitable": [
+          "Buchhaltung",
+          "reine Verwaltung",
+          "Militär"
+        ]
+      },
+      "wealth_pattern": "Schwankend. Erfolg meist durch kreatives Talent, aber Finanz-Management oft Herausforderung.",
+      "relationships_pattern": "Emotional intensiv, romantisch, kann in Beziehungen Krisen erleben. Bester Partner: Erde (stabilisierende Kraft).",
+      "health_pattern": "Nervensystem empfindlich. Schlafqualität und emotionale Regulation zentral.",
+      "element": "fire",
+      "compatible_shapes": [
+        "oval",
+        "square"
+      ],
+      "challenging_shapes": [
+        "diamond",
+        "triangular_wide_jaw"
+      ]
+    },
+    "triangular_wide_jaw": {
+      "name_de": "Dreieckig (nach unten breit)",
+      "criteria": "Schmale Stirn, breite Kiefer",
+      "personality_short": "Praktisch, sinnlich, willensstark, verlässlich, spätblühend",
+      "personality_long": "Das dreieckige Gesicht (nach unten breit) zeigt einen sensitiv-sinnlichen Kern mit starkem Willen. Diese Menschen sind meist wenig intellektuell interessiert, aber sehr willensstark und praktisch. Sie sind Spätblüher — die zweite Lebenshälfte bringt oft mehr Erfolg als die erste. In Beziehungen sind sie leidenschaftlich und beständig. Karriere-Erfolg oft im Alter zwischen 45-65.",
+      "career_matches_detail": {
+        "highly_suitable": [
+          "Handwerk",
+          "Vertrieb",
+          "Sport",
+          "Familienunternehmen",
+          "Handel"
+        ],
+        "less_suitable": [
+          "Wissenschaft",
+          "Theorie-Berufe"
+        ]
+      },
+      "wealth_pattern": "Spätes Glück. Wohlstand ab Alter 45+.",
+      "relationships_pattern": "Leidenschaftlich, treu wenn Vertrauen aufgebaut. Bester Partner: Metall oder Wasser.",
+      "element": "earth"
+    },
+    "diamond": {
+      "name_de": "Diamant / Raute",
+      "criteria": "Schmale Stirn, hohe Wangenknochen, schmales Kinn",
+      "personality_short": "Willensstark, kreativ, kontrollierend, perfektionistisch",
+      "personality_long": "Das diamant-förmige Gesicht ist selten und markant. Menschen mit dieser Form haben eine intensive, konzentrierte Energie. Die hohen Wangenknochen zeigen Autorität und den Willen zur Kontrolle. Das schmale Kinn verrät sensiblen Kern hinter der Fassade. Diese Menschen sind oft in kreativen Berufen mit präziser Ausführung (Design, Chirurgie, hochauflösende Fotografie) zu finden. Perfektionismus ist ihr Antrieb und ihre Belastung.",
+      "career_matches_detail": {
+        "highly_suitable": [
+          "Design",
+          "Chirurgie",
+          "Präzisions-Handwerk",
+          "hochwertige Fotografie",
+          "Uhrmacherei"
+        ],
+        "less_suitable": [
+          "Massen-Vertrieb",
+          "unstrukturierte Kreativität"
+        ]
+      },
+      "wealth_pattern": "Erfolg durch Exzellenz in Nische. Wohlstand mittel bis hoch, oft nach 40.",
+      "relationships_pattern": "Anspruchsvoll, kontrollierend, aber tief liebend. Braucht sicheren Partner.",
+      "element": "metal"
+    },
+    "trapezoid_wide_forehead": {
+      "name_de": "Trapez (Stirn breiter als Kinn)",
+      "criteria": "Sehr breite Stirn, spitzeres Kinn, oft mit hohen Wangenknochen",
+      "personality_short": "Intellektuell, autoritär, karriereorientiert",
+      "element": "wood"
+    },
+    "long_narrow": {
+      "name_de": "Länglich schmal",
+      "criteria": "Sehr schmales, langes Gesicht",
+      "personality_short": "Distanziert, intellektuell, spirituell, künstlerisch",
+      "personality_long": "Das lange, schmale Gesicht zeigt den ausgeprägten 'Holz-Typ': aufstrebend, aber innerlich schmal fokussiert. Diese Menschen sind oft in spirituellen, philosophischen oder hoch-intellektuellen Berufen. Sie brauchen Rückzug, Meditation, Kontemplation. In Beziehungen sind sie treu, aber emotional wenig zugänglich. Materielle Ambitionen sind meist geringer als intellektuelle oder spirituelle.",
+      "career_matches_detail": {
+        "highly_suitable": [
+          "Philosophie",
+          "Wissenschaft",
+          "Spiritualität",
+          "Bibliothek",
+          "Forschung",
+          "Yoga/Meditation"
+        ]
+      },
+      "element": "wood"
+    },
+    "pear": {
+      "name_de": "Birne / auf den Kopf gestellt",
+      "criteria": "Sehr schmale Stirn, sehr breite untere Gesichtshälfte",
+      "personality_short": "Sinnenorientiert, spätblühend, geerdet",
+      "element": "earth"
+    },
+    "round_with_high_cheekbones": {
+      "name_de": "Rund mit hohen Wangenknochen",
+      "criteria": "Runde Grundform, aber Wangenknochen prominent",
+      "personality_short": "Herzlich und autoritär zugleich, Führungsperson mit Wärme",
+      "element": "water_earth_mix"
+    },
+    "square_with_prominent_forehead": {
+      "name_de": "Quadratisch mit prominenter Stirn",
+      "criteria": "Quadratische Grundstruktur, Stirn deutlich hervorstehend",
+      "personality_short": "Intellektuell UND willensstark — klassische Führungspersönlichkeit",
+      "element": "earth_wood_mix"
+    }
+  },
+  "forehead_deep": {
+    "name_de": "Stirn (Detail)",
+    "age_map": "15-30",
+    "domain": "Verstand, Vorfahren, Karriere-Potenzial, Beziehung zu Autorität",
+    "measurements": {
+      "high": "Höher als 1/3 der Gesichtslänge",
+      "medium": "Etwa 1/3 der Gesichtslänge",
+      "low": "Weniger als 1/3 der Gesichtslänge"
+    },
+    "height_detailed": {
+      "very_high": {
+        "personality": "Sehr intellektuell, oft weltfremd, brillanter Analytiker",
+        "career": "Wissenschaft, Philosophie",
+        "warning": "Kann in Theorien verlorengehen"
+      },
+      "high": {
+        "personality": "Intelligent, gebildet, analytisch, oft akademisch",
+        "career": "Akademik, Bildung, Analyse"
+      },
+      "medium": {
+        "personality": "Ausgeglichen, guter Alltagsverstand, praktisch anwendbare Intelligenz",
+        "career": "Vielfältig, ausgeglichen"
+      },
+      "low": {
+        "personality": "Praktisch, sinnenorientiert, wenig Theorie, körperlich präsent",
+        "career": "Handwerk, Sport, Praxis-Berufe"
+      },
+      "very_low": {
+        "personality": "Sehr instinktiv, kann verbale Ausdrucksschwäche haben",
+        "career": "Manuelle Berufe, Sport"
+      }
+    },
+    "shape_detailed": {
+      "round_convex": {
+        "personality": "Phantasievoll, ideenreich, künstlerisch, ästhetisch",
+        "career": "Kunst, Design"
+      },
+      "square_flat": {
+        "personality": "Logisch, systematisch, praktisch, methodisch",
+        "career": "Ingenieurwesen, Programmierung"
+      },
+      "arched_protruding": {
+        "personality": "Sehr intelligent, tief nachdenkend, eigenwillig, oft Genie",
+        "career": "Erfinder, Wissenschaftler"
+      },
+      "receding": {
+        "personality": "Impulsiv, entscheidungsstark, geringere Selbstreflexion, oft Action-Person",
+        "career": "Sport, Vertrieb"
+      },
+      "sloping": {
+        "personality": "Kreativ, ideensprudelnd, künstlerisch, exzentrisch",
+        "career": "Kreative"
+      },
+      "flat_wide": {
+        "personality": "Führungspotenzial mit Weitblick, ausgleichend",
+        "career": "Management"
+      }
+    },
+    "width_detailed": {
+      "very_wide": {
+        "meaning": "Sehr vielseitige Talente, Multitalent, kann aber Fokus verlieren"
+      },
+      "wide": {
+        "meaning": "Führungspotenzial, guter Überblick, Multi-Interessen"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "narrow": {
+        "meaning": "Fokussiert auf ein Feld, Spezialist, konzentriert"
+      },
+      "very_narrow": {
+        "meaning": "Extremer Spezialist, aber teilweise Tunnelblick"
+      }
+    },
+    "special_features": {
+      "widows_peak": {
+        "appearance": "V-förmiger Haaransatz mittig",
+        "meaning": "Künstlerisch, magnetisch, kreativ, charmant, oft dramatisch"
+      },
+      "m_shaped_hairline": {
+        "appearance": "M-förmige Aussparungen",
+        "meaning": "Männliche Kraft, dominant, kann Haarverlust ankündigen"
+      },
+      "straight_hairline": {
+        "appearance": "Gerade horizontale Linie",
+        "meaning": "Klar, direkt, strukturiert"
+      },
+      "irregular_hairline": {
+        "appearance": "Ungleichmäßig",
+        "meaning": "Innere Konflikte, Kämpfe in der Jugend"
+      },
+      "scar_on_forehead": {
+        "meaning": "Frühere Kämpfe, oft Karriere-Rückschlag Alter 15-30, aber überwunden"
+      },
+      "prominent_brow_ridge": {
+        "meaning": "Testosterone-geprägt, kämpferisch, oft körperlich"
+      },
+      "smooth_brow_area": {
+        "meaning": "Ausgleichend, diplomatisch, sanft"
+      }
+    },
+    "forehead_lines_full_metoposcopy": {
+      "1_saturn_line_top": {
+        "position": "Höchste Falte",
+        "planet": "Saturn",
+        "domain": "Verantwortung, Karriere, Ernst, Familie",
+        "reading": {
+          "clear_unbroken": "Erfolg im Beruf, gute Familienstellung",
+          "broken": "Berufskrise mittleres Alter",
+          "wavy": "Wechselnde Karrieren",
+          "island": "Karriere-Skandal",
+          "absent": "Jugendliches Wesen, kein Karriere-Fokus"
+        }
+      },
+      "2_jupiter_line": {
+        "position": "Zweite Falte von oben",
+        "planet": "Jupiter",
+        "domain": "Ehrgeiz, Führung, Reisen, Expansion",
+        "reading": {
+          "clear": "Gute Karriere, viele Chancen",
+          "broken": "Karriere-Rückschläge, verlorene Chancen",
+          "absent": "Wenig Ehrgeiz"
+        }
+      },
+      "3_mars_line": {
+        "position": "Dritte Falte",
+        "planet": "Mars",
+        "domain": "Mut, Kampf, Konflikte, körperliche Kraft",
+        "reading": {
+          "clear": "Mutige Persönlichkeit, oft Militär/Sport",
+          "broken": "Verletzungen, Konflikte",
+          "with_cross": "Verletzungen in Kämpfen",
+          "absent": "Friedfertig, konfliktscheu"
+        }
+      },
+      "4_sun_line_center": {
+        "position": "Mittlere Falte (die 'große Falte')",
+        "planet": "Sonne",
+        "domain": "Ruhm, Kreativität, Selbstwert, Anerkennung",
+        "reading": {
+          "clear_long": "Öffentliche Anerkennung, Ruhm, Erfolg",
+          "broken": "Reputationsverluste, öffentliche Kritik",
+          "with_star": "Berühmtheit",
+          "absent": "Zurückhaltend, kein öffentliches Streben"
+        }
+      },
+      "5_venus_line": {
+        "position": "Unterhalb der Sonnenlinie",
+        "planet": "Venus",
+        "domain": "Liebe, Beziehungen, Kunst, Sinnlichkeit",
+        "reading": {
+          "clear": "Stabile Beziehungen",
+          "wavy": "Wechselnde Beziehungen",
+          "broken": "Trennungen, Herzschmerz"
+        }
+      },
+      "6_mercury_line": {
+        "position": "Vorletzte Falte",
+        "planet": "Merkur",
+        "domain": "Kommunikation, Geschäft, Handel",
+        "reading": {
+          "clear": "Geschäftstüchtig, guter Kommunikator",
+          "broken": "Kommunikationsprobleme, Vertragsstreitigkeiten"
+        }
+      },
+      "7_moon_line_bottom": {
+        "position": "Unterste Falte (nahe Brauen)",
+        "planet": "Mond",
+        "domain": "Intuition, Träume, Reisen, Unbewusstes",
+        "reading": {
+          "clear": "Spirituell begabt, intuitiv",
+          "broken": "Instabile Intuition",
+          "with_star": "Mystische Begabung"
+        }
+      }
+    }
+  },
+  "eyebrows_deep": {
+    "age_map_left": "31-32",
+    "age_map_right": "33-34",
+    "official": "Bao Shou Guan (Amt der Langlebigkeit)",
+    "palace": "Xiong Di Gong (Geschwister)",
+    "length_detailed": {
+      "much_longer_than_eye": {
+        "meaning": "Langlebigkeit, große soziale Netzwerke, viele Freunde",
+        "warning": "Kann übergroße Verantwortung für andere übernehmen"
+      },
+      "longer_than_eye": {
+        "meaning": "Gute Familien- und Peer-Beziehungen"
+      },
+      "same_as_eye": {
+        "meaning": "Ausgeglichenes soziales Leben"
+      },
+      "shorter_than_eye": {
+        "meaning": "Weniger enge Bindungen, selbstständig"
+      },
+      "much_shorter": {
+        "meaning": "Einsam, wenige echte Freunde, oft Solitär"
+      }
+    },
+    "thickness_detailed": {
+      "very_thick": {
+        "meaning": "Sehr impulsiv, kraftvoll, teils grob, testosteron-geprägt"
+      },
+      "thick": {
+        "meaning": "Willensstark, energisch, temperamentvoll, dominant"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen, gesundes Temperament"
+      },
+      "thin": {
+        "meaning": "Sanft, sensibel, teils schüchtern"
+      },
+      "very_thin": {
+        "meaning": "Emotional labil, teils schwaches Nervensystem"
+      },
+      "sparse_gappy": {
+        "meaning": "Familienkonflikt, teils schwaches Yang (TCM)"
+      }
+    },
+    "shape_detailed": {
+      "straight_horizontal": {
+        "meaning": "Sachlich, ehrlich, direkt, praktisch"
+      },
+      "arched_moderate": {
+        "meaning": "Emotional, freundlich, offen, warm"
+      },
+      "arched_high_dramatic": {
+        "meaning": "Dramatisch, ausdrucksstark, künstlerisch, teils theatralisch"
+      },
+      "downturned_ends": {
+        "meaning": "Melancholisch, mitfühlend, oft traurig veranlagt"
+      },
+      "upturned_ends": {
+        "meaning": "Energisch, ehrgeizig, teils aggressiv"
+      },
+      "wild_bushy": {
+        "meaning": "Temperamentvoll, unabhängig, künstlerisch, oft Nonkonformist"
+      },
+      "one_arched_one_straight": {
+        "meaning": "Ambivalent, wechselnde Stimmungen"
+      }
+    },
+    "spacing_detailed": {
+      "very_wide_apart": {
+        "meaning": "Sehr großzügig, offen, entspannt, teils naiv, wenig strategisch"
+      },
+      "wide_apart": {
+        "meaning": "Großzügig, offen, entspannt"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "close_together": {
+        "meaning": "Intensiv, grüblerisch, sorgen-anfällig"
+      },
+      "monobrow": {
+        "meaning": "Sehr grüblerisch, intensive Konzentration, oft von Sorgen belastet"
+      }
+    },
+    "special_signs": {
+      "mole_on_brow": {
+        "meaning": "Talent im entsprechenden Bereich (linke = Karriere, rechte = Kreativität)"
+      },
+      "break_in_brow": {
+        "meaning": "Familienkonflikt oder Verlust im Alter 31-34"
+      },
+      "scar_through_brow": {
+        "meaning": "Frühere Krise, Kampf überwunden"
+      },
+      "brows_touch_hair_at_temples": {
+        "meaning": "Sehr breite soziale Verbindungen, klassisch Reichtum"
+      },
+      "brows_curl_upward_end": {
+        "meaning": "Sehr ambitioniert, oft Führungsperson"
+      },
+      "hair_growing_downward": {
+        "meaning": "Sanftmütig, oft künstlerisch"
+      }
+    }
+  },
+  "eyes_deep": {
+    "age_map": "35-40 (linkes Auge 35-37, rechtes 38-40)",
+    "official": "Jian Cha Guan (Amt der Überwachung)",
+    "domain": "Charakter, Weisheit, Urteilskraft, aktuelle Vitalität, Ehe-Palast an äußeren Winkeln",
+    "size_detailed": {
+      "very_large": {
+        "personality": "Extrem expressiv, sehr emotional, dramatisch",
+        "career": "Schauspiel, Kunst"
+      },
+      "large": {
+        "personality": "Expressiv, künstlerisch, emotional, kommunikativ"
+      },
+      "medium": {
+        "personality": "Ausgeglichen"
+      },
+      "small": {
+        "personality": "Konzentriert, detailorientiert, verschlossen, misstrauisch"
+      },
+      "very_small": {
+        "personality": "Extrem introvertiert, präzise, oft argwöhnisch"
+      }
+    },
+    "shape_detailed": {
+      "almond": {
+        "personality": "Klassisch ideal, ausgewogen, klug, klassisch schön",
+        "career": "Vielseitig"
+      },
+      "round_open": {
+        "personality": "Kindlich, offen, ehrlich, naiv, empfänglich"
+      },
+      "narrow_slit": {
+        "personality": "Klug, klar denkend, verschlossen, teils argwöhnisch"
+      },
+      "hooded_droopy_lid": {
+        "personality": "Diskret, komplex, tiefgründig, oft weise"
+      },
+      "downturned_corners": {
+        "personality": "Mitfühlend, empfänglich, traurig, oft heilerische Anlagen"
+      },
+      "upturned_corners": {
+        "personality": "Optimistisch, ehrgeizig, energisch, oft dominant"
+      },
+      "asymmetric_eyes": {
+        "personality": "Zweiseitige Persönlichkeit, wechselnde Stimmungen"
+      }
+    },
+    "distance_detailed": {
+      "very_wide_apart": {
+        "meaning": "Sehr kreativ, weitsichtig, aber leicht zerstreut, oft Träumer"
+      },
+      "wide": {
+        "meaning": "Kreativ, weitsichtig, entspannt"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "close_together": {
+        "meaning": "Fokussiert, präzise, teils kleinlich, oft misstrauisch"
+      },
+      "very_close": {
+        "meaning": "Extrem fokussiert, oft kritisch bis paranoid"
+      }
+    },
+    "color_western_detailed": {
+      "blue_light": {
+        "personality": "Sensibel, künstlerisch, romantisch"
+      },
+      "blue_dark": {
+        "personality": "Ruhig, analytisch, tief"
+      },
+      "brown_light_honey": {
+        "personality": "Warmherzig, spielerisch, charmant"
+      },
+      "brown_dark": {
+        "personality": "Verlässlich, praktisch, geerdet"
+      },
+      "green": {
+        "personality": "Kreativ, geheimnisvoll, leidenschaftlich, oft künstlerisch"
+      },
+      "gray": {
+        "personality": "Kühl, intellektuell, unabhängig, distanziert"
+      },
+      "hazel": {
+        "personality": "Vielseitig, wandlungsfähig, sozial anpassbar"
+      },
+      "black_asian": {
+        "personality": "Willensstark, energiereich, konzentriert"
+      },
+      "amber": {
+        "personality": "Kreativ und feurig, oft spontan"
+      },
+      "heterochromia": {
+        "personality": "Sehr besondere Persönlichkeit, oft Sonderling, künstlerisch"
+      }
+    },
+    "expression_detailed": {
+      "bright_clear_lively": {
+        "meaning": "Höchste Vitalität, geistige Klarheit, aktuell Erfolgsphase"
+      },
+      "dull_matte": {
+        "meaning": "Erschöpfung, Krankheit, Sorge, Karma-Blockade"
+      },
+      "fiery_intense": {
+        "meaning": "Leidenschaft und Zorn, oft Führungsperson"
+      },
+      "cold_hard": {
+        "meaning": "Kontrolliert, teils rücksichtslos, ehrgeizig"
+      },
+      "watery_moist": {
+        "meaning": "Emotional bewegt, verliebt, oder Trauer"
+      },
+      "sunken_hollow": {
+        "meaning": "Sehr erschöpft, Nierenschwäche (TCM)"
+      },
+      "bloodshot_red": {
+        "meaning": "Leber-Hitze, Alkohol, Schlafmangel, akute Wut"
+      },
+      "yellowish_whites": {
+        "meaning": "Leber-Ungleichgewicht, Ikterus möglich"
+      }
+    },
+    "sanpaku_detailed": {
+      "yin_sanpaku_bottom_white": {
+        "appearance": "Weiß unter der Iris sichtbar",
+        "meaning": "Innere Anspannung, äußere Gefahr (klassisch Verkehrsunfälle, körperliche Bedrohung)",
+        "modern_reading": "Chronischer Stress, Erschöpfung"
+      },
+      "yang_sanpaku_top_white": {
+        "appearance": "Weiß über der Iris sichtbar",
+        "meaning": "Innere Aggression, mentale Instabilität, klassisch mit gewaltbereiten Menschen assoziiert",
+        "modern_reading": "Wut, unterdrückte Emotionen"
+      }
+    },
+    "special_markers": {
+      "eyes_slightly_upturned_female": {
+        "meaning": "Klassisches Attraktivitäts-Ideal in asiatischer Tradition"
+      },
+      "eyes_slightly_downturned_male": {
+        "meaning": "Mitfühlender Führer, oft therapeutische Berufung"
+      },
+      "very_prominent_lower_eyelid": {
+        "meaning": "Emotional sehr feinfühlig"
+      },
+      "dark_circles_under_eyes": {
+        "meaning": "TCM: Nieren-Yin-Mangel, Erschöpfung, oft chronisch"
+      },
+      "puffiness_under_eyes": {
+        "meaning": "Wasser-Ungleichgewicht, oft Milz-Schwäche (TCM)"
+      },
+      "wrinkles_from_outer_corner": {
+        "meaning": "Klassische Krähenfüße — bei vielen Lächel-Falten positiv, bei sehr tiefen Falten Beziehungs-Belastung"
+      }
+    }
+  },
+  "nose_deep": {
+    "age_map": "41-50",
+    "official": "Shen Bian Guan (Amt der Prüfung)",
+    "palace": "Cai Bo Gong (Vermögen)",
+    "domain": "Selbst, Wille, Vermögensaufbau, Karriere-Höhepunkt",
+    "length_detailed": {
+      "very_long": {
+        "meaning": "Sehr starke Persönlichkeit, aber teils weltfremd, egozentrisch"
+      },
+      "long": {
+        "meaning": "Starke Persönlichkeit, unabhängig, arbeitsam, teils sturr"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "short": {
+        "meaning": "Spontan, offen, teamfähig, teils oberflächlich"
+      },
+      "very_short": {
+        "meaning": "Sehr impulsiv, wenig Selbstreflexion"
+      }
+    },
+    "bridge_detailed": {
+      "very_high_straight": {
+        "meaning": "Königliche Ausstrahlung, Führungsanspruch, starkes Selbst"
+      },
+      "high_straight": {
+        "meaning": "Gute Karriere, klarer Wille, Wohlstand mittleres Alter"
+      },
+      "medium_straight": {
+        "meaning": "Ausgeglichen"
+      },
+      "low_flat": {
+        "meaning": "Abhängig von anderen, teamorientiert, Selbstwertthemen"
+      },
+      "humped_aquiline": {
+        "meaning": "Kämpferisch, unabhängig, Führungsstärke, oft charismatisch"
+      },
+      "dented_saddle": {
+        "meaning": "Wechselhafte Karriere, oft Rückschläge im mittleren Alter"
+      },
+      "very_visible_bone": {
+        "meaning": "Hartes Leben, viel Kampf, oft asketisch"
+      },
+      "curved_left_or_right": {
+        "meaning": "Ehe-Instabilität, oft Wechsel des Lebenspartners"
+      }
+    },
+    "tip_detailed": {
+      "round_fleshy_ideal": {
+        "meaning": "Warmherzig, wohlhabend, familienorientiert. 'Buddha-Nase' — Wohlstand"
+      },
+      "round_bulbous_very_large": {
+        "meaning": "Sinnlich, genussorientiert, kann verschwenderisch sein"
+      },
+      "pointed_sharp": {
+        "meaning": "Kritisch, scharfsinnig, berechnend"
+      },
+      "upturned_ski_slope": {
+        "meaning": "Leichtsinnig mit Geld, verschwenderisch, offen, oft jugendliche Ausstrahlung"
+      },
+      "downturned_hooked": {
+        "meaning": "Geschäftstüchtig, klug im Umgang mit Geld"
+      },
+      "split_bifid": {
+        "meaning": "Vielseitig, zwiegespalten, oft zwei Karrieren"
+      },
+      "square_flat": {
+        "meaning": "Praktisch, geerdet, verlässlich"
+      }
+    },
+    "wings_detailed": {
+      "very_full_thick": {
+        "meaning": "Sehr guter Vermögensaufbau, kann Geld sehr gut halten"
+      },
+      "full_fleshy": {
+        "meaning": "Guter Vermögensaufbau, kann Geld halten"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "narrow": {
+        "meaning": "Schwierigkeit Geld zu halten, sparsam bis geizig"
+      },
+      "very_narrow": {
+        "meaning": "Extremer Geiz oder ständige Verluste"
+      },
+      "asymmetric": {
+        "meaning": "Einkommen aus zwei Quellen, oft ungleiches Vermögen"
+      }
+    },
+    "nostril_detailed": {
+      "very_small_hidden": {
+        "meaning": "Sehr sparsam, kann Geld halten aber teils geizig"
+      },
+      "small_hidden": {
+        "meaning": "Sparsam"
+      },
+      "medium_visible": {
+        "meaning": "Ausgeglichener Umgang mit Geld"
+      },
+      "large_visible": {
+        "meaning": "Verschwenderisch, offene Hand"
+      },
+      "very_large_flaring": {
+        "meaning": "Kann kein Geld halten, oft in Schulden"
+      }
+    },
+    "root_shan_gen_detailed": {
+      "very_high_wide": {
+        "meaning": "Sehr starke Familie, gute Anlage, Wohlstand vererbt"
+      },
+      "high_wide": {
+        "meaning": "Starke Anlage, gute Familie"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "low_sunken": {
+        "meaning": "Schwierigkeiten im mittleren Alter, Kämpfe um 41"
+      },
+      "with_horizontal_line": {
+        "meaning": "Ehe-Krise oder Gesundheits-Test um 41"
+      },
+      "with_mole": {
+        "meaning": "Chronische Belastung, Herausforderung im 41. Lebensjahr"
+      }
+    },
+    "philtrum_extra": {
+      "very_long_deep": {
+        "meaning": "Sehr lange Lebenslinie, viele Nachkommen, große Vitalität im Alter"
+      },
+      "long_deep": {
+        "meaning": "Gute Vitalität, Langlebigkeit, viele Nachkommen"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "short_shallow": {
+        "meaning": "Weniger Kinder, weniger Vitalität im Alter"
+      },
+      "very_short_absent": {
+        "meaning": "Fruchtbarkeitsprobleme (traditionell), oft kinderlos"
+      },
+      "wider_top_narrow_bottom": {
+        "meaning": "Junge Jahre vielversprechend, Alter schwieriger"
+      },
+      "narrow_top_wider_bottom": {
+        "meaning": "Spätes Glück, Wohlstand wächst"
+      },
+      "crooked_tilted": {
+        "meaning": "Unruhiges Familienleben"
+      }
+    }
+  },
+  "mouth_lips_deep": {
+    "age_map": "60",
+    "official": "Chu Na Guan (Amt der Ein- und Ausgabe)",
+    "domain": "Kommunikation, Genuss, Ressourcen-Fluss, Vermögen im Alter",
+    "size_detailed": {
+      "very_large": {
+        "meaning": "Risikofreudig, sehr mutig, öffentlich präsent, oft dominant"
+      },
+      "large": {
+        "meaning": "Kommunikativ, ausdrucksstark, führungsfreudig"
+      },
+      "medium_symmetric": {
+        "meaning": "Ausgeglichen"
+      },
+      "small": {
+        "meaning": "Diskret, sensibel, teils scheu"
+      },
+      "very_small": {
+        "meaning": "Sehr introvertiert, wenig Ausdruck, oft schüchtern"
+      }
+    },
+    "lip_thickness_detailed": {
+      "very_full_both": {
+        "meaning": "Sehr sinnlich, sehr romantisch, ausdrucksstark, oft leidenschaftlich"
+      },
+      "full_both": {
+        "meaning": "Sinnlich, warmherzig, romantisch"
+      },
+      "medium_both": {
+        "meaning": "Ausgeglichen"
+      },
+      "thin_both": {
+        "meaning": "Kontrolliert, diszipliniert, emotional zurückhaltend"
+      },
+      "very_thin_both": {
+        "meaning": "Sehr kontrolliert, oft emotional verschlossen"
+      },
+      "upper_much_fuller": {
+        "meaning": "Sehr romantisch, gibt viel Liebe, teils zu großzügig"
+      },
+      "upper_fuller": {
+        "meaning": "Romantisch, redegewandt, gibt gern"
+      },
+      "lower_much_fuller": {
+        "meaning": "Sehr genussorientiert, will empfangen, egoistisch"
+      },
+      "lower_fuller": {
+        "meaning": "Sinnenorientiert, will empfangen, teils egoistisch"
+      }
+    },
+    "shape_detailed": {
+      "cupids_bow_pronounced": {
+        "meaning": "Verspielt, charmant, künstlerisch, klassisch attraktiv"
+      },
+      "straight_upper_lip": {
+        "meaning": "Sachlich, klar, ehrlich"
+      },
+      "wide_flat_lips": {
+        "meaning": "Praktisch, direkte Ausdrucksform"
+      },
+      "small_pointed_lips": {
+        "meaning": "Präzise, fokussiert in Worten"
+      },
+      "heart_shaped_lips": {
+        "meaning": "Romantisch, ausdrucksstark"
+      }
+    },
+    "corners_detailed": {
+      "very_upturned": {
+        "meaning": "Sehr optimistisch, extrem lebensbejahend, oft ansteckend fröhlich"
+      },
+      "upturned": {
+        "meaning": "Optimistisch, glücklich, lebensbejahend"
+      },
+      "neutral": {
+        "meaning": "Ausgeglichen"
+      },
+      "downturned": {
+        "meaning": "Melancholisch, kritisch, klassisch 'traurige' Grundstimmung"
+      },
+      "very_downturned": {
+        "meaning": "Chronische Melancholie, oft Depressions-Prädisposition"
+      }
+    },
+    "teeth_visibility": {
+      "always_shows_teeth_when_talking": {
+        "meaning": "Sehr ausdrucksstark, öffentlich präsent"
+      },
+      "hides_teeth_when_smiling": {
+        "meaning": "Schüchtern, oder Zähne als Sorge (klassisch mit Selbstwertthemen)"
+      },
+      "front_gap_diastema": {
+        "meaning": "Reisefreudig, unabhängig, glücksbringend (indische Tradition)"
+      }
+    },
+    "color_of_lips": {
+      "natural_healthy_pink": {
+        "meaning": "Gute Konstitution, gutes Herz-Kreislauf"
+      },
+      "pale_lips": {
+        "meaning": "Blutarmut, geringe Vitalität"
+      },
+      "very_red": {
+        "meaning": "Hitze, hoher Blutdruck, leidenschaftlich"
+      },
+      "bluish_lips": {
+        "meaning": "Sauerstoffmangel, Herz-Kreislauf-Schwäche (TCM)"
+      },
+      "purplish_lips": {
+        "meaning": "Blut-Stagnation, Herz-Ungleichgewicht"
+      },
+      "dry_cracked_lips": {
+        "meaning": "Yin-Mangel, Trockenheit, Erschöpfung"
+      }
+    },
+    "philtrum_ren_zhong_deep": {
+      "very_deep_long": {
+        "meaning": "Extreme Langlebigkeit, viele Nachkommen, klassisch 'unsterbliches Kanalschema'"
+      },
+      "long_clear_deep": {
+        "meaning": "Gute Vitalität, Langlebigkeit, viele Nachkommen"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "short_flat": {
+        "meaning": "Weniger Nachkommen, mittlere Vitalität"
+      },
+      "very_flat_absent": {
+        "meaning": "Fruchtbarkeitsprobleme klassisch"
+      }
+    }
+  },
+  "chin_jaw_deep": {
+    "age_map": "61-75",
+    "domain": "Willenskraft, Ausdauer, spätes Leben, Legat",
+    "chin_shape_detailed": {
+      "very_round_full": {
+        "meaning": "Sehr wohlhabend im Alter, extrem familienorientiert, klassisch 'unsterbliches Alter'"
+      },
+      "round_full": {
+        "meaning": "Warmherzig, wohlhabend im Alter, familienorientiert, Glück"
+      },
+      "square_angular": {
+        "meaning": "Willensstark, durchsetzungsfähig, tatkräftig"
+      },
+      "very_square": {
+        "meaning": "Extreme Sturheit, kann brutal wirken"
+      },
+      "pointed_sharp": {
+        "meaning": "Sensibel, künstlerisch, teils fragil, oft weiblich empfunden"
+      },
+      "very_pointed": {
+        "meaning": "Sehr sensibel, oft künstlerisch, aber schwaches Alter"
+      },
+      "double_chin_natural": {
+        "meaning": "Wohlstand, Behäbigkeit, Genussmensch"
+      },
+      "protruding_thrust_forward": {
+        "meaning": "Willensstark, sturr, teils aggressiv, sehr durchsetzungsfähig"
+      },
+      "receding_weak": {
+        "meaning": "Sanft, teils willensschwach, oft abhängig"
+      },
+      "very_receding": {
+        "meaning": "Chronisch abhängig, kann kaum eigene Entscheidungen treffen"
+      },
+      "cleft_dimple": {
+        "meaning": "Charismatisch, magnetisch, dramatisch, dramatikliebend, oft schauspielerisch"
+      },
+      "asymmetric_chin": {
+        "meaning": "Zwei-Persönlichkeits-Aspekte, oft Wechsel im späten Leben"
+      }
+    },
+    "jaw_detailed": {
+      "very_wide_strong": {
+        "meaning": "Extrem willensstark, oft Führer oder Sportler"
+      },
+      "wide_strong": {
+        "meaning": "Willenskraft, Ausdauer, teils Sturheit"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "narrow": {
+        "meaning": "Sanft, intellektuell, unentschlossen"
+      },
+      "very_narrow_delicate": {
+        "meaning": "Sehr sanft, oft künstlerisch, teils fragil"
+      },
+      "very_angular_defined": {
+        "meaning": "Dominant, führungsstark, oft eingesetzt in klassischen Ideal-Portraits"
+      }
+    },
+    "combinations_detailed": {
+      "full_chin_full_lower_cheeks": {
+        "meaning": "Gutes Alter, Enkel-Glück, Ruhestand mit Wohlstand"
+      },
+      "thin_pointed_chin_thin_cheeks": {
+        "meaning": "Einsameres Alter, schwierige Rentenphase"
+      },
+      "double_chin_full_lips": {
+        "meaning": "Genussmensch, wohlhabend, oft in gastfreundlichen Berufen"
+      },
+      "cleft_chin_high_cheekbones": {
+        "meaning": "Charismatischer Führer, öffentliche Person"
+      },
+      "wide_jaw_thin_lips": {
+        "meaning": "Kontrollierter Machtmensch, oft erfolgreicher aber emotionaler Trockener"
+      }
+    }
+  },
+  "ears_deep": {
+    "age_map": "0-14 (linkes Ohr 0-7, rechtes 8-14)",
+    "official": "Cai Ting Guan (Amt des Sammelns)",
+    "domain": "Kindheit, Weisheit, Vermögen, Langlebigkeit",
+    "size_detailed": {
+      "very_large_prominent": {
+        "meaning": "Sehr langlebig, weise, wohlhabend, oft 'Buddha-Ohren'"
+      },
+      "large": {
+        "meaning": "Langlebig, weise, gute Kindheit, wohlhabend"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "small": {
+        "meaning": "Sensibel, teils schwierige Kindheit, nervös"
+      },
+      "very_small": {
+        "meaning": "Sehr nervös, angespannt, schwache Kindheit"
+      }
+    },
+    "position_detailed": {
+      "very_high_above_brow_level": {
+        "meaning": "Sehr intelligent, karriereorientiert, oft akademisch"
+      },
+      "high_at_brow_level": {
+        "meaning": "Intelligent, karriereorientiert, führungsstark"
+      },
+      "medium_at_eye_level": {
+        "meaning": "Ausgeglichen, gesund"
+      },
+      "low_below_eye_level": {
+        "meaning": "Sinnlich, praktisch, dickköpfig"
+      },
+      "very_low": {
+        "meaning": "Sehr geerdet, kann teilweise stur sein"
+      }
+    },
+    "earlobe_detailed": {
+      "very_large_fleshy_pendulous": {
+        "meaning": "Buddha-Ohr, extremer Wohlstand, Langlebigkeit"
+      },
+      "large_fleshy": {
+        "meaning": "Wohlstand, Langlebigkeit, glückverheißend"
+      },
+      "medium_fleshy": {
+        "meaning": "Ausgeglichen"
+      },
+      "small_thin": {
+        "meaning": "Kämpferisches Leben, Wohlstand muss hart erarbeitet werden"
+      },
+      "absent_no_lobe": {
+        "meaning": "Sehr hartes Leben, wenig ererbtes Glück"
+      },
+      "attached_lobe": {
+        "meaning": "Praktisch, familientreu, traditionell"
+      },
+      "free_lobe": {
+        "meaning": "Unabhängig, kreativ, unkonventionell"
+      }
+    },
+    "shape_detailed": {
+      "pointed_elf_ears": {
+        "meaning": "Empfänglich, künstlerisch, Sonderling, oft spirituell"
+      },
+      "rounded_soft": {
+        "meaning": "Sozial, warmherzig, oft Diplomat"
+      },
+      "very_thick_ears": {
+        "meaning": "Robust, oft langlebig"
+      },
+      "very_thin_ears": {
+        "meaning": "Sensibel, oft angespannt"
+      },
+      "flat_close_to_head": {
+        "meaning": "Konformistisch, mainstream-orientiert"
+      },
+      "protruding_sticking_out": {
+        "meaning": "Unabhängig, kreativ, oft Nonkonformist"
+      }
+    },
+    "color_detailed": {
+      "very_white_pink": {
+        "meaning": "Ruhm, hohe Position wahrscheinlich, extrem glückverheißend"
+      },
+      "pink_healthy": {
+        "meaning": "Gesund, gute Vitalität"
+      },
+      "red": {
+        "meaning": "Leidenschaftlich, teils aggressiv, oft cholerisch"
+      },
+      "very_red_flushed": {
+        "meaning": "Cholerisch, hoher Blutdruck"
+      },
+      "darker_than_skin": {
+        "meaning": "Harte Kindheit, viele Kämpfe"
+      },
+      "yellowish_pale": {
+        "meaning": "Erschöpfung, oft Nierenschwäche (TCM)"
+      }
+    },
+    "inner_structure": {
+      "clear_defined_inner_helix": {
+        "meaning": "Gute Konstitution, klarer Verstand"
+      },
+      "irregular_inner_structure": {
+        "meaning": "Wechselhaftes Leben"
+      },
+      "very_prominent_tragus": {
+        "meaning": "Gutes Gehör für 'zwischen den Zeilen', oft Intuition"
+      },
+      "visible_scars_on_ear": {
+        "meaning": "Kindheits-Trauma, überwunden"
+      }
+    }
+  },
+  "skin_deep": {
+    "domain": "Aktueller Zustand, Gesundheit, Emotionen, spirituelle Energie (Qi)",
+    "color_detailed": {
+      "clear_luminous_glowing": {
+        "meaning": "Höchstes Qi, spirituelle Klarheit, Erfolgsphase"
+      },
+      "healthy_pink_smooth": {
+        "meaning": "Gute Vitalität, ausgeglichenes System"
+      },
+      "sallow_yellowish": {
+        "meaning": "Erschöpfung, chronische Sorge, Milz-Schwäche (TCM)"
+      },
+      "very_pale": {
+        "meaning": "Anämie, Blut-Mangel, schwache Vitalität (TCM Blood Deficiency)"
+      },
+      "red_veined_ruddy": {
+        "meaning": "Hoher Blutdruck, Zorn, Hitze im Körper"
+      },
+      "gray_dull": {
+        "meaning": "Sehr schwacher Zustand, oft Warnung vor Krankheit"
+      },
+      "bluish_under_eyes": {
+        "meaning": "Nieren-Yin-Mangel (TCM), Erschöpfung, oft chronisch"
+      },
+      "greenish_tinge": {
+        "meaning": "Leber-Stress, oft Frustration gestaut (TCM)"
+      },
+      "very_dark_under_skin": {
+        "meaning": "Chronische Belastung, TCM Blood Stagnation"
+      }
+    },
+    "texture_detailed": {
+      "very_fine_smooth": {
+        "meaning": "Extrem sensibel, oft künstlerisch, spirituell"
+      },
+      "fine_smooth": {
+        "meaning": "Sensibel, künstlerisch, intellektuell"
+      },
+      "medium": {
+        "meaning": "Ausgeglichen"
+      },
+      "rough": {
+        "meaning": "Praktisch, robust, körperliche Arbeit"
+      },
+      "very_rough_thick": {
+        "meaning": "Sehr geerdet, oft harte körperliche Berufe"
+      },
+      "very_dry": {
+        "meaning": "Innere Trockenheit, Yin-Mangel (TCM)"
+      },
+      "very_oily": {
+        "meaning": "Kraftvoll, überaktiv, oft Hitze (TCM)"
+      },
+      "combination": {
+        "meaning": "Wechselnde innere Zustände, oft emotional bewegt"
+      }
+    },
+    "special_conditions": {
+      "acne_forehead": {
+        "meaning": "Verdauung, Stress (TCM: Dünndarm/Nervensystem)"
+      },
+      "acne_between_brows": {
+        "meaning": "Leber-Stress, oft Alkohol oder Frustration (TCM)"
+      },
+      "acne_cheeks": {
+        "meaning": "Lunge, Atemwege, Allergien (TCM)"
+      },
+      "acne_chin": {
+        "meaning": "Hormone, Nieren-Ungleichgewicht (TCM)"
+      },
+      "acne_around_mouth": {
+        "meaning": "Verdauung, oft schweres/scharfes Essen"
+      },
+      "rosacea_persistent": {
+        "meaning": "Chronische Hitze, oft Alkohol-Empfindlichkeit"
+      },
+      "eczema_face": {
+        "meaning": "Yin-Mangel, oft Stress-bedingt"
+      }
+    }
+  },
+  "moles_extended_positions": {
+    "description": "Detaillierte Karte aller klassischen Muttermal-Positionen mit Deutung. Basis: Chinesische Mole Reading Tradition + westliche Traditionen.",
+    "general_reading_rules": {
+      "dark_round_raised_clear": "Perlmuttermal — positive Deutung verstärkt.",
+      "pale_irregular_flat": "Schwaches Mal — negative Deutung.",
+      "red_mole": "Leidenschaftlich, teils Warnung.",
+      "black_deep_mole": "Sehr klare Botschaft, meist positiv wenn regelmäßig.",
+      "hair_growing_from_mole": "Traditionell besonders auspicious (chinesisch)."
+    },
+    "positions": {
+      "forehead_center_top": {
+        "meaning": "Vater-Schicksal, oft Vaterverlust in Jugend"
+      },
+      "forehead_center": {
+        "meaning": "Hochintelligent, führungsstark; wenn schwach: Karriere-Kampf"
+      },
+      "forehead_center_lower_between_brows": {
+        "meaning": "Spirituelle Begabung, 3. Auge, Intuition; wenn schwach: mentale Kämpfe"
+      },
+      "forehead_left_upper": {
+        "meaning": "Karriere-Talent, Führungsanspruch, aber Autoritätskonflikte"
+      },
+      "forehead_right_upper": {
+        "meaning": "Mutter-Karma, oft Mutter-Konflikte"
+      },
+      "forehead_temple_left": {
+        "meaning": "Reisen und Ausland, positiv wenn stark"
+      },
+      "forehead_temple_right": {
+        "meaning": "Kommunikation, oft öffentliche Person"
+      },
+      "eyebrow_head_left": {
+        "meaning": "Bruder-Konflikt oder Bruder-Verlust"
+      },
+      "eyebrow_middle_left": {
+        "meaning": "Talent, künstlerisch"
+      },
+      "eyebrow_tail_left": {
+        "meaning": "Beziehungsstress um Alter 33"
+      },
+      "eyebrow_head_right": {
+        "meaning": "Schwester-Konflikt oder -Verlust"
+      },
+      "eyebrow_middle_right": {
+        "meaning": "Kreatives Talent, oft Kunst"
+      },
+      "eyebrow_tail_right": {
+        "meaning": "Karriere-Talent, Autorität"
+      },
+      "eyelid_upper_left": {
+        "meaning": "Ehe-Frage, oft Untreue-Risiko"
+      },
+      "eyelid_upper_right": {
+        "meaning": "Kinder-Talent, Fruchtbarkeit"
+      },
+      "eyelid_lower_left": {
+        "meaning": "Emotionale Belastung, oft Weinen"
+      },
+      "eyelid_lower_right": {
+        "meaning": "Sorgen um Kinder"
+      },
+      "eye_corner_outer_left_wife_palace": {
+        "meaning": "Ehe-Skandal Warnung"
+      },
+      "eye_corner_outer_right": {
+        "meaning": "Beziehungs-Instabilität"
+      },
+      "eye_corner_inner_left": {
+        "meaning": "Erschöpfung, oft Nieren-Ungleichgewicht"
+      },
+      "eye_corner_inner_right": {
+        "meaning": "Emotionaler Rückzug"
+      },
+      "nose_root_between_eyes": {
+        "meaning": "Krankheits-Zeichen, Test um Alter 41"
+      },
+      "nose_bridge_upper": {
+        "meaning": "Karriere-Test, oft Verlust um 42-43"
+      },
+      "nose_bridge_middle": {
+        "meaning": "Vermögens-Vorsicht, Warnung vor Investitionsverlust"
+      },
+      "nose_bridge_lower": {
+        "meaning": "Herz-Ungleichgewicht möglich"
+      },
+      "nose_tip_center": {
+        "meaning": "Verschwenderisch mit Geld, oft Betrug erlebt"
+      },
+      "nose_wing_left": {
+        "meaning": "Vermögensverlust, kann Geld nicht halten"
+      },
+      "nose_wing_right": {
+        "meaning": "Familien-Vermögens-Konflikt"
+      },
+      "cheek_upper_left": {
+        "meaning": "Autorität, Führungsanspruch"
+      },
+      "cheek_upper_right": {
+        "meaning": "Reputation, oft Ehrgeiz"
+      },
+      "cheek_middle_left_female": {
+        "meaning": "Viel Liebe, aber teils Skandale (klassisch)"
+      },
+      "cheek_middle_right_female": {
+        "meaning": "Ehe-Herausforderungen"
+      },
+      "cheek_lower_left": {
+        "meaning": "Vermögen im Alter, positiv wenn stark"
+      },
+      "cheek_lower_right": {
+        "meaning": "Familien-Beziehungen"
+      },
+      "nasolabial_fold_left": {
+        "meaning": "Karriere-Autorität, oft Führung"
+      },
+      "nasolabial_fold_right": {
+        "meaning": "Öffentliche Reputation"
+      },
+      "philtrum_upper": {
+        "meaning": "Fruchtbarkeit, oft Kinderwunsch-Herausforderung"
+      },
+      "philtrum_middle": {
+        "meaning": "Familien-Vermögen"
+      },
+      "philtrum_lower": {
+        "meaning": "Späte Kinder"
+      },
+      "above_upper_lip_left": {
+        "meaning": "Sinnlich, glücklich in Liebe"
+      },
+      "above_upper_lip_right": {
+        "meaning": "Kommunikative Anziehung"
+      },
+      "upper_lip_center": {
+        "meaning": "Sehr sinnlich, oft öffentliche Person in Kunst/Musik"
+      },
+      "upper_lip_left": {
+        "meaning": "Redegewandt, teils zu großzügig mit Worten"
+      },
+      "upper_lip_right": {
+        "meaning": "Ausdrucksstark, künstlerisch"
+      },
+      "lower_lip_center": {
+        "meaning": "Ge­nuss­orientiert, oft Feinschmecker"
+      },
+      "lower_lip_left": {
+        "meaning": "Vorliebe für Süßes und Sinnliches"
+      },
+      "lower_lip_right": {
+        "meaning": "Verwöhnt"
+      },
+      "mouth_corner_left": {
+        "meaning": "Familien-Erweiterung, aber teils Konflikt"
+      },
+      "mouth_corner_right": {
+        "meaning": "Öffentliche Anerkennung"
+      },
+      "below_lower_lip_center": {
+        "meaning": "Grübelei, Gedankenlast"
+      },
+      "below_lower_lip_left": {
+        "meaning": "Wohlstands-Konflikt im Alter"
+      },
+      "below_lower_lip_right": {
+        "meaning": "Alterspflege-Themen"
+      },
+      "chin_upper_center": {
+        "meaning": "Emotionaler Rückblick im Alter"
+      },
+      "chin_center": {
+        "meaning": "Willensstark, glückliches Alter"
+      },
+      "chin_lower_center": {
+        "meaning": "Alter-Zufriedenheit"
+      },
+      "chin_left": {
+        "meaning": "Familien-Legat, oft Erbe"
+      },
+      "chin_right": {
+        "meaning": "Weisheits-Übergabe"
+      },
+      "chin_left_lower": {
+        "meaning": "Späte Kinder oder Enkel"
+      },
+      "chin_right_lower": {
+        "meaning": "Erbteil-Konflikt möglich"
+      },
+      "jawline_left_upper": {
+        "meaning": "Autoritätskonflikt"
+      },
+      "jawline_right_upper": {
+        "meaning": "Öffentliche Auseinandersetzung"
+      },
+      "jawline_left_lower": {
+        "meaning": "Reisen im Alter"
+      },
+      "jawline_right_lower": {
+        "meaning": "Familien-Zentrum"
+      },
+      "earlobe_left": {
+        "meaning": "Reichtum, Wohlstand, Glücksmal"
+      },
+      "earlobe_right": {
+        "meaning": "Wohlstand von der Familie"
+      },
+      "ear_inner_left": {
+        "meaning": "Gute Weisheit, Fürsorge"
+      },
+      "ear_inner_right": {
+        "meaning": "Intuitive Weisheit"
+      },
+      "ear_upper_edge_left": {
+        "meaning": "Karriere-Weisheit"
+      },
+      "ear_upper_edge_right": {
+        "meaning": "Spätes Talent"
+      },
+      "neck_front": {
+        "meaning": "Kommunikations-Talent"
+      },
+      "neck_left_side": {
+        "meaning": "Verantwortung getragen"
+      },
+      "neck_right_side": {
+        "meaning": "Belastung überwunden"
+      },
+      "throat_center": {
+        "meaning": "Ausdrucks-Blockade oder -Talent"
+      },
+      "temple_hairline_left": {
+        "meaning": "Vater-Karma"
+      },
+      "temple_hairline_right": {
+        "meaning": "Mutter-Karma"
+      },
+      "chin_deep_center_below_lip": {
+        "meaning": "Kern-Standhaftigkeit"
+      },
+      "between_eyes_slightly_left": {
+        "meaning": "Intellektuelle Blockade"
+      },
+      "between_eyes_slightly_right": {
+        "meaning": "Emotionale Blockade"
+      },
+      "under_eye_left_lower_inner": {
+        "meaning": "Nieren-Erschöpfung"
+      },
+      "under_eye_right_lower_inner": {
+        "meaning": "Milz-Ungleichgewicht"
+      },
+      "cheek_dimple_area_left": {
+        "meaning": "Charme, oft künstlerisch"
+      },
+      "cheek_dimple_area_right": {
+        "meaning": "Sozial anziehend"
+      },
+      "left_side_of_nose_bridge": {
+        "meaning": "Ehe-Test 42-43"
+      },
+      "right_side_of_nose_bridge": {
+        "meaning": "Karriere-Test 43-44"
+      },
+      "under_left_eye_middle": {
+        "meaning": "Kinder-Sorge"
+      },
+      "under_right_eye_middle": {
+        "meaning": "Erschöpfung durch Fürsorge"
+      },
+      "chin_tip_bottom": {
+        "meaning": "Standhaftigkeit, oft Alterserfolg"
+      },
+      "left_jaw_angle": {
+        "meaning": "Familien-Führung"
+      },
+      "right_jaw_angle": {
+        "meaning": "Kollegen-Führung"
+      },
+      "top_of_forehead_far_left": {
+        "meaning": "Vorfahren-Karma väterlich"
+      },
+      "top_of_forehead_far_right": {
+        "meaning": "Vorfahren-Karma mütterlich"
+      },
+      "hairline_center": {
+        "meaning": "Klare Bestimmung erkannt"
+      },
+      "hairline_left_edge": {
+        "meaning": "Auslands-Karma väterlich"
+      },
+      "hairline_right_edge": {
+        "meaning": "Auslands-Karma mütterlich"
+      },
+      "above_left_eye_far_outer": {
+        "meaning": "Emotionale Autonomie"
+      },
+      "above_right_eye_far_outer": {
+        "meaning": "Karriere-Autonomie"
+      },
+      "small_of_forehead_center_low": {
+        "meaning": "Meditations-Anlage"
+      },
+      "left_eyelid_crease": {
+        "meaning": "Beziehungs-Wandlung"
+      },
+      "right_eyelid_crease": {
+        "meaning": "Selbst-Wandlung"
+      },
+      "under_nose_direct": {
+        "meaning": "Frucht­bar­keits-Marker"
+      },
+      "left_side_upper_lip_edge": {
+        "meaning": "Redegewandt in Liebe"
+      },
+      "right_side_upper_lip_edge": {
+        "meaning": "Ausdrucks-Talent"
+      },
+      "very_center_of_chin_low": {
+        "meaning": "Willensstark im Alter"
+      },
+      "left_lower_cheek": {
+        "meaning": "Kollegen-Konflikte"
+      },
+      "right_lower_cheek": {
+        "meaning": "Untergebenen-Führung"
+      }
+    }
+  },
+  "facs_complete_44_action_units": {
+    "description": "Facial Action Coding System nach Ekman & Friesen (1978). Alle 44 sichtbaren Gesichtsmuskelbewegungen mit Bedeutung.",
+    "usage_note": "FACS ist wissenschaftlich validiert. Diese AUs können mittels Computer Vision (OpenCV + Deep Learning) erkannt werden. Kombinationen von AUs ergeben die 7 Basis-Emotionen nach Ekman.",
+    "upper_face_aus": {
+      "AU1_inner_brow_raiser": {
+        "muscle": "Frontalis pars medialis",
+        "emotion": "Traurigkeit, Angst, Überraschung"
+      },
+      "AU2_outer_brow_raiser": {
+        "muscle": "Frontalis pars lateralis",
+        "emotion": "Überraschung, Angst"
+      },
+      "AU4_brow_lowerer": {
+        "muscle": "Depressor Glabellae, Corrugator",
+        "emotion": "Zorn, Konzentration, Verwirrung, Kummer"
+      },
+      "AU5_upper_lid_raiser": {
+        "muscle": "Levator palpebrae superioris",
+        "emotion": "Überraschung, Angst, Zorn"
+      },
+      "AU6_cheek_raiser": {
+        "muscle": "Orbicularis oculi (Duchenne-Marker)",
+        "emotion": "Echtes Lächeln, Freude"
+      },
+      "AU7_lid_tightener": {
+        "muscle": "Orbicularis oculi",
+        "emotion": "Zorn, Verachtung, Konzentration"
+      },
+      "AU41_lid_droop": {
+        "muscle": "Relaxation of Levator palpebrae",
+        "emotion": "Müdigkeit, Trance"
+      },
+      "AU42_slit": {
+        "muscle": "Orbicularis oculi",
+        "emotion": "Argwohn"
+      },
+      "AU43_eyes_closed": {
+        "muscle": "Relaxation of Levator palpebrae",
+        "emotion": "Ruhe, Schlaf, Vermeidung"
+      },
+      "AU44_squint": {
+        "muscle": "Orbicularis oculi",
+        "emotion": "Argwohn, Sonneneinstrahlung"
+      },
+      "AU45_blink": {
+        "muscle": "Orbicularis oculi",
+        "emotion": "Normale Funktion, Nervosität"
+      },
+      "AU46_wink": {
+        "muscle": "Orbicularis oculi (einseitig)",
+        "emotion": "Spiel, Konspiration"
+      }
+    },
+    "lower_face_aus": {
+      "AU9_nose_wrinkler": {
+        "muscle": "Levator labii superioris alaeque nasi",
+        "emotion": "Ekel"
+      },
+      "AU10_upper_lip_raiser": {
+        "muscle": "Levator labii superioris",
+        "emotion": "Ekel, Verachtung"
+      },
+      "AU11_nasolabial_deepener": {
+        "muscle": "Zygomaticus minor",
+        "emotion": "Traurigkeit, Verachtung"
+      },
+      "AU12_lip_corner_puller": {
+        "muscle": "Zygomaticus major",
+        "emotion": "Lächeln, Freude"
+      },
+      "AU13_cheek_puffer": {
+        "muscle": "Levator anguli oris",
+        "emotion": "Ekel, Überheblichkeit"
+      },
+      "AU14_dimpler": {
+        "muscle": "Buccinator",
+        "emotion": "Verachtung"
+      },
+      "AU15_lip_corner_depressor": {
+        "muscle": "Depressor anguli oris",
+        "emotion": "Traurigkeit"
+      },
+      "AU16_lower_lip_depressor": {
+        "muscle": "Depressor labii inferioris",
+        "emotion": "Ekel"
+      },
+      "AU17_chin_raiser": {
+        "muscle": "Mentalis",
+        "emotion": "Trotz, Stolz, Enttäuschung"
+      },
+      "AU18_lip_puckerer": {
+        "muscle": "Orbicularis oris (Incisivii)",
+        "emotion": "Skepsis, Denken"
+      },
+      "AU20_lip_stretcher": {
+        "muscle": "Risorius",
+        "emotion": "Angst, Horror"
+      },
+      "AU22_lip_funneler": {
+        "muscle": "Orbicularis oris",
+        "emotion": "Kuss-Geste, Überraschung"
+      },
+      "AU23_lip_tightener": {
+        "muscle": "Orbicularis oris",
+        "emotion": "Zorn, Entschlossenheit"
+      },
+      "AU24_lip_pressor": {
+        "muscle": "Orbicularis oris",
+        "emotion": "Zorn, Konzentration"
+      },
+      "AU25_lips_part": {
+        "muscle": "Depressor labii, Relaxation of Mentalis",
+        "emotion": "Überraschung, Kommunikation"
+      },
+      "AU26_jaw_drop": {
+        "muscle": "Masseter, Temporalis, Internal Pterygoid (relaxed)",
+        "emotion": "Überraschung, Angst"
+      },
+      "AU27_mouth_stretch": {
+        "muscle": "Pterygoids, Digastric",
+        "emotion": "Angst, Gähnen"
+      },
+      "AU28_lip_suck": {
+        "muscle": "Orbicularis oris",
+        "emotion": "Denken, Angst"
+      }
+    },
+    "head_and_eye_movement_aus": {
+      "AU51_head_turn_left": {
+        "emotion": "Vermeidung"
+      },
+      "AU52_head_turn_right": {
+        "emotion": "Vermeidung"
+      },
+      "AU53_head_up": {
+        "emotion": "Stolz, Trotz"
+      },
+      "AU54_head_down": {
+        "emotion": "Scham, Traurigkeit"
+      },
+      "AU55_head_tilt_left": {
+        "emotion": "Sympathie, Skepsis"
+      },
+      "AU56_head_tilt_right": {
+        "emotion": "Sympathie, Skepsis"
+      },
+      "AU57_head_forward": {
+        "emotion": "Interesse, Aggression"
+      },
+      "AU58_head_back": {
+        "emotion": "Überraschung"
+      },
+      "AU61_eyes_turn_left": {
+        "emotion": "Referenz"
+      },
+      "AU62_eyes_turn_right": {
+        "emotion": "Referenz"
+      },
+      "AU63_eyes_up": {
+        "emotion": "Denken, Verachtung"
+      },
+      "AU64_eyes_down": {
+        "emotion": "Scham, Denken"
+      }
+    },
+    "basic_emotions_aus_combinations": {
+      "joy_genuine_duchenne": {
+        "aus_required": [
+          "AU6",
+          "AU12"
+        ],
+        "aus_optional": [
+          "AU25"
+        ],
+        "description": "Duchenne-Lächeln — echt, mit Augenpartie"
+      },
+      "joy_social_fake": {
+        "aus_required": [
+          "AU12"
+        ],
+        "aus_absent": [
+          "AU6"
+        ],
+        "description": "Höflichkeits-Lächeln, nur Mund"
+      },
+      "sadness": {
+        "aus_required": [
+          "AU1",
+          "AU4",
+          "AU15"
+        ],
+        "aus_optional": [
+          "AU17"
+        ],
+        "description": "Traurigkeit, schwer bewusst zu simulieren"
+      },
+      "fear": {
+        "aus_required": [
+          "AU1",
+          "AU2",
+          "AU4",
+          "AU5",
+          "AU20"
+        ],
+        "aus_optional": [
+          "AU25",
+          "AU26"
+        ],
+        "description": "Angst, sehr kurzlebig"
+      },
+      "anger": {
+        "aus_required": [
+          "AU4",
+          "AU5",
+          "AU7",
+          "AU23"
+        ],
+        "aus_optional": [
+          "AU10",
+          "AU17",
+          "AU24"
+        ],
+        "description": "Zorn"
+      },
+      "surprise": {
+        "aus_required": [
+          "AU1",
+          "AU2",
+          "AU5",
+          "AU26"
+        ],
+        "aus_optional": [
+          "AU25",
+          "AU27"
+        ],
+        "description": "Überraschung, unter 1 Sekunde echt"
+      },
+      "disgust": {
+        "aus_required": [
+          "AU9",
+          "AU15"
+        ],
+        "aus_optional": [
+          "AU10",
+          "AU16"
+        ],
+        "description": "Ekel"
+      },
+      "contempt": {
+        "aus_required": [
+          "AU12_unilateral"
+        ],
+        "aus_optional": [
+          "AU14"
+        ],
+        "description": "Einziger asymmetrischer Basis-Ausdruck. Prädiktor für Beziehungsende (Gottman)."
+      }
+    },
+    "compound_emotions_advanced": {
+      "happily_surprised": {
+        "aus": [
+          "AU1",
+          "AU2",
+          "AU5",
+          "AU12",
+          "AU25",
+          "AU26"
+        ]
+      },
+      "happily_disgusted": {
+        "aus": [
+          "AU9",
+          "AU12",
+          "AU25"
+        ]
+      },
+      "sadly_fearful": {
+        "aus": [
+          "AU1",
+          "AU4",
+          "AU15",
+          "AU20"
+        ]
+      },
+      "sadly_angry": {
+        "aus": [
+          "AU4",
+          "AU15",
+          "AU23"
+        ]
+      },
+      "sadly_surprised": {
+        "aus": [
+          "AU1",
+          "AU4",
+          "AU15",
+          "AU26"
+        ]
+      },
+      "sadly_disgusted": {
+        "aus": [
+          "AU1",
+          "AU4",
+          "AU9",
+          "AU15"
+        ]
+      },
+      "fearfully_angry": {
+        "aus": [
+          "AU4",
+          "AU5",
+          "AU7",
+          "AU20"
+        ]
+      },
+      "fearfully_surprised": {
+        "aus": [
+          "AU1",
+          "AU2",
+          "AU4",
+          "AU5",
+          "AU20",
+          "AU26"
+        ]
+      },
+      "fearfully_disgusted": {
+        "aus": [
+          "AU4",
+          "AU9",
+          "AU20"
+        ]
+      },
+      "angrily_surprised": {
+        "aus": [
+          "AU4",
+          "AU5",
+          "AU10",
+          "AU26"
+        ]
+      },
+      "angrily_disgusted": {
+        "aus": [
+          "AU4",
+          "AU9",
+          "AU10",
+          "AU23"
+        ]
+      },
+      "disgustedly_surprised": {
+        "aus": [
+          "AU1",
+          "AU2",
+          "AU5",
+          "AU9",
+          "AU10",
+          "AU26"
+        ]
+      }
+    }
+  },
+  "five_elements_full_matrix": {
+    "description": "Vollständige 5x5 Kompatibilitäts-Matrix der Wu Xing im Gesicht.",
+    "elements_detailed": {
+      "wood": {
+        "chinese": "木 Mù",
+        "shape": "Länglich, schmal, hohe Stirn",
+        "traits": [
+          "kreativ",
+          "wachstumsorientiert",
+          "sensibel"
+        ]
+      },
+      "fire": {
+        "chinese": "火 Huǒ",
+        "shape": "Spitzig, dreieckig, prominente Stirn/Kinn",
+        "traits": [
+          "leidenschaftlich",
+          "energisch",
+          "unruhig"
+        ]
+      },
+      "earth": {
+        "chinese": "土 Tǔ",
+        "shape": "Quadratisch, breit, fleischig",
+        "traits": [
+          "stabil",
+          "geerdet",
+          "gastfreundlich"
+        ]
+      },
+      "metal": {
+        "chinese": "金 Jīn",
+        "shape": "Oval, klare Konturen, blass",
+        "traits": [
+          "diszipliniert",
+          "klar",
+          "streng"
+        ]
+      },
+      "water": {
+        "chinese": "水 Shuǐ",
+        "shape": "Rund, weich, dunkel",
+        "traits": [
+          "intuitiv",
+          "wandelbar",
+          "tief"
+        ]
+      }
+    },
+    "compatibility_matrix": {
+      "wood_wood": {
+        "type": "same",
+        "score": 6,
+        "description": "Zwei Holz-Menschen wachsen zusammen, aber können in gleichen Blockaden stecken bleiben"
+      },
+      "wood_fire": {
+        "type": "nurturing",
+        "score": 9,
+        "description": "Holz nährt Feuer — Holz-Person unterstützt Feuer-Person, die belebt zurück"
+      },
+      "wood_earth": {
+        "type": "destroying",
+        "score": 3,
+        "description": "Holz zerstört Erde — Holz-Person kann Erde-Person überfordern"
+      },
+      "wood_metal": {
+        "type": "destroyed_by",
+        "score": 3,
+        "description": "Metall zerstört Holz — Metall-Person kann Holz-Person begrenzen"
+      },
+      "wood_water": {
+        "type": "nurtured_by",
+        "score": 9,
+        "description": "Wasser nährt Holz — sehr harmonisch, Wasser-Person gibt Kreativität"
+      },
+      "fire_fire": {
+        "type": "same",
+        "score": 5,
+        "description": "Zwei Feuer verbrennen sich gegenseitig, sehr intensiv aber kurz"
+      },
+      "fire_earth": {
+        "type": "nurturing",
+        "score": 9,
+        "description": "Feuer nährt Erde — kraftvolle, aufbauende Verbindung"
+      },
+      "fire_metal": {
+        "type": "destroying",
+        "score": 3,
+        "description": "Feuer zerstört Metall — Feuer-Person kann Metall-Person 'schmelzen'"
+      },
+      "fire_water": {
+        "type": "destroyed_by",
+        "score": 2,
+        "description": "Wasser löscht Feuer — starker Konflikt, aber magnetische Anziehung"
+      },
+      "fire_wood": {
+        "type": "nurtured_by",
+        "score": 9,
+        "description": "Holz nährt Feuer — Feuer wird belebt"
+      },
+      "earth_earth": {
+        "type": "same",
+        "score": 7,
+        "description": "Zwei Erde-Menschen sehr stabil, aber wenig Bewegung"
+      },
+      "earth_metal": {
+        "type": "nurturing",
+        "score": 9,
+        "description": "Erde nährt Metall — nachhaltige, aufbauende Verbindung"
+      },
+      "earth_water": {
+        "type": "destroying",
+        "score": 3,
+        "description": "Erde zerstört Wasser — Erde-Person kann Wasser-Person 'eindämmen'"
+      },
+      "earth_wood": {
+        "type": "destroyed_by",
+        "score": 3,
+        "description": "Holz zerstört Erde — Herausforderungen"
+      },
+      "earth_fire": {
+        "type": "nurtured_by",
+        "score": 9,
+        "description": "Feuer nährt Erde — kraftvoll"
+      },
+      "metal_metal": {
+        "type": "same",
+        "score": 6,
+        "description": "Zwei Metall-Menschen klar strukturiert, aber emotional trocken"
+      },
+      "metal_water": {
+        "type": "nurturing",
+        "score": 9,
+        "description": "Metall nährt Wasser — inspirierend"
+      },
+      "metal_wood": {
+        "type": "destroying",
+        "score": 3,
+        "description": "Metall zerstört Holz — Metall-Person kann Holz-Person begrenzen"
+      },
+      "metal_fire": {
+        "type": "destroyed_by",
+        "score": 3,
+        "description": "Feuer schmilzt Metall — intensiver Konflikt"
+      },
+      "metal_earth": {
+        "type": "nurtured_by",
+        "score": 9,
+        "description": "Erde nährt Metall — stabil"
+      },
+      "water_water": {
+        "type": "same",
+        "score": 5,
+        "description": "Zwei Wasser fließen zusammen, aber ohne Grenzen"
+      },
+      "water_wood": {
+        "type": "nurturing",
+        "score": 9,
+        "description": "Wasser nährt Holz — sehr harmonisch"
+      },
+      "water_fire": {
+        "type": "destroying",
+        "score": 2,
+        "description": "Wasser löscht Feuer — sehr herausfordernd, aber magnetisch"
+      },
+      "water_earth": {
+        "type": "destroyed_by",
+        "score": 3,
+        "description": "Erde absorbiert Wasser — Konflikt"
+      },
+      "water_metal": {
+        "type": "nurtured_by",
+        "score": 9,
+        "description": "Metall nährt Wasser — klar"
+      }
+    }
+  },
+  "samudrika_32_auspicious_signs": {
+    "description": "Die 32 klassisch auspiciösen Merkmale nach Samudrika Shastra. Ein Mensch mit vielen dieser Zeichen hat 'gutes Karma' im Sinne der Tradition.",
+    "face_signs": {
+      "1_wide_smooth_forehead": "Weisheit, Karriere-Erfolg",
+      "2_clear_luminous_eyes": "Klare Urteilskraft, spirituelles Karma",
+      "3_straight_well_shaped_nose": "Wohlstand, Selbstwert",
+      "4_full_lips_natural_red": "Sinnliches Glück, Genuss",
+      "5_white_even_teeth": "Gute Konstitution, Familien-Glück",
+      "6_full_cheeks": "Wohlstand mittleres Alter",
+      "7_round_well_shaped_chin": "Glückliches Alter",
+      "8_soft_glowing_skin": "Gutes Karma sichtbar",
+      "9_large_earlobes_with_holes": "Langlebigkeit, Weisheit",
+      "10_symmetric_face": "Karma-Balance"
+    },
+    "body_signs_relevant": {
+      "11_long_arms_reaching_knees": "Königliches Karma",
+      "12_long_fingers": "Feinsinn, kreatives Talent",
+      "13_curved_eyebrows": "Ehe-Glück",
+      "14_deep_navel": "Spirituelle Tiefe",
+      "15_soft_palm_skin": "Wohlstand-Karma",
+      "16_broad_shoulders": "Verantwortungs-Träger",
+      "17_slim_waist": "Ausgeglichene Konstitution",
+      "18_strong_thighs": "Ausdauer, körperliche Kraft",
+      "19_full_calves": "Fest im Leben"
+    },
+    "voice_and_expression": {
+      "20_deep_resonant_voice": "Autorität, Führungsberufung",
+      "21_grave_dignified_expression": "Ernste Karma-Übernahme",
+      "22_slow_measured_gait": "Königliches Auftreten"
+    },
+    "special_marks": {
+      "23_lotus_mark_on_hand_or_foot": "Spirituelle Vollendung",
+      "24_fish_mark": "Reichtum, Migration-Glück",
+      "25_temple_mark": "Religiöse Berufung",
+      "26_conch_shell_mark": "Priester-Karma",
+      "27_wheel_chakra_mark": "Königliche Bestimmung",
+      "28_crown_mark": "Führung, Öffentlichkeit",
+      "29_swastika_mark": "Auspiciousness (traditionelle Bedeutung)",
+      "30_bow_mark": "Krieger-Karma"
+    },
+    "meta_signs": {
+      "31_calm_meditative_gaze": "Innere Ruhe, spirituelle Reife",
+      "32_natural_charisma": "Charisma unabhängig von Aussehen"
+    },
+    "app_usage": "Für die App: Aus den 32 Zeichen prüfen, wie viele beim User erkennbar sind. Score = Anzahl / 32. Ab 20+ Zeichen: 'stark auspiciöses Profil'."
+  },
+  "san_cai_three_treasures": {
+    "description": "Klassische chinesische Kosmologie: Himmel, Mensch, Erde — im Gesicht abgebildet.",
+    "tian_heaven": {
+      "chinese": "天 Tiān",
+      "region": "Stirn",
+      "domain": "Karma der Vorfahren, spirituelle Anlage, Glück von 'oben'",
+      "reading": "Wie glatt, hell, breit — so gut das ererbte Karma"
+    },
+    "ren_human": {
+      "chinese": "人 Rén",
+      "region": "Nase und Wangen (mittleres Drittel)",
+      "domain": "Selbstgemachtes Karma, aktives Leben, Wille",
+      "reading": "Wie hoch, gerade, fleischig — so stark die eigene Kraft"
+    },
+    "di_earth": {
+      "chinese": "地 Dì",
+      "region": "Kinn und Unterkiefer",
+      "domain": "Materielles Fundament, Nachkommenschaft, Alter, Legat",
+      "reading": "Wie voll, rund, stabil — so gut das späte Leben"
+    },
+    "balance_priority": "Der harmonische Mensch hat alle drei ausgeglichen. Ideal-Portrait der Mian Xiang."
+  },
+  "compound_rules_200plus": {
+    "description": "200+ Kombinationsregeln. Diese Regeln nutzen mehrere Features zusammen, um differenzierte Deutungen zu liefern. Format: condition (AND/OR) → output.",
+    "personality_rules": [
+      {
+        "id": "p001",
+        "condition": "face_shape='oval' AND eyes='almond' AND lips='medium_full'",
+        "output": "Klassisch harmonische Persönlichkeit: diplomatisch, ausgeglichen, romantisch."
+      },
+      {
+        "id": "p002",
+        "condition": "face_shape='square' AND jaw='wide_strong' AND brows='thick'",
+        "output": "Kraftvoll führungsstark. Führer durch Präsenz, weniger durch Charisma."
+      },
+      {
+        "id": "p003",
+        "condition": "face_shape='heart' AND eyes='large' AND lips='full'",
+        "output": "Sehr expressive, romantische Persönlichkeit. Kreativ und emotional intensiv."
+      },
+      {
+        "id": "p004",
+        "condition": "face_shape='long_narrow' AND forehead='very_high' AND brows='thin'",
+        "output": "Intellektuell-spiritueller Typ. Zieht Rückzug vor, sehr feinsinnig."
+      },
+      {
+        "id": "p005",
+        "condition": "face_shape='diamond' AND cheekbones='high_prominent' AND lips='thin'",
+        "output": "Präzisions-Perfektionist. Kontrolliert, hoch anspruchsvoll, oft in Nischen brillant."
+      },
+      {
+        "id": "p006",
+        "condition": "face_shape='round' AND cheeks='full' AND mouth='upturned'",
+        "output": "Klassisch fröhliche Naturell. Ansteckend positiv, sozial, gastfreundlich."
+      },
+      {
+        "id": "p007",
+        "condition": "brows='monobrow' AND yin_tang='narrow' AND eyes='intense'",
+        "output": "Grüblerisch, konzentriert, sorgt sich viel. Braucht Meditation für Balance."
+      },
+      {
+        "id": "p008",
+        "condition": "face_shape='rectangular' AND jaw='very_angular' AND brows='straight'",
+        "output": "Klassischer Konzernführer-Typ. Strategisch, kontrolliert, hoch produktiv, emotional zurückhaltend."
+      },
+      {
+        "id": "p009",
+        "condition": "eyes='hooded' AND brows='downturned' AND lips='thin_pressed'",
+        "output": "Diskret, tiefgründig, oft weise. Wird in Krisen zum Anker anderer."
+      },
+      {
+        "id": "p010",
+        "condition": "widow_peak=true AND cheekbones='high' AND lips='cupids_bow'",
+        "output": "Klassisch dramatisches Naturell. Magnetisch, oft Bühnen- oder Kunstberufe."
+      }
+    ],
+    "career_rules": [
+      {
+        "id": "c001",
+        "condition": "mount_jupiter='strong' AND forehead='wide_high' AND eyes='clear_bright'",
+        "output": "Politische/Führungs-Karriere. Gute Anlagen für hohe Position."
+      },
+      {
+        "id": "c002",
+        "condition": "nose='straight_high' AND cheekbones='prominent' AND jaw='strong'",
+        "output": "Managerial-Karriere. CEO- oder Direktoren-Profil."
+      },
+      {
+        "id": "c003",
+        "condition": "brows='thin_arched' AND lips='full' AND eyes='downturned'",
+        "output": "Kreativ-künstlerische Karriere. Design, Mode, Ästhetik-Berufe."
+      },
+      {
+        "id": "c004",
+        "condition": "forehead='very_high' AND eyes='calm' AND face='long_narrow'",
+        "output": "Akademisch-wissenschaftliche Karriere. Forschung, Philosophie."
+      },
+      {
+        "id": "c005",
+        "condition": "eyes='fiery' AND jaw='strong' AND cheekbones='high'",
+        "output": "Sport-, Militär- oder Krisenmanagement-Karriere. Körperlich präsent."
+      },
+      {
+        "id": "c006",
+        "condition": "philtrum='deep_long' AND lips='full' AND cheeks='full'",
+        "output": "Familien-Business oder Pflege-Berufe. Familienerhaltend."
+      },
+      {
+        "id": "c007",
+        "condition": "nose_tip='round_fleshy' AND wings='full' AND jaw='medium'",
+        "output": "Finanz-/Handels-Karriere. Investitions-Erfolg."
+      },
+      {
+        "id": "c008",
+        "condition": "ears='large_high_set' AND forehead='wide' AND yin_tang='wide'",
+        "output": "Bildungs- oder Beratungs-Karriere. Wissens-Übertragung."
+      },
+      {
+        "id": "c009",
+        "condition": "mouth='large' AND brows='thick' AND cheeks='rosy'",
+        "output": "Vertriebs-/PR-Karriere. Kommunikations-Berufe mit Auftritt."
+      },
+      {
+        "id": "c010",
+        "condition": "eyes='small_focused' AND lips='thin' AND nose='sharp'",
+        "output": "Analytische Karriere. Recht, Buchhaltung, Programmierung, Detail-Berufe."
+      }
+    ],
+    "wealth_rules": [
+      {
+        "id": "w001",
+        "condition": "nose_tip='round_fleshy' AND wings='full' AND nostrils='hidden'",
+        "output": "Klassisch bester Wohlstands-Marker. Kann Geld verdienen UND halten."
+      },
+      {
+        "id": "w002",
+        "condition": "earlobes='large_fleshy' AND ears='large' AND cheeks='full'",
+        "output": "Erbte Wohlstand oder wohlhabend werdend. Buddha-Ohren + Wohlstands-Wangen."
+      },
+      {
+        "id": "w003",
+        "condition": "philtrum='long_deep' AND lips='full' AND chin='round_full'",
+        "output": "Wohlstand im Alter. Sichere Rente, oft Erbe an Nachkommen."
+      },
+      {
+        "id": "w004",
+        "condition": "cheekbones='high_solid' AND jaw='strong' AND forehead='wide'",
+        "output": "Selfmade-Wohlstand. Aufsteigen durch eigene Kraft."
+      },
+      {
+        "id": "w005",
+        "condition": "eyes='bright_clear' AND yin_tang='wide' AND san_gen='high'",
+        "output": "Klares Karma für Wohlstand. Wohlstand kommt zu diesem Menschen."
+      },
+      {
+        "id": "w006",
+        "condition": "nostrils='visible' OR nose_tip='pointed_sharp'",
+        "output": "Warnung: Kann Geld schwer halten. Vorsicht bei Investitionen und Verschwendung."
+      },
+      {
+        "id": "w007",
+        "condition": "mole_on_nose_tip=true OR mole_on_nose_wing=true",
+        "output": "Vermögens-Volatilität. Vorsicht vor Betrug und Skandalen um Geld."
+      },
+      {
+        "id": "w008",
+        "condition": "cai_bo_gong='sunken' AND ji_e_gong='low'",
+        "output": "Klassische Konstellation für 'Wohlstandsblockade'. Karma-Arbeit empfohlen."
+      },
+      {
+        "id": "w009",
+        "condition": "san_gen='low' AND age_now=41",
+        "output": "Kritisches 41. Lebensjahr. Gesundheits- und Karriere-Test."
+      },
+      {
+        "id": "w010",
+        "condition": "ears='very_pale_pink' AND ji_e_gong='high'",
+        "output": "Ruhm und Wohlstand wahrscheinlich, oft öffentliche Anerkennung."
+      }
+    ],
+    "relationship_rules": [
+      {
+        "id": "r001",
+        "condition": "fu_qi_gong='smooth_clear' AND eyes='downturned_soft' AND lips='full'",
+        "output": "Ideale Ehe-Konstellation. Harmonische Beziehung, romantisch und stabil."
+      },
+      {
+        "id": "r002",
+        "condition": "crows_feet='deep_many' AND mole_at_eye_corner=true",
+        "output": "Beziehungs-Traumata wahrscheinlich. Oft Trennungen oder Untreue erlebt."
+      },
+      {
+        "id": "r003",
+        "condition": "brows='asymmetric' AND eyes='asymmetric' AND face='asymmetric'",
+        "output": "Innere Ambivalenz in Beziehungen. Zwei Seiten, wechselnde Wünsche."
+      },
+      {
+        "id": "r004",
+        "condition": "philtrum='long_clear' AND lips='full' AND chin='round'",
+        "output": "Familien-Glück. Viele Kinder oder enge familiäre Bindungen."
+      },
+      {
+        "id": "r005",
+        "condition": "eyes='sanpaku_yang'",
+        "output": "Warnung: kann aggressiv in Beziehungen sein. Emotionale Regulation wichtig."
+      },
+      {
+        "id": "r006",
+        "condition": "eyes='sanpaku_yin' AND yin_tang='dark_circles'",
+        "output": "Erschöpfung durch Beziehungen. Braucht Rückzug und Selbstpflege."
+      },
+      {
+        "id": "r007",
+        "condition": "person_a.element='wood' AND person_b.element='water'",
+        "output": "Sehr harmonische Verbindung. Wasser nährt Holz — B unterstützt A optimal."
+      },
+      {
+        "id": "r008",
+        "condition": "person_a.element='fire' AND person_b.element='water'",
+        "output": "Herausfordernde Konstellation. Wasser löscht Feuer — kraftvolle Anziehung, aber Konfliktpotential."
+      },
+      {
+        "id": "r009",
+        "condition": "both_persons.face_shape='oval' AND both_persons.element='metal'",
+        "output": "Sehr ähnliche Persönlichkeiten. Harmonisch aber teils langweilig."
+      },
+      {
+        "id": "r010",
+        "condition": "person_a.chin='strong' AND person_b.chin='weak'",
+        "output": "Dominant-passive Dynamik. Kann funktionieren wenn beide zufrieden."
+      }
+    ],
+    "health_rules": [
+      {
+        "id": "h001",
+        "condition": "yin_tang_between_eyes='dark_line'",
+        "output": "Aktueller Leber-Stress. Möglich Alkohol, Frustration, wenig Schlaf."
+      },
+      {
+        "id": "h002",
+        "condition": "dark_circles_under_eyes='deep' AND ears='pale'",
+        "output": "Nieren-Yin-Mangel (TCM). Chronische Erschöpfung, Regeneration nötig."
+      },
+      {
+        "id": "h003",
+        "condition": "forehead='dry_flaking' AND chin='acne'",
+        "output": "Hormon- und Verdauungs-Ungleichgewicht. Zucker reduzieren, Wasser erhöhen."
+      },
+      {
+        "id": "h004",
+        "condition": "nose_tip='red_visible_veins'",
+        "output": "Herz-Kreislauf-Aufmerksamkeit. Blutdruck prüfen, Alkohol reduzieren."
+      },
+      {
+        "id": "h005",
+        "condition": "cheeks_upper='red_ruddy'",
+        "output": "Lungen-Aktivität hoch. Auf Allergien, Rauchen, Luftqualität achten."
+      },
+      {
+        "id": "h006",
+        "condition": "lips='blue_purple'",
+        "output": "Sauerstoff-Aufnahme prüfen. Herz-Kreislauf ärztlich klären."
+      },
+      {
+        "id": "h007",
+        "condition": "skin='very_pale' AND lips='pale' AND nail_beds='pale'",
+        "output": "TCM Blood Deficiency. Blutbild ärztlich prüfen. Eisen, B12 checken."
+      },
+      {
+        "id": "h008",
+        "condition": "swelling_puffiness_face='general'",
+        "output": "Wasser- oder Milz-Ungleichgewicht. Salz reduzieren, Bewegung."
+      },
+      {
+        "id": "h009",
+        "condition": "eyes='yellow_whites'",
+        "output": "Leber ärztlich abklären. Ikterus möglich."
+      },
+      {
+        "id": "h010",
+        "condition": "very_dry_lips_cracked",
+        "output": "Yin-Mangel (TCM). Genug trinken, Feuchtigkeitscremes."
+      }
+    ],
+    "life_phase_rules_age_based": [
+      {
+        "id": "l001",
+        "condition": "user.age BETWEEN 15 AND 30",
+        "output": "Stirn-Phase aktiv. Bildung, Karriere-Start, Identitätsfindung sind zentrale Themen. Prüfe Stirn-Bereich."
+      },
+      {
+        "id": "l002",
+        "condition": "user.age BETWEEN 31 AND 34",
+        "output": "Augenbrauen-Phase. Familien- und Peer-Beziehungen sind aktuell zentral."
+      },
+      {
+        "id": "l003",
+        "condition": "user.age BETWEEN 35 AND 40",
+        "output": "Augen-Phase. Ehe, Charakter-Reife, wichtige Entscheidungen."
+      },
+      {
+        "id": "l004",
+        "condition": "user.age BETWEEN 41 AND 50",
+        "output": "Nasen-Phase. Karriere-Höhepunkt, Vermögensaufbau, Selbst-Konsolidierung. Alter 41 ist Test (Shan Gen)."
+      },
+      {
+        "id": "l005",
+        "condition": "user.age BETWEEN 51 AND 55",
+        "output": "Philtrum-Phase. Nachkommen, Familienerweiterung, späte mittlere Jahre."
+      },
+      {
+        "id": "l006",
+        "condition": "user.age BETWEEN 56 AND 65",
+        "output": "Mund-Phase. Ernte-Zeit. 60. Geburtstag klassisch besonders wichtig."
+      },
+      {
+        "id": "l007",
+        "condition": "user.age BETWEEN 66 AND 75",
+        "output": "Kinn-Phase. Ruhestand, Alter-Konsolidierung, Vermächtnis."
+      },
+      {
+        "id": "l008",
+        "condition": "user.age BETWEEN 76 AND 100",
+        "output": "Rand-Zonen aktiv. Weisheit, Vermächtnis, Reflektion des gesamten Lebens."
+      }
+    ],
+    "compound_lucky_signs": [
+      {
+        "id": "L001",
+        "condition": "moles_lucky_positions>=3",
+        "output": "Sehr auspiciöses Muttermal-Profil. Karma-Segen in mehreren Bereichen."
+      },
+      {
+        "id": "L002",
+        "condition": "cheekbones='high' AND ears='buddha_lobes' AND philtrum='deep_long'",
+        "output": "Klassisches Ideal-Portrait: Autorität + Weisheit + Fortpflanzung. Extrem selten."
+      },
+      {
+        "id": "L003",
+        "condition": "yin_tang='wide_bright' AND san_gen='high_full' AND san_ting='balanced'",
+        "output": "Klassisch idealer 'Ming Gong' — starkes Lebens-Karma."
+      },
+      {
+        "id": "L004",
+        "condition": "eyes='clear_bright' AND skin='glowing' AND lips='natural_red'",
+        "output": "Höchstes Qi. Aktuelle Erfolgsphase, alles fließt."
+      },
+      {
+        "id": "L005",
+        "condition": "all_three_courts='full_balanced' AND all_five_officials='ideal'",
+        "output": "Klassisch perfektes Gesicht. Kaiser-Karma in der Tradition."
+      }
+    ]
+  },
+  "samudrika_shastra_deep": {
+    "description": "Erweiterte vedische Deutung des Gesichts. Basiert auf Hasta Samudrika Shastra (indische Körperzeichenlehre).",
+    "the_five_body_signs_pancha_lakshana": {
+      "1_ruksha_dry": "Trockene Konstitution — Vata-dominant, sensibel, sehr kreativ, aber angespannt",
+      "2_snigdha_soft": "Weiche Konstitution — Kapha-dominant, warmherzig, wohlhabend",
+      "3_ushna_hot": "Warme Konstitution — Pitta-dominant, führungsstark, cholerisch",
+      "4_sheeta_cold": "Kühle Konstitution — mixed, distanziert, rational",
+      "5_madhya_balanced": "Ausgeglichen — ideales Tridosha"
+    },
+    "vedic_face_zones_ideal": {
+      "forehead_bhaal": {
+        "ideal": "Breit, wolkenlos, sanft leuchtend",
+        "meaning": "Gute Karma-Ernte, Bildung"
+      },
+      "brows_bhru": {
+        "ideal": "Wie Bogen des Krieger-Gottes Arjuna",
+        "meaning": "Weisheit, kämpferisches Herz"
+      },
+      "eyes_netra": {
+        "ideal": "Lotusblatt-förmig, leuchtend",
+        "meaning": "Klarheit, Wahrheit"
+      },
+      "nose_naasa": {
+        "ideal": "Wie Sesamsamenschote (gerade und würdig)",
+        "meaning": "Wohlstand"
+      },
+      "lips_oshtha": {
+        "ideal": "Wie Bimba-Frucht (voll, natürlich rot)",
+        "meaning": "Sinnliches Karma"
+      },
+      "chin_chibuka": {
+        "ideal": "Wie Kokosnuss (rund und voll)",
+        "meaning": "Familien-Wohlstand"
+      },
+      "ears_karna": {
+        "ideal": "Wie Muschel, mit Lotusknospen-förmigen Läppchen",
+        "meaning": "Weisheit, Langlebigkeit"
+      }
+    },
+    "vedic_mole_positions_extras": {
+      "on_third_eye_ajna": "Extrem spirituell begabt, oft Yogi",
+      "on_bindi_position": "Weiblich: extrem auspicious",
+      "under_left_eye": "Traurigkeit im Leben, weinen viel",
+      "on_ganesha_belly_between_brows": "Weisheit-Karma",
+      "at_shiva_third_eye": "Meditative Bestimmung"
+    },
+    "the_32_lakshanas_expanded": {
+      "note": "Erweiterte Liste — auch außerhalb des Gesichts.",
+      "royal_signs": [
+        "Löwenblick",
+        "Tiger-Gang",
+        "Schwanenhals",
+        "Elefantenlauf"
+      ],
+      "meaning": "Wer mehrere dieser Zeichen hat, gilt in Samudrika als 'raja-yogya' (königlich-berufen)."
+    }
+  },
+  "app_workflow_extended": {
+    "description": "Detaillierter App-Entwicklungs-Workflow mit konkreten Empfehlungen.",
+    "phases": {
+      "phase_1_capture": {
+        "steps": [
+          "Frontales Selfie in gutem Tageslicht (7500K)",
+          "Neutraler Ausdruck (kein Lächeln, keine Anspannung)",
+          "Gesicht komplett sichtbar (kein Bart, keine Brille wenn möglich)",
+          "Kamera auf Augenhöhe, direkt frontal"
+        ],
+        "quality_checks": [
+          "Detect blur (Laplacian Varianz > 100)",
+          "Detect lighting (Histogramm-Verteilung)",
+          "Detect face size (Gesicht > 40% des Bildes)",
+          "Detect head tilt (< 10 Grad)"
+        ]
+      },
+      "phase_2_landmarks": {
+        "recommended_tools": [
+          "MediaPipe Face Mesh (468 Landmarks, Google, Open Source)",
+          "dlib (68 Landmarks, Ovid Kazemi)",
+          "Apple ARKit Face Tracking (iOS-spezifisch)",
+          "InsightFace (SOTA, Python)",
+          "MTCNN (multi-task cascade CNN)"
+        ],
+        "key_landmark_groups": {
+          "face_contour": "17 landmarks — Konturform",
+          "eyebrows": "10 landmarks — Form, Winkel, Länge",
+          "eyes": "12 landmarks (6 per Auge) — Größe, Form, Position",
+          "nose": "9 landmarks — Wurzel, Brücke, Spitze, Flügel",
+          "mouth": "20 landmarks — Konturen, Winkel, Fülle",
+          "jaw_and_chin": "17 landmarks (Teil der Kontur) — Form, Winkel"
+        }
+      },
+      "phase_3_feature_extraction": {
+        "geometric_features": [
+          "Face aspect ratio (Länge / Breite)",
+          "Three courts ratio (obere/mittlere/untere Höhe)",
+          "Golden ratio checks (mehrere Verhältnisse)",
+          "Symmetry score (linke vs. rechte Seite)",
+          "Eye distance / eye width",
+          "Nose length / face length",
+          "Lip fullness (Ober- vs. Unterlippe)",
+          "Cheekbone prominence"
+        ],
+        "color_features": [
+          "Overall skin tone",
+          "Regional color variations (TCM zones)",
+          "Under-eye darkness score",
+          "Cheek redness score",
+          "Lip color analysis"
+        ],
+        "advanced_features": [
+          "Mole detection (Convolutional Neural Network)",
+          "Wrinkle detection (edge detection auf spezifischen Zonen)",
+          "Emotion detection (FACS-basiert, AffectNet-pretrained)",
+          "Age estimation (DEX model)",
+          "Gender detection (mit Bias-Warnung)"
+        ]
+      },
+      "phase_4_interpretation": {
+        "strategy": "Multi-Layer-Auswertung",
+        "layers": [
+          "Layer 1: Grundformen (face_shape, three_courts, five_officials)",
+          "Layer 2: Einzelmerkmale (jedes Feature einzeln)",
+          "Layer 3: Kombinationsregeln (compound rules aus Datenbank)",
+          "Layer 4: Age-spezifische Deutung (Age Map + aktuelle Zone)",
+          "Layer 5: Element-Zuordnung + Kompatibilität",
+          "Layer 6: LLM-basierte Zusammenfassung (natürliche Sprache)"
+        ]
+      },
+      "phase_5_output": {
+        "recommended_ui": [
+          "Startseite: Score-Zusammenfassung (nicht wertend, informativ)",
+          "Detail-Ansichten pro Gesichts-Zone (klickbar)",
+          "Timeline: Age Map mit aktueller Zone hervorgehoben",
+          "Kompatibilitäts-Feature (2. Person, Elemente vergleichen)",
+          "Historie: eigene Gesichter über Zeit vergleichen",
+          "Sharing: nur mit expliziter Nutzer-Erlaubnis"
+        ]
+      }
+    },
+    "tech_stack_recommendations": {
+      "mobile_native": {
+        "ios": "Swift + Vision Framework + Core ML für lokale Inferenz",
+        "android": "Kotlin + ML Kit + TensorFlow Lite für lokale Inferenz",
+        "cross_platform": "React Native oder Flutter mit ML-Bridge"
+      },
+      "backend_optional": {
+        "api": "FastAPI (Python) — nur wenn cloud-basierte Analyse gewünscht",
+        "warning": "Cloud-Verarbeitung von biometrischen Daten ist unter DSGVO problematisch — bevorzuge lokale Verarbeitung"
+      },
+      "llm_integration": {
+        "recommended": "Claude API (Anthropic) oder OpenAI für natürlichsprachliche Reports",
+        "prompt_template": "Given these physiognomy features: {features}, generate a personalized report in the style of Mian Xiang face reading."
+      }
+    },
+    "monetization_ideas": [
+      "Freemium: Grundprofil kostenlos, Detail-Reports Premium",
+      "Kompatibilitäts-Feature Premium",
+      "Historie und Vergleich über Zeit Premium",
+      "Personalisierte Meditationen und Übungen basierend auf TCM-Zonen",
+      "Kombinierte Analyse mit anderer App (Handlesen, Astrologie)",
+      "Print-Reports auf Wunsch (physisches Produkt)"
+    ]
+  },
+  "ethics_extended": {
+    "core_principle": "Physiognomik ist historisch und ethisch das heikelste aller Deutungssysteme. Eine App muss extrem sorgfältig konzipiert werden.",
+    "absolute_prohibitions": [
+      "Aussagen über Ethnie/Rasse/Herkunft aus Gesichtsmerkmalen",
+      "Kriminalitätsvorhersagen",
+      "Sexuelle Orientierung ableiten",
+      "IQ-Prognosen aus Gesichtsform",
+      "Medizinische Diagnosen (auch wenn TCM-Zonen medizinisch nutzbar sind)",
+      "Wertende Deutungen (hässlich, dumm, unattraktiv)",
+      "Analyse von Kindern (Minderjährigen) ohne besondere Vorkehrungen",
+      "Vorhersagen des Sterbedatums",
+      "Analyse ohne Einwilligung der abgebildeten Person"
+    ],
+    "recommended_disclaimers_full": {
+      "onboarding_de": "Diese App bietet Deutungen im Kontext der traditionellen Physiognomik (chinesisches Mian Xiang, indisches Samudrika Shastra, klassisches westliches Face Reading) zum Zweck der Unterhaltung und Selbstreflexion. Die Aussagen sind nicht wissenschaftlich validiert und ersetzen keine medizinische, psychologische oder juristische Beratung. Sie erlauben KEINE Rückschlüsse auf Herkunft, Ethnie, Kriminalität, sexuelle Orientierung oder Intelligenz.",
+      "before_each_reading": "Diese Analyse ist eine spielerische Interpretation traditioneller Symbolik und keine wissenschaftliche Aussage über deine Persönlichkeit oder Zukunft.",
+      "share_warning": "Möchtest du dieses Ergebnis teilen? Bedenke, dass Persönlichkeits-Deutungen sensibel sind."
+    },
+    "bias_mitigation": {
+      "training_data": "Diverse Datasets verwenden: FairFace, BFW Dataset, MORPH-II",
+      "testing": "Regelmäßig mit unterschiedlichen ethnischen Gruppen, Altersstufen, Geschlechtern testen",
+      "model_cards": "Für jedes ML-Modell dokumentieren: Trainings-Daten, bekannte Bias, Genauigkeit pro demographischer Gruppe",
+      "user_feedback": "Nutzer können Vorhersagen korrigieren und Feedback geben",
+      "audits": "Jährlicher Bias-Audit durch Dritte"
+    },
+    "gdpr_compliance": {
+      "biometric_data": "Gesichtsdaten sind gemäß Art. 9 DSGVO 'besondere Kategorie personenbezogener Daten'",
+      "consent": "Ausdrückliche, informierte Einwilligung nötig — nicht durch bloße App-Installation gegeben",
+      "purpose_limitation": "Verwendung nur für den erklärten Zweck (Unterhaltung/Selbstreflexion)",
+      "data_minimization": "Nur Feature-Vektoren speichern, keine Rohbilder",
+      "storage_limitation": "Feature-Vektoren nach 30 Tagen löschen (oder auf Wunsch)",
+      "on_device_processing": "Empfohlen: Verarbeitung ausschließlich auf dem Gerät des Nutzers"
+    },
+    "eu_ai_act_compliance": {
+      "emotion_recognition": "Fällt unter Art. 5 (Verbotene KI-Praktiken) im Kontext von Bildung und Arbeitsplatz",
+      "recommendation": "Emotion Recognition NUR im privaten Unterhaltungs-Kontext, klar gekennzeichnet",
+      "high_risk_prevention": "Keine Verwendung in HR, Kreditvergabe, Strafverfolgung"
+    },
+    "mental_health_safeguards": {
+      "depression_indicators_disclaimer": "Bei User-Analyse mit vielen 'negativen' Signalen (dunkle Ringe, herabhängende Mundwinkel, Bitterness-Linien): Klare Botschaft, dass dies traditionelle Deutungen sind. Angebot: Reflektions-Übungen statt Sorgen-Amplifikation.",
+      "crisis_hotlines": {
+        "germany": "Telefonseelsorge: 0800 111 0 111",
+        "austria": "Telefonseelsorge: 142",
+        "switzerland": "Dargebotene Hand: 143",
+        "international": "Findahelpline.com"
+      },
+      "when_to_show": "Bei Deutungen zu Depression, Isolation, Suizid-Themen IMMER Krisenhilfe-Info anbieten."
+    },
+    "cultural_sensitivity": {
+      "attribution": "Immer Herkunft der Deutungssysteme benennen (Mian Xiang aus China, Samudrika aus Indien, etc.)",
+      "no_appropriation": "Kulturelle Elemente respektvoll darstellen, keine Kommerzialisierung heiliger Symbole",
+      "swastika_handling": "Nur mit klarer historischer Einordnung darstellen — auf indische Auspicious-Bedeutung UND NS-Missbrauch hinweisen",
+      "language": "Vermeide veraltete Rassismus-belastete Terminologie (kein 'Zigeuner', keine kolonialen Begriffe)"
+    }
+  },
+  "_final_stats": {
+    "generated_at": "2026-08-27",
+    "total_top_level_keys": 24,
+    "estimated_use_cases": [
+      "Mobile App Face Reading",
+      "Web-based Personality Analysis",
+      "Coaching Tools (mit Wissenschafts-Kontext)",
+      "Kompatibilitäts-Apps",
+      "Entertainment Apps",
+      "Kombinierte Divinations-Apps (Handlesen + Physiognomik + Astrologie)"
+    ]
+  }
+}

@@ -18,7 +18,7 @@ _TOKEN_RE = re.compile(
     r"'([^']*)'"          # 1: quoted string
     r"|(\()"              # 2: lparen
     r"|(\))"              # 3: rparen
-    r"|(==|!=)"           # 4: operator
+    r"|(==|!=|=)"          # 4: operator
     r"|(\d+(?:\.\d+)?)"   # 5: number
     r"|([A-Za-z_][A-Za-z0-9_.]*)"  # 6: word (path / keyword / boolean)
 )
@@ -118,7 +118,7 @@ class _Parser:
             raise ValueError(f"Expected operator after path '{path_tok.value}'")
 
         if op_tok.type == "OP":
-            op = op_tok.value
+            op = "==" if op_tok.value == "=" else op_tok.value
             self._pos += 1
         elif op_tok.type == "CONTAINS":
             op = "contains"
