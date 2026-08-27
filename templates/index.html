@@ -168,19 +168,11 @@
     <p class="eyebrow">Regel-Engine &middot; KI-Foto-Analyse</p>
     <h1>Handlese-Konsole</h1>
     <p class="lede">Foto hochladen, Claude extrahiert die Handmerkmale, die Regel-Engine wertet sie aus. Läuft lokal auf deinem Rechner.</p>
-    <p class="notice">Diese App läuft nur lokal auf deinem Rechner. Dein API-Key wird nicht gespeichert und nur für die Dauer der Analyse verwendet. Fotos werden zur Auswertung an die Anthropic-API gesendet.</p>
+    <p class="notice">Fotos werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert.</p>
   </header>
 
   <main>
     <div class="controls">
-      <section class="panel">
-        <h2 class="group-title">Zugang</h2>
-        <div class="field">
-          <label class="field-label" for="api_key">Anthropic API-Key (optional, falls auf dem Server hinterlegt)</label>
-          <input type="password" id="api_key" placeholder="sk-ant-... (leer lassen, falls serverseitig konfiguriert)">
-        </div>
-      </section>
-
       <section class="panel">
         <h2 class="group-title">Fotos</h2>
         <div class="field">
@@ -206,7 +198,7 @@
       <section class="panel">
         <h2 class="group-title">Ergebnis</h2>
         <div id="output">
-          <p class="placeholder-text">Mindestens ein Foto hochladen, API-Key eintragen und "Analysieren" drücken.</p>
+          <p class="placeholder-text">Mindestens ein Foto hochladen und "Analysieren" drücken.</p>
         </div>
       </section>
     </div>
@@ -278,14 +270,12 @@
   document.getElementById("run").addEventListener("click", async () => {
     const button = document.getElementById("run");
     const output = document.getElementById("output");
-    const apiKey = document.getElementById("api_key").value.trim();
     const leftFile = document.getElementById("left_image").files[0];
     const rightFile = document.getElementById("right_image").files[0];
 
     if (!leftFile && !rightFile) { output.innerHTML = '<div class="error-box">Bitte mindestens ein Foto hochladen.</div>'; return; }
 
     const formData = new FormData();
-    if (apiKey) formData.append("api_key", apiKey);
     if (leftFile) formData.append("left_image", leftFile);
     if (rightFile) formData.append("right_image", rightFile);
 
