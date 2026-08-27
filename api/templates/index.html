@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handlese-Konsole — KI-Analyse</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --surface: #E7E0CE;
+    --surface-raised: #FBF8EF;
+    --surface-sunken: #DCD3B9;
+    --ink: #23202B;
+    --ink-soft: #5B5468;
+    --ink-faint: #8B8496;
+    --line: #C7BC9E;
+    --accent: #8F5F27;
+    --accent-strong: #6E4A1E;
+    --accent-soft: #E7D2AC;
+    --accent-ink: #FBF8EF;
+    --match: #4C6B57;
+    --match-soft: #DCE4DC;
+    --danger: #8C3B2E;
+    --danger-soft: #F0DCD6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  header.masthead {
+    padding: 2rem 0 1.75rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 1.75rem;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.6rem;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.9rem, 4vw + 1rem, 2.9rem);
+    margin: 0 0 0.5rem;
+  }
+  .lede { max-width: 56ch; color: var(--ink-soft); font-size: 1rem; margin: 0; }
+  .notice {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    border-radius: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--accent-strong);
+    max-width: 62ch;
+  }
+  main { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+  @media (min-width: 900px) { main { grid-template-columns: minmax(0, 22rem) 1fr; align-items: start; } }
+  section.panel {
+    background: var(--surface-raised);
+    border: 1px solid var(--line);
+    border-radius: 0.4rem;
+    padding: 1.25rem;
+  }
+  .panel + .panel { margin-top: 1.1rem; }
+  h2.group-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.9rem;
+  }
+  .field { margin-bottom: 1rem; }
+  .field:last-child { margin-bottom: 0; }
+  label.field-label { display: block; font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 0.35rem; }
+  input[type="password"], input[type="text"] {
+    width: 100%; font: inherit; font-size: 0.9rem; color: var(--ink);
+    background: var(--surface-sunken); border: 1px solid var(--line);
+    border-radius: 0.3rem; padding: 0.65rem 0.75rem; min-height: 2.6rem;
+  }
+  .upload-box {
+    border: 1px dashed var(--line);
+    border-radius: 0.35rem;
+    background: var(--surface-sunken);
+    padding: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    min-height: 8rem;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .upload-box input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .upload-box img { max-width: 100%; max-height: 9rem; border-radius: 0.25rem; }
+  .upload-box .placeholder { color: var(--ink-faint); font-size: 0.84rem; }
+  button.evaluate {
+    display: block; width: 100%; margin-top: 1.4rem; padding: 0.95rem 1rem;
+    min-height: 3rem; background: var(--accent); color: var(--accent-ink);
+    border: none; border-radius: 0.35rem; font: inherit; font-size: 1rem;
+    font-weight: 600; cursor: pointer;
+  }
+  button.evaluate:hover { background: var(--accent-strong); }
+  button.evaluate:disabled { opacity: 0.55; cursor: default; }
+  .results .summary {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--ink-faint);
+    margin: 0 0 1rem;
+  }
+  .placeholder-text { color: var(--ink-faint); font-size: 0.94rem; }
+  .error-box {
+    background: var(--danger-soft); border: 1px solid var(--danger); color: var(--danger);
+    border-radius: 0.35rem; padding: 0.85rem 1rem; font-size: 0.88rem; margin-bottom: 1rem;
+  }
+  .comparison-box {
+    background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 0.35rem;
+    padding: 0.85rem 1rem; font-size: 0.9rem; color: var(--accent-strong); margin-bottom: 1.4rem;
+  }
+  .hand-block + .hand-block { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+  .hand-title {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600;
+    font-size: 1.4rem; margin: 0 0 0.7rem;
+  }
+  .domain-block + .domain-block { margin-top: 1rem; }
+  .domain-name {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--match); margin: 0 0 0.5rem;
+  }
+  .rule-card {
+    border-left: 3px solid var(--match); background: var(--match-soft);
+    border-radius: 0 0.3rem 0.3rem 0; padding: 0.75rem 0.9rem;
+  }
+  .rule-card + .rule-card { margin-top: 0.55rem; }
+  .rule-card .rule-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--ink-faint); margin-bottom: 0.3rem; }
+  details.raw {
+    margin-top: 1rem; border-top: 1px dashed var(--line); padding-top: 0.8rem;
+  }
+  details.raw summary { cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-faint); }
+  pre.raw-json {
+    background: var(--surface-sunken); border-radius: 0.3rem; padding: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; overflow-x: auto;
+    margin-top: 0.6rem; white-space: pre-wrap; word-break: break-word;
+  }
+  .confidence-note { font-size: 0.84rem; color: var(--ink-soft); font-style: italic; margin-top: 0.6rem; }
+  .spinner {
+    display: inline-block; width: 1rem; height: 1rem; border: 2px solid var(--accent-ink);
+    border-top-color: transparent; border-radius: 50%; animation: spin 0.7s linear infinite;
+    vertical-align: -2px; margin-right: 0.5rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  footer.note {
+    margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
+    font-size: 0.78rem; color: var(--ink-faint); max-width: 62ch;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Regel-Engine &middot; KI-Foto-Analyse</p>
+    <h1>Handlese-Konsole</h1>
+    <p class="lede">Foto hochladen, Claude extrahiert die Handmerkmale, die Regel-Engine wertet sie aus. Läuft lokal auf deinem Rechner.</p>
+    <p class="notice">Diese App läuft nur lokal auf deinem Rechner. Dein API-Key wird nicht gespeichert und nur für die Dauer der Analyse verwendet. Fotos werden zur Auswertung an die Anthropic-API gesendet.</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <section class="panel">
+        <h2 class="group-title">Zugang</h2>
+        <div class="field">
+          <label class="field-label" for="api_key">Anthropic API-Key</label>
+          <input type="password" id="api_key" placeholder="sk-ant-...">
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 class="group-title">Fotos</h2>
+        <div class="field">
+          <label class="field-label">Linke Hand (passiv)</label>
+          <label class="upload-box" id="left_box">
+            <input type="file" id="left_image" accept="image/*">
+            <span class="placeholder" id="left_placeholder">Foto auswählen …</span>
+          </label>
+        </div>
+        <div class="field">
+          <label class="field-label">Rechte Hand (aktiv)</label>
+          <label class="upload-box" id="right_box">
+            <input type="file" id="right_image" accept="image/*">
+            <span class="placeholder" id="right_placeholder">Foto auswählen …</span>
+          </label>
+        </div>
+      </section>
+
+      <button class="evaluate" id="run">Analysieren</button>
+    </div>
+
+    <div class="results">
+      <section class="panel">
+        <h2 class="group-title">Ergebnis</h2>
+        <div id="output">
+          <p class="placeholder-text">Mindestens ein Foto hochladen, API-Key eintragen und "Analysieren" drücken.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="note">
+    Diese Deutungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und
+    Selbstreflexion, nicht als medizinischer, psychologischer oder finanzieller Rat.
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  function wireUpload(inputId, boxId, placeholderId) {
+    const input = document.getElementById(inputId);
+    const box = document.getElementById(boxId);
+    const placeholder = document.getElementById(placeholderId);
+    input.addEventListener("change", () => {
+      const file = input.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        placeholder.remove();
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        box.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+  wireUpload("left_image", "left_box", "left_placeholder");
+  wireUpload("right_image", "right_box", "right_placeholder");
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  function renderHand(label, data) {
+    let html = `<div class="hand-block"><h3 class="hand-title">${escapeHtml(label)}</h3>`;
+    html += `<p class="summary">${data.matches.length} von ${data.rule_count} Regeln ausgelöst</p>`;
+    if (data.matches.length === 0) {
+      html += '<p class="placeholder-text">Keine Regel hat mit den erkannten Merkmalen ausgelöst.</p>';
+    } else {
+      const byDomain = {};
+      const order = [];
+      data.matches.forEach((m) => {
+        if (!byDomain[m.domain]) { byDomain[m.domain] = []; order.push(m.domain); }
+        byDomain[m.domain].push(m);
+      });
+      order.forEach((d) => {
+        const label2 = byDomain[d][0].domain_label;
+        html += `<div class="domain-block"><h4 class="domain-name">${escapeHtml(label2)}</h4>`;
+        byDomain[d].forEach((m) => {
+          html += `<div class="rule-card"><div class="rule-id">${escapeHtml(m.id)}</div><div>${escapeHtml(m.text)}</div></div>`;
+        });
+        html += "</div>";
+      });
+    }
+    if (data.extracted && data.extracted.confidence_notes) {
+      html += `<p class="confidence-note">${escapeHtml(data.extracted.confidence_notes)}</p>`;
+    }
+    html += `<details class="raw"><summary>Rohdaten (extrahierte Merkmale)</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data.extracted, null, 2))}</pre></details>`;
+    html += "</div>";
+    return html;
+  }
+
+  document.getElementById("run").addEventListener("click", async () => {
+    const button = document.getElementById("run");
+    const output = document.getElementById("output");
+    const apiKey = document.getElementById("api_key").value.trim();
+    const leftFile = document.getElementById("left_image").files[0];
+    const rightFile = document.getElementById("right_image").files[0];
+
+    if (!apiKey) { output.innerHTML = '<div class="error-box">Bitte API-Key eintragen.</div>'; return; }
+    if (!leftFile && !rightFile) { output.innerHTML = '<div class="error-box">Bitte mindestens ein Foto hochladen.</div>'; return; }
+
+    const formData = new FormData();
+    formData.append("api_key", apiKey);
+    if (leftFile) formData.append("left_image", leftFile);
+    if (rightFile) formData.append("right_image", rightFile);
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Analysiere …';
+    output.innerHTML = '<p class="placeholder-text">Foto(s) werden an Claude gesendet und ausgewertet …</p>';
+
+    try {
+      const res = await fetch("/api/analyze", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      let html = "";
+      if (data.comparison) {
+        html += `<div class="comparison-box">${escapeHtml(data.comparison)}</div>`;
+      }
+      if (data.left) html += renderHand("Linke Hand (passiv)", data.left);
+      if (data.right) html += renderHand("Rechte Hand (aktiv)", data.right);
+      output.innerHTML = html;
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Analysieren";
+    }
+  });
+})();
+</script>
+</body>
+</html>
