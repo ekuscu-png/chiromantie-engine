@@ -150,7 +150,7 @@ def index():
 
 @app.post("/api/analyze")
 def analyze():
-    api_key = request.form.get("api_key", "").strip()
+    api_key = request.form.get("api_key", "").strip() or os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not api_key:
         return jsonify({"error": "Kein API-Key angegeben."}), 400
 

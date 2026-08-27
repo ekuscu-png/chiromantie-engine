@@ -176,8 +176,8 @@
       <section class="panel">
         <h2 class="group-title">Zugang</h2>
         <div class="field">
-          <label class="field-label" for="api_key">Anthropic API-Key</label>
-          <input type="password" id="api_key" placeholder="sk-ant-...">
+          <label class="field-label" for="api_key">Anthropic API-Key (optional, falls auf dem Server hinterlegt)</label>
+          <input type="password" id="api_key" placeholder="sk-ant-... (leer lassen, falls serverseitig konfiguriert)">
         </div>
       </section>
 
@@ -282,11 +282,10 @@
     const leftFile = document.getElementById("left_image").files[0];
     const rightFile = document.getElementById("right_image").files[0];
 
-    if (!apiKey) { output.innerHTML = '<div class="error-box">Bitte API-Key eintragen.</div>'; return; }
     if (!leftFile && !rightFile) { output.innerHTML = '<div class="error-box">Bitte mindestens ein Foto hochladen.</div>'; return; }
 
     const formData = new FormData();
-    formData.append("api_key", apiKey);
+    if (apiKey) formData.append("api_key", apiKey);
     if (leftFile) formData.append("left_image", leftFile);
     if (rightFile) formData.append("right_image", rightFile);
 
