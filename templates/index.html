@@ -170,6 +170,18 @@
   button.evaluate:disabled { opacity: 0.5; cursor: default; filter: none; box-shadow: none; }
   button.evaluate.face-btn { background: linear-gradient(180deg, var(--violet-strong), var(--violet)); color: #150E22; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(144, 120, 184, 0.55); }
 
+  .button-row { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
+  .button-row .evaluate { margin-top: 0; flex: 2; }
+  button.reset {
+    flex: 1; min-height: 3.1rem; padding: 1rem 0.5rem;
+    background: transparent; color: var(--ink-soft);
+    border: 1px solid var(--line); border-radius: 0.35rem;
+    font-family: 'Cinzel', Georgia, serif; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 600; cursor: pointer;
+  }
+  button.reset:hover { border-color: var(--gold); color: var(--gold-strong); }
+  .tab-face button.reset:hover { border-color: var(--violet); color: var(--violet-strong); }
+
   .results .summary {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-faint);
     margin: 0 0 1.1rem;
@@ -284,7 +296,10 @@
           </div>
         </section>
 
-        <button class="evaluate" id="run">Analysieren</button>
+        <div class="button-row">
+          <button class="evaluate" id="run">Analysieren</button>
+          <button class="reset" id="reset" type="button">Zurücksetzen</button>
+        </div>
       </div>
 
       <div class="results">
@@ -317,7 +332,10 @@
           </div>
         </section>
 
-        <button class="evaluate face-btn" id="run-face">Analysieren</button>
+        <div class="button-row">
+          <button class="evaluate face-btn" id="run-face">Analysieren</button>
+          <button class="reset" id="reset-face" type="button">Zurücksetzen</button>
+        </div>
       </div>
 
       <div class="results">
@@ -353,10 +371,13 @@
       if (!file) return;
       const reader = new FileReader();
       reader.onload = (e) => {
-        placeholder.remove();
-        const img = document.createElement("img");
+        placeholder.style.display = "none";
+        let img = box.querySelector("img");
+        if (!img) {
+          img = document.createElement("img");
+          box.appendChild(img);
+        }
         img.src = e.target.result;
-        box.appendChild(img);
       };
       reader.readAsDataURL(file);
     });
@@ -364,6 +385,16 @@
   wireUpload("left_image", "left_box", "left_placeholder");
   wireUpload("right_image", "right_box", "right_placeholder");
   wireUpload("face_image", "face_box", "face_placeholder");
+
+  function resetUpload(inputId, boxId, placeholderId) {
+    const input = document.getElementById(inputId);
+    const box = document.getElementById(boxId);
+    const placeholder = document.getElementById(placeholderId);
+    input.value = "";
+    const img = box.querySelector("img");
+    if (img) img.remove();
+    placeholder.style.display = "";
+  }
 
   function wireTabs() {
     const tabs = [
@@ -518,6 +549,20 @@
       button.disabled = false;
       button.textContent = "Analysieren";
     }
+  });
+
+  document.getElementById("reset").addEventListener("click", () => {
+    resetUpload("left_image", "left_box", "left_placeholder");
+    resetUpload("right_image", "right_box", "right_placeholder");
+    document.getElementById("output").innerHTML =
+      '<p class="placeholder-text">Mindestens ein Foto hochladen und „Analysieren“ drücken.</p>';
+  });
+
+  document.getElementById("reset-face").addEventListener("click", () => {
+    resetUpload("face_image", "face_box", "face_placeholder");
+    document.getElementById("face_age").value = "";
+    document.getElementById("face-output").innerHTML =
+      '<p class="placeholder-text">Foto hochladen und „Analysieren“ drücken.</p>';
   });
 })();
 </script>
