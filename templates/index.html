@@ -90,11 +90,18 @@
 
   .tabs {
     display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2.5rem;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
   }
   .tab-btn {
     font: inherit; cursor: pointer; background: none; border: none; padding: 0 0 0.9rem;
     font-family: 'Cinzel', Georgia, serif; font-size: 0.86rem; letter-spacing: 0.16em; text-transform: uppercase;
     color: var(--ink-faint); border-bottom: 1px solid transparent; position: relative;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  @media (max-width: 480px) {
+    .tabs { gap: 1.25rem; justify-content: flex-start; }
+    .tab-btn { font-size: 0.72rem; letter-spacing: 0.1em; }
+    .tab-btn .tab-sub { font-size: 0.82rem; }
   }
   .tab-btn .tab-sub {
     display: block; margin-top: 0.35rem; font-family: 'Cormorant Garamond', Georgia, serif;
@@ -314,6 +321,7 @@
       <div class="controls">
         <section class="panel">
           <h2 class="group-title">Fotos</h2>
+          <p class="field-hint" style="margin-top:-0.5rem; margin-bottom:1.15rem;">Handfläche flach und ausgestreckt, gutes Licht, kein Schmuck über den Linien. Mindestens ein Foto reicht.</p>
           <div class="field">
             <label class="field-label">Linke Hand (passiv)</label>
             <label class="upload-box" id="left_box">
@@ -352,8 +360,9 @@
       <div class="controls">
         <section class="panel">
           <h2 class="group-title">Foto</h2>
+          <p class="field-hint" style="margin-top:-0.5rem; margin-bottom:1.15rem;">Frontal in die Kamera, neutraler Ausdruck, gleichmäßiges Licht ohne starke Schatten.</p>
           <div class="field">
-            <label class="field-label">Gesicht (Frontal, neutraler Ausdruck)</label>
+            <label class="field-label">Gesicht</label>
             <label class="upload-box" id="face_box">
               <input type="file" id="face_image" accept="image/*">
               <span class="placeholder" id="face_placeholder">Foto auswählen …</span>
@@ -457,6 +466,18 @@
         img.src = e.target.result;
       };
       reader.readAsDataURL(file);
+
+      let warning = box.parentElement.querySelector(".size-warning");
+      if (file.size > 12 * 1024 * 1024) {
+        if (!warning) {
+          warning = document.createElement("p");
+          warning.className = "field-hint size-warning";
+          box.insertAdjacentElement("afterend", warning);
+        }
+        warning.textContent = "Große Datei (" + (file.size / 1024 / 1024).toFixed(1) + " MB) — der Upload kann auf mobilen Netzen etwas dauern.";
+      } else if (warning) {
+        warning.remove();
+      }
     });
   }
   wireUpload("left_image", "left_box", "left_placeholder");
@@ -471,6 +492,8 @@
     const img = box.querySelector("img");
     if (img) img.remove();
     placeholder.style.display = "";
+    const warning = box.parentElement.querySelector(".size-warning");
+    if (warning) warning.remove();
   }
 
   function wireTabs() {
@@ -490,6 +513,12 @@
     });
   }
   wireTabs();
+
+  function scrollToOutput(outputEl) {
+    if (window.matchMedia("(max-width: 899px)").matches) {
+      outputEl.closest(".panel").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -531,10 +560,11 @@
     let html = "";
 
     if (data.direct_interpretations && data.direct_interpretations.length) {
-      html += '<h3 class="section-heading">Merkmal für Merkmal</h3>';
+      html += `<details class="raw" open><summary>Merkmal für Merkmal (${data.direct_interpretations.length})</summary><div style="margin-top:0.8rem;">`;
       data.direct_interpretations.forEach((d) => {
         html += `<div class="direct-card"><div class="direct-label">${escapeHtml(d.section)}</div><div>${escapeHtml(d.text)}</div></div>`;
       });
+      html += "</div></details>";
     }
 
     html += `<p class="summary" style="margin-top:1.4rem">${data.matches.length} von ${data.rule_count} Kombinationsregeln ausgelöst</p>`;
@@ -638,6 +668,7 @@
     button.disabled = true;
     button.innerHTML = '<span class="spinner"></span>Analysiere …';
     output.innerHTML = '<p class="placeholder-text">Foto(s) werden an Claude gesendet und ausgewertet …</p>';
+    scrollToOutput(output);
 
     try {
       const res = await fetch("/api/analyze", { method: "POST", body: formData });
@@ -676,6 +707,7 @@
     button.disabled = true;
     button.innerHTML = '<span class="spinner"></span>Analysiere …';
     output.innerHTML = '<p class="placeholder-text">Foto wird an Claude gesendet und ausgewertet …</p>';
+    scrollToOutput(output);
 
     try {
       const res = await fetch("/api/analyze-face", { method: "POST", body: formData });
@@ -722,6 +754,7 @@
     button.disabled = true;
     button.innerHTML = '<span class="spinner"></span>Berechne …';
     output.innerHTML = '<p class="placeholder-text">Wird berechnet …</p>';
+    scrollToOutput(output);
 
     try {
       const res = await fetch("/api/zodiac", { method: "POST", body: formData });
