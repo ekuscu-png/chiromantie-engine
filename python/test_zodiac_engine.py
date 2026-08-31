@@ -20,15 +20,19 @@ class WesternSignForDateTests(unittest.TestCase):
         self.assertEqual(western_sign_for_date(11, 30), "sagittarius")
 
     def test_boundary_dates(self):
-        self.assertEqual(western_sign_for_date(3, 21), "aries")
-        self.assertEqual(western_sign_for_date(4, 19), "aries")
-        self.assertEqual(western_sign_for_date(4, 20), "taurus")
+        self.assertEqual(western_sign_for_date(3, 22), "aries")
+        self.assertEqual(western_sign_for_date(4, 20), "aries")
+        self.assertEqual(western_sign_for_date(4, 21), "taurus")
+
+    def test_leo_virgo_cusp_matches_the_other_common_convention(self):
+        self.assertEqual(western_sign_for_date(8, 23), "leo")
+        self.assertEqual(western_sign_for_date(8, 24), "virgo")
 
     def test_capricorn_wraps_year_boundary(self):
         self.assertEqual(western_sign_for_date(12, 25), "capricorn")
         self.assertEqual(western_sign_for_date(1, 5), "capricorn")
-        self.assertEqual(western_sign_for_date(1, 19), "capricorn")
-        self.assertEqual(western_sign_for_date(1, 20), "aquarius")
+        self.assertEqual(western_sign_for_date(1, 20), "capricorn")
+        self.assertEqual(western_sign_for_date(1, 21), "aquarius")
 
     def test_every_day_of_year_maps_to_exactly_one_sign(self):
         d = date(2023, 1, 1)
