@@ -573,6 +573,23 @@
     html += `<p class="summary">Element: ${escapeHtml(s.element)} · Qualität: ${escapeHtml(s.quality)} · Herrscherplanet: ${escapeHtml(s.ruling_planet)}</p>`;
     html += `<p style="margin:0 0 1rem;">${escapeHtml(s.personality_long)}</p>`;
 
+    html += '<h3 class="section-heading">Persönlichkeit</h3>';
+    if (s.keywords && s.keywords.length) {
+      html += `<div class="direct-card zodiac"><div class="direct-label">Schlüsselworte</div><div>${escapeHtml(s.keywords.join(", "))}</div></div>`;
+    }
+    if (s.personality_positive && s.personality_positive.length) {
+      html += `<div class="direct-card zodiac"><div class="direct-label">Stärken</div><div>${escapeHtml(s.personality_positive.join(", "))}</div></div>`;
+    }
+    if (s.personality_negative && s.personality_negative.length) {
+      html += `<div class="direct-card zodiac"><div class="direct-label">Schattenseiten</div><div>${escapeHtml(s.personality_negative.join(", "))}</div></div>`;
+    }
+    if (s.shadow_work) {
+      html += `<div class="direct-card zodiac"><div class="direct-label">Schatten-Arbeit</div><div>${escapeHtml(s.shadow_work)}</div></div>`;
+    }
+    if (s.friendship_style) {
+      html += `<div class="direct-card zodiac"><div class="direct-label">Freundschaftsstil</div><div>${escapeHtml(s.friendship_style)}</div></div>`;
+    }
+
     html += '<h3 class="section-heading">Karriere</h3>';
     html += `<div class="direct-card zodiac"><div class="direct-label">Berufe</div><div>${escapeHtml((s.career_matches || []).join(", "))}</div></div>`;
     if (data.career) {
