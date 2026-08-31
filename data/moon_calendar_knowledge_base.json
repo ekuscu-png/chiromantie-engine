@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "language": "de",
+    "description": "Master-Wissensdatenbank für Mondkalender-App. Umfasst 8 Mondphasen, Mond in 12 Zeichen, tägliche Praxis-Empfehlungen (Haare, Pflanzen, Fasten, OPs), Vollmond/Neumond-Rituale.",
+    "disclaimer": "Mondkalender-Empfehlungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und als Anleitung zu bewusster Lebensführung."
+  },
+  "moon_phases_8": {
+    "description": "Der Mond durchläuft in ~29,5 Tagen 8 Phasen. Jede Phase hat eine eigene Energie und optimale Aktivitäten.",
+    "cycle_duration": "29,5 Tage synodischer Monat",
+    "phases": {
+      "new_moon": {
+        "name_de": "Neumond",
+        "illumination": "0%",
+        "duration": "~1 Tag",
+        "energy": "Beginn, Samen, Absicht",
+        "keywords": [
+          "Neuanfang",
+          "Intention",
+          "Innen-Schau",
+          "Samen pflanzen"
+        ],
+        "meaning_long": "Der Neumond ist der Beginn eines neuen Zyklus. Die Nacht ist dunkelste — der Mond nicht sichtbar. Das ist die Zeit für Intention, Samen pflanzen, Neuanfänge. Was du in dieser Phase beginnst, wächst über die nächsten 14 Tage.",
+        "recommended_activities": [
+          "Meditation",
+          "Ziele setzen",
+          "Journal schreiben",
+          "Rituale für Neuanfang",
+          "Fasten (leicht)"
+        ],
+        "avoid": [
+          "Große Entscheidungen (Energie noch niedrig)",
+          "Aggressive Handlungen",
+          "Wichtige Meetings"
+        ],
+        "practical_tips": {
+          "hair": "Nicht schneiden (wächst langsam)",
+          "plants": "Perfekt zum Aussaat der Samen — sie wurzeln tief",
+          "fasting": "Ideal für 1-Tages-Fasten oder Detox-Beginn",
+          "surgery": "Nur wenn dringend nötig — Heilung dauert länger",
+          "cleaning": "Detox-Cleaning, ausmisten"
+        },
+        "rituals": [
+          "Neumond-Intention schreiben",
+          "Kerze anzünden mit Wunsch",
+          "Meditation über neue Phase"
+        ]
+      },
+      "waxing_crescent": {
+        "name_de": "Zunehmende Sichel",
+        "illumination": "1-49%",
+        "duration": "~7 Tage",
+        "energy": "Wachstum, Aufbau, erste Schritte",
+        "keywords": [
+          "Aufbauen",
+          "Erste Aktionen",
+          "Vision folgen"
+        ],
+        "meaning_long": "Der Mond wächst. Deine Intentionen vom Neumond beginnen sich zu manifestieren. Zeit für konkrete erste Schritte. Aktion in Richtung Ziel.",
+        "recommended_activities": [
+          "Projekt-Start",
+          "Neue Gewohnheiten etablieren",
+          "Sport beginnen",
+          "Lernen"
+        ],
+        "avoid": [
+          "Zögern, Aufschieben",
+          "Zurück zu alten Mustern"
+        ],
+        "practical_tips": {
+          "hair": "Wächst schneller — jetzt schneiden für starkes Wachstum",
+          "plants": "Blattpflanzen setzen — sie werden üppig",
+          "fasting": "Aufbau-Ernährung, nährstoffreich essen",
+          "surgery": "Kleinere Eingriffe möglich"
+        }
+      },
+      "first_quarter": {
+        "name_de": "Erstes Viertel (Halbmond zunehmend)",
+        "illumination": "50%",
+        "duration": "~1 Tag",
+        "energy": "Aktion, Entscheidung, Herausforderung",
+        "keywords": [
+          "Entscheiden",
+          "Handeln",
+          "Widerstände überwinden"
+        ],
+        "meaning_long": "Halbmond. Widerstände auf dem Weg zeigen sich. Zeit, entschieden zu handeln und Herausforderungen zu meistern.",
+        "recommended_activities": [
+          "Entscheidungen treffen",
+          "Aktion trotz Widerstand",
+          "Verhandlungen"
+        ],
+        "avoid": [
+          "Aufgeben bei ersten Hindernissen"
+        ]
+      },
+      "waxing_gibbous": {
+        "name_de": "Zunehmender Mond (fast voll)",
+        "illumination": "51-99%",
+        "duration": "~7 Tage",
+        "energy": "Verfeinerung, Analyse, Vorbereitung",
+        "keywords": [
+          "Verfeinern",
+          "Anpassen",
+          "Details"
+        ],
+        "meaning_long": "Der Mond wächst zur Fülle. Zeit, deine Manifestationen zu verfeinern. Details anpassen. Auf den Höhepunkt vorbereiten.",
+        "recommended_activities": [
+          "Verfeinern von Projekten",
+          "Feedback einholen",
+          "Detaillierte Planung"
+        ],
+        "practical_tips": {
+          "hair": "Jetzt schneiden für maximales Wachstum",
+          "plants": "Frucht- und Blütenpflanzen bevorzugen"
+        }
+      },
+      "full_moon": {
+        "name_de": "Vollmond",
+        "illumination": "100%",
+        "duration": "~1 Tag",
+        "energy": "Höhepunkt, Enthüllung, Manifestation",
+        "keywords": [
+          "Vollendung",
+          "Enthüllung",
+          "Emotion",
+          "Feier"
+        ],
+        "meaning_long": "Der Mond ist voll. Alles wird sichtbar. Emotionen kochen hoch. Manifestationen zeigen sich. Klassisch bekannt für unruhige Nächte, intensive Träume, emotionale Klarheit — oder Chaos. Kraftvollste Mondphase.",
+        "recommended_activities": [
+          "Rituale, Meditationen",
+          "Feier von Erfolgen",
+          "Enthüllung/Klarheit suchen",
+          "Karten legen (verstärkte Intuition)"
+        ],
+        "avoid": [
+          "Große OPs (mehr Blutungsrisiko traditionell)",
+          "Impulsive Entscheidungen",
+          "Streit-Themen"
+        ],
+        "practical_tips": {
+          "hair": "NICHT schneiden — traditionell schlecht für Wachstum",
+          "plants": "Beobachten, nicht schneiden",
+          "fasting": "Vollmond-Fasten sehr wirkungsvoll (1 Tag)",
+          "surgery": "Vermeiden wenn möglich",
+          "sleep": "Oft gestört — Schlafhygiene wichtig",
+          "water": "Extra viel trinken",
+          "crystals": "Kristalle laden im Vollmond-Licht"
+        },
+        "rituals": [
+          "Loslass-Ritual (was gehen soll aufschreiben und verbrennen)",
+          "Dankbarkeit-Ritual",
+          "Vollmond-Bad mit Salz",
+          "Kristalle laden",
+          "Wasser im Mondschein laden ('Moon Water')"
+        ]
+      },
+      "waning_gibbous": {
+        "name_de": "Abnehmender Mond (nach Vollmond)",
+        "illumination": "99-51%",
+        "duration": "~7 Tage",
+        "energy": "Dankbarkeit, Teilen, Weitergeben",
+        "keywords": [
+          "Ernten",
+          "Teilen",
+          "Lehren"
+        ],
+        "meaning_long": "Der Mond nimmt ab. Zeit, das Geerntete zu teilen. Wissen weiterzugeben. Dankbarkeit leben.",
+        "recommended_activities": [
+          "Wissen teilen",
+          "Lehren",
+          "Dankbarkeit ausdrücken",
+          "Kritischer Rückblick"
+        ],
+        "practical_tips": {
+          "hair": "Jetzt schneiden für weniger Wachstum",
+          "plants": "Wurzelpflanzen ernten — sie sind kräftiger",
+          "cleaning": "Große Reinigung — Schmutz löst sich leichter",
+          "detox": "Körper-Detox effektiver"
+        }
+      },
+      "last_quarter": {
+        "name_de": "Letztes Viertel (Halbmond abnehmend)",
+        "illumination": "50%",
+        "duration": "~1 Tag",
+        "energy": "Revision, Loslassen, Reinigung",
+        "keywords": [
+          "Loslassen",
+          "Revision",
+          "Reinigen"
+        ],
+        "meaning_long": "Halbmond abnehmend. Zeit, das was nicht mehr dient loszulassen. Revision der letzten 2 Wochen. Reinigung.",
+        "recommended_activities": [
+          "Ausmisten",
+          "Beziehungen klären",
+          "Detox",
+          "Vergebung"
+        ]
+      },
+      "waning_crescent": {
+        "name_de": "Abnehmende Sichel (Balsamischer Mond)",
+        "illumination": "49-1%",
+        "duration": "~7 Tage",
+        "energy": "Rückzug, Rest, Übergang",
+        "keywords": [
+          "Ruhe",
+          "Meditation",
+          "Übergang"
+        ],
+        "meaning_long": "Der Mond fast weg. Zeit für Rückzug, Rest, Meditation. Übergang zum neuen Zyklus. Reflektion.",
+        "recommended_activities": [
+          "Meditation",
+          "Ruhezeit",
+          "Meilensteine reflektieren",
+          "Vorbereitung für neuen Zyklus"
+        ],
+        "avoid": [
+          "Neue Projekte starten",
+          "Große Anstrengungen"
+        ],
+        "practical_tips": {
+          "hair": "Nicht schneiden",
+          "fasting": "Ideal für Fasten und Detox",
+          "sleep": "Extra Schlaf, Ruhe",
+          "surgery": "Vermeiden — Heilung schwer"
+        }
+      }
+    }
+  },
+  "moon_in_zodiac_signs": {
+    "description": "Der Mond wandert alle ~2,5 Tage in ein neues Sternzeichen. Das Mondzeichen prägt die tägliche Energie.",
+    "cycle": "~2,5 Tage pro Zeichen, ~28 Tage kompletter Zyklus",
+    "signs": {
+      "aries": {
+        "energy": "Feurig, aktiv, impulsiv, sportlich",
+        "body_parts_influenced": "Kopf, Gehirn, Augen",
+        "good_for": [
+          "Sport, körperliche Aktivität",
+          "Neuanfänge",
+          "Mutige Aktionen",
+          "Kurze intensive Projekte"
+        ],
+        "avoid": [
+          "Kopf-OPs",
+          "Feine Detailarbeit",
+          "Diplomatie erforderlich"
+        ],
+        "hair": "Wächst schnell und stark",
+        "plants": "Nichts schneiden bei Kopfsalat, Blätterpflanzen — sie schießen zu schnell in die Höhe"
+      },
+      "taurus": {
+        "energy": "Erdig, sinnlich, langsam, genussvoll",
+        "body_parts_influenced": "Hals, Nacken, Schilddrüse, Stimme",
+        "good_for": [
+          "Genuss",
+          "Kochen",
+          "Sinnliches",
+          "Beständigkeit",
+          "Finanzen"
+        ],
+        "avoid": [
+          "Hals-OPs",
+          "Stimmbelastung",
+          "Diäten (schwer durchzuhalten)"
+        ],
+        "hair": "Wächst kräftig, ideal für Färbung",
+        "plants": "Wurzelpflanzen pflegen — sie werden kräftig"
+      },
+      "gemini": {
+        "energy": "Kommunikativ, sprunghaft, sozial",
+        "body_parts_influenced": "Lunge, Arme, Hände, Nerven",
+        "good_for": [
+          "Kommunikation",
+          "Lernen",
+          "Schreiben",
+          "Networking",
+          "Reisen"
+        ],
+        "avoid": [
+          "Lungen-OPs",
+          "Handverletzungen riskante Arbeit",
+          "Alleinsein"
+        ],
+        "hair": "Wächst durchschnittlich",
+        "plants": "Kräuter setzen — sie gedeihen unter Zwilling-Mond"
+      },
+      "cancer": {
+        "energy": "Emotional, fürsorglich, häuslich, sensibel",
+        "body_parts_influenced": "Brust, Magen, Verdauung",
+        "good_for": [
+          "Familie",
+          "Zuhause",
+          "Kochen",
+          "Emotionale Gespräche"
+        ],
+        "avoid": [
+          "Brust/Bauch-OPs",
+          "Konflikte (zu emotional)",
+          "Öffentliche Auftritte"
+        ],
+        "hair": "Kräftiges Wachstum",
+        "plants": "Wassernahe Pflanzen — sehr fruchtbarer Mond"
+      },
+      "leo": {
+        "energy": "Feurig, dramatisch, führend, kreativ",
+        "body_parts_influenced": "Herz, Wirbelsäule, Rücken",
+        "good_for": [
+          "Auftritte",
+          "Kreatives",
+          "Führung zeigen",
+          "Feiern"
+        ],
+        "avoid": [
+          "Herz-OPs",
+          "Rücken-Belastung",
+          "Ego-Verletzungen"
+        ],
+        "hair": "Wächst stark, ideal für Farbwechsel",
+        "plants": "Blütenpflanzen — sie zeigen sich"
+      },
+      "virgo": {
+        "energy": "Analytisch, präzise, dienend, akribisch",
+        "body_parts_influenced": "Verdauung, Darm, Milz",
+        "good_for": [
+          "Analyse",
+          "Aufräumen",
+          "Detail-Arbeit",
+          "Diät starten",
+          "Gesundheits-Check"
+        ],
+        "avoid": [
+          "Darm-OPs",
+          "Große Feiern"
+        ],
+        "hair": "Wächst schnell",
+        "plants": "Ernten — Ernte hält lange",
+        "cleaning": "Perfekt für Detox und Reinigung"
+      },
+      "libra": {
+        "energy": "Harmonisch, ästhetisch, sozial, ausgleichend",
+        "body_parts_influenced": "Nieren, Blase, untere Wirbelsäule",
+        "good_for": [
+          "Kunst",
+          "Beziehungs-Gespräche",
+          "Ästhetik",
+          "Verhandlungen"
+        ],
+        "avoid": [
+          "Nieren-OPs",
+          "Entscheidungen (schwer)"
+        ],
+        "hair": "Wächst schön, ideal für Frisur ändern",
+        "plants": "Zierpflanzen, Blüten"
+      },
+      "scorpio": {
+        "energy": "Intensiv, tief, transformativ, geheimnisvoll",
+        "body_parts_influenced": "Fortpflanzungsorgane, Blase",
+        "good_for": [
+          "Tiefen-Arbeit",
+          "Schattenarbeit",
+          "Sex",
+          "Investigation"
+        ],
+        "avoid": [
+          "Unterleib-OPs",
+          "Oberflächliches"
+        ],
+        "hair": "Wächst kräftig und dunkel",
+        "plants": "Transformative Kräuter, Detox-Pflanzen"
+      },
+      "sagittarius": {
+        "energy": "Weit, philosophisch, abenteuerlich, optimistisch",
+        "body_parts_influenced": "Hüfte, Oberschenkel, Leber",
+        "good_for": [
+          "Reisen",
+          "Bildung",
+          "Philosophie",
+          "Sport"
+        ],
+        "avoid": [
+          "Hüft-OPs",
+          "Leber-Belastung (Alkohol)"
+        ],
+        "hair": "Wächst schnell",
+        "plants": "Ausdehnende Pflanzen, Kletterpflanzen"
+      },
+      "capricorn": {
+        "energy": "Diszipliniert, strukturiert, verantwortungsvoll",
+        "body_parts_influenced": "Knochen, Gelenke, Zähne, Haut, Knie",
+        "good_for": [
+          "Arbeit",
+          "Karriere",
+          "Struktur",
+          "Langfrist-Planung",
+          "Zähne (Dentist)"
+        ],
+        "avoid": [
+          "Knochen-OPs",
+          "Sturz-Riskio",
+          "Übertreibung der Arbeit"
+        ],
+        "hair": "Wächst langsam aber gesund",
+        "plants": "Wurzelpflanzen"
+      },
+      "aquarius": {
+        "energy": "Innovativ, freidenkend, sozial-visionär",
+        "body_parts_influenced": "Waden, Knöchel, Kreislauf",
+        "good_for": [
+          "Innovation",
+          "Technologie",
+          "Gruppen-Arbeit",
+          "Netzwerke"
+        ],
+        "avoid": [
+          "Kreislauf-OPs",
+          "Konformität"
+        ],
+        "hair": "Wächst überraschend",
+        "plants": "Exotische, ungewöhnliche Pflanzen"
+      },
+      "pisces": {
+        "energy": "Sensitiv, spirituell, träumerisch",
+        "body_parts_influenced": "Füße, Lymphsystem, Immunsystem",
+        "good_for": [
+          "Meditation",
+          "Kunst",
+          "Musik",
+          "Träumen",
+          "Schwimmen"
+        ],
+        "avoid": [
+          "Fuß-OPs",
+          "Alkohol/Drogen",
+          "Aggressive Umgebungen"
+        ],
+        "hair": "Wächst langsam, feuchtigkeitsempfindlich",
+        "plants": "Wassernahe Pflanzen, sehr fruchtbar"
+      }
+    }
+  },
+  "fertility_moon_signs": {
+    "description": "Traditionell werden Mondzeichen nach Fruchtbarkeit für Pflanzen kategorisiert.",
+    "very_fertile": [
+      "cancer",
+      "scorpio",
+      "pisces"
+    ],
+    "fertile": [
+      "taurus",
+      "capricorn"
+    ],
+    "average": [
+      "gemini",
+      "libra",
+      "sagittarius",
+      "aquarius"
+    ],
+    "barren": [
+      "aries",
+      "leo",
+      "virgo"
+    ],
+    "usage": "Fruchtbare Mondzeichen für Aussaat und Pflanzen. Unfruchtbare für Unkraut jäten und Ernte."
+  },
+  "practical_daily_guide": {
+    "hair_cutting": {
+      "for_growth": [
+        "waxing_gibbous in leo",
+        "waxing_gibbous in virgo",
+        "waxing_gibbous in capricorn"
+      ],
+      "for_slower_growth": [
+        "waning_moon in cancer",
+        "waning_moon in scorpio"
+      ],
+      "avoid": [
+        "Vollmond",
+        "Neumond"
+      ]
+    },
+    "planting": {
+      "root_vegetables": "Zunehmend im Steinbock",
+      "leaf_vegetables": "Zunehmend im Krebs, Skorpion oder Fischen",
+      "flowering_plants": "Zunehmend im Löwen oder Widder (aber vorsichtig)",
+      "harvesting": "Abnehmend im Steinbock (Wurzelgemüse), Jungfrau (Getreide)"
+    },
+    "surgery_general": {
+      "avoid": "Vollmond, Neumond, sowie das Zeichen, in dem der zu operierende Körperteil liegt",
+      "example": "Nierensteine nicht bei Waage-Mond (Nieren)",
+      "best_phases": "Abnehmender Mond zwischen Vollmond und Neumond"
+    },
+    "fasting_detox": {
+      "start": "Vollmond (Höhepunkt der Energie) oder abnehmender Mond",
+      "end": "Neumond (natürlicher Zyklus-Ende)",
+      "duration": "3, 7, 14 oder 21 Tage traditionell"
+    },
+    "cleaning_house": {
+      "best": "Abnehmender Mond in Jungfrau (Details) oder Skorpion (Detox)",
+      "avoid": "Zunehmender Mond (Schmutz kommt schnell wieder)"
+    },
+    "signing_contracts": {
+      "best": "Zunehmender Mond, nicht Vollmond, nicht Neumond, nicht Merkur retrograd",
+      "avoid": "Vollmond (zu emotional), Merkur retrograd"
+    }
+  },
+  "special_events": {
+    "supermoon": {
+      "description": "Vollmond mit besonders naher Erd-Position. Wirkung verstärkt.",
+      "frequency": "3-4 mal pro Jahr",
+      "recommended": "Rituale sehr kraftvoll, aber auch: emotional intensiver"
+    },
+    "blue_moon": {
+      "description": "Zweiter Vollmond in einem Kalendermonat (~alle 2,5 Jahre).",
+      "meaning": "Traditionell besondere Kraft für seltene Wünsche und tiefe Manifestation"
+    },
+    "eclipse_solar": {
+      "description": "Sonnenfinsternis — Neumond mit besonderer Kraft.",
+      "energy": "Große Neuanfänge, radikale Veränderungen initiiert",
+      "advice": "6 Wochen davor bis 6 Wochen danach als Umbruchsphase"
+    },
+    "eclipse_lunar": {
+      "description": "Mondfinsternis — Vollmond mit besonderer Kraft.",
+      "energy": "Große Enthüllungen, dramatische Enden",
+      "advice": "Emotional intensiv, aber transformativ"
+    },
+    "void_of_course_moon": {
+      "description": "Mond zwischen zwei Zeichen, keine Aspekte macht.",
+      "duration": "Wenige Stunden bis 1-2 Tage",
+      "energy": "Nichts wichtiges beginnen — Pläne führen ins Leere",
+      "usage": "Perfekt für Ruhe, Meditation, Reflexion"
+    }
+  },
+  "rituals_by_phase": {
+    "new_moon_intention_ritual": {
+      "materials": [
+        "Papier",
+        "Stift",
+        "weiße Kerze",
+        "ruhiger Ort"
+      ],
+      "steps": [
+        "1. Reinigen: Raum mit Salbei oder Palo Santo räuchern",
+        "2. Kerze anzünden",
+        "3. 3-6 Absichten für die kommenden 28 Tage aufschreiben",
+        "4. Jeden laut aussprechen",
+        "5. Papier unter Kerze oder Altar legen",
+        "6. Meditation über die Absichten"
+      ]
+    },
+    "full_moon_release_ritual": {
+      "materials": [
+        "Papier",
+        "Stift",
+        "Feuerfeste Schale",
+        "Feuerzeug"
+      ],
+      "steps": [
+        "1. Was möchtest du loslassen? Aufschreiben",
+        "2. Laut aussprechen: 'Ich lasse los...'",
+        "3. Papier verbrennen (sicher!)",
+        "4. Asche in Erde geben oder Wind übergeben",
+        "5. Dankbarkeit ausdrücken"
+      ]
+    },
+    "moon_water_ritual": {
+      "description": "Wasser im Vollmond-Licht laden",
+      "steps": [
+        "1. Klares Wasser in Glasgefäß",
+        "2. Über Nacht im Vollmond-Licht draußen (oder am Fenster)",
+        "3. Am Morgen geladenes Wasser trinken oder für Rituale nutzen"
+      ]
+    }
+  },
+  "app_workflow": {
+    "input_needed": [
+      "Aktuelles Datum + Zeit",
+      "Ort (für Zeitzone)"
+    ],
+    "computations": {
+      "moon_phase": "Berechnung basierend auf synodischem Zyklus (29,53 Tage)",
+      "moon_sign": "Ephemeriden-Berechnung (nutze Swisseph oder ähnlich)",
+      "next_full_moon": "Aus aktueller Phase extrapoliert",
+      "next_new_moon": "Aus aktueller Phase extrapoliert"
+    },
+    "features_recommended": [
+      "Tägliche Push-Notification mit Mondphase + Empfehlung",
+      "Interaktiver Mond-Kalender (Kalender-Ansicht)",
+      "Ritual-Assistent (Neumond/Vollmond)",
+      "Tagesempfehlung basierend auf Mondzeichen (Haare, Pflanzen, OPs)",
+      "Journal-Feature für Mond-Beobachtungen",
+      "Mondphasen-Widget für Home-Screen",
+      "Integration mit Zyklustracking (bei weiblichen Nutzerinnen)"
+    ],
+    "code_example_javascript": "function getMoonPhase(date) { const known_new_moon = new Date('2000-01-06T18:14:00Z'); const cycle = 29.53058867; const days_since = (date - known_new_moon) / (1000*60*60*24); const phase = (days_since % cycle) / cycle; if (phase < 0.03 || phase > 0.97) return 'new_moon'; if (phase < 0.22) return 'waxing_crescent'; if (phase < 0.28) return 'first_quarter'; if (phase < 0.47) return 'waxing_gibbous'; if (phase < 0.53) return 'full_moon'; if (phase < 0.72) return 'waning_gibbous'; if (phase < 0.78) return 'last_quarter'; return 'waning_crescent'; }"
+  },
+  "ethics": {
+    "disclaimer": "Mondkalender-Empfehlungen sind traditionell und wissenschaftlich nicht validiert. Sie ersetzen keine medizinische Beratung. OP-Termine sollten nach medizinischer, nicht astrologischer Notwendigkeit gewählt werden.",
+    "avoid": [
+      "Ablehnung notwendiger medizinischer Behandlungen wegen Mondstand",
+      "Emotionale Entscheidungen auf Vollmond schieben"
+    ]
+  }
+}

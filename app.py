@@ -26,6 +26,9 @@ from chiro_engine.physiognomy_engine import (
     load_compound_rules,
 )
 from chiro_engine.zodiac_engine import build_zodiac_report, compatibility_report, western_sign_for_date
+from chiro_engine.moon_engine import build_moon_report
+from chiro_engine.tarot_engine import draw_spread
+from chiro_engine.numerology_engine import build_numerology_report, numerology_compatibility
 
 BASE_DIR = Path(__file__).resolve().parent
 KB_PATH = BASE_DIR / "data" / "knowledge_base.json"
@@ -41,6 +44,15 @@ PHYSIOGNOMY_ENGINE = RuleEngine(PHYSIOGNOMY_RULES, PHYSIOGNOMY_KB["meta"]["weigh
 
 ZODIAC_KB_PATH = BASE_DIR / "data" / "zodiac_knowledge_base.json"
 ZODIAC_KB = json.loads(ZODIAC_KB_PATH.read_text(encoding="utf-8"))
+
+MOON_KB_PATH = BASE_DIR / "data" / "moon_calendar_knowledge_base.json"
+MOON_KB = json.loads(MOON_KB_PATH.read_text(encoding="utf-8"))
+
+TAROT_KB_PATH = BASE_DIR / "data" / "tarot_knowledge_base.json"
+TAROT_KB = json.loads(TAROT_KB_PATH.read_text(encoding="utf-8"))
+
+NUMEROLOGY_KB_PATH = BASE_DIR / "data" / "numerology_knowledge_base.json"
+NUMEROLOGY_KB = json.loads(NUMEROLOGY_KB_PATH.read_text(encoding="utf-8"))
 
 DOMAIN_LABELS = {
     "personality": "Persönlichkeit",
@@ -596,6 +608,60 @@ def zodiac():
         report["partner_sign"] = partner_sign
         report["partner_sign_name"] = ZODIAC_KB["western_zodiac_signs"][partner_sign]["name_de"]
         report["compatibility"] = compatibility_report(report["sign"], partner_sign, ZODIAC_KB)
+
+    return jsonify(report)
+
+
+@app.post("/api/moon")
+def moon():
+    date_raw = request.form.get("date", "").strip()
+    target_date = date.today()
+    if date_raw:
+        try:
+            target_date = date.fromisoformat(date_raw)
+        except ValueError:
+            return jsonify({"error": "Ungueltiges Datum."}), 400
+
+    return jsonify(build_moon_report(target_date, MOON_KB))
+
+
+@app.post("/api/tarot")
+def tarot():
+    spread = request.form.get("spread", "daily_card").strip()
+    result = draw_spread(spread, TAROT_KB)
+    if result is None:
+        return jsonify({"error": "Unbekannte Legung."}), 400
+    return jsonify(result)
+
+
+@app.post("/api/numerology")
+def numerology():
+    name = request.form.get("name", "").strip()
+    if not name:
+        return jsonify({"error": "Bitte einen vollen Namen angeben."}), 400
+
+    birth_raw = request.form.get("birth_date", "").strip()
+    if not birth_raw:
+        return jsonify({"error": "Bitte ein Geburtsdatum angeben."}), 400
+    try:
+        birth_date = date.fromisoformat(birth_raw)
+    except ValueError:
+        return jsonify({"error": "Ungueltiges Geburtsdatum."}), 400
+
+    report = build_numerology_report(name, birth_date, NUMEROLOGY_KB)
+
+    partner_name = request.form.get("partner_name", "").strip()
+    partner_birth_raw = request.form.get("partner_birth_date", "").strip()
+    if partner_name and partner_birth_raw:
+        try:
+            partner_birth_date = date.fromisoformat(partner_birth_raw)
+        except ValueError:
+            return jsonify({"error": "Ungueltiges Geburtsdatum der Partnerin/des Partners."}), 400
+        partner_report = build_numerology_report(partner_name, partner_birth_date, NUMEROLOGY_KB)
+        report["partner_life_path"] = partner_report["life_path"]["number"]
+        report["compatibility"] = numerology_compatibility(
+            report["life_path"]["number"], partner_report["life_path"]["number"], NUMEROLOGY_KB
+        )
 
     return jsonify(report)
 

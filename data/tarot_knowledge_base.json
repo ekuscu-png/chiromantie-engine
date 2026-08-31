@@ -1,0 +1,1542 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "language": "de",
+    "description": "Master-Wissensdatenbank für Tarot mit allen 78 Karten (22 Große Arkana + 56 Kleine Arkana), Legesystemen und Deutungsregeln.",
+    "total_cards": 78,
+    "major_arcana": 22,
+    "minor_arcana": 56,
+    "suits": 4,
+    "cards_per_suit": 14,
+    "disclaimer": "Tarot-Deutungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion."
+  },
+  "system_basics": {
+    "history": "Tarot entstand im 15. Jahrhundert in Italien als Kartenspiel (Tarocchi). Ab dem 18. Jahrhundert wurde es zu Divinationszwecken genutzt. Das heute populärste Deck ist das Rider-Waite-Smith (1909).",
+    "structure": {
+      "major_arcana": "22 Karten (0-21), zeigen große Lebensthemen und archetypische Kräfte",
+      "minor_arcana": "56 Karten in 4 Farben (Stäbe, Kelche, Schwerter, Münzen) zu je 14 Karten (Ass, 2-10, Page, Ritter, Königin, König)"
+    },
+    "suits": {
+      "wands_staebe": {
+        "element": "Feuer",
+        "domain": "Kreativität, Leidenschaft, Aktion, Willen",
+        "keywords": [
+          "Kreativität",
+          "Passion",
+          "Karriere-Beginn"
+        ]
+      },
+      "cups_kelche": {
+        "element": "Wasser",
+        "domain": "Emotionen, Liebe, Beziehungen, Intuition",
+        "keywords": [
+          "Gefühle",
+          "Liebe",
+          "Beziehungen"
+        ]
+      },
+      "swords_schwerter": {
+        "element": "Luft",
+        "domain": "Gedanken, Kommunikation, Konflikte, Wahrheit",
+        "keywords": [
+          "Gedanken",
+          "Konflikte",
+          "Klarheit"
+        ]
+      },
+      "pentacles_muenzen": {
+        "element": "Erde",
+        "domain": "Geld, Materie, Karriere, Gesundheit",
+        "keywords": [
+          "Geld",
+          "Karriere",
+          "Materielles"
+        ]
+      }
+    },
+    "court_cards": {
+      "page_bube": "Botschaft, Anfänger, Kind, Neuigkeit",
+      "knight_ritter": "Aktion, Bewegung, Ungestüm, junger Erwachsener",
+      "queen_koenigin": "Reife, Empfangen, weibliche Meisterin",
+      "king_koenig": "Autorität, Meisterschaft, männliche Autorität"
+    }
+  },
+  "major_arcana": {
+    "0_fool": {
+      "name_de": "Der Narr",
+      "name_en": "The Fool",
+      "number": 0,
+      "element": "Luft",
+      "planet": "Uranus",
+      "astrology": "Alle Elemente",
+      "keywords_upright": [
+        "Neuanfang",
+        "Naivität",
+        "Sprung ins Unbekannte",
+        "Freiheit",
+        "Vertrauen"
+      ],
+      "keywords_reversed": [
+        "Naivität negativ",
+        "Leichtsinn",
+        "Verantwortungslosigkeit",
+        "gescheiterter Start"
+      ],
+      "meaning_upright": "Der Narr ist der Anfang der Reise. Er zeigt einen mutigen Sprung ins Unbekannte, eine neue Phase, unschuldige Offenheit. Vertraue dem Universum. Sei mutig genug für Neuanfang, auch wenn du nicht weißt wohin.",
+      "meaning_reversed": "Warnung vor Leichtsinn, schlechten Entscheidungen aus Naivität, Verantwortungslosigkeit. Nicht jeder Sprung führt zum Ziel — manchmal ist Vorsicht angebracht.",
+      "love": "Aufrichtig, Neuanfang in der Liebe, spontane Verliebtheit — oder naiv-blauäugig verliebt.",
+      "career": "Neue berufliche Phase, mutige Entscheidung. Auch: Job wechseln ohne Plan.",
+      "health": "Neue Gesundheitsroutine, spontane Aktivität, aber auch: Vernachlässigung.",
+      "spiritual": "Beginn der spirituellen Reise, die 'Heldenreise' beginnt."
+    },
+    "1_magician": {
+      "name_de": "Der Magier",
+      "name_en": "The Magician",
+      "number": 1,
+      "element": "Luft",
+      "planet": "Merkur",
+      "keywords_upright": [
+        "Manifestation",
+        "Handlungskraft",
+        "Willenskraft",
+        "Ressourcen nutzen",
+        "Fokus"
+      ],
+      "keywords_reversed": [
+        "Manipulation",
+        "vergeudetes Talent",
+        "Selbsttäuschung",
+        "unrealisierte Vision"
+      ],
+      "meaning_upright": "Du hast alle Ressourcen, die du brauchst. Der Magier zeigt bewusste Manifestation — du kannst gestalten, was du willst. Nutze deine Talente, fokussiere deine Energie. Wille + Fähigkeit = Erfolg.",
+      "meaning_reversed": "Talente werden verschwendet oder missbraucht. Manipulation zeigt sich. Warnung vor Selbsttäuschung — du glaubst zu manifestieren, während du dich täuschst.",
+      "love": "Bewusste Wahl in der Liebe, Anziehung durch Fokus. Charmeur/in mit Kalkül.",
+      "career": "Manifestation der Karriere-Ziele, alle Werkzeuge sind da.",
+      "health": "Aktive Selbstheilung, Verantwortung übernehmen.",
+      "spiritual": "Bewusste Nutzung spiritueller Werkzeuge."
+    },
+    "2_high_priestess": {
+      "name_de": "Die Hohepriesterin",
+      "name_en": "The High Priestess",
+      "number": 2,
+      "element": "Wasser",
+      "planet": "Mond",
+      "keywords_upright": [
+        "Intuition",
+        "Geheimnis",
+        "innere Weisheit",
+        "Unterbewusstes",
+        "verborgenes Wissen"
+      ],
+      "keywords_reversed": [
+        "Ignorierte Intuition",
+        "Oberflächlichkeit",
+        "verdrängte Wahrheit"
+      ],
+      "meaning_upright": "Höre auf deine Intuition. Nicht alles Wissen ist rational — die tiefsten Wahrheiten kommen von innen. Zeit für Reflektion, Meditation, dem inneren Wissen vertrauen. Geheimnisse werden bald offenbart.",
+      "meaning_reversed": "Du ignorierst deine Intuition. Oberflächlichkeit dominiert. Verdrängte Wahrheiten wollen ans Licht.",
+      "love": "Tiefe emotionale Verbindung, oft geheime Anziehung. Höre auf dein Bauchgefühl.",
+      "career": "Karriere-Entscheidung braucht Reflexion, nicht schnelles Handeln.",
+      "health": "Höre auf deinen Körper, Intuition zeigt was fehlt.",
+      "spiritual": "Tiefe spirituelle Einsicht, Meditation empfohlen."
+    },
+    "3_empress": {
+      "name_de": "Die Herrscherin",
+      "name_en": "The Empress",
+      "number": 3,
+      "element": "Erde",
+      "planet": "Venus",
+      "keywords_upright": [
+        "Fruchtbarkeit",
+        "Mütterlichkeit",
+        "Kreativität",
+        "Sinnlichkeit",
+        "Fülle",
+        "Natur"
+      ],
+      "keywords_reversed": [
+        "Kreativitäts-Blockade",
+        "Überfürsorge",
+        "Vernachlässigung",
+        "materielle Sorgen"
+      ],
+      "meaning_upright": "Fülle in allen Bereichen — Kreativität, Beziehungen, Materie. Mütterliche Energie, Nährung, Wachstum. Sinnlichkeit und Naturverbundenheit. Zeit für Genuss und Kreation.",
+      "meaning_reversed": "Blockade in Kreativität oder Fruchtbarkeit. Zu viel Fürsorge (für andere) oder Vernachlässigung (der Selbstpflege).",
+      "love": "Sinnliche, romantische Liebe. Möglicherweise Schwangerschaft. Klassische Mutter-Rolle.",
+      "career": "Kreative Berufe blühen, künstlerische Manifestation.",
+      "health": "Fruchtbarkeit, weibliche Gesundheit im Fokus. Selbstpflege wichtig.",
+      "spiritual": "Verbindung zur göttlichen Mutter, Natur-Spiritualität."
+    },
+    "4_emperor": {
+      "name_de": "Der Herrscher",
+      "name_en": "The Emperor",
+      "number": 4,
+      "element": "Feuer",
+      "astrology": "Widder",
+      "keywords_upright": [
+        "Autorität",
+        "Struktur",
+        "Vaterrolle",
+        "Kontrolle",
+        "Führung"
+      ],
+      "keywords_reversed": [
+        "Tyrannei",
+        "Machtmissbrauch",
+        "Sturheit",
+        "fehlende Autorität"
+      ],
+      "meaning_upright": "Zeit für Struktur, klare Grenzen, Autorität. Der Herrscher zeigt männliche Kraft, Vaterschaft, Ordnung. Führe klar, entscheide fest. Baue Systeme, die halten.",
+      "meaning_reversed": "Autoritätsmissbrauch — durch dich oder andere. Sturheit blockiert Fortschritt. Oder: Führungslücke, niemand übernimmt Verantwortung.",
+      "love": "Klassischer, männlicher Partner. Manchmal zu dominant. Struktur in der Beziehung.",
+      "career": "Führungsposition, Aufstieg. Zeit für strategische Entscheidungen.",
+      "health": "Disziplin bringt Ergebnisse. Aber Warnung vor zu viel Härte.",
+      "spiritual": "Struktur in spirituellen Praktiken, Disziplin."
+    },
+    "5_hierophant": {
+      "name_de": "Der Hierophant",
+      "name_en": "The Hierophant",
+      "number": 5,
+      "element": "Erde",
+      "astrology": "Stier",
+      "keywords_upright": [
+        "Tradition",
+        "spirituelle Führung",
+        "Bildung",
+        "Konvention",
+        "Ritual"
+      ],
+      "keywords_reversed": [
+        "Rebellion",
+        "Non-Konformität",
+        "Dogma brechen",
+        "eigener Weg"
+      ],
+      "meaning_upright": "Tradition, klassische Wege, spirituelle Institutionen. Zeit für Bildung, Mentoren finden, konventionelle Wege gehen. Ehe, Religion, Familie im klassischen Sinn.",
+      "meaning_reversed": "Rebellion gegen Konvention. Zeit, den eigenen Weg zu gehen. Dogma hinterfragen.",
+      "love": "Ehe, klassische Beziehung, Familienintegration.",
+      "career": "Klassische Karriere-Wege, Ausbildung, Zertifizierung.",
+      "health": "Klassische Medizin bevorzugen. Regelmäßigkeit.",
+      "spiritual": "Etablierte spirituelle Wege, religiöse Praxis."
+    },
+    "6_lovers": {
+      "name_de": "Die Liebenden",
+      "name_en": "The Lovers",
+      "number": 6,
+      "element": "Luft",
+      "astrology": "Zwillinge",
+      "keywords_upright": [
+        "Liebe",
+        "Wahl",
+        "Harmonie",
+        "Verbindung",
+        "Werte"
+      ],
+      "keywords_reversed": [
+        "Disharmonie",
+        "schwierige Wahl",
+        "Ungleichgewicht",
+        "Trennung"
+      ],
+      "meaning_upright": "Tiefe Verbindung, wahre Liebe. Auch: wichtige Wahl basierend auf Werten. Harmonie im Herzen. Manchmal: die Wahl zwischen zwei Wegen.",
+      "meaning_reversed": "Disharmonie in Beziehung. Falsche Wahl. Ungleichgewicht. Zeit für Klärung.",
+      "love": "Wahre Liebe, Seelenverwandschaft, oder wichtige Beziehungsentscheidung.",
+      "career": "Wahl zwischen zwei Karrierewegen. Werte-basierte Entscheidung.",
+      "health": "Balance zwischen Körper und Geist.",
+      "spiritual": "Vereinigung von Yin und Yang, göttliche Liebe."
+    },
+    "7_chariot": {
+      "name_de": "Der Wagen",
+      "name_en": "The Chariot",
+      "number": 7,
+      "element": "Wasser",
+      "astrology": "Krebs",
+      "keywords_upright": [
+        "Sieg",
+        "Willenskraft",
+        "Fortschritt",
+        "Kontrolle",
+        "Reise"
+      ],
+      "keywords_reversed": [
+        "Verlust der Kontrolle",
+        "Aggression",
+        "verlorene Richtung"
+      ],
+      "meaning_upright": "Sieg durch Willenskraft. Fortschritt ist sicher, wenn du fokussiert bleibst. Auch: körperliche Reise, Bewegung. Kontrolle über gegensätzliche Kräfte.",
+      "meaning_reversed": "Kontrollverlust. Gegensätzliche Kräfte reißen dich auseinander. Warnung vor Aggression.",
+      "love": "Beziehung braucht klare Richtung. Willensstärke im Werben.",
+      "career": "Karriere-Fortschritt durch Fokus. Auch: berufliche Reise.",
+      "health": "Willenskraft heilt. Fortschritt durch Disziplin.",
+      "spiritual": "Sieg über niedere Impulse durch spirituelle Disziplin."
+    },
+    "8_strength": {
+      "name_de": "Die Kraft",
+      "name_en": "Strength",
+      "number": 8,
+      "element": "Feuer",
+      "astrology": "Löwe",
+      "keywords_upright": [
+        "innere Stärke",
+        "Mut",
+        "Sanftmut",
+        "Selbstkontrolle",
+        "Geduld"
+      ],
+      "keywords_reversed": [
+        "Selbstzweifel",
+        "Schwäche",
+        "unkontrollierte Impulse"
+      ],
+      "meaning_upright": "Innere Kraft — nicht durch Gewalt, sondern durch Sanftmut. Du zähmst die 'wilden Tiere' in dir. Mut in Krisen. Geduld und Selbstkontrolle. Warmherzige Autorität.",
+      "meaning_reversed": "Selbstzweifel, mangelndes Vertrauen. Wilde Impulse übernehmen. Zeit, innere Kraft neu zu finden.",
+      "love": "Sanfte Stärke in der Liebe. Vertrauen im Herzen.",
+      "career": "Erfolg durch Ausdauer und Sanftmut, nicht Aggression.",
+      "health": "Innere Heilkraft. Geduld mit dem Körper.",
+      "spiritual": "Meisterung der niederen Natur durch Selbstliebe."
+    },
+    "9_hermit": {
+      "name_de": "Der Eremit",
+      "name_en": "The Hermit",
+      "number": 9,
+      "element": "Erde",
+      "astrology": "Jungfrau",
+      "keywords_upright": [
+        "Rückzug",
+        "Introspektion",
+        "Weisheit",
+        "spirituelle Suche",
+        "Alleinsein"
+      ],
+      "keywords_reversed": [
+        "Isolation",
+        "Einsamkeit",
+        "verlorene Weisheit",
+        "Rückzug übertrieben"
+      ],
+      "meaning_upright": "Zeit für Rückzug und Selbstsuche. Der Eremit zeigt, dass wahre Weisheit im Alleinsein gefunden wird. Meditiere. Reflektiere. Manchmal ist der Rückzug der beste Weg voran.",
+      "meaning_reversed": "Zu viel Rückzug wird Isolation. Einsamkeit ohne Sinn. Zeit, wieder unter Menschen zu gehen.",
+      "love": "Zeit alleine, Selbstreflexion. Beziehungspause. Oder: Weiser Berater in der Liebe.",
+      "career": "Reflexion über Karriere. Sabbatical. Weisheit sammeln.",
+      "health": "Rückzug für Heilung. Selbstreflexion.",
+      "spiritual": "Meditation, spirituelle Suche, Guru finden oder sein."
+    },
+    "10_wheel_of_fortune": {
+      "name_de": "Das Rad des Schicksals",
+      "name_en": "Wheel of Fortune",
+      "number": 10,
+      "element": "Feuer",
+      "planet": "Jupiter",
+      "keywords_upright": [
+        "Wandel",
+        "Glück",
+        "Wendepunkt",
+        "Karma",
+        "Zyklen"
+      ],
+      "keywords_reversed": [
+        "Unglück",
+        "Widerstand gegen Wandel",
+        "schlechtes Timing"
+      ],
+      "meaning_upright": "Das Leben ist ein Rad — was oben war, kommt unten, was unten war, kommt oben. Zeit des Wandels und Glücks. Karma wirkt sich aus. Wichtiger Wendepunkt.",
+      "meaning_reversed": "Widerstand gegen unvermeidlichen Wandel. Pech-Serie. Schlechtes Timing.",
+      "love": "Wende in der Liebe — Neuanfang oder Ende.",
+      "career": "Karriere-Wende, Glück oder Verlust.",
+      "health": "Zyklen der Gesundheit — Verbesserung oder Verschlechterung.",
+      "spiritual": "Karmisches Verstehen, große Lebenslektion."
+    },
+    "11_justice": {
+      "name_de": "Gerechtigkeit",
+      "name_en": "Justice",
+      "number": 11,
+      "element": "Luft",
+      "astrology": "Waage",
+      "keywords_upright": [
+        "Wahrheit",
+        "Fairness",
+        "Karma",
+        "Recht",
+        "Balance"
+      ],
+      "keywords_reversed": [
+        "Ungerechtigkeit",
+        "Voreingenommenheit",
+        "Rechtsstreit"
+      ],
+      "meaning_upright": "Was du gesät hast, wirst du ernten. Gerechte Konsequenzen. Auch: Rechtsangelegenheiten, Verträge. Wahrheit kommt ans Licht.",
+      "meaning_reversed": "Ungerechtigkeit, Voreingenommenheit. Rechtsstreit gegen dich. Karma nicht anerkannt.",
+      "love": "Ehrlichkeit in der Beziehung. Konsequenzen alter Handlungen.",
+      "career": "Rechtsstreit, Vertragsangelegenheiten. Gerechte Bezahlung.",
+      "health": "Balance zwischen Gegensätzen. Konsequenzen des Lebensstils.",
+      "spiritual": "Karmische Abrechnung."
+    },
+    "12_hanged_man": {
+      "name_de": "Der Gehängte",
+      "name_en": "The Hanged Man",
+      "number": 12,
+      "element": "Wasser",
+      "planet": "Neptun",
+      "keywords_upright": [
+        "Perspektivwechsel",
+        "Loslassen",
+        "Opfer",
+        "Pause",
+        "Neue Sicht"
+      ],
+      "keywords_reversed": [
+        "Stagnation",
+        "Widerstand",
+        "Unnötiges Leiden"
+      ],
+      "meaning_upright": "Zeit für Perspektivwechsel. Was du verstehen willst, kannst du nur aus einer anderen Position sehen. Loslassen von alten Sichtweisen. Freiwilliges Opfer bringt Erkenntnis. Pause.",
+      "meaning_reversed": "Stagnation. Du hältst fest, was gehen sollte. Unnötiges Leiden.",
+      "love": "Beziehung braucht neue Perspektive. Oder: Beziehung in Warteposition.",
+      "career": "Karriere-Pause, Neu-Orientierung. Sabbatical.",
+      "health": "Stillstand — Zeit für neue Behandlungsansätze.",
+      "spiritual": "Erleuchtung durch Umkehr der gewohnten Sicht."
+    },
+    "13_death": {
+      "name_de": "Der Tod",
+      "name_en": "Death",
+      "number": 13,
+      "element": "Wasser",
+      "astrology": "Skorpion",
+      "keywords_upright": [
+        "Transformation",
+        "Ende und Neuanfang",
+        "Metamorphose",
+        "Loslassen",
+        "Wandel"
+      ],
+      "keywords_reversed": [
+        "Widerstand gegen Wandel",
+        "Stagnation",
+        "Angst vor Ende"
+      ],
+      "meaning_upright": "NICHT der buchstäbliche Tod — die Transformations-Karte. Etwas endet, damit Neues beginnen kann. Loslassen ist nötig. Radikaler Wandel. Wie eine Schlange häutet sich das Leben.",
+      "meaning_reversed": "Du widerstehst notwendigem Wandel. Festhalten an dem, was gehen muss. Angst blockiert.",
+      "love": "Ende einer Beziehung (nicht immer negativ) oder radikale Transformation.",
+      "career": "Karriere-Ende und Neuanfang. Radikaler Wechsel.",
+      "health": "Ende einer Krankheitsphase, aber auch: chronische Zustände enden.",
+      "spiritual": "Ego-Tod, spirituelle Wiedergeburt."
+    },
+    "14_temperance": {
+      "name_de": "Die Mäßigkeit",
+      "name_en": "Temperance",
+      "number": 14,
+      "element": "Feuer",
+      "astrology": "Schütze",
+      "keywords_upright": [
+        "Balance",
+        "Mäßigung",
+        "Geduld",
+        "Verschmelzung",
+        "Alchemie"
+      ],
+      "keywords_reversed": [
+        "Ungleichgewicht",
+        "Extreme",
+        "Ungeduld"
+      ],
+      "meaning_upright": "Die Kunst der Balance. Extreme werden versöhnt. Geduld ist der Schlüssel. Alchemische Verschmelzung von Gegensätzen. Heilung durch Balance.",
+      "meaning_reversed": "Ungleichgewicht, Extreme, Ungeduld. Alles zu viel oder zu wenig.",
+      "love": "Harmonische Beziehung, Balance zwischen Nähe und Freiheit.",
+      "career": "Balance zwischen Arbeit und Leben. Geduldige Planung.",
+      "health": "Balance in Ernährung und Bewegung. Heilung durch Mäßigung.",
+      "spiritual": "Vereinigung von Himmel und Erde in dir."
+    },
+    "15_devil": {
+      "name_de": "Der Teufel",
+      "name_en": "The Devil",
+      "number": 15,
+      "element": "Erde",
+      "astrology": "Steinbock",
+      "keywords_upright": [
+        "Sucht",
+        "Materialismus",
+        "Sklaverei",
+        "Schatten",
+        "Versuchung"
+      ],
+      "keywords_reversed": [
+        "Befreiung",
+        "Sucht überwinden",
+        "Klarheit"
+      ],
+      "meaning_upright": "Du bist in etwas gefangen — Sucht, materielle Bindung, ungesunde Beziehung. Der Teufel zeigt, dass die Ketten oft selbstgemacht sind. Schau in deine Schatten. Was hält dich gefangen?",
+      "meaning_reversed": "Befreiung! Du erkennst die Illusion und gehst. Sucht wird überwunden.",
+      "love": "Toxische Beziehung, Abhängigkeit. Sexuelle Anziehung ohne Substanz.",
+      "career": "Karriere-Falle, Geld-Sucht. Ungesunde Arbeitssituation.",
+      "health": "Sucht (Substanzen, Essen, Verhalten). Zeit zur Befreiung.",
+      "spiritual": "Konfrontation mit dem Schatten."
+    },
+    "16_tower": {
+      "name_de": "Der Turm",
+      "name_en": "The Tower",
+      "number": 16,
+      "element": "Feuer",
+      "planet": "Mars",
+      "keywords_upright": [
+        "Zusammenbruch",
+        "plötzlicher Wandel",
+        "Offenbarung",
+        "Krise",
+        "Befreiung durch Chaos"
+      ],
+      "keywords_reversed": [
+        "Vermeidener Zusammenbruch",
+        "aufgeschobene Krise"
+      ],
+      "meaning_upright": "Der Turm fällt. Was auf falschem Fundament stand, bricht zusammen. Plötzliche, oft schockierende Veränderung. Aber: Nur was falsch war, kann fallen. Danach kommt Klarheit.",
+      "meaning_reversed": "Du versuchst, den Zusammenbruch zu verhindern. Die Krise ist verschoben, nicht überwunden.",
+      "love": "Plötzliches Beziehungsende, große Enthüllung.",
+      "career": "Karriere-Kollaps, Firma bricht zusammen. Aber: Neuanfang möglich.",
+      "health": "Plötzliche Gesundheitskrise. Warnsignal beachten.",
+      "spiritual": "Ego-Zerstörung, Ende einer Illusion."
+    },
+    "17_star": {
+      "name_de": "Der Stern",
+      "name_en": "The Star",
+      "number": 17,
+      "element": "Luft",
+      "astrology": "Wassermann",
+      "keywords_upright": [
+        "Hoffnung",
+        "Inspiration",
+        "Heilung",
+        "Vertrauen ins Universum",
+        "Vision"
+      ],
+      "keywords_reversed": [
+        "Hoffnungslosigkeit",
+        "Verzweiflung",
+        "Zynismus"
+      ],
+      "meaning_upright": "Nach dem Sturm des Turms kommt der Stern. Hoffnung kehrt zurück. Heilung findet statt. Vertrauen ins Universum. Dein wahrer Zweck wird sichtbar. Inspirationsphase.",
+      "meaning_reversed": "Du hast die Hoffnung verloren. Zynismus. Zeit, die Verbindung zum Höheren wiederzufinden.",
+      "love": "Hoffnungsvolle neue Liebe, Heilung nach Trauma.",
+      "career": "Berufung wird klar. Inspirations-Phase.",
+      "health": "Heilungsphase, Regeneration.",
+      "spiritual": "Verbindung zum kosmischen Bewusstsein."
+    },
+    "18_moon": {
+      "name_de": "Der Mond",
+      "name_en": "The Moon",
+      "number": 18,
+      "element": "Wasser",
+      "astrology": "Fische",
+      "keywords_upright": [
+        "Illusion",
+        "Unterbewusstes",
+        "Angst",
+        "Intuition",
+        "Traum"
+      ],
+      "keywords_reversed": [
+        "Illusion aufgelöst",
+        "Klarheit",
+        "Wahrheit ans Licht"
+      ],
+      "meaning_upright": "Nicht alles ist, wie es scheint. Illusionen, Ängste aus dem Unterbewussten kommen hoch. Träume enthalten Botschaften. Deine Intuition ist stark, aber verwirrt. Vorsicht vor Selbsttäuschung.",
+      "meaning_reversed": "Illusionen fallen. Wahrheit wird sichtbar. Ängste überwunden.",
+      "love": "Verwirrung, Illusionen in der Liebe. Nicht alles ist real.",
+      "career": "Unklarheit über Weg. Nicht alle Kollegen sind ehrlich.",
+      "health": "Psychische Belastung, Ängste, Schlafprobleme.",
+      "spiritual": "Konfrontation mit dem Schatten, mystische Erfahrungen."
+    },
+    "19_sun": {
+      "name_de": "Die Sonne",
+      "name_en": "The Sun",
+      "number": 19,
+      "element": "Feuer",
+      "planet": "Sonne",
+      "keywords_upright": [
+        "Erfolg",
+        "Freude",
+        "Vitalität",
+        "Wahrheit",
+        "Klarheit"
+      ],
+      "keywords_reversed": [
+        "Verzögerter Erfolg",
+        "unterdrückte Freude",
+        "Überheblichkeit"
+      ],
+      "meaning_upright": "Reine, klare Freude. Erfolg auf ganzer Linie. Vitalität. Wahrheit strahlt. Kindliche Freude. Alles ist gut. Zeit zum Feiern.",
+      "meaning_reversed": "Erfolg verzögert, aber kommt. Oder: du siehst deinen Erfolg nicht.",
+      "love": "Glückliche Beziehung, Vitalität. Kinder-Wunsch erfüllt.",
+      "career": "Erfolg, Anerkennung, Beförderung.",
+      "health": "Vitalität, Heilung, Gesundheit.",
+      "spiritual": "Erleuchtung, klares Bewusstsein."
+    },
+    "20_judgement": {
+      "name_de": "Das Gericht",
+      "name_en": "Judgement",
+      "number": 20,
+      "element": "Feuer",
+      "planet": "Pluto",
+      "keywords_upright": [
+        "Erwachen",
+        "Berufung",
+        "Vergebung",
+        "Wiedergeburt",
+        "Bewertung"
+      ],
+      "keywords_reversed": [
+        "Selbstverurteilung",
+        "Ignorieren der Berufung",
+        "verpasste Chance"
+      ],
+      "meaning_upright": "Ein Ruf. Zeit für spirituelles Erwachen. Vergangenes wird bewertet, aber mit Mitgefühl. Neue Berufung ruft. Wiedergeburt in bewussterer Form.",
+      "meaning_reversed": "Du verurteilst dich zu hart. Ignorierst deine Berufung. Verpasste Chance zur Wandlung.",
+      "love": "Zweite Chance, Vergebung, Neuanfang mit demselben Partner möglich.",
+      "career": "Berufung findet sich. Zweite Karriere-Chance.",
+      "health": "Heilungs-Erwachen, alte Wunden heilen.",
+      "spiritual": "Spirituelles Erwachen, Berufung folgen."
+    },
+    "21_world": {
+      "name_de": "Die Welt",
+      "name_en": "The World",
+      "number": 21,
+      "element": "Erde",
+      "planet": "Saturn",
+      "keywords_upright": [
+        "Vollendung",
+        "Erfüllung",
+        "Erfolg",
+        "Ganzheit",
+        "Weltreisen"
+      ],
+      "keywords_reversed": [
+        "Unvollendet",
+        "Blockade vor Ziel",
+        "verzögerter Abschluss"
+      ],
+      "meaning_upright": "Vollendung. Ein Zyklus ist abgeschlossen. Erfüllung. Ganzheit. Die Reise vom Narren zur Welt ist beendet. Bereit für den nächsten Zyklus. Weltreisen möglich.",
+      "meaning_reversed": "Etwas ist unvollendet. Du bist kurz vor dem Ziel, aber es fehlt der letzte Schritt.",
+      "love": "Beziehungs-Vollendung, Ehe, tiefe Erfüllung.",
+      "career": "Karriere-Höhepunkt, Ziel erreicht.",
+      "health": "Vollständige Heilung, Ganzheit.",
+      "spiritual": "Erleuchtung, Vereinigung mit dem Göttlichen."
+    }
+  },
+  "minor_arcana": {
+    "wands_staebe": {
+      "element": "Feuer",
+      "domain": "Kreativität, Leidenschaft, Aktion, Willen",
+      "cards": {
+        "ace": {
+          "name_de": "Ass der Stäbe",
+          "name_en": "Ace of Wands",
+          "keywords_upright": [
+            "Inspiration",
+            "neuer Anfang",
+            "Kreativitäts-Explosion"
+          ],
+          "meaning_upright": "Ein kraftvoller kreativer Impuls. Neue Idee, neues Projekt, neue Leidenschaft. Zeit zu handeln.",
+          "meaning_reversed": "Blockierte Kreativität, aufgeschobener Start, Zögern.",
+          "love": "Neue Leidenschaft, sexuelle Anziehung, Feuer beginnt.",
+          "career": "Neues Projekt startet, kreative Karriere beginnt.",
+          "key_short": "creative_spark"
+        },
+        "2": {
+          "name_de": "Zwei der Stäbe",
+          "name_en": "Two of Wands",
+          "keywords_upright": [
+            "Planung",
+            "Zukunfts-Vision",
+            "Wahl",
+            "Erkundung"
+          ],
+          "meaning_upright": "Du planst deine Zukunft. Die Welt liegt vor dir. Wähle den Weg. Vision entwickeln.",
+          "meaning_reversed": "Angst vor dem Sprung, Zaudern, verpasste Chance.",
+          "love": "Beziehungs-Zukunft planen. Fernbeziehung möglich.",
+          "career": "Karriere-Planung, Expansion, internationale Möglichkeiten.",
+          "key_short": "future_planning"
+        },
+        "3": {
+          "name_de": "Drei der Stäbe",
+          "name_en": "Three of Wands",
+          "keywords_upright": [
+            "Expansion",
+            "Weitblick",
+            "internationale Aktionen"
+          ],
+          "meaning_upright": "Deine Pläne beginnen zu greifen. Weitblick zahlt sich aus. Internationaler Erfolg.",
+          "meaning_reversed": "Verzögerungen, gescheiterte Expansion, kurzsichtige Planung.",
+          "love": "Fernbeziehung funktioniert, Beziehung wächst weiter.",
+          "career": "Karriere expandiert, international. Erste Erfolge.",
+          "key_short": "expansion"
+        },
+        "4": {
+          "name_de": "Vier der Stäbe",
+          "name_en": "Four of Wands",
+          "keywords_upright": [
+            "Feier",
+            "Zuhause",
+            "Familie",
+            "Harmonie"
+          ],
+          "meaning_upright": "Zeit zum Feiern! Meilenstein erreicht. Zuhause, Familie, Gemeinschaft. Hochzeit möglich.",
+          "meaning_reversed": "Familie in Konflikt, Instabilität zu Hause, verschobene Feier.",
+          "love": "Hochzeit, Verlobung, glückliches Zuhause.",
+          "career": "Firmenfeier, Meilenstein, Team-Erfolg.",
+          "key_short": "celebration"
+        },
+        "5": {
+          "name_de": "Fünf der Stäbe",
+          "name_en": "Five of Wands",
+          "keywords_upright": [
+            "Konflikt",
+            "Konkurrenz",
+            "Uneinigkeit",
+            "Streit"
+          ],
+          "meaning_upright": "Konflikte, Konkurrenz, viele Meinungen. Kann konstruktiv sein, wenn respektvoll.",
+          "meaning_reversed": "Vermiedener Konflikt, unterdrückte Spannung, Schein-Harmonie.",
+          "love": "Beziehungs-Streitereien, Konkurrenz um Partner.",
+          "career": "Team-Konflikte, Konkurrenz. Wettbewerbliche Situation.",
+          "key_short": "conflict"
+        },
+        "6": {
+          "name_de": "Sechs der Stäbe",
+          "name_en": "Six of Wands",
+          "keywords_upright": [
+            "Sieg",
+            "öffentliche Anerkennung",
+            "Triumph"
+          ],
+          "meaning_upright": "Sieg. Anerkennung. Öffentlicher Triumph. Du wirst geehrt.",
+          "meaning_reversed": "Selbst-Zweifel trotz Erfolg, Anerkennung ausbleibend.",
+          "love": "Beziehungs-Sieg, Öffentlichkeit erkennt Liebe an.",
+          "career": "Beförderung, öffentliche Anerkennung, Auszeichnung.",
+          "key_short": "victory"
+        },
+        "7": {
+          "name_de": "Sieben der Stäbe",
+          "name_en": "Seven of Wands",
+          "keywords_upright": [
+            "Verteidigung",
+            "Standhaftigkeit",
+            "Position halten"
+          ],
+          "meaning_upright": "Verteidige deine Position. Herausforderer kommen, aber du bist im Recht. Standhalten.",
+          "meaning_reversed": "Aufgeben, Position verloren, Überforderung.",
+          "love": "Beziehung gegen Widerstände verteidigen.",
+          "career": "Karriere-Position verteidigen, Konkurrenz standhalten.",
+          "key_short": "defend_position"
+        },
+        "8": {
+          "name_de": "Acht der Stäbe",
+          "name_en": "Eight of Wands",
+          "keywords_upright": [
+            "Schnelligkeit",
+            "Botschaften",
+            "Fortschritt",
+            "Bewegung"
+          ],
+          "meaning_upright": "Schnelle Bewegung. Alles kommt zusammen. Botschaften, Reisen, Fortschritt.",
+          "meaning_reversed": "Verzögerungen, Chaos, verpasste Verbindungen.",
+          "love": "Schnelle Entwicklung in Beziehung, plötzliche Verbindung.",
+          "career": "Schnelle Karriere-Entwicklung, Reise, wichtige Nachrichten.",
+          "key_short": "swift_action"
+        },
+        "9": {
+          "name_de": "Neun der Stäbe",
+          "name_en": "Nine of Wands",
+          "keywords_upright": [
+            "Ausdauer",
+            "Grenze setzen",
+            "letzter Kampf"
+          ],
+          "meaning_upright": "Du bist müde, aber fast am Ziel. Halte durch. Ein letzter Widerstand. Grenzen setzen.",
+          "meaning_reversed": "Erschöpfung, aufgeben kurz vor Ziel, Paranoia.",
+          "love": "Beziehungs-Ermüdung, aber Fortsetzung wert.",
+          "career": "Karriere-Erschöpfung, aber Erfolg nahe.",
+          "key_short": "endurance"
+        },
+        "10": {
+          "name_de": "Zehn der Stäbe",
+          "name_en": "Ten of Wands",
+          "keywords_upright": [
+            "Überlastung",
+            "Bürde",
+            "Verantwortung tragen"
+          ],
+          "meaning_upright": "Zu viel Last. Du trägst mehr, als du solltest. Delegiere. Setze Grenzen.",
+          "meaning_reversed": "Burnout, Zusammenbruch, zu spät reagiert.",
+          "love": "Beziehung zur Bürde geworden. Zu viel Verantwortung.",
+          "career": "Überarbeitung, zu viele Aufgaben. Delegiere!",
+          "key_short": "overburdened"
+        },
+        "page": {
+          "name_de": "Bube der Stäbe",
+          "name_en": "Page of Wands",
+          "keywords_upright": [
+            "Botschaft",
+            "Neuigkeit",
+            "junger Enthusiast"
+          ],
+          "meaning_upright": "Neuigkeit über kreatives Projekt. Junger enthusiastischer Mensch. Neue Ideen.",
+          "meaning_reversed": "Unreife, gescheitertes Projekt, kindliche Trotz.",
+          "love": "Junge, spontane Liebe. Sexuelle Neugier.",
+          "career": "Neue kreative Idee, junger Kollege bringt Frische.",
+          "key_short": "enthusiasm"
+        },
+        "knight": {
+          "name_de": "Ritter der Stäbe",
+          "name_en": "Knight of Wands",
+          "keywords_upright": [
+            "Aktion",
+            "Ungeduld",
+            "Abenteuer"
+          ],
+          "meaning_upright": "Impulsive Aktion. Abenteuer. Leidenschaftlicher Sprung. Aber Vorsicht vor Ungeduld.",
+          "meaning_reversed": "Rücksichtslos, Aggression, impulsive Fehler.",
+          "love": "Leidenschaftlicher Verehrer, aber flüchtig.",
+          "career": "Karriere-Sprung, aber Vorsicht vor Impulsivität.",
+          "key_short": "impulsive_action"
+        },
+        "queen": {
+          "name_de": "Königin der Stäbe",
+          "name_en": "Queen of Wands",
+          "keywords_upright": [
+            "Selbstsicherheit",
+            "Charisma",
+            "Führung",
+            "Warmherzigkeit"
+          ],
+          "meaning_upright": "Charismatische Frau/Persönlichkeit. Selbstsicher, warmherzig, führungsstark.",
+          "meaning_reversed": "Eifersucht, Kontrollsucht, Machtmissbrauch.",
+          "love": "Leidenschaftliche, dominante Partnerin.",
+          "career": "Charismatische Führung, Netzwerk-Kraft.",
+          "key_short": "confident_leader"
+        },
+        "king": {
+          "name_de": "König der Stäbe",
+          "name_en": "King of Wands",
+          "keywords_upright": [
+            "Vision",
+            "Leadership",
+            "Unternehmertum"
+          ],
+          "meaning_upright": "Visionärer Führer. Unternehmer. Charismatische männliche Autorität.",
+          "meaning_reversed": "Tyrannei, Impulsivität, Aggression, unerreichbar.",
+          "love": "Erfolgreicher, dominanter Partner. Kann zu selbstbezogen sein.",
+          "career": "Unternehmerische Vision, Führung, Erfolg.",
+          "key_short": "visionary_leader"
+        }
+      }
+    },
+    "cups_kelche": {
+      "element": "Wasser",
+      "domain": "Emotionen, Liebe, Beziehungen, Intuition",
+      "cards": {
+        "ace": {
+          "name_de": "Ass der Kelche",
+          "name_en": "Ace of Cups",
+          "keywords_upright": [
+            "neue Liebe",
+            "emotionale Fülle",
+            "spirituelle Erneuerung"
+          ],
+          "meaning_upright": "Herz öffnet sich. Neue Liebe. Emotionale Fülle. Kreativer Fluss. Spirituelle Erneuerung.",
+          "meaning_reversed": "Geschlossenes Herz, emotionale Blockade, verpasste Liebe.",
+          "love": "Neue Liebe, Verlobung, tiefe emotionale Verbindung.",
+          "career": "Kreativer Job, neue Berufung.",
+          "key_short": "emotional_beginning"
+        },
+        "2": {
+          "name_de": "Zwei der Kelche",
+          "name_en": "Two of Cups",
+          "keywords_upright": [
+            "Partnerschaft",
+            "Gegenseitige Liebe",
+            "Harmonie"
+          ],
+          "meaning_upright": "Partnerschaft. Zwei Menschen in perfekter Balance. Gegenseitige Liebe. Zusammenarbeit.",
+          "meaning_reversed": "Trennung, Ungleichgewicht, Missverständnisse.",
+          "love": "Klassische Liebeskarte. Seelenverwandschaft.",
+          "career": "Erfolgreiche Partnerschaft, Business-Deal.",
+          "key_short": "partnership"
+        },
+        "3": {
+          "name_de": "Drei der Kelche",
+          "name_en": "Three of Cups",
+          "keywords_upright": [
+            "Feier",
+            "Freundschaft",
+            "Gemeinschaft"
+          ],
+          "meaning_upright": "Freundinnen feiern. Gemeinschaft. Freude teilen. Hochzeit, Geburt.",
+          "meaning_reversed": "Übertreibung, Klatsch, Ausschluss aus Gruppe.",
+          "love": "Beziehungs-Feier, Freundinnen als Unterstützung.",
+          "career": "Team-Erfolg, gefeierte Präsentation.",
+          "key_short": "celebration_friends"
+        },
+        "4": {
+          "name_de": "Vier der Kelche",
+          "name_en": "Four of Cups",
+          "keywords_upright": [
+            "Unzufriedenheit",
+            "Apathie",
+            "verpasste Chance"
+          ],
+          "meaning_upright": "Du siehst nicht, was da ist. Unzufriedenheit trotz Fülle. Verpasste Angebot.",
+          "meaning_reversed": "Erwachen aus Apathie, neue Motivation.",
+          "love": "Beziehungs-Langweile, Chance übersehen.",
+          "career": "Karriere-Angebot übersehen, Motivations-Verlust.",
+          "key_short": "apathy"
+        },
+        "5": {
+          "name_de": "Fünf der Kelche",
+          "name_en": "Five of Cups",
+          "keywords_upright": [
+            "Trauer",
+            "Verlust",
+            "Enttäuschung"
+          ],
+          "meaning_upright": "Verlust und Trauer. Du siehst, was verloren ist, aber übersehe, was noch da ist.",
+          "meaning_reversed": "Heilung nach Trauer, Loslassen möglich.",
+          "love": "Beziehungs-Verlust, Trauer.",
+          "career": "Karriere-Enttäuschung, aber nicht alles verloren.",
+          "key_short": "grief"
+        },
+        "6": {
+          "name_de": "Sechs der Kelche",
+          "name_en": "Six of Cups",
+          "keywords_upright": [
+            "Nostalgie",
+            "Kindheit",
+            "unschuldige Freude"
+          ],
+          "meaning_upright": "Alte Freunde. Kindheits-Erinnerungen. Unschuldige Freude. Vergangenheit besuchen.",
+          "meaning_reversed": "Zurück in der Vergangenheit stecken, nicht loslassen.",
+          "love": "Alte Liebe kehrt zurück. Kindheitsfreund als Partner.",
+          "career": "Alte Kontakte bringen neue Chancen.",
+          "key_short": "nostalgia"
+        },
+        "7": {
+          "name_de": "Sieben der Kelche",
+          "name_en": "Seven of Cups",
+          "keywords_upright": [
+            "Illusion",
+            "viele Optionen",
+            "Wahl-Überforderung"
+          ],
+          "meaning_upright": "Viele Optionen — welche ist real? Illusionen und Träume. Wahl treffen ist schwer.",
+          "meaning_reversed": "Entscheidung getroffen, Klarheit, Illusion durchbrochen.",
+          "love": "Viele Verehrer, aber welcher ist echt?",
+          "career": "Karriere-Optionen, aber Vorsicht vor Illusionen.",
+          "key_short": "illusion"
+        },
+        "8": {
+          "name_de": "Acht der Kelche",
+          "name_en": "Eight of Cups",
+          "keywords_upright": [
+            "Aufbruch",
+            "Verlassen",
+            "spirituelle Suche"
+          ],
+          "meaning_upright": "Du gehst von etwas weg, obwohl es 'gut aussieht'. Spirituelle Suche.",
+          "meaning_reversed": "Bleiben in unbefriedigender Situation, Angst zu gehen.",
+          "love": "Beziehung verlassen für höheres Gutes.",
+          "career": "Karriere verlassen für Sinn.",
+          "key_short": "walking_away"
+        },
+        "9": {
+          "name_de": "Neun der Kelche",
+          "name_en": "Nine of Cups",
+          "keywords_upright": [
+            "Wunsch erfüllt",
+            "Zufriedenheit",
+            "Fülle"
+          ],
+          "meaning_upright": "'Wunschkarte'. Was du wünschst, wird erfüllt. Emotionale Fülle. Zufriedenheit.",
+          "meaning_reversed": "Übersättigung, oberflächliche Zufriedenheit, materielle Fülle ohne Sinn.",
+          "love": "Beziehungs-Wunsch wird wahr.",
+          "career": "Karriere-Wunsch erfüllt, Bonus, Aufstieg.",
+          "key_short": "wish_fulfilled"
+        },
+        "10": {
+          "name_de": "Zehn der Kelche",
+          "name_en": "Ten of Cups",
+          "keywords_upright": [
+            "Familien-Glück",
+            "Erfüllung",
+            "emotionale Vollendung"
+          ],
+          "meaning_upright": "Perfekte Familie. Emotionale Vollendung. Alles ist gut. Ideal-Zustand.",
+          "meaning_reversed": "Familien-Probleme, Ideal nicht erreicht.",
+          "love": "Familien-Ideal, glückliche Ehe, Kinder.",
+          "career": "Team wie Familie, harmonisches Arbeitsleben.",
+          "key_short": "family_bliss"
+        },
+        "page": {
+          "name_de": "Bube der Kelche",
+          "name_en": "Page of Cups",
+          "keywords_upright": [
+            "kreative Botschaft",
+            "Sensibilität"
+          ],
+          "meaning_upright": "Botschaft von Liebe. Kreative Nachricht. Kindlich-sensibel.",
+          "meaning_reversed": "Emotionale Unreife, Manipulation durch Tränen.",
+          "love": "Neue Verliebtheit, sensible Neuigkeit.",
+          "career": "Kreative Idee, sensible Kollegin.",
+          "key_short": "creative_message"
+        },
+        "knight": {
+          "name_de": "Ritter der Kelche",
+          "name_en": "Knight of Cups",
+          "keywords_upright": [
+            "Romantiker",
+            "Träumer",
+            "Angebot der Liebe"
+          ],
+          "meaning_upright": "Romantischer Verehrer. Träumer bringt Angebot. Charmanter Ritter.",
+          "meaning_reversed": "Verführung, unrealistische Versprechen.",
+          "love": "Romantischer Antrag, Prinz-Charming-Typ.",
+          "career": "Kreatives Angebot, aber Vorsicht vor unrealistischen Versprechen.",
+          "key_short": "romantic_offer"
+        },
+        "queen": {
+          "name_de": "Königin der Kelche",
+          "name_en": "Queen of Cups",
+          "keywords_upright": [
+            "Empathie",
+            "Intuition",
+            "emotionale Weisheit"
+          ],
+          "meaning_upright": "Empathische, intuitive Frau. Emotionale Meisterin. Heilerin.",
+          "meaning_reversed": "Emotional erschöpft, Grenzen fehlen, Opferrolle.",
+          "love": "Empathische Partnerin, mütterlich.",
+          "career": "Empathische Führung, Therapeutinnen-Qualität.",
+          "key_short": "empathic_woman"
+        },
+        "king": {
+          "name_de": "König der Kelche",
+          "name_en": "King of Cups",
+          "keywords_upright": [
+            "emotionale Meisterschaft",
+            "Weisheit",
+            "Mitgefühl"
+          ],
+          "meaning_upright": "Emotionale Meisterschaft. Weiser, mitfühlender Mann. Diplomat.",
+          "meaning_reversed": "Emotional distanziert, unterdrückte Gefühle, Manipulation.",
+          "love": "Emotionaler Partner, aber kontrolliert.",
+          "career": "Beratung, Therapie, weise Führung.",
+          "key_short": "emotional_master"
+        }
+      }
+    },
+    "swords_schwerter": {
+      "element": "Luft",
+      "domain": "Gedanken, Kommunikation, Konflikte, Wahrheit",
+      "cards": {
+        "ace": {
+          "name_de": "Ass der Schwerter",
+          "name_en": "Ace of Swords",
+          "keywords_upright": [
+            "Wahrheit",
+            "Klarheit",
+            "Durchbruch"
+          ],
+          "meaning_upright": "Klarheit. Wahrheit durchbricht. Neuer Gedanke. Mentale Klarheit.",
+          "meaning_reversed": "Verwirrung, verpasste Wahrheit, Ideen ohne Umsetzung.",
+          "love": "Klare Kommunikation in Beziehung.",
+          "career": "Klare Karriere-Entscheidung, Vertrag, Kommunikation.",
+          "key_short": "mental_clarity"
+        },
+        "2": {
+          "name_de": "Zwei der Schwerter",
+          "name_en": "Two of Swords",
+          "keywords_upright": [
+            "Wahl",
+            "Zaudern",
+            "Balance"
+          ],
+          "meaning_upright": "Blockierte Entscheidung. Du ignorierst was du fühlst. Zeit, die Binde abzulegen.",
+          "meaning_reversed": "Klarheit, Entscheidung getroffen, Wahrheit angenommen.",
+          "love": "Beziehungs-Zaudern, ignorierte Wahrheit.",
+          "career": "Karriere-Wahl aufgeschoben.",
+          "key_short": "stalemate"
+        },
+        "3": {
+          "name_de": "Drei der Schwerter",
+          "name_en": "Three of Swords",
+          "keywords_upright": [
+            "Herzschmerz",
+            "Trennung",
+            "schmerzhafte Wahrheit"
+          ],
+          "meaning_upright": "Herzschmerz. Trennung. Schmerzhafte Wahrheit. Kein Trost — nur Anerkennung.",
+          "meaning_reversed": "Heilung nach Herzschmerz, Vergebung möglich.",
+          "love": "Trennung, Betrug, tiefe Verletzung.",
+          "career": "Karriere-Verletzung, Vertrauensbruch.",
+          "key_short": "heartbreak"
+        },
+        "4": {
+          "name_de": "Vier der Schwerter",
+          "name_en": "Four of Swords",
+          "keywords_upright": [
+            "Ruhe",
+            "Rückzug",
+            "Regeneration"
+          ],
+          "meaning_upright": "Zeit für Ruhe. Rückzug nach Kampf. Meditation. Regeneration nötig.",
+          "meaning_reversed": "Erschöpfung ignoriert, Zusammenbruch droht.",
+          "love": "Beziehungs-Pause zur Selbstfindung.",
+          "career": "Karriere-Auszeit, Sabbatical.",
+          "key_short": "rest"
+        },
+        "5": {
+          "name_de": "Fünf der Schwerter",
+          "name_en": "Five of Swords",
+          "keywords_upright": [
+            "Konflikt",
+            "Verlust",
+            "hohler Sieg"
+          ],
+          "meaning_upright": "Konflikt mit Verlierern. Sieg um jeden Preis kostet zu viel. Zeit für Frieden.",
+          "meaning_reversed": "Frieden geschlossen, Vergebung.",
+          "love": "Streit ohne Sieger. Beide verlieren.",
+          "career": "Karriere-Streit, geschundene Beziehungen.",
+          "key_short": "hollow_victory"
+        },
+        "6": {
+          "name_de": "Sechs der Schwerter",
+          "name_en": "Six of Swords",
+          "keywords_upright": [
+            "Übergang",
+            "Reise",
+            "besseres Ufer"
+          ],
+          "meaning_upright": "Übergang in bessere Zeiten. Ruhige Reise. Vergangenheit loslassen.",
+          "meaning_reversed": "Nicht loslassen können, festhalten am Alten.",
+          "love": "Beziehung verbessert sich, Konflikt überwunden.",
+          "career": "Karriere-Wechsel, geographischer Umzug.",
+          "key_short": "transition"
+        },
+        "7": {
+          "name_de": "Sieben der Schwerter",
+          "name_en": "Seven of Swords",
+          "keywords_upright": [
+            "Täuschung",
+            "Diebstahl",
+            "Strategie"
+          ],
+          "meaning_upright": "Täuschung — durch dich oder andere. Vorsicht. Auch: strategische List.",
+          "meaning_reversed": "Wahrheit ans Licht, Enttarnung.",
+          "love": "Untreue, Geheimnisse, Vertrauensbruch.",
+          "career": "Betrug im Beruf, unlautere Konkurrenz.",
+          "key_short": "deception"
+        },
+        "8": {
+          "name_de": "Acht der Schwerter",
+          "name_en": "Eight of Swords",
+          "keywords_upright": [
+            "Gefangenschaft",
+            "eingeschränkte Sicht",
+            "Selbst-Sabotage"
+          ],
+          "meaning_upright": "Du fühlst dich gefangen — aber die Fesseln sind lose. Ändere deine Sicht.",
+          "meaning_reversed": "Befreiung, Klarheit, Ausweg gefunden.",
+          "love": "Beziehungs-Falle, Selbst-Sabotage.",
+          "career": "Karriere-Blockade, aber selbstgemacht.",
+          "key_short": "trapped"
+        },
+        "9": {
+          "name_de": "Neun der Schwerter",
+          "name_en": "Nine of Swords",
+          "keywords_upright": [
+            "Angst",
+            "Alpträume",
+            "Sorge"
+          ],
+          "meaning_upright": "Angst, Sorgen, Alpträume. Die Nacht der Seele. Aber Ängste sind meist übertrieben.",
+          "meaning_reversed": "Ängste überwunden, Klarheit am Morgen.",
+          "love": "Beziehungs-Ängste, aber oft eingebildet.",
+          "career": "Karriere-Sorgen, Stress, Burnout-Gefahr.",
+          "key_short": "anxiety"
+        },
+        "10": {
+          "name_de": "Zehn der Schwerter",
+          "name_en": "Ten of Swords",
+          "keywords_upright": [
+            "Ende",
+            "Zusammenbruch",
+            "Tiefpunkt"
+          ],
+          "meaning_upright": "Tiefpunkt. Zusammenbruch. Aber: Von hier kann es nur besser werden. Ende einer Phase.",
+          "meaning_reversed": "Regeneration, Hoffnung kehrt zurück, Widerstand.",
+          "love": "Beziehungs-Ende, endgültiger Bruch.",
+          "career": "Karriere-Ende, Kollaps.",
+          "key_short": "rock_bottom"
+        },
+        "page": {
+          "name_de": "Bube der Schwerter",
+          "name_en": "Page of Swords",
+          "keywords_upright": [
+            "Neugier",
+            "Vorsicht",
+            "Kommunikation"
+          ],
+          "meaning_upright": "Neugierige, kommunikative junge Person. Aufmerksam. Zeit für Lernen.",
+          "meaning_reversed": "Klatsch, Spionage, unreife Kommunikation.",
+          "love": "Junger, kommunikativer Partner.",
+          "career": "Neuer Kollege bringt Ideen, Kommunikations-Training.",
+          "key_short": "curious_communication"
+        },
+        "knight": {
+          "name_de": "Ritter der Schwerter",
+          "name_en": "Knight of Swords",
+          "keywords_upright": [
+            "schnelles Handeln",
+            "Ungestüm",
+            "Wahrheit sprechen"
+          ],
+          "meaning_upright": "Schnelles Handeln. Ungestüm. Wahrheit direkt sprechen — auch wenn's weh tut.",
+          "meaning_reversed": "Aggression, Rücksichtslosigkeit, Impulsivität.",
+          "love": "Direkter Verehrer, ungestüm.",
+          "career": "Schnelle Karriere-Bewegung, aber Vorsicht.",
+          "key_short": "swift_truth"
+        },
+        "queen": {
+          "name_de": "Königin der Schwerter",
+          "name_en": "Queen of Swords",
+          "keywords_upright": [
+            "klare Wahrheit",
+            "Unabhängigkeit",
+            "scharfer Verstand"
+          ],
+          "meaning_upright": "Klare, unabhängige Frau. Scharfer Verstand. Wahrheit ohne Zuckerguss.",
+          "meaning_reversed": "Bitter, hart, überkritisch, kalt.",
+          "love": "Unabhängige Partnerin, kann emotional distanziert sein.",
+          "career": "Klare Führung, scharfe Analyse, harte Verhandlung.",
+          "key_short": "clear_truth_woman"
+        },
+        "king": {
+          "name_de": "König der Schwerter",
+          "name_en": "King of Swords",
+          "keywords_upright": [
+            "Autorität",
+            "Wahrheit",
+            "intellektuelle Meisterschaft"
+          ],
+          "meaning_upright": "Autoritätsfigur, Richter, Analytiker. Klare Wahrheit, intellektuelle Meisterschaft.",
+          "meaning_reversed": "Tyrannei, Machtmissbrauch, kalte Kalkulation.",
+          "love": "Autoritärer Partner, kommunikativ, aber emotional distanziert.",
+          "career": "Autorität in Beruf, Recht, Analyse.",
+          "key_short": "intellectual_authority"
+        }
+      }
+    },
+    "pentacles_muenzen": {
+      "element": "Erde",
+      "domain": "Geld, Materie, Karriere, Gesundheit",
+      "cards": {
+        "ace": {
+          "name_de": "Ass der Münzen",
+          "name_en": "Ace of Pentacles",
+          "keywords_upright": [
+            "neue Chance",
+            "materieller Anfang",
+            "Fülle"
+          ],
+          "meaning_upright": "Neue materielle Chance. Geld, Job, Investition. Fülle beginnt.",
+          "meaning_reversed": "Verpasste Chance, verschwendete Ressourcen.",
+          "love": "Materiell sichere Beziehung, Geschenk der Liebe.",
+          "career": "Neue Karriere-Chance, Job-Angebot, Geld.",
+          "key_short": "material_beginning"
+        },
+        "2": {
+          "name_de": "Zwei der Münzen",
+          "name_en": "Two of Pentacles",
+          "keywords_upright": [
+            "Balance",
+            "Jonglieren",
+            "Anpassung"
+          ],
+          "meaning_upright": "Du jonglierst viele Sachen. Balance zwischen Verpflichtungen. Anpassungsfähigkeit.",
+          "meaning_reversed": "Ungleichgewicht, alles fällt, überfordert.",
+          "love": "Beziehung neben viel anderem — Balance schwierig.",
+          "career": "Multi-Tasking, Karriere-Jonglage.",
+          "key_short": "juggling"
+        },
+        "3": {
+          "name_de": "Drei der Münzen",
+          "name_en": "Three of Pentacles",
+          "keywords_upright": [
+            "Handwerk",
+            "Zusammenarbeit",
+            "Fertigkeit"
+          ],
+          "meaning_upright": "Zusammenarbeit. Team-Werk. Fertigkeit wird gewürdigt. Handwerkliche Meisterschaft.",
+          "meaning_reversed": "Schlechte Team-Arbeit, minderwertige Qualität.",
+          "love": "Beziehung als gemeinsames Werk.",
+          "career": "Team-Projekt, Zertifikat, handwerkliche Anerkennung.",
+          "key_short": "craftsmanship"
+        },
+        "4": {
+          "name_de": "Vier der Münzen",
+          "name_en": "Four of Pentacles",
+          "keywords_upright": [
+            "Halten",
+            "Sicherheit",
+            "Geiz"
+          ],
+          "meaning_upright": "Halten was du hast. Sicherheit. Aber Vorsicht vor Geiz. Manchmal muss man loslassen.",
+          "meaning_reversed": "Loslassen, Großzügigkeit, geöffnete Hand.",
+          "love": "Besitzergreifend in Liebe, Kontrolle.",
+          "career": "Konservativ mit Geld, Rücklagen aufbauen.",
+          "key_short": "holding_tight"
+        },
+        "5": {
+          "name_de": "Fünf der Münzen",
+          "name_en": "Five of Pentacles",
+          "keywords_upright": [
+            "Verlust",
+            "Armut",
+            "Ausgrenzung"
+          ],
+          "meaning_upright": "Materielle Not. Verlust. Sich ausgegrenzt fühlen. Aber Hilfe ist nah, wenn du hinschaust.",
+          "meaning_reversed": "Erholung von Verlust, Hilfe angenommen.",
+          "love": "Beziehungs-Verlust, sich alleingelassen fühlen.",
+          "career": "Job-Verlust, finanzielle Not, aber Hilfe verfügbar.",
+          "key_short": "hardship"
+        },
+        "6": {
+          "name_de": "Sechs der Münzen",
+          "name_en": "Six of Pentacles",
+          "keywords_upright": [
+            "Geben und Nehmen",
+            "Großzügigkeit",
+            "Balance"
+          ],
+          "meaning_upright": "Fluss von Geben und Nehmen. Großzügigkeit. Wohltätigkeit.",
+          "meaning_reversed": "Ungleichgewicht in Geben/Nehmen, Ausnutzung.",
+          "love": "Beziehung als Geben und Nehmen. Aber wer gibt mehr?",
+          "career": "Bonus, gerechte Bezahlung, oder: Wohltätigkeit.",
+          "key_short": "giving_receiving"
+        },
+        "7": {
+          "name_de": "Sieben der Münzen",
+          "name_en": "Seven of Pentacles",
+          "keywords_upright": [
+            "Geduld",
+            "Bewertung",
+            "langfristige Investition"
+          ],
+          "meaning_upright": "Geduld. Bewerte deine Fortschritte. Manche Früchte brauchen Zeit.",
+          "meaning_reversed": "Ungeduld, verfrühte Ernte, gescheiterte Investition.",
+          "love": "Beziehung braucht Geduld, wächst langsam.",
+          "career": "Investition zahlt sich bald aus. Neubewertung.",
+          "key_short": "patience_investment"
+        },
+        "8": {
+          "name_de": "Acht der Münzen",
+          "name_en": "Eight of Pentacles",
+          "keywords_upright": [
+            "Handwerks-Meisterschaft",
+            "Fleiß",
+            "Lernen"
+          ],
+          "meaning_upright": "Fleißiges Lernen. Meisterschaft entwickelt sich. Bleib dran.",
+          "meaning_reversed": "Faulheit, keine Motivation, mangelnde Qualität.",
+          "love": "Beziehungs-Arbeit, an sich arbeiten.",
+          "career": "Fortbildung, Meisterschaft, Fokus auf Handwerk.",
+          "key_short": "apprenticeship"
+        },
+        "9": {
+          "name_de": "Neun der Münzen",
+          "name_en": "Nine of Pentacles",
+          "keywords_upright": [
+            "Wohlstand",
+            "Unabhängigkeit",
+            "Genuss"
+          ],
+          "meaning_upright": "Wohlstand durch eigene Arbeit. Unabhängigkeit. Genuss verdient. Schöne Umgebung.",
+          "meaning_reversed": "Materielle Abhängigkeit, oberflächlicher Wohlstand.",
+          "love": "Unabhängige, selbstversorgende Partnerin.",
+          "career": "Eigenes Business erfolgreich, Wohlstand aus eigener Kraft.",
+          "key_short": "abundance_self"
+        },
+        "10": {
+          "name_de": "Zehn der Münzen",
+          "name_en": "Ten of Pentacles",
+          "keywords_upright": [
+            "Wohlstand-Vermächtnis",
+            "Familien-Erbe",
+            "Sicherheit"
+          ],
+          "meaning_upright": "Wohlstand-Legat. Familien-Erbe. Generationen-Sicherheit. Alles am Platz.",
+          "meaning_reversed": "Familien-Konflikt um Geld, verlorenes Erbe.",
+          "love": "Eheliche Sicherheit, Familie gegründet.",
+          "career": "Karriere-Höhepunkt, Rente gesichert, Erbe.",
+          "key_short": "generational_wealth"
+        },
+        "page": {
+          "name_de": "Bube der Münzen",
+          "name_en": "Page of Pentacles",
+          "keywords_upright": [
+            "neue Chance",
+            "Lernen",
+            "Fleiß"
+          ],
+          "meaning_upright": "Neue Bildungs-Chance. Junge, fleißige Person. Verantwortung anfangen.",
+          "meaning_reversed": "Unmotiviert, verspielt, kindisch mit Geld.",
+          "love": "Junge Beziehung mit Zukunft.",
+          "career": "Lehre, Praktikum, junge Talente.",
+          "key_short": "diligent_beginner"
+        },
+        "knight": {
+          "name_de": "Ritter der Münzen",
+          "name_en": "Knight of Pentacles",
+          "keywords_upright": [
+            "Verlässlichkeit",
+            "Ausdauer",
+            "praktisches Handeln"
+          ],
+          "meaning_upright": "Verlässlicher, praktischer Mensch. Ausdauer. Nichts Aufregendes, aber solide.",
+          "meaning_reversed": "Langweilig, sturr, keine Bewegung.",
+          "love": "Verlässlicher, langweiliger Partner.",
+          "career": "Verlässlicher Kollege, langsame Karriere.",
+          "key_short": "reliable_worker"
+        },
+        "queen": {
+          "name_de": "Königin der Münzen",
+          "name_en": "Queen of Pentacles",
+          "keywords_upright": [
+            "Fürsorge",
+            "Wohlstand",
+            "Naturliebe"
+          ],
+          "meaning_upright": "Reiche, fürsorgliche Frau. Verbindet Karriere mit Familie. Naturliebe.",
+          "meaning_reversed": "Materialistisch, Vernachlässigung der Selbstpflege.",
+          "love": "Fürsorgliche, wohlhabende Partnerin.",
+          "career": "Erfolgreiche Business-Frau mit Fürsorge.",
+          "key_short": "abundant_nurturer"
+        },
+        "king": {
+          "name_de": "König der Münzen",
+          "name_en": "King of Pentacles",
+          "keywords_upright": [
+            "materieller Erfolg",
+            "Autorität",
+            "Weisheit"
+          ],
+          "meaning_upright": "Erfolgreicher Business-Mann. Materielle Meisterschaft. Weise mit Geld.",
+          "meaning_reversed": "Gierig, korrupt, materialistisch ohne Werte.",
+          "love": "Erfolgreicher, aber materialistischer Partner.",
+          "career": "Business-Meisterschaft, CEO, Investment-Genie.",
+          "key_short": "material_master"
+        }
+      }
+    }
+  },
+  "spreads": {
+    "daily_card": {
+      "name": "Tageskarte",
+      "cards": 1,
+      "description": "Eine Karte ziehen für das Thema des Tages. Perfekt als tägliche Praxis.",
+      "positions": [
+        "Thema des Tages"
+      ]
+    },
+    "three_card": {
+      "name": "3-Karten-Legung",
+      "cards": 3,
+      "description": "Klassische Legung für schnelle Deutung. Verschiedene Interpretationen möglich.",
+      "positions_time": [
+        "Vergangenheit",
+        "Gegenwart",
+        "Zukunft"
+      ],
+      "positions_situation": [
+        "Situation",
+        "Herausforderung",
+        "Rat"
+      ],
+      "positions_mind_body": [
+        "Geist",
+        "Körper",
+        "Seele"
+      ]
+    },
+    "celtic_cross": {
+      "name": "Keltisches Kreuz",
+      "cards": 10,
+      "description": "Klassische umfassende Legung. Die berühmteste Tarot-Legung.",
+      "positions": [
+        "1. Gegenwart / Kernthema",
+        "2. Hindernis / Herausforderung",
+        "3. Unterbewusstes / Wurzel",
+        "4. Vergangenheit / Kürzlich",
+        "5. Möglicher Weg / Ziel",
+        "6. Nahe Zukunft",
+        "7. Selbstbild / Grundhaltung",
+        "8. Umfeld / Andere Menschen",
+        "9. Hoffnungen und Ängste",
+        "10. Ergebnis"
+      ]
+    },
+    "relationship_spread": {
+      "name": "Beziehungs-Legung",
+      "cards": 7,
+      "description": "Für Fragen zu Beziehungen, Liebe, Partnerschaft.",
+      "positions": [
+        "Du in dieser Beziehung",
+        "Partner in dieser Beziehung",
+        "Gemeinsame Basis",
+        "Herausforderung",
+        "Dynamik",
+        "Rat für dich",
+        "Ausgang"
+      ]
+    },
+    "yes_no": {
+      "name": "Ja/Nein-Ziehung",
+      "cards": 3,
+      "description": "3 Karten ziehen. Aufrechte = Ja, umgekehrte = Nein. Mehrheit entscheidet."
+    }
+  },
+  "reading_rules": {
+    "reversal_rules": {
+      "description": "Umgekehrte (reversed) Karten haben eigene Bedeutungen — meist blockierte, verzögerte oder Schatten-Version der Aufrechten.",
+      "when_to_use": "Advanced Reader nutzen Umkehrungen. Anfänger können auch ohne arbeiten."
+    },
+    "major_vs_minor": "Major Arcana zeigen große Lebensthemen, karmische Kräfte. Minor Arcana zeigen alltägliche Situationen. Reading mit vielen Major-Karten = großes Thema aktiv.",
+    "suit_dominance": {
+      "many_wands": "Kreativität, Leidenschaft, Aktion dominiert.",
+      "many_cups": "Emotionen, Beziehungen dominieren.",
+      "many_swords": "Gedanken, Konflikte, Kommunikation dominieren.",
+      "many_pentacles": "Geld, Karriere, Materie dominieren."
+    },
+    "court_card_meaning": "Hofkarten können echte Menschen im Leben repräsentieren ODER Aspekte in dir selbst.",
+    "number_meaning": {
+      "aces": "Neuanfänge, reine Energie",
+      "twos": "Balance, Wahl, Partnerschaft",
+      "threes": "Wachstum, Kreativität",
+      "fours": "Stabilität, Struktur",
+      "fives": "Konflikt, Wandel",
+      "sixes": "Harmonie, Anerkennung",
+      "sevens": "Selbstreflexion, Wahl",
+      "eights": "Bewegung, Fortschritt",
+      "nines": "Vollständigkeit",
+      "tens": "Vollendung, Übergang"
+    }
+  },
+  "app_workflow": {
+    "shuffle_algorithm": "Für digitale App: Fisher-Yates Shuffle. Zusätzlich: Nutzer-Geste (Wischen) als Zufalls-Seed für 'echte' Karten-Ziehung.",
+    "code_example_javascript": "function drawCards(n) { const deck = [...allCards]; for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; } return deck.slice(0, n).map(c => ({...c, reversed: Math.random() < 0.3})); }",
+    "features_recommended": [
+      "Tägliche Karte mit Push-Notification",
+      "Karten-Bibliothek zum Durchblättern",
+      "Persönliche Karten-Historie",
+      "Verschiedene Deck-Skins (Rider-Waite, Marseille, Thoth)",
+      "Journal-Feature für Karten-Reflexion",
+      "Kompatibilität mit Astrologie (Aszendent + Tageskarte)"
+    ]
+  }
+}

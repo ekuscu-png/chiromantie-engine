@@ -1,0 +1,832 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "language": "de",
+    "description": "Master-Wissensdatenbank für Numerologie. Umfasst Pythagoreische, Chaldäische und Kabbalistische Numerologie, alle Kern-Zahlen (Lebenszahl, Namenszahl, Seelenzahl, Ausdruckszahl, Persönlichkeitszahl, Geburtstagszahl), Master-Zahlen und Karmische Zahlen.",
+    "systems_included": 3,
+    "core_numbers": 9,
+    "master_numbers": 3,
+    "karmic_numbers": 4,
+    "disclaimer": "Diese Deutungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion.",
+    "weightings_for_app": {
+      "life_path_number": 3.0,
+      "expression_number": 2.5,
+      "soul_urge_number": 2.5,
+      "personality_number": 2.0,
+      "birthday_number": 1.5,
+      "personal_year": 2.0,
+      "karmic_debt": 1.8
+    }
+  },
+  "systems": {
+    "pythagorean": {
+      "name_de": "Pythagoreische Numerologie",
+      "description": "Das im Westen häufigste System. Zurückgeführt auf Pythagoras (~500 v. Chr.). Jeder Buchstabe wird einer Zahl 1-9 zugeordnet.",
+      "letter_values": {
+        "1": [
+          "A",
+          "J",
+          "S"
+        ],
+        "2": [
+          "B",
+          "K",
+          "T"
+        ],
+        "3": [
+          "C",
+          "L",
+          "U"
+        ],
+        "4": [
+          "D",
+          "M",
+          "V"
+        ],
+        "5": [
+          "E",
+          "N",
+          "W"
+        ],
+        "6": [
+          "F",
+          "O",
+          "X"
+        ],
+        "7": [
+          "G",
+          "P",
+          "Y"
+        ],
+        "8": [
+          "H",
+          "Q",
+          "Z"
+        ],
+        "9": [
+          "I",
+          "R"
+        ]
+      },
+      "usage": "Am weitesten verbreitet. Ideal für Standard-Deutungen."
+    },
+    "chaldean": {
+      "name_de": "Chaldäische Numerologie",
+      "description": "Älteres System (~2000 v. Chr., Babylonien). Nutzt Zahlen 1-8 (9 gilt als heilig). Berücksichtigt die Vibration der Buchstaben.",
+      "letter_values": {
+        "1": [
+          "A",
+          "I",
+          "J",
+          "Q",
+          "Y"
+        ],
+        "2": [
+          "B",
+          "K",
+          "R"
+        ],
+        "3": [
+          "C",
+          "G",
+          "L",
+          "S"
+        ],
+        "4": [
+          "D",
+          "M",
+          "T"
+        ],
+        "5": [
+          "E",
+          "H",
+          "N",
+          "X"
+        ],
+        "6": [
+          "U",
+          "V",
+          "W"
+        ],
+        "7": [
+          "O",
+          "Z"
+        ],
+        "8": [
+          "F",
+          "P"
+        ]
+      },
+      "usage": "Präziser für spirituelle Deutungen, esoterisch tief."
+    },
+    "kabbalistic": {
+      "name_de": "Kabbalistische Numerologie",
+      "description": "Aus der jüdischen Mystik (Gematria). Ursprünglich mit hebräischen Buchstaben. Modern für lateinische Buchstaben angepasst. Fokus auf Namen, nicht auf Geburtsdatum.",
+      "usage": "Für spirituelle Namensdeutung und Lebenszweck."
+    }
+  },
+  "life_path_calculation": {
+    "description": "Die Lebenszahl (Life Path Number) ist die WICHTIGSTE Zahl in der Numerologie. Sie zeigt den Lebensweg und die Grundbestimmung.",
+    "how_to_calculate": "Addiere alle Ziffern deines Geburtsdatums, reduziere bis eine einstellige Zahl oder Master-Zahl (11, 22, 33) übrigbleibt.",
+    "example": "Geburtsdatum 14.03.1985 → 1+4+0+3+1+9+8+5 = 31 → 3+1 = 4. Lebenszahl = 4",
+    "master_number_note": "Wenn während der Reduktion die Zwischensumme 11, 22 oder 33 erreicht, HALTE dort — das sind Master-Zahlen."
+  },
+  "core_numbers_1_9": {
+    "1": {
+      "name": "Die Führerin / Der Führer",
+      "keywords": [
+        "Unabhängigkeit",
+        "Initiative",
+        "Führung",
+        "Individualität",
+        "Pionier"
+      ],
+      "personality_positive": [
+        "ambitious",
+        "kreativ",
+        "originell",
+        "mutig",
+        "selbstständig",
+        "innovativ",
+        "entschlossen",
+        "willensstark"
+      ],
+      "personality_negative": [
+        "egozentrisch",
+        "sturr",
+        "dominant",
+        "einsam",
+        "arrogant",
+        "ungeduldig"
+      ],
+      "personality_long": "Die 1 ist die Zahl des Ursprungs, des Anfangs, der Individualität. Menschen mit Lebenszahl 1 sind geboren, um zu führen. Sie sind Pioniere, Erfinder, Startups-Gründer. Ihre größte Stärke ist ihre Unabhängigkeit und ihr innerer Kompass. Sie können aus dem Nichts etwas erschaffen. Ihre Herausforderung: Sie können einsam werden, weil sie schwer delegieren und Kompromisse eingehen. Die Lektion der 1 ist, andere zu inspirieren, ohne sie zu dominieren.",
+      "career_matches": [
+        "Unternehmertum",
+        "Politik",
+        "Erfindungen",
+        "Selbständigkeit",
+        "Führungspositionen",
+        "Pionier-Berufe"
+      ],
+      "love_style": "Braucht Partner, die eigenständig sind und die 1-Persönlichkeit respektieren. Nicht für abhängige Beziehungen geeignet.",
+      "challenges": "Ego, Sturheit, Einsamkeit. Muss lernen zu teilen.",
+      "life_purpose": "Neues erschaffen, andere zu inspirieren, Pionier-Wege zu gehen.",
+      "compatible_numbers": [
+        3,
+        5,
+        7
+      ],
+      "challenging_numbers": [
+        4,
+        6,
+        8
+      ],
+      "color": "Rot",
+      "day": "Sonntag",
+      "planet": "Sonne",
+      "element": "Feuer",
+      "tarot": "Der Magier"
+    },
+    "2": {
+      "name": "Die Diplomatin / Der Diplomat",
+      "keywords": [
+        "Kooperation",
+        "Sensitivität",
+        "Balance",
+        "Partnerschaft",
+        "Intuition"
+      ],
+      "personality_positive": [
+        "diplomatisch",
+        "einfühlsam",
+        "kooperativ",
+        "geduldig",
+        "friedliebend",
+        "unterstützend",
+        "intuitiv",
+        "harmoniesüchtig"
+      ],
+      "personality_negative": [
+        "übersensibel",
+        "unentschlossen",
+        "abhängig",
+        "schüchtern",
+        "manipulativ (subtil)",
+        "unsicher"
+      ],
+      "personality_long": "Die 2 ist die Zahl der Beziehung, der Kooperation, der Sensitivität. Menschen mit Lebenszahl 2 sind geboren, um zu vermitteln. Sie sind Diplomaten, Berater, Partner. Ihre Stärke: außerordentliche emotionale Intelligenz und die Fähigkeit, Konflikte zu lösen. Sie brauchen andere, um ganz zu werden. Herausforderung: Sie können in Abhängigkeit versinken und sich selbst vergessen. Die Lektion der 2 ist, Balance zu finden zwischen Selbst und Anderen.",
+      "career_matches": [
+        "Diplomatie",
+        "Beratung",
+        "Mediation",
+        "Therapie",
+        "Pflege",
+        "Teamwork-Rollen",
+        "Musik (Zweitstimme)"
+      ],
+      "love_style": "Klassische Beziehungsmenschen. Können in Beziehung schmelzen. Brauchen aber Grenzen.",
+      "challenges": "Zu abhängig, zu sensibel, zu selbstlos.",
+      "life_purpose": "Menschen verbinden, Frieden stiften, Beziehungen heilen.",
+      "compatible_numbers": [
+        4,
+        6,
+        8,
+        9
+      ],
+      "challenging_numbers": [
+        1,
+        5
+      ],
+      "color": "Orange, Weiß",
+      "day": "Montag",
+      "planet": "Mond",
+      "element": "Wasser",
+      "tarot": "Die Hohepriesterin"
+    },
+    "3": {
+      "name": "Die Künstlerin / Der Künstler",
+      "keywords": [
+        "Kreativität",
+        "Ausdruck",
+        "Freude",
+        "Kommunikation",
+        "Optimismus"
+      ],
+      "personality_positive": [
+        "kreativ",
+        "witzig",
+        "gesellig",
+        "optimistisch",
+        "künstlerisch",
+        "inspirierend",
+        "verspielt",
+        "ausdrucksstark"
+      ],
+      "personality_negative": [
+        "oberflächlich",
+        "sprunghaft",
+        "kritisch (mit anderen)",
+        "faul (wenn nicht inspiriert)",
+        "übertrieben",
+        "vertsteut"
+      ],
+      "personality_long": "Die 3 ist die Zahl der Kreativität, des Ausdrucks, der Freude. Menschen mit Lebenszahl 3 sind geboren, um zu erschaffen und zu inspirieren. Sie sind Künstler, Autoren, Schauspieler, Musiker, Redner. Ihre Stärke: Charme, Kommunikationsgabe und ansteckender Optimismus. Sie ziehen andere durch ihre Freude an. Herausforderung: Sie können sich verzetteln, zu viel angefangen, wenig vollendet. Sie können auch zu abhängig von Anerkennung werden. Die Lektion der 3 ist, ihre Gaben zu fokussieren und zu meistern.",
+      "career_matches": [
+        "Kunst",
+        "Schauspiel",
+        "Musik",
+        "Schreiben",
+        "Werbung",
+        "Comedy",
+        "PR",
+        "Design"
+      ],
+      "love_style": "Charmant, verspielt, romantisch. Braucht Partner, die Humor teilen.",
+      "challenges": "Fokus, Tiefe, Vollendung.",
+      "life_purpose": "Andere durch Kreativität inspirieren, Freude verbreiten.",
+      "compatible_numbers": [
+        1,
+        5,
+        6,
+        9
+      ],
+      "challenging_numbers": [
+        4,
+        7
+      ],
+      "color": "Gelb",
+      "day": "Donnerstag",
+      "planet": "Jupiter",
+      "element": "Feuer",
+      "tarot": "Die Herrscherin"
+    },
+    "4": {
+      "name": "Die Bauherrin / Der Bauherr",
+      "keywords": [
+        "Struktur",
+        "Arbeit",
+        "Disziplin",
+        "Verlässlichkeit",
+        "Fundament"
+      ],
+      "personality_positive": [
+        "diszipliniert",
+        "loyal",
+        "praktisch",
+        "organisiert",
+        "geduldig",
+        "verlässlich",
+        "fleißig",
+        "systematisch"
+      ],
+      "personality_negative": [
+        "sturr",
+        "unflexibel",
+        "konservativ",
+        "materiell orientiert",
+        "langweilig",
+        "kritisch"
+      ],
+      "personality_long": "Die 4 ist die Zahl der Struktur, der Arbeit, des Fundaments. Menschen mit Lebenszahl 4 sind geboren, um zu bauen. Sie sind Architekten (buchstäblich und metaphorisch), Manager, Verwalter, Handwerker. Ihre Stärke: Disziplin, Verlässlichkeit und die Fähigkeit, langfristige Projekte zu vollenden. Herausforderung: Sie können in Routine versinken, zu wenig Freude leben und andere durch Sturheit vertreiben. Die Lektion der 4 ist, Struktur und Flexibilität zu balancieren.",
+      "career_matches": [
+        "Bau",
+        "Ingenieurwesen",
+        "Verwaltung",
+        "Buchhaltung",
+        "Handwerk",
+        "Landwirtschaft",
+        "IT-Systeme"
+      ],
+      "love_style": "Verlässlich, treu, aber nicht sehr romantisch. Braucht Sicherheit.",
+      "challenges": "Flexibilität, Spielerei, Loslassen.",
+      "life_purpose": "Solide Fundamente bauen, andere durch Verlässlichkeit stärken.",
+      "compatible_numbers": [
+        2,
+        6,
+        7,
+        8
+      ],
+      "challenging_numbers": [
+        3,
+        5
+      ],
+      "color": "Grün, Braun",
+      "day": "Sonntag/Montag",
+      "planet": "Uranus/Rahu",
+      "element": "Erde",
+      "tarot": "Der Herrscher"
+    },
+    "5": {
+      "name": "Die Freidenkerin / Der Freidenker",
+      "keywords": [
+        "Freiheit",
+        "Abenteuer",
+        "Wandel",
+        "Neugier",
+        "Kommunikation"
+      ],
+      "personality_positive": [
+        "freidenkend",
+        "abenteuerlustig",
+        "vielseitig",
+        "anpassungsfähig",
+        "witzig",
+        "sozial",
+        "neugierig",
+        "energisch"
+      ],
+      "personality_negative": [
+        "unbeständig",
+        "impulsiv",
+        "verantwortungsscheu",
+        "sucht-anfällig",
+        "genusssüchtig",
+        "unruhig"
+      ],
+      "personality_long": "Die 5 ist die Zahl der Freiheit, des Wandels, des Abenteuers. Menschen mit Lebenszahl 5 sind geboren, um zu erleben. Sie sind Reisende, Journalisten, Vertreter, Autoren. Ihre Stärke: Vielseitigkeit, Anpassungsfähigkeit, Charme. Sie sind die 'Alleskönner' der Numerologie. Herausforderung: Verantwortungsscheu, Sucht (Substanzen, Nervenkitzel), Unbeständigkeit. Die Lektion der 5 ist, Freiheit mit Verantwortung zu verbinden.",
+      "career_matches": [
+        "Reisebranche",
+        "Journalismus",
+        "Vertrieb",
+        "Marketing",
+        "Sport",
+        "Sprachen",
+        "Unternehmertum"
+      ],
+      "love_style": "Braucht Freiheit in der Liebe. Nicht für klammernde Partner. Sucht Abenteuer.",
+      "challenges": "Beständigkeit, Verantwortung, Suchtvermeidung.",
+      "life_purpose": "Andere durch neue Perspektiven bereichern, Grenzen erweitern.",
+      "compatible_numbers": [
+        1,
+        3,
+        7,
+        9
+      ],
+      "challenging_numbers": [
+        4,
+        6
+      ],
+      "color": "Blau, Türkis",
+      "day": "Mittwoch",
+      "planet": "Merkur",
+      "element": "Luft",
+      "tarot": "Der Hierophant"
+    },
+    "6": {
+      "name": "Die Nährerin / Der Nährer",
+      "keywords": [
+        "Familie",
+        "Verantwortung",
+        "Fürsorge",
+        "Schönheit",
+        "Balance"
+      ],
+      "personality_positive": [
+        "fürsorglich",
+        "verantwortungsvoll",
+        "harmoniebedürftig",
+        "künstlerisch",
+        "warmherzig",
+        "unterstützend",
+        "gerecht"
+      ],
+      "personality_negative": [
+        "selbstlos (bis zur Erschöpfung)",
+        "übermäßig sorgend",
+        "eifersüchtig",
+        "opferrolle",
+        "kritisch",
+        "konservativ"
+      ],
+      "personality_long": "Die 6 ist die Zahl der Familie, der Verantwortung, der Schönheit. Menschen mit Lebenszahl 6 sind geboren, um zu nähren. Sie sind Eltern, Lehrer, Heiler, Berater, Künstler. Ihre Stärke: außergewöhnliche Empathie und die Fähigkeit, Schönheit und Harmonie zu schaffen. Herausforderung: Sie können sich in Fürsorge verlieren, andere vor sich stellen und in Opferrollen versinken. Die Lektion der 6 ist, sich selbst genauso zu nähren wie andere.",
+      "career_matches": [
+        "Pflege",
+        "Pädagogik",
+        "Therapie",
+        "Kunst",
+        "Musik",
+        "Innenarchitektur",
+        "Familienberatung",
+        "Gastronomie"
+      ],
+      "love_style": "Klassische Familienmenschen. Sehr treu, sehr fürsorglich, sehr romantisch.",
+      "challenges": "Selbstliebe, Grenzen, Loslassen.",
+      "life_purpose": "Andere nähren, Schönheit schaffen, Familie und Gemeinschaft stärken.",
+      "compatible_numbers": [
+        2,
+        3,
+        4,
+        9
+      ],
+      "challenging_numbers": [
+        5,
+        7
+      ],
+      "color": "Rosa, Türkis",
+      "day": "Freitag",
+      "planet": "Venus",
+      "element": "Erde/Wasser",
+      "tarot": "Die Liebenden"
+    },
+    "7": {
+      "name": "Die Sucherin / Der Sucher",
+      "keywords": [
+        "Weisheit",
+        "Spiritualität",
+        "Analyse",
+        "Introspektion",
+        "Mystik"
+      ],
+      "personality_positive": [
+        "intellektuell",
+        "spirituell",
+        "analytisch",
+        "introspektiv",
+        "weise",
+        "gebildet",
+        "unabhängig",
+        "philosophisch"
+      ],
+      "personality_negative": [
+        "distanziert",
+        "geheimnisvoll",
+        "misstrauisch",
+        "einsam",
+        "arrogant (intellektuell)",
+        "kalt",
+        "pessimistisch"
+      ],
+      "personality_long": "Die 7 ist die Zahl der Weisheit, der Spiritualität, der Suche. Menschen mit Lebenszahl 7 sind geboren, um zu verstehen. Sie sind Forscher, Philosophen, Mystiker, Wissenschaftler, Analytiker. Ihre Stärke: tiefes Denken und die Fähigkeit, die Wahrheit hinter der Oberfläche zu sehen. Herausforderung: Sie können sich isolieren, emotional kalt werden und in ihren Gedanken gefangen bleiben. Die Lektion der 7 ist, ihr Wissen zu teilen und emotionale Verbindungen zu pflegen.",
+      "career_matches": [
+        "Forschung",
+        "Wissenschaft",
+        "Philosophie",
+        "Theologie",
+        "Psychologie",
+        "Astronomie",
+        "Detektivarbeit",
+        "Antiquare"
+      ],
+      "love_style": "Braucht intellektuellen Partner. Emotionale Nähe ist schwer, aber tief wenn erreicht.",
+      "challenges": "Emotionale Öffnung, soziale Verbindung, Vertrauen.",
+      "life_purpose": "Weisheit finden und teilen, tiefe Wahrheiten aufdecken.",
+      "compatible_numbers": [
+        1,
+        4,
+        5,
+        9
+      ],
+      "challenging_numbers": [
+        2,
+        6,
+        8
+      ],
+      "color": "Violett, Silber",
+      "day": "Montag/Sonntag",
+      "planet": "Neptun/Ketu",
+      "element": "Wasser",
+      "tarot": "Der Wagen"
+    },
+    "8": {
+      "name": "Die Erfolgreiche / Der Erfolgreiche",
+      "keywords": [
+        "Macht",
+        "Erfolg",
+        "Materie",
+        "Ehrgeiz",
+        "Karma"
+      ],
+      "personality_positive": [
+        "ambitious",
+        "strategisch",
+        "führungsstark",
+        "materiell erfolgreich",
+        "diszipliniert",
+        "willensstark",
+        "gerecht"
+      ],
+      "personality_negative": [
+        "machtsüchtig",
+        "materialistisch",
+        "kontrollsüchtig",
+        "kalt",
+        "arbeitssüchtig",
+        "harsch"
+      ],
+      "personality_long": "Die 8 ist die Zahl der Macht, des materiellen Erfolgs, des Karmas. Menschen mit Lebenszahl 8 sind geboren, um Erfolg zu haben — in Business, Politik, Führung. Ihre Stärke: strategisches Denken, Ehrgeiz, die Fähigkeit, große Vorhaben zu managen. Herausforderung: Sie können materialistisch werden, Macht missbrauchen, emotional verhärten. Die Lektion der 8 ist, Erfolg mit Ethik und Balance zu verbinden. Die 8 hat KARMISCHE Qualität — was gesät wird, wird geerntet (verstärkt).",
+      "career_matches": [
+        "Business",
+        "Finanzen",
+        "Politik",
+        "Immobilien",
+        "Konzernführung",
+        "Recht",
+        "Investment"
+      ],
+      "love_style": "Sucht Partner, die Erfolg respektieren. Kann emotional distanziert sein.",
+      "challenges": "Balance zwischen Materie und Geist, Macht ethisch nutzen.",
+      "life_purpose": "Materiell erfolgreich sein und diesen Erfolg für andere nutzen.",
+      "compatible_numbers": [
+        2,
+        4,
+        6
+      ],
+      "challenging_numbers": [
+        1,
+        5,
+        7
+      ],
+      "color": "Schwarz, Grau, Dunkelblau",
+      "day": "Samstag",
+      "planet": "Saturn",
+      "element": "Erde",
+      "tarot": "Gerechtigkeit / Kraft"
+    },
+    "9": {
+      "name": "Die Humanistin / Der Humanist",
+      "keywords": [
+        "Vollendung",
+        "Mitgefühl",
+        "Universelles Wissen",
+        "Idealismus",
+        "Loslassen"
+      ],
+      "personality_positive": [
+        "mitfühlend",
+        "großzügig",
+        "kreativ",
+        "weltoffen",
+        "idealistisch",
+        "künstlerisch",
+        "spirituell tief",
+        "weise"
+      ],
+      "personality_negative": [
+        "realitätsfern",
+        "opferrolle",
+        "melancholisch",
+        "kritisch (moralisch)",
+        "unpraktisch",
+        "emotional turbulent"
+      ],
+      "personality_long": "Die 9 ist die Zahl der Vollendung, des Mitgefühls, des Loslassens. Menschen mit Lebenszahl 9 sind alte Seelen — sie haben viele Leben (metaphorisch oder karmisch) hinter sich und tragen die Weisheit vieler in sich. Sie sind Humanitäre, Künstler, Heiler, Weise. Ihre Stärke: universelle Liebe, weitreichende Vision, die Fähigkeit, das große Ganze zu sehen. Herausforderung: Sie können in Idealismus versinken, an der Realität leiden, und Schwierigkeiten haben, in der materiellen Welt zu funktionieren. Die Lektion der 9 ist, das Alte loszulassen, damit Neues entstehen kann.",
+      "career_matches": [
+        "Wohltätigkeit",
+        "Kunst",
+        "Heilberufe",
+        "Lehre",
+        "Spiritualität",
+        "Aktivismus",
+        "Internationale Arbeit"
+      ],
+      "love_style": "Universelle Liebe. Schwer für monogame Beziehung, weil Liebe zu weit ist.",
+      "challenges": "Loslassen, in der Realität leben, emotionale Grenzen.",
+      "life_purpose": "Der Menschheit dienen, universelle Weisheit teilen, Zyklen vollenden.",
+      "compatible_numbers": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "challenging_numbers": [
+        4,
+        8
+      ],
+      "color": "Gold, Weiß, alle Farben",
+      "day": "Dienstag",
+      "planet": "Mars",
+      "element": "Feuer",
+      "tarot": "Der Eremit"
+    }
+  },
+  "master_numbers": {
+    "11": {
+      "name": "Der Erleuchter",
+      "keywords": [
+        "Intuition",
+        "Erleuchtung",
+        "Spiritualität",
+        "Vision"
+      ],
+      "personality_long": "Die 11 ist eine Master-Zahl und trägt die höhere Vibration der 2. Menschen mit Lebenszahl 11 sind geboren, um zu inspirieren durch spirituelle Vision. Sie haben außergewöhnliche Intuition, oft mediale Fähigkeiten. Sie sind Lehrer, Mystiker, Künstler mit Botschaft. Herausforderung: Die 11 ist eine Master-Zahl mit hoher Anforderung — viele leben nicht ihr Potenzial und funktionieren als 2. Sie können nervlich überreizt sein, ängstlich, überempfindlich.",
+      "career_matches": [
+        "Spirituelle Lehre",
+        "Medium",
+        "Kunst mit Botschaft",
+        "Heilung",
+        "Inspirationsberufe"
+      ],
+      "life_purpose": "Andere zu spiritueller Erkenntnis inspirieren.",
+      "shadow": "Kann als 2 leben (unterentwickelt) — Abhängigkeit, Selbstunterschätzung.",
+      "if_you_do_not_live_it": "Reduziert sich auf 2 — überempfindlich, abhängig."
+    },
+    "22": {
+      "name": "Der Meisterbauer",
+      "keywords": [
+        "Vision umgesetzt",
+        "Weltverbesserung",
+        "Große Werke",
+        "Materielle Manifestation"
+      ],
+      "personality_long": "Die 22 ist die stärkste Master-Zahl. Sie kombiniert die Vision der 11 mit der Umsetzungskraft der 4. Menschen mit Lebenszahl 22 sind geboren, um WELTVERÄNDERND zu wirken — durch Bauwerke, Institutionen, große Systeme, die der Menschheit dienen. Sie sind Architekten der Zivilisation. Herausforderung: Die 22 ist so anspruchsvoll, dass viele sie nicht leben und als 4 funktionieren (fleißig, aber ohne Vision).",
+      "career_matches": [
+        "Große Architektur",
+        "Institutionen-Gründung",
+        "Weltbewegende Werke",
+        "Politik im großen Maßstab"
+      ],
+      "life_purpose": "Die Welt konkret verändern durch große Werke.",
+      "shadow": "Kann als 4 leben — nur fleißig ohne Vision.",
+      "famous_examples": [
+        "Dalai Lama",
+        "Bill Gates",
+        "Oprah Winfrey"
+      ]
+    },
+    "33": {
+      "name": "Der Meisterlehrer",
+      "keywords": [
+        "Universelles Mitgefühl",
+        "Heilung",
+        "Christusbewusstsein"
+      ],
+      "personality_long": "Die 33 ist die höchste und seltenste Master-Zahl. Sie kombiniert die Kreativität der 3 mit der Verantwortung der 6. Menschen mit Lebenszahl 33 sind geboren, um universelles Mitgefühl zu leben — sie sind Christusfiguren, Bodhisattvas, Menschheitslehrer. Extrem selten (weniger als 1% der Weltbevölkerung). Herausforderung: Diese Zahl ist so hoch, dass sie meist nur teilweise gelebt wird.",
+      "career_matches": [
+        "Menschheits-Lehre",
+        "spirituelle Führung",
+        "Heilung im großen Maßstab"
+      ],
+      "life_purpose": "Universelles Mitgefühl leben und lehren.",
+      "shadow": "Kann als 6 leben — nur familiär orientiert ohne größeren Auftrag."
+    }
+  },
+  "karmic_debt_numbers": {
+    "description": "Karmische Schulden sind Zahlen, die auf ungelöste karmische Muster deuten — meist 13, 14, 16, 19 in bestimmten Positionen des numerologischen Diagramms.",
+    "13": {
+      "meaning": "Karma von Faulheit. Muss in diesem Leben Arbeit und Disziplin lernen."
+    },
+    "14": {
+      "meaning": "Karma des Freiheitsmissbrauchs. Muss in diesem Leben Selbstkontrolle lernen."
+    },
+    "16": {
+      "meaning": "Karma des Egoismus in Liebe. Muss in diesem Leben Demut und Selbstliebe lernen."
+    },
+    "19": {
+      "meaning": "Karma des Machtmissbrauchs. Muss in diesem Leben Verantwortung und Dienst lernen."
+    }
+  },
+  "core_number_types": {
+    "life_path_number": {
+      "calculation": "Alle Ziffern des Geburtsdatums addieren",
+      "meaning": "Grundbestimmung, Lebensweg, größte Lektion",
+      "importance": "WICHTIGSTE Zahl der Numerologie"
+    },
+    "expression_number": {
+      "calculation": "Alle Buchstaben des vollständigen Geburtsnamens (Vor+Mittel+Nachname) addieren",
+      "meaning": "Was du in dieser Welt ausdrücken sollst, deine Talente und Fähigkeiten",
+      "importance": "Zweitwichtigste Zahl"
+    },
+    "soul_urge_number": {
+      "calculation": "Nur die Vokale des Namens addieren (A, E, I, O, U — manchmal Y)",
+      "meaning": "Deine innersten Wünsche, was deine Seele wirklich will",
+      "importance": "Zeigt Herz-Motivation"
+    },
+    "personality_number": {
+      "calculation": "Nur die Konsonanten des Namens addieren",
+      "meaning": "Wie du auf andere wirkst, dein äußeres Bild",
+      "importance": "Erste Eindruck"
+    },
+    "birthday_number": {
+      "calculation": "Der Tag des Monats (nicht reduziert bei 1-31)",
+      "meaning": "Besonderes Talent, das du mitbringst",
+      "importance": "Ergänzt Lebenszahl"
+    },
+    "personal_year_number": {
+      "calculation": "Geburtstag + Geburtsmonat + aktuelles Jahr, dann reduzieren",
+      "meaning": "Thema und Energie des aktuellen Jahres",
+      "importance": "Für jährliche Deutung"
+    }
+  },
+  "personal_year_meanings": {
+    "1": "Neuanfang, neue Kapitel, Selbstständigkeit. Pflanze Samen für die nächsten 9 Jahre.",
+    "2": "Beziehungen, Kooperation, Geduld. Warten und Zusammenarbeit.",
+    "3": "Kreativität, Freude, Selbstausdruck. Sozial aktiv sein.",
+    "4": "Arbeit, Fundament, harte Arbeit. Solide bauen.",
+    "5": "Wandel, Freiheit, Abenteuer. Reise, wechsle.",
+    "6": "Verantwortung, Familie, Heim. Fürsorge zeigen.",
+    "7": "Rückzug, Analyse, Spiritualität. Zeit für inneres Wachstum.",
+    "8": "Erfolg, Macht, Manifestation. Ernte die Früchte.",
+    "9": "Vollendung, Loslassen, Abschluss. Beende einen Zyklus."
+  },
+  "compatibility_matrix": {
+    "1_1": "Zwei Führer — Machtkämpfe garantiert. Kann funktionieren, wenn beide getrennte Bereiche haben.",
+    "1_2": "Führer + Diplomat — sehr komplementär. 2 unterstützt 1, 1 gibt Richtung.",
+    "1_3": "Führer + Künstler — sehr belebend. Gemeinsame Kreativität und Führung.",
+    "1_4": "Führer + Bauherr — 1 will schnell, 4 langsam. Kompliziert.",
+    "1_5": "Führer + Freidenker — beide unabhängig, dynamisch. Gutes Match.",
+    "1_6": "Führer + Nährer — 1 zu selbstbezogen für 6's Fürsorge. Schwierig.",
+    "1_7": "Führer + Sucher — 1 handelt, 7 denkt. Gut wenn Respekt da ist.",
+    "1_8": "Führer + Erfolgreicher — zwei Alpha-Persönlichkeiten. Kann Machtkampf werden.",
+    "1_9": "Führer + Humanist — 1 individualistisch, 9 universell. Kann funktionieren.",
+    "2_2": "Zwei Diplomaten — sehr harmonisch, aber niemand entscheidet.",
+    "2_3": "Diplomat + Künstler — 2 unterstützt 3's Kreativität. Gutes Match.",
+    "2_4": "Diplomat + Bauherr — sehr stabil, treu. Klassisches Familienpaar.",
+    "2_5": "Diplomat + Freidenker — 2 will Nähe, 5 Freiheit. Schwierig.",
+    "2_6": "Diplomat + Nährer — extrem harmonisch. Klassisch romantisch.",
+    "2_7": "Diplomat + Sucher — 7 zu distanziert für 2's Bedürfnisse. Schwierig.",
+    "2_8": "Diplomat + Erfolgreicher — 2 unterstützt 8's Ehrgeiz. Gutes Team.",
+    "2_9": "Diplomat + Humanist — 2 gibt Nähe, 9 Vision. Sehr harmonisch.",
+    "3_3": "Zwei Künstler — sehr kreativ, aber wenig Struktur. Kann chaotisch werden.",
+    "3_4": "Künstler + Bauherr — 4 gibt Struktur für 3's Kreativität. Ergänzend.",
+    "3_5": "Künstler + Freidenker — sehr spontan, sozial. Fun-Paar.",
+    "3_6": "Künstler + Nährer — 6 nährt 3's Kreativität. Klassisch.",
+    "3_7": "Künstler + Sucher — 3 zu oberflächlich für 7. Schwierig.",
+    "3_8": "Künstler + Erfolgreicher — 8 nutzt 3's Talent. Kann kommerziell erfolgreich sein.",
+    "3_9": "Künstler + Humanist — beide kreativ. Sehr inspirierend.",
+    "4_4": "Zwei Bauherren — sehr stabil, aber wenig Freude.",
+    "4_5": "Bauherr + Freidenker — 4 will bleiben, 5 gehen. Schwierig.",
+    "4_6": "Bauherr + Nährer — klassisches Familienfundament. Sehr stabil.",
+    "4_7": "Bauherr + Sucher — 4 praktisch, 7 abstrakt. Kann komplementär sein.",
+    "4_8": "Bauherr + Erfolgreicher — Business-Traumpaar. Erfolg garantiert.",
+    "4_9": "Bauherr + Humanist — 4 zu materiell für 9's Vision. Schwierig.",
+    "5_5": "Zwei Freidenker — sehr wild, wenig Struktur. Kann brennen.",
+    "5_6": "Freidenker + Nährer — 5 will weg, 6 will Nest. Schwierig.",
+    "5_7": "Freidenker + Sucher — beide unabhängig, geistig. Gutes Match.",
+    "5_8": "Freidenker + Erfolgreicher — 8 zu materiell für 5. Schwierig.",
+    "5_9": "Freidenker + Humanist — beide weit denkend. Sehr abenteuerlich.",
+    "6_6": "Zwei Nährer — sehr familiär, aber niemand pflegt sich selbst.",
+    "6_7": "Nährer + Sucher — 6 emotional, 7 mental. Schwierig.",
+    "6_8": "Nährer + Erfolgreicher — 8 gibt Sicherheit für 6's Nest. Gut.",
+    "6_9": "Nährer + Humanist — beide dienen. Sehr harmonisch.",
+    "7_7": "Zwei Sucher — sehr geistig, aber emotional distanziert.",
+    "7_8": "Sucher + Erfolgreicher — 8 materiell, 7 spirituell. Schwierig.",
+    "7_9": "Sucher + Humanist — beide weise. Tiefes Match.",
+    "8_8": "Zwei Erfolgreiche — Business-Traumpaar oder Machtkampf.",
+    "8_9": "Erfolgreicher + Humanist — 8 will Erfolg, 9 will teilen. Kompliziert.",
+    "9_9": "Zwei Humanisten — sehr weise, aber realitätsfern."
+  },
+  "app_workflow": {
+    "input_required": [
+      "Vollständiger Geburtsname",
+      "Geburtsdatum"
+    ],
+    "calculations_to_perform": [
+      "Life Path Number (aus Geburtsdatum)",
+      "Expression Number (aus Namen)",
+      "Soul Urge Number (aus Vokalen des Namens)",
+      "Personality Number (aus Konsonanten des Namens)",
+      "Birthday Number (Tag des Monats)",
+      "Personal Year Number (Jahr aktuell)"
+    ],
+    "code_example_javascript": "function calculateLifePath(birthdate) { const digits = birthdate.replace(/[^0-9]/g, ''); let sum = 0; for (const d of digits) sum += parseInt(d); while (sum > 9 && sum !== 11 && sum !== 22 && sum !== 33) { let ns = 0; for (const c of String(sum)) ns += parseInt(c); sum = ns; } return sum; }",
+    "code_example_python": "def calculate_life_path(birthdate): digits = ''.join(filter(str.isdigit, birthdate)); s = sum(int(d) for d in digits); while s > 9 and s not in (11, 22, 33): s = sum(int(d) for d in str(s)); return s"
+  },
+  "ethics": {
+    "disclaimer": "Numerologische Deutungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion.",
+    "avoid": [
+      "Konkrete Vorhersagen von Ereignissen",
+      "Namensänderungs-Empfehlungen ohne Warnung"
+    ]
+  }
+}

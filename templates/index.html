@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lese-Konsole — Chiromantie, Physiognomik &amp; Astrologie</title>
+<title>Lese-Konsole — Sechs Wege der Deutung</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -29,6 +29,15 @@
     --celestial: #6F93C9;
     --celestial-strong: #93B4E3;
     --celestial-soft: rgba(111, 147, 201, 0.14);
+    --moonlight: #8FA3BD;
+    --moonlight-strong: #B4C4D9;
+    --moonlight-soft: rgba(143, 163, 189, 0.14);
+    --tarot: #B5566B;
+    --tarot-strong: #D97C90;
+    --tarot-soft: rgba(181, 86, 107, 0.14);
+    --numerology: #6FA88C;
+    --numerology-strong: #92CBAE;
+    --numerology-soft: rgba(111, 168, 140, 0.14);
     --danger: #C97562;
     --danger-soft: rgba(201, 117, 98, 0.14);
   }
@@ -112,6 +121,9 @@
   .tab-btn[aria-selected="true"] .tab-sub { color: var(--ink-soft); }
   .tab-btn.face-tab[aria-selected="true"] { color: var(--violet-strong); border-bottom-color: var(--violet); }
   .tab-btn.zodiac-tab[aria-selected="true"] { color: var(--celestial-strong); border-bottom-color: var(--celestial); }
+  .tab-btn.moon-tab[aria-selected="true"] { color: var(--moonlight-strong); border-bottom-color: var(--moonlight); }
+  .tab-btn.tarot-tab[aria-selected="true"] { color: var(--tarot-strong); border-bottom-color: var(--tarot); }
+  .tab-btn.numerology-tab[aria-selected="true"] { color: var(--numerology-strong); border-bottom-color: var(--numerology); }
 
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
@@ -136,6 +148,9 @@
   }
   .tab-face h2.group-title { color: var(--violet-strong); }
   .tab-zodiac h2.group-title { color: var(--celestial-strong); }
+  .tab-moon h2.group-title { color: var(--moonlight-strong); }
+  .tab-tarot h2.group-title { color: var(--tarot-strong); }
+  .tab-numerology h2.group-title { color: var(--numerology-strong); }
 
   .field { margin-bottom: 1.15rem; }
   .field:last-child { margin-bottom: 0; }
@@ -150,6 +165,16 @@
   input:focus { outline: none; border-color: var(--gold); }
   .tab-face input:focus { border-color: var(--violet); }
   .tab-zodiac input:focus { border-color: var(--celestial); }
+  .tab-moon input:focus { border-color: var(--moonlight); }
+  .tab-tarot input:focus, .tab-tarot select:focus { border-color: var(--tarot); }
+  .tab-numerology input:focus { border-color: var(--numerology); }
+
+  select {
+    width: 100%; font: inherit; font-size: 0.9rem; color: var(--ink);
+    background: var(--bg-sunken); border: 1px solid var(--line);
+    border-radius: 0.3rem; padding: 0.7rem 0.85rem; min-height: 2.7rem;
+  }
+  select:focus { outline: none; border-color: var(--gold); }
 
   .upload-box {
     border: 1px dashed var(--line);
@@ -183,6 +208,9 @@
   button.evaluate:disabled { opacity: 0.5; cursor: default; filter: none; box-shadow: none; }
   button.evaluate.face-btn { background: linear-gradient(180deg, var(--violet-strong), var(--violet)); color: #150E22; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(144, 120, 184, 0.55); }
   button.evaluate.zodiac-btn { background: linear-gradient(180deg, var(--celestial-strong), var(--celestial)); color: #0E1522; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(111, 147, 201, 0.55); }
+  button.evaluate.moon-btn { background: linear-gradient(180deg, var(--moonlight-strong), var(--moonlight)); color: #10151C; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(143, 163, 189, 0.55); }
+  button.evaluate.tarot-btn { background: linear-gradient(180deg, var(--tarot-strong), var(--tarot)); color: #200D12; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(181, 86, 107, 0.55); }
+  button.evaluate.numerology-btn { background: linear-gradient(180deg, var(--numerology-strong), var(--numerology)); color: #0D1F17; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(111, 168, 140, 0.55); }
 
   .button-row { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
   .button-row .evaluate { margin-top: 0; flex: 2; }
@@ -196,6 +224,9 @@
   button.reset:hover { border-color: var(--gold); color: var(--gold-strong); }
   .tab-face button.reset:hover { border-color: var(--violet); color: var(--violet-strong); }
   .tab-zodiac button.reset:hover { border-color: var(--celestial); color: var(--celestial-strong); }
+  .tab-moon button.reset:hover { border-color: var(--moonlight); color: var(--moonlight-strong); }
+  .tab-tarot button.reset:hover { border-color: var(--tarot); color: var(--tarot-strong); }
+  .tab-numerology button.reset:hover { border-color: var(--numerology); color: var(--numerology-strong); }
 
   .results .summary {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-faint);
@@ -264,6 +295,25 @@
   }
   .direct-card.zodiac .direct-label { color: var(--celestial-strong); }
   .direct-card.zodiac { border-left-color: var(--line); }
+  .direct-card.moon .direct-label { color: var(--moonlight-strong); }
+  .direct-card.tarot .direct-label { color: var(--tarot-strong); }
+  .direct-card.numerology .direct-label { color: var(--numerology-strong); }
+
+  .tarot-card-block { border: 1px solid var(--line); border-radius: 0.4rem; padding: 1rem; margin-top: 0.8rem; background: var(--bg-sunken); }
+  .tarot-card-name { font-family: 'Cinzel', Georgia, serif; font-size: 1.05rem; color: var(--tarot-strong); margin-bottom: 0.2rem; }
+  .tarot-card-position { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.5rem; }
+  .tarot-reversed-tag { color: var(--danger); font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; text-transform: uppercase; margin-left: 0.5rem; }
+  .tarot-answer { font-family: 'Cinzel', Georgia, serif; font-size: 1.8rem; color: var(--tarot-strong); margin: 0.5rem 0 1rem; text-align: center; }
+
+  .number-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 2.6rem; height: 2.6rem; border-radius: 50%; flex-shrink: 0;
+    background: var(--numerology-soft); border: 1px solid var(--numerology);
+    font-family: 'Cinzel', Georgia, serif; font-size: 1.15rem; color: var(--numerology-strong);
+    margin-right: 0.85rem;
+  }
+  .number-row { display: flex; align-items: flex-start; }
+  .number-row .number-text { flex: 1; }
 
   .compat-card {
     border-left: 2px solid var(--celestial); background: var(--celestial-soft);
@@ -306,14 +356,17 @@
   <header class="masthead">
     <p class="eyebrow"><span class="glyph">✦</span>&nbsp; Regel-Engine &middot; KI-Foto-Analyse &nbsp;<span class="glyph">✦</span></p>
     <h1>Lese-Konsole</h1>
-    <p class="lede">Chiromantie, Physiognomik und Astrologie — Foto oder Geburtsdatum genügen, Claude bzw. die Regel-Engines befragen die Wissensdatenbanken.</p>
-    <p class="notice">Fotos werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert. Die Astrologie-Auswertung läuft rein lokal, ohne Foto oder KI.</p>
+    <p class="lede">Chiromantie, Physiognomik, Astrologie, Mondkalender, Tarot und Numerologie — Foto, Geburtsdatum oder Name genügen, Claude bzw. die Regel-Engines befragen die Wissensdatenbanken.</p>
+    <p class="notice">Fotos werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert. Astrologie, Mondkalender, Tarot und Numerologie laufen rein lokal, ohne Foto oder KI.</p>
   </header>
 
   <div class="tabs" role="tablist">
     <button class="tab-btn" id="tab-btn-hand" role="tab" aria-selected="true" aria-controls="tab-hand">Chiromantie<span class="tab-sub">die Hand</span></button>
     <button class="tab-btn face-tab" id="tab-btn-face" role="tab" aria-selected="false" aria-controls="tab-face">Physiognomik<span class="tab-sub">das Gesicht</span></button>
     <button class="tab-btn zodiac-tab" id="tab-btn-zodiac" role="tab" aria-selected="false" aria-controls="tab-zodiac">Astrologie<span class="tab-sub">Geburtsdatum</span></button>
+    <button class="tab-btn moon-tab" id="tab-btn-moon" role="tab" aria-selected="false" aria-controls="tab-moon">Mondkalender<span class="tab-sub">Datum</span></button>
+    <button class="tab-btn tarot-tab" id="tab-btn-tarot" role="tab" aria-selected="false" aria-controls="tab-tarot">Tarot<span class="tab-sub">Kartenlegung</span></button>
+    <button class="tab-btn numerology-tab" id="tab-btn-numerology" role="tab" aria-selected="false" aria-controls="tab-numerology">Numerologie<span class="tab-sub">Name &amp; Datum</span></button>
   </div>
 
   <div class="tab-panel active" id="tab-hand" role="tabpanel" aria-labelledby="tab-btn-hand">
@@ -425,10 +478,116 @@
     </main>
   </div>
 
+  <div class="tab-panel tab-moon" id="tab-moon" role="tabpanel" aria-labelledby="tab-btn-moon">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Datum</h2>
+          <div class="field">
+            <label class="field-label" for="moon_date">Datum (leer = heute)</label>
+            <input type="date" id="moon_date">
+            <p class="field-hint">Mondphasen-Näherung (±1 Tag). Mondstand im Tierkreis, Fruchtbarkeits-Fenster und exakte Finsternis-/Supermond-Termine brauchen echte Ephemeriden-Daten und werden hier nicht berechnet.</p>
+          </div>
+        </section>
+
+        <div class="button-row">
+          <button class="evaluate moon-btn" id="run-moon">Mondphase anzeigen</button>
+          <button class="reset" id="reset-moon" type="button">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="moon-output">
+            <p class="placeholder-text">Datum eingeben (oder leer lassen) und „Mondphase anzeigen“ drücken.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="tab-panel tab-tarot" id="tab-tarot" role="tabpanel" aria-labelledby="tab-btn-tarot">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Legung</h2>
+          <div class="field">
+            <label class="field-label" for="tarot_spread">Art der Legung</label>
+            <select id="tarot_spread">
+              <option value="daily_card">Tageskarte (1 Karte)</option>
+              <option value="three_card">Vergangenheit – Gegenwart – Zukunft (3 Karten)</option>
+              <option value="yes_no">Ja/Nein-Ziehung (3 Karten)</option>
+            </select>
+            <p class="field-hint">Reiner Zufall aus 78 Karten (22 große + 56 kleine Arkana), inklusive Umkehrungen.</p>
+          </div>
+        </section>
+
+        <div class="button-row">
+          <button class="evaluate tarot-btn" id="run-tarot">Karten ziehen</button>
+          <button class="reset" id="reset-tarot" type="button">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="tarot-output">
+            <p class="placeholder-text">Legung auswählen und „Karten ziehen“ drücken.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="tab-panel tab-numerology" id="tab-numerology" role="tabpanel" aria-labelledby="tab-btn-numerology">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Name &amp; Geburtsdatum</h2>
+          <div class="field">
+            <label class="field-label" for="numerology_name">Vollständiger Geburtsname</label>
+            <input type="text" id="numerology_name" placeholder="Vor- und Nachname">
+          </div>
+          <div class="field">
+            <label class="field-label" for="numerology_birth_date">Geburtsdatum</label>
+            <input type="date" id="numerology_birth_date">
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="group-title">Kompatibilität (optional)</h2>
+          <div class="field">
+            <label class="field-label" for="numerology_partner_name">Name der Partnerin/des Partners</label>
+            <input type="text" id="numerology_partner_name" placeholder="Vor- und Nachname">
+          </div>
+          <div class="field">
+            <label class="field-label" for="numerology_partner_birth_date">Geburtsdatum der Partnerin/des Partners</label>
+            <input type="date" id="numerology_partner_birth_date">
+          </div>
+        </section>
+
+        <div class="button-row">
+          <button class="evaluate numerology-btn" id="run-numerology">Berechnen</button>
+          <button class="reset" id="reset-numerology" type="button">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="numerology-output">
+            <p class="placeholder-text">Name und Geburtsdatum eingeben und „Berechnen“ drücken.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
   <footer class="note">
     <span class="glyph">✦</span><br><br>
     Diese Deutungen sind traditionell (Mian Xiang, Samudrika Shastra, westliche Chiromantie/Physiognomik, westliche
-    und chinesische Astrologie) und
+    und chinesische Astrologie, Mondkalender, Tarot, Numerologie) und
     wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion, nicht als medizinischer,
     psychologischer oder finanzieller Rat. Sie erlauben keine Rückschlüsse auf Herkunft, Ethnie oder Charakter-Urteile
     über Dritte.
@@ -501,6 +660,9 @@
       { btn: document.getElementById("tab-btn-hand"), panel: document.getElementById("tab-hand") },
       { btn: document.getElementById("tab-btn-face"), panel: document.getElementById("tab-face") },
       { btn: document.getElementById("tab-btn-zodiac"), panel: document.getElementById("tab-zodiac") },
+      { btn: document.getElementById("tab-btn-moon"), panel: document.getElementById("tab-moon") },
+      { btn: document.getElementById("tab-btn-tarot"), panel: document.getElementById("tab-tarot") },
+      { btn: document.getElementById("tab-btn-numerology"), panel: document.getElementById("tab-numerology") },
     ];
     tabs.forEach((tab) => {
       tab.btn.addEventListener("click", () => {
@@ -653,6 +815,92 @@
     return html;
   }
 
+  function renderMoon(data) {
+    const p = data.phase_data;
+    let html = "";
+    html += `<h3 class="hand-title">${escapeHtml(p.name_de)}</h3>`;
+    html += `<p class="summary">${escapeHtml(data.date)} · Beleuchtung: ${escapeHtml(p.illumination)} · Dauer: ${escapeHtml(p.duration)}</p>`;
+    html += `<p style="margin:0 0 1rem;">${escapeHtml(p.meaning_long)}</p>`;
+
+    if (p.keywords && p.keywords.length) {
+      html += `<div class="direct-card moon"><div class="direct-label">Energie</div><div>${escapeHtml(p.energy)} — ${escapeHtml(p.keywords.join(", "))}</div></div>`;
+    }
+    if (p.recommended_activities && p.recommended_activities.length) {
+      html += `<div class="direct-card moon"><div class="direct-label">Empfohlen</div><div>${escapeHtml(p.recommended_activities.join(", "))}</div></div>`;
+    }
+    if (p.avoid && p.avoid.length) {
+      html += `<div class="direct-card moon"><div class="direct-label">Eher vermeiden</div><div>${escapeHtml(p.avoid.join(", "))}</div></div>`;
+    }
+    if (p.practical_tips) {
+      const labels = { hair: "Haare schneiden", plants: "Pflanzen/Garten", fasting: "Fasten/Detox", surgery: "Operationen", cleaning: "Reinigung/Entrümpeln" };
+      html += '<h3 class="section-heading">Praktische Tipps</h3>';
+      Object.keys(p.practical_tips).forEach((key) => {
+        html += `<div class="direct-card moon"><div class="direct-label">${escapeHtml(labels[key] || key)}</div><div>${escapeHtml(p.practical_tips[key])}</div></div>`;
+      });
+    }
+    if (p.rituals && p.rituals.length) {
+      html += '<h3 class="section-heading">Ritual-Ideen</h3>';
+      html += `<div class="direct-card moon"><div class="direct-label">Vorschläge</div><div>${escapeHtml(p.rituals.join(" · "))}</div></div>`;
+    }
+    html += `<details class="raw"><summary>Rohdaten</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data, null, 2))}</pre></details>`;
+    return html;
+  }
+
+  function renderTarot(data) {
+    let html = "";
+    if (data.answer) {
+      html += `<div class="tarot-answer">${escapeHtml(data.answer)}</div>`;
+    }
+    data.cards.forEach((c) => {
+      const meaning = c.reversed ? c.meaning_reversed : c.meaning_upright;
+      const keywords = c.reversed ? c.keywords_reversed : c.keywords_upright;
+      html += '<div class="tarot-card-block">';
+      if (c.position) html += `<div class="tarot-card-position">${escapeHtml(c.position)}</div>`;
+      html += `<div class="tarot-card-name">${escapeHtml(c.name_de)}${c.reversed ? '<span class="tarot-reversed-tag">Umgekehrt</span>' : ""}</div>`;
+      if (keywords && keywords.length) {
+        html += `<p class="summary" style="margin-bottom:0.6rem;">${escapeHtml(keywords.join(", "))}</p>`;
+      }
+      html += `<p style="margin:0 0 0.6rem;">${escapeHtml(meaning || "")}</p>`;
+      if (c.love) html += `<div class="direct-card tarot"><div class="direct-label">Liebe</div><div>${escapeHtml(c.love)}</div></div>`;
+      if (c.career) html += `<div class="direct-card tarot"><div class="direct-label">Beruf</div><div>${escapeHtml(c.career)}</div></div>`;
+      html += "</div>";
+    });
+    html += `<details class="raw"><summary>Rohdaten</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data, null, 2))}</pre></details>`;
+    return html;
+  }
+
+  function numberBlock(label, num, entry) {
+    if (!entry) {
+      return `<div class="number-row" style="margin-top:0.8rem;"><div class="number-badge">${num}</div><div class="number-text"><div class="direct-label">${escapeHtml(label)}</div><p class="placeholder-text" style="margin:0;">Keine Deutung für diese Zahl hinterlegt.</p></div></div>`;
+    }
+    return `<div class="number-row" style="margin-top:0.8rem;"><div class="number-badge">${num}</div><div class="number-text"><div class="direct-label">${escapeHtml(label)} — ${escapeHtml(entry.name || "")}</div><div>${escapeHtml(entry.personality_long || "")}</div></div></div>`;
+  }
+
+  function renderNumerology(data) {
+    let html = "";
+    html += numberBlock("Lebenszahl", data.life_path.number, data.life_path.data);
+    html += numberBlock("Ausdruckszahl", data.expression.number, data.expression.data);
+    html += numberBlock("Seelenzahl", data.soul_urge.number, data.soul_urge.data);
+    html += numberBlock("Persönlichkeitszahl", data.personality.number, data.personality.data);
+    html += numberBlock(`Geburtstagszahl (Tag ${data.birthday.number})`, data.birthday.reduced, data.birthday.data);
+
+    html += '<h3 class="section-heading">Aktuelles Jahr</h3>';
+    html += `<div class="direct-card numerology"><div class="direct-label">Personal-Year-Zahl ${data.personal_year.number}</div><div>${escapeHtml(data.personal_year.meaning || "")}</div></div>`;
+
+    if (data.karmic_debt) {
+      html += '<h3 class="section-heading">Karmische Schuld</h3>';
+      html += `<div class="direct-card numerology"><div class="direct-label">Geburtstag ${data.birthday.number}</div><div>${escapeHtml(data.karmic_debt.meaning)}</div></div>`;
+    }
+
+    if (data.compatibility) {
+      html += '<h3 class="section-heading">Kompatibilität</h3>';
+      html += `<div class="compat-card" style="border-left-color:var(--numerology); background:var(--numerology-soft);"><div class="compat-score" style="color:var(--numerology-strong);">${data.life_path.number} &amp; ${data.partner_life_path}</div><div>${escapeHtml(data.compatibility)}</div></div>`;
+    }
+
+    html += `<details class="raw"><summary>Rohdaten</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data, null, 2))}</pre></details>`;
+    return html;
+  }
+
   document.getElementById("run").addEventListener("click", async () => {
     const button = document.getElementById("run");
     const output = document.getElementById("output");
@@ -777,6 +1025,123 @@
     document.getElementById("partner_birth_date").value = "";
     document.getElementById("zodiac-output").innerHTML =
       '<p class="placeholder-text">Geburtsdatum eingeben und „Berechnen“ drücken.</p>';
+  });
+
+  document.getElementById("run-moon").addEventListener("click", async () => {
+    const button = document.getElementById("run-moon");
+    const output = document.getElementById("moon-output");
+    const moonDate = document.getElementById("moon_date").value;
+
+    const formData = new FormData();
+    if (moonDate) formData.append("date", moonDate);
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Berechne …';
+    output.innerHTML = '<p class="placeholder-text">Wird berechnet …</p>';
+    scrollToOutput(output);
+
+    try {
+      const res = await fetch("/api/moon", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      output.innerHTML = renderMoon(data);
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Mondphase anzeigen";
+    }
+  });
+
+  document.getElementById("reset-moon").addEventListener("click", () => {
+    document.getElementById("moon_date").value = "";
+    document.getElementById("moon-output").innerHTML =
+      '<p class="placeholder-text">Datum eingeben (oder leer lassen) und „Mondphase anzeigen“ drücken.</p>';
+  });
+
+  document.getElementById("run-tarot").addEventListener("click", async () => {
+    const button = document.getElementById("run-tarot");
+    const output = document.getElementById("tarot-output");
+    const spread = document.getElementById("tarot_spread").value;
+
+    const formData = new FormData();
+    formData.append("spread", spread);
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Ziehe Karten …';
+    output.innerHTML = '<p class="placeholder-text">Karten werden gezogen …</p>';
+    scrollToOutput(output);
+
+    try {
+      const res = await fetch("/api/tarot", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      output.innerHTML = renderTarot(data);
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Karten ziehen";
+    }
+  });
+
+  document.getElementById("reset-tarot").addEventListener("click", () => {
+    document.getElementById("tarot-output").innerHTML =
+      '<p class="placeholder-text">Legung auswählen und „Karten ziehen“ drücken.</p>';
+  });
+
+  document.getElementById("run-numerology").addEventListener("click", async () => {
+    const button = document.getElementById("run-numerology");
+    const output = document.getElementById("numerology-output");
+    const name = document.getElementById("numerology_name").value.trim();
+    const birthDate = document.getElementById("numerology_birth_date").value;
+    const partnerName = document.getElementById("numerology_partner_name").value.trim();
+    const partnerBirthDate = document.getElementById("numerology_partner_birth_date").value;
+
+    if (!name || !birthDate) { output.innerHTML = '<div class="error-box">Bitte Name und Geburtsdatum angeben.</div>'; return; }
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("birth_date", birthDate);
+    if (partnerName && partnerBirthDate) {
+      formData.append("partner_name", partnerName);
+      formData.append("partner_birth_date", partnerBirthDate);
+    }
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Berechne …';
+    output.innerHTML = '<p class="placeholder-text">Wird berechnet …</p>';
+    scrollToOutput(output);
+
+    try {
+      const res = await fetch("/api/numerology", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      output.innerHTML = renderNumerology(data);
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Berechnen";
+    }
+  });
+
+  document.getElementById("reset-numerology").addEventListener("click", () => {
+    document.getElementById("numerology_name").value = "";
+    document.getElementById("numerology_birth_date").value = "";
+    document.getElementById("numerology_partner_name").value = "";
+    document.getElementById("numerology_partner_birth_date").value = "";
+    document.getElementById("numerology-output").innerHTML =
+      '<p class="placeholder-text">Name und Geburtsdatum eingeben und „Berechnen“ drücken.</p>';
   });
 })();
 </script>
