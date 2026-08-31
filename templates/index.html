@@ -225,6 +225,19 @@
   .rule-card + .rule-card { margin-top: 0.6rem; }
   .rule-card .rule-id { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--ink-faint); margin-bottom: 0.35rem; }
 
+  .tip-card {
+    margin-top: 0.6rem; padding: 0.75rem 1rem;
+    border: 1px dashed var(--gold); border-radius: 0.3rem;
+    background: transparent;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 0.98rem;
+    color: var(--gold-strong);
+  }
+  .tip-card.face { border-color: var(--violet); color: var(--violet-strong); }
+  .tip-card .tip-label {
+    font-family: 'IBM Plex Mono', monospace; font-style: normal; font-size: 0.66rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.35rem;
+  }
+
   .direct-card {
     border-left: 2px solid var(--line); background: var(--bg-sunken);
     border-radius: 0 0.3rem 0.3rem 0; padding: 0.75rem 1rem;
@@ -362,6 +375,15 @@
 (function () {
   "use strict";
 
+  const DOMAIN_TIPS = {
+    personality: "Nutze diese Deutung als Ausgangspunkt, nicht als Schublade — beobachte in den nächsten Wochen bewusst, wo sie zutrifft und wo nicht.",
+    career: "Sprich zeitnah gezielt jemanden an, der dir in diesem Bereich weiterhelfen kann — ein Karriereschritt beginnt selten von allein.",
+    wealth: "Wirf einmal im Monat einen bewussten Blick auf Ausgaben und Rücklagen, statt Vermögensaufbau dem Zufall zu überlassen.",
+    relationships: "Sprich offen an, was dir in deiner wichtigsten Beziehung gerade fehlt — eine Deutung ersetzt kein Gespräch.",
+    creativity: "Reserviere dir feste wöchentliche Zeit für ein kreatives Projekt, statt auf Inspiration zu warten.",
+    health: "Nimm anhaltende körperliche Signale ernst und sprich mit einer Ärztin oder einem Arzt — diese Deutung ersetzt keine Diagnose.",
+  };
+
   function wireUpload(inputId, boxId, placeholderId) {
     const input = document.getElementById(inputId);
     const box = document.getElementById(boxId);
@@ -435,6 +457,9 @@
         byDomain[d].forEach((m) => {
           html += `<div class="rule-card"><div class="rule-id">${escapeHtml(m.id)}</div><div>${escapeHtml(m.text)}</div></div>`;
         });
+        if (DOMAIN_TIPS[d]) {
+          html += `<div class="tip-card"><div class="tip-label">Impuls</div><div>${escapeHtml(DOMAIN_TIPS[d])}</div></div>`;
+        }
         html += "</div>";
       });
     }
@@ -470,6 +495,9 @@
         byDomain[d].forEach((m) => {
           html += `<div class="rule-card face"><div class="rule-id">${escapeHtml(m.id)}</div><div>${escapeHtml(m.text)}</div></div>`;
         });
+        if (DOMAIN_TIPS[d]) {
+          html += `<div class="tip-card face"><div class="tip-label">Impuls</div><div>${escapeHtml(DOMAIN_TIPS[d])}</div></div>`;
+        }
         html += "</div>";
       });
     }
