@@ -1,6 +1,7 @@
 import base64
 import json
 import os
+from datetime import date
 from io import BytesIO
 from pathlib import Path
 
@@ -24,6 +25,7 @@ from chiro_engine.physiognomy_engine import (
     direct_interpretations,
     load_compound_rules,
 )
+from chiro_engine.zodiac_engine import build_zodiac_report, compatibility_report, western_sign_for_date
 
 BASE_DIR = Path(__file__).resolve().parent
 KB_PATH = BASE_DIR / "data" / "knowledge_base.json"
@@ -36,6 +38,9 @@ PHYSIOGNOMY_KB_PATH = BASE_DIR / "data" / "physiognomy_knowledge_base.json"
 PHYSIOGNOMY_KB = json.loads(PHYSIOGNOMY_KB_PATH.read_text(encoding="utf-8"))
 PHYSIOGNOMY_RULES = load_compound_rules(PHYSIOGNOMY_KB)
 PHYSIOGNOMY_ENGINE = RuleEngine(PHYSIOGNOMY_RULES, PHYSIOGNOMY_KB["meta"]["weightings"])
+
+ZODIAC_KB_PATH = BASE_DIR / "data" / "zodiac_knowledge_base.json"
+ZODIAC_KB = json.loads(ZODIAC_KB_PATH.read_text(encoding="utf-8"))
 
 DOMAIN_LABELS = {
     "personality": "Persönlichkeit",
@@ -567,6 +572,32 @@ def analyze_face():
         return jsonify({"error": "Keine Verbindung zur Anthropic-API. Internetverbindung pruefen."}), 502
 
     return jsonify(build_physiognomy_output(extracted, age))
+
+
+@app.post("/api/zodiac")
+def zodiac():
+    birth_raw = request.form.get("birth_date", "").strip()
+    if not birth_raw:
+        return jsonify({"error": "Bitte ein Geburtsdatum angeben."}), 400
+    try:
+        birth_date = date.fromisoformat(birth_raw)
+    except ValueError:
+        return jsonify({"error": "Ungueltiges Geburtsdatum."}), 400
+
+    report = build_zodiac_report(birth_date, ZODIAC_KB)
+
+    partner_raw = request.form.get("partner_birth_date", "").strip()
+    if partner_raw:
+        try:
+            partner_date = date.fromisoformat(partner_raw)
+        except ValueError:
+            return jsonify({"error": "Ungueltiges Geburtsdatum der Partnerin/des Partners."}), 400
+        partner_sign = western_sign_for_date(partner_date.month, partner_date.day)
+        report["partner_sign"] = partner_sign
+        report["partner_sign_name"] = ZODIAC_KB["western_zodiac_signs"][partner_sign]["name_de"]
+        report["compatibility"] = compatibility_report(report["sign"], partner_sign, ZODIAC_KB)
+
+    return jsonify(report)
 
 
 if __name__ == "__main__":

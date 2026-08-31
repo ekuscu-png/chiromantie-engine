@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lese-Konsole — Chiromantie &amp; Physiognomik</title>
+<title>Lese-Konsole — Chiromantie, Physiognomik &amp; Astrologie</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -26,6 +26,9 @@
     --violet-soft: rgba(144, 120, 184, 0.14);
     --emerald: #6B9C7C;
     --emerald-soft: rgba(107, 156, 124, 0.14);
+    --celestial: #6F93C9;
+    --celestial-strong: #93B4E3;
+    --celestial-soft: rgba(111, 147, 201, 0.14);
     --danger: #C97562;
     --danger-soft: rgba(201, 117, 98, 0.14);
   }
@@ -101,6 +104,7 @@
   .tab-btn[aria-selected="true"] { color: var(--gold-strong); border-bottom-color: var(--gold); }
   .tab-btn[aria-selected="true"] .tab-sub { color: var(--ink-soft); }
   .tab-btn.face-tab[aria-selected="true"] { color: var(--violet-strong); border-bottom-color: var(--violet); }
+  .tab-btn.zodiac-tab[aria-selected="true"] { color: var(--celestial-strong); border-bottom-color: var(--celestial); }
 
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
@@ -124,6 +128,7 @@
     margin: 0 0 1.1rem;
   }
   .tab-face h2.group-title { color: var(--violet-strong); }
+  .tab-zodiac h2.group-title { color: var(--celestial-strong); }
 
   .field { margin-bottom: 1.15rem; }
   .field:last-child { margin-bottom: 0; }
@@ -137,6 +142,7 @@
   }
   input:focus { outline: none; border-color: var(--gold); }
   .tab-face input:focus { border-color: var(--violet); }
+  .tab-zodiac input:focus { border-color: var(--celestial); }
 
   .upload-box {
     border: 1px dashed var(--line);
@@ -169,6 +175,7 @@
   button.evaluate:hover { filter: brightness(1.08); }
   button.evaluate:disabled { opacity: 0.5; cursor: default; filter: none; box-shadow: none; }
   button.evaluate.face-btn { background: linear-gradient(180deg, var(--violet-strong), var(--violet)); color: #150E22; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(144, 120, 184, 0.55); }
+  button.evaluate.zodiac-btn { background: linear-gradient(180deg, var(--celestial-strong), var(--celestial)); color: #0E1522; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(111, 147, 201, 0.55); }
 
   .button-row { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
   .button-row .evaluate { margin-top: 0; flex: 2; }
@@ -181,6 +188,7 @@
   }
   button.reset:hover { border-color: var(--gold); color: var(--gold-strong); }
   .tab-face button.reset:hover { border-color: var(--violet); color: var(--violet-strong); }
+  .tab-zodiac button.reset:hover { border-color: var(--celestial); color: var(--celestial-strong); }
 
   .results .summary {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-faint);
@@ -247,6 +255,18 @@
     font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.06em;
     color: var(--violet-strong); margin-bottom: 0.3rem; text-transform: uppercase;
   }
+  .direct-card.zodiac .direct-label { color: var(--celestial-strong); }
+  .direct-card.zodiac { border-left-color: var(--line); }
+
+  .compat-card {
+    border-left: 2px solid var(--celestial); background: var(--celestial-soft);
+    border-radius: 0 0.3rem 0.3rem 0; padding: 0.85rem 1rem; margin-top: 0.6rem;
+  }
+  .compat-score {
+    font-family: 'Cinzel', Georgia, serif; font-size: 1.6rem; color: var(--celestial-strong);
+    margin-bottom: 0.3rem;
+  }
+  .compat-score span { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: var(--ink-faint); }
 
   details.raw { margin-top: 1.2rem; border-top: 1px dashed var(--line); padding-top: 0.9rem; }
   details.raw summary { cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--ink-faint); }
@@ -279,13 +299,14 @@
   <header class="masthead">
     <p class="eyebrow"><span class="glyph">✦</span>&nbsp; Regel-Engine &middot; KI-Foto-Analyse &nbsp;<span class="glyph">✦</span></p>
     <h1>Lese-Konsole</h1>
-    <p class="lede">Chiromantie und Physiognomik — ein Foto genügt, Claude liest die Merkmale, die Regel-Engines befragen die Wissensdatenbanken.</p>
-    <p class="notice">Fotos werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert.</p>
+    <p class="lede">Chiromantie, Physiognomik und Astrologie — Foto oder Geburtsdatum genügen, Claude bzw. die Regel-Engines befragen die Wissensdatenbanken.</p>
+    <p class="notice">Fotos werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert. Die Astrologie-Auswertung läuft rein lokal, ohne Foto oder KI.</p>
   </header>
 
   <div class="tabs" role="tablist">
     <button class="tab-btn" id="tab-btn-hand" role="tab" aria-selected="true" aria-controls="tab-hand">Chiromantie<span class="tab-sub">die Hand</span></button>
     <button class="tab-btn face-tab" id="tab-btn-face" role="tab" aria-selected="false" aria-controls="tab-face">Physiognomik<span class="tab-sub">das Gesicht</span></button>
+    <button class="tab-btn zodiac-tab" id="tab-btn-zodiac" role="tab" aria-selected="false" aria-controls="tab-zodiac">Astrologie<span class="tab-sub">Geburtsdatum</span></button>
   </div>
 
   <div class="tab-panel active" id="tab-hand" role="tabpanel" aria-labelledby="tab-btn-hand">
@@ -362,9 +383,43 @@
     </main>
   </div>
 
+  <div class="tab-panel tab-zodiac" id="tab-zodiac" role="tabpanel" aria-labelledby="tab-btn-zodiac">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Geburtsdatum</h2>
+          <div class="field">
+            <label class="field-label" for="birth_date">Dein Geburtsdatum</label>
+            <input type="date" id="birth_date">
+          </div>
+          <div class="field">
+            <label class="field-label" for="partner_birth_date">Geburtsdatum der Partnerin/des Partners (optional)</label>
+            <input type="date" id="partner_birth_date">
+            <p class="field-hint">Für eine Kompatibilitäts-Deutung zwischen euren Sternzeichen.</p>
+          </div>
+        </section>
+
+        <div class="button-row">
+          <button class="evaluate zodiac-btn" id="run-zodiac">Berechnen</button>
+          <button class="reset" id="reset-zodiac" type="button">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="zodiac-output">
+            <p class="placeholder-text">Geburtsdatum eingeben und „Berechnen“ drücken.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
   <footer class="note">
     <span class="glyph">✦</span><br><br>
-    Diese Deutungen sind traditionell (Mian Xiang, Samudrika Shastra, westliche Chiromantie/Physiognomik) und
+    Diese Deutungen sind traditionell (Mian Xiang, Samudrika Shastra, westliche Chiromantie/Physiognomik, westliche
+    und chinesische Astrologie) und
     wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion, nicht als medizinischer,
     psychologischer oder finanzieller Rat. Sie erlauben keine Rückschlüsse auf Herkunft, Ethnie oder Charakter-Urteile
     über Dritte.
@@ -422,6 +477,7 @@
     const tabs = [
       { btn: document.getElementById("tab-btn-hand"), panel: document.getElementById("tab-hand") },
       { btn: document.getElementById("tab-btn-face"), panel: document.getElementById("tab-face") },
+      { btn: document.getElementById("tab-btn-zodiac"), panel: document.getElementById("tab-zodiac") },
     ];
     tabs.forEach((tab) => {
       tab.btn.addEventListener("click", () => {
@@ -509,6 +565,47 @@
     return html;
   }
 
+  function renderZodiac(data) {
+    const s = data.sign_data;
+    let html = "";
+
+    html += `<h3 class="hand-title">${escapeHtml(s.symbol || "")} ${escapeHtml(s.name_de)} <span style="color:var(--ink-faint); font-family:'IBM Plex Mono', monospace; font-size:0.7rem; letter-spacing:0.04em;">${escapeHtml(s.period)}</span></h3>`;
+    html += `<p class="summary">Element: ${escapeHtml(s.element)} · Qualität: ${escapeHtml(s.quality)} · Herrscherplanet: ${escapeHtml(s.ruling_planet)}</p>`;
+    html += `<p style="margin:0 0 1rem;">${escapeHtml(s.personality_long)}</p>`;
+
+    html += '<h3 class="section-heading">Karriere</h3>';
+    html += `<div class="direct-card zodiac"><div class="direct-label">Berufe</div><div>${escapeHtml((s.career_matches || []).join(", "))}</div></div>`;
+    if (data.career) {
+      html += `<div class="direct-card zodiac"><div class="direct-label">Führungsstil</div><div>${escapeHtml(data.career.leadership_style)}</div></div>`;
+    }
+
+    html += '<h3 class="section-heading">Liebe &amp; Beziehung</h3>';
+    html += `<div class="direct-card zodiac"><div class="direct-label">Beziehungsstil</div><div>${escapeHtml(s.love_style)}</div></div>`;
+
+    html += '<h3 class="section-heading">Gesundheit</h3>';
+    html += `<div class="direct-card zodiac"><div class="direct-label">Fokus</div><div>${escapeHtml(s.health_advice || "")}</div></div>`;
+
+    html += '<h3 class="section-heading">Geld &amp; Vermögen</h3>';
+    html += `<div class="direct-card zodiac"><div class="direct-label">Umgang mit Geld</div><div>${escapeHtml(data.money || "")}</div></div>`;
+
+    if (data.chinese_animal_data) {
+      const c = data.chinese_animal_data;
+      html += '<h3 class="section-heading">Chinesisches Sternzeichen</h3>';
+      html += `<div class="direct-card zodiac"><div class="direct-label">${escapeHtml(c.name_de)} (${escapeHtml(c.name_cn || "")})</div><div>${escapeHtml(c.personality_long || "")}</div></div>`;
+      if (data.chinese_new_year_caveat) {
+        html += '<p class="field-hint" style="margin-top:0.6rem;">Bei Geburt im Januar/Februar kann das chinesische Neujahr das tatsächliche Tierkreiszeichen verschieben — bitte im Zweifel das genaue Datum des chinesischen Neujahrs für dein Geburtsjahr prüfen.</p>';
+      }
+    }
+
+    if (data.compatibility) {
+      html += '<h3 class="section-heading">Kompatibilität</h3>';
+      html += `<div class="compat-card"><div class="compat-score">${data.compatibility.score_1_to_10}<span>/10 — ${escapeHtml(s.name_de)} &amp; ${escapeHtml(data.partner_sign_name)}</span></div><div>${escapeHtml(data.compatibility.description)}</div></div>`;
+    }
+
+    html += `<details class="raw"><summary>Rohdaten</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data, null, 2))}</pre></details>`;
+    return html;
+  }
+
   document.getElementById("run").addEventListener("click", async () => {
     const button = document.getElementById("run");
     const output = document.getElementById("output");
@@ -591,6 +688,45 @@
     document.getElementById("face_age").value = "";
     document.getElementById("face-output").innerHTML =
       '<p class="placeholder-text">Foto hochladen und „Analysieren“ drücken.</p>';
+  });
+
+  document.getElementById("run-zodiac").addEventListener("click", async () => {
+    const button = document.getElementById("run-zodiac");
+    const output = document.getElementById("zodiac-output");
+    const birthDate = document.getElementById("birth_date").value;
+    const partnerDate = document.getElementById("partner_birth_date").value;
+
+    if (!birthDate) { output.innerHTML = '<div class="error-box">Bitte ein Geburtsdatum angeben.</div>'; return; }
+
+    const formData = new FormData();
+    formData.append("birth_date", birthDate);
+    if (partnerDate) formData.append("partner_birth_date", partnerDate);
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Berechne …';
+    output.innerHTML = '<p class="placeholder-text">Wird berechnet …</p>';
+
+    try {
+      const res = await fetch("/api/zodiac", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      output.innerHTML = renderZodiac(data);
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Berechnen";
+    }
+  });
+
+  document.getElementById("reset-zodiac").addEventListener("click", () => {
+    document.getElementById("birth_date").value = "";
+    document.getElementById("partner_birth_date").value = "";
+    document.getElementById("zodiac-output").innerHTML =
+      '<p class="placeholder-text">Geburtsdatum eingeben und „Berechnen“ drücken.</p>';
   });
 })();
 </script>

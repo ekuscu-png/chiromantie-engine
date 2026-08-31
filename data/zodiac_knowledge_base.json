@@ -1,0 +1,4819 @@
+{
+  "meta": {
+    "version": "1.0.0-master",
+    "language": "de",
+    "created": "2026-08-27",
+    "description": "Master-Wissensdatenbank für Sternzeichen-App. Umfasst westliche Astrologie (12 Zeichen, 10 Planeten, 12 Häuser, Aspekte), chinesische Astrologie (12 Tierkreise, 5 Elemente, 60-Jahres-Zyklus) und vedische Jyotish (27 Nakshatras).",
+    "structure": {
+      "western_signs": 12,
+      "planets": 10,
+      "houses": 12,
+      "aspects": 5,
+      "chinese_animals": 12,
+      "chinese_elements": 5,
+      "nakshatras": 27,
+      "compatibility_pairs_western": 144,
+      "compatibility_pairs_chinese": 144
+    },
+    "disclaimer": "Astrologische Deutungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion. Sie ersetzen keine medizinische, psychologische, finanzielle oder juristische Beratung.",
+    "weightings_for_app": {
+      "sun_sign": 3.0,
+      "moon_sign": 2.5,
+      "ascendant": 2.5,
+      "mercury_sign": 1.8,
+      "venus_sign": 1.8,
+      "mars_sign": 1.8,
+      "chinese_year_animal": 2.5,
+      "chinese_element": 2.0,
+      "nakshatra": 1.8,
+      "aspects": 1.5,
+      "houses": 1.5
+    }
+  },
+  "western_zodiac_signs": {
+    "aries": {
+      "id": 1,
+      "name_de": "Widder",
+      "name_en": "Aries",
+      "symbol": "♈",
+      "period": "21. März – 19. April",
+      "element": "fire",
+      "quality": "kardinal",
+      "polarity": "männlich / positiv / aktiv",
+      "ruling_planet": "Mars",
+      "exalted_planet": "Sonne",
+      "detriment_planet": "Venus",
+      "fall_planet": "Saturn",
+      "opposite_sign": "libra",
+      "keywords": [
+        "Ich bin",
+        "Initiative",
+        "Mut",
+        "Führung",
+        "Impulsivität",
+        "Pionier"
+      ],
+      "personality_positive": [
+        "mutig",
+        "energisch",
+        "spontan",
+        "leidenschaftlich",
+        "abenteuerlustig",
+        "pionierhaft",
+        "direkt",
+        "ehrlich",
+        "optimistisch",
+        "zielstrebig"
+      ],
+      "personality_negative": [
+        "ungeduldig",
+        "impulsiv",
+        "aggressiv",
+        "egozentrisch",
+        "streitsüchtig",
+        "rücksichtslos",
+        "voreilig",
+        "jähzornig"
+      ],
+      "personality_long": "Der Widder ist das erste Zeichen des Tierkreises und trägt die Urenergie des Neubeginns. Widder-Menschen sind geboren, um zu führen, zu starten und zu erobern. Sie sind kraftvoll, direkt und lieben Herausforderungen. Ihre Energie ist ansteckend, ihre Begeisterung mitreißend. Sie treffen Entscheidungen aus dem Bauch heraus und handeln, bevor andere noch nachdenken. Die Kehrseite: Sie können ungeduldig, kämpferisch und egozentrisch sein. Sie beginnen viele Projekte, aber nicht alle werden zu Ende gebracht. Widder brauchen Bewegung, Herausforderung und Anerkennung.",
+      "career_matches": [
+        "Unternehmertum",
+        "Militär",
+        "Sport",
+        "Vertrieb",
+        "Feuerwehr",
+        "Chirurgie",
+        "Ingenieurwesen",
+        "Führungspositionen",
+        "Krisenmanagement",
+        "Extremsport"
+      ],
+      "career_avoid": [
+        "Repetitive Bürojobs",
+        "Routine ohne Herausforderung",
+        "sehr detailorientierte Verwaltung"
+      ],
+      "love_style": "Leidenschaftlich, direkt, initiativstark. Widder jagen gerne und lieben die Eroberung. Sie brauchen einen Partner, der ihre Energie halten kann und keine Angst vor Konflikten hat. Zu langsame oder passive Partner langweilen sie schnell.",
+      "friendship_style": "Loyaler Freund, der immer für Abenteuer bereit ist. Kann direkt und ungeduldig sein, aber nie hinterhältig. Steht in Krisen als Erster bereit.",
+      "health_focus": [
+        "Kopf",
+        "Gehirn",
+        "Augen",
+        "Zähne",
+        "Kiefer"
+      ],
+      "health_risks": "Kopfschmerzen, Migräne, Verletzungen durch Impulsivität, Bluthochdruck durch Stress",
+      "health_advice": "Regelmäßiger Sport zum Ableiten der Energie, ausreichend Schlaf, Meditation zum Kalmieren des Nervensystems",
+      "colors": [
+        "rot",
+        "scharlachrot",
+        "orange"
+      ],
+      "gemstones": [
+        "Diamant",
+        "Rubin",
+        "Bloodstone",
+        "roter Jaspis",
+        "Karneol"
+      ],
+      "metals": [
+        "Eisen",
+        "Stahl"
+      ],
+      "numbers": [
+        1,
+        9
+      ],
+      "day": "Dienstag",
+      "flowers": [
+        "Tulpe",
+        "Geißblatt",
+        "Distel"
+      ],
+      "plants": [
+        "Ingwer",
+        "Chili",
+        "Zwiebel"
+      ],
+      "body_part": "Kopf",
+      "tarot_card": "Der Kaiser",
+      "chakra": "Wurzelchakra + Solarplexus",
+      "famous_personalities": [
+        "Leonardo da Vinci",
+        "Vincent van Gogh",
+        "Charlie Chaplin",
+        "Marlon Brando",
+        "Lady Gaga",
+        "Robert Downey Jr."
+      ],
+      "myth": "Der Widder repräsentiert das goldene Vlies aus der griechischen Mythologie. Der Widder mit dem goldenen Fell rettete Phrixos vor der Opferung und wurde später von Iason und den Argonauten gesucht — Symbol für Mut, Rettung und heroischen Aufbruch.",
+      "shadow_work": "Widder muss lernen, Impulse zu kontrollieren, andere zu Wort kommen zu lassen und Projekte zu vollenden. Der innere Krieger muss zum weisen Anführer reifen."
+    },
+    "taurus": {
+      "id": 2,
+      "name_de": "Stier",
+      "name_en": "Taurus",
+      "symbol": "♉",
+      "period": "20. April – 20. Mai",
+      "element": "earth",
+      "quality": "fix",
+      "polarity": "weiblich / negativ / passiv",
+      "ruling_planet": "Venus",
+      "exalted_planet": "Mond",
+      "detriment_planet": "Mars, Pluto",
+      "fall_planet": "Uranus",
+      "opposite_sign": "scorpio",
+      "keywords": [
+        "Ich habe",
+        "Beständigkeit",
+        "Genuss",
+        "Werte",
+        "Erde",
+        "Sinnlichkeit"
+      ],
+      "personality_positive": [
+        "zuverlässig",
+        "geduldig",
+        "praktisch",
+        "loyal",
+        "sinnlich",
+        "geerdet",
+        "beständig",
+        "warmherzig",
+        "kreativ (materiell)",
+        "genussvoll"
+      ],
+      "personality_negative": [
+        "sturr",
+        "besitzergreifend",
+        "materialistisch",
+        "faul",
+        "träge",
+        "unflexibel",
+        "eifersüchtig",
+        "genusssüchtig"
+      ],
+      "personality_long": "Der Stier ist das erste Erdzeichen und verkörpert die Verwurzelung im Körper und in der materiellen Welt. Stiere sind Genießer, Sammler, Bauer und Handwerker. Sie schätzen Qualität über Quantität, Sicherheit über Abenteuer, Tradition über Innovation. Ihre Ausdauer ist legendär — was sie beginnen, ziehen sie durch, egal wie lange es dauert. Sie sind sinnliche Wesen, die alle fünf Sinne genießen: gutes Essen, schöne Musik, weiche Stoffe, angenehme Düfte, körperliche Berührung. Die Schattenseite: Sie können extrem sturr sein, sich weigern loszulassen, und in Bequemlichkeit versinken.",
+      "career_matches": [
+        "Bankwesen",
+        "Immobilien",
+        "Landwirtschaft",
+        "Gastronomie",
+        "Kunst (materiell)",
+        "Musik",
+        "Bildhauerei",
+        "Handwerk",
+        "Finanzberatung",
+        "Luxus-Business"
+      ],
+      "career_avoid": [
+        "Ständige Reisen",
+        "Unsicherheit",
+        "sehr schnelle Wandelbereiche"
+      ],
+      "love_style": "Treu, sinnlich, langsam entfachend aber lang brennend. Stiere brauchen physische Nähe, gutes Essen zusammen, gemeinsame Sicherheit. Sie sind besitzergreifend, aber verlässlich wie kaum ein anderes Zeichen.",
+      "friendship_style": "Freundschaften auf Lebenszeit. Stiere pflegen ihre engen Kreise sehr sorgfältig, sind großzügig mit Materiellem, aber wählen Freunde sorgfältig.",
+      "health_focus": [
+        "Hals",
+        "Nacken",
+        "Schilddrüse",
+        "Stimme"
+      ],
+      "health_risks": "Halsentzündungen, Stimmprobleme, Schilddrüsen-Ungleichgewicht, Übergewicht durch Genuss",
+      "health_advice": "Balance zwischen Genuss und Bewegung, Halspflege, Singen als Therapie",
+      "colors": [
+        "grün",
+        "rosa",
+        "erdtöne"
+      ],
+      "gemstones": [
+        "Smaragd",
+        "Rosenquarz",
+        "Malachit",
+        "Türkis",
+        "Saphir"
+      ],
+      "metals": [
+        "Kupfer"
+      ],
+      "numbers": [
+        2,
+        6
+      ],
+      "day": "Freitag",
+      "flowers": [
+        "Rose",
+        "Mohn",
+        "Fuchsia",
+        "Veilchen"
+      ],
+      "plants": [
+        "Aprikose",
+        "Feige",
+        "Apfelbaum"
+      ],
+      "body_part": "Hals, Nacken, Schilddrüse",
+      "tarot_card": "Der Hierophant",
+      "chakra": "Hals- und Wurzelchakra",
+      "famous_personalities": [
+        "William Shakespeare",
+        "Sigmund Freud",
+        "Karl Marx",
+        "Adele",
+        "David Beckham",
+        "Audrey Hepburn"
+      ],
+      "myth": "Der Stier wird mit Zeus in Verbindung gebracht, der sich in einen weißen Stier verwandelte, um Europa zu entführen. Auch der ägyptische Apis-Stier symbolisiert Fruchtbarkeit, Kraft und Stabilität — das Grundthema aller Stier-Symbolik.",
+      "shadow_work": "Stier muss lernen loszulassen — Menschen, Dinge, alte Gewohnheiten. Der innere Sammler muss zum weisen Genießer reifen, der Fülle teilen kann."
+    },
+    "gemini": {
+      "id": 3,
+      "name_de": "Zwillinge",
+      "name_en": "Gemini",
+      "symbol": "♊",
+      "period": "21. Mai – 20. Juni",
+      "element": "air",
+      "quality": "veränderlich",
+      "polarity": "männlich / positiv / aktiv",
+      "ruling_planet": "Merkur",
+      "exalted_planet": "Nordknoten",
+      "detriment_planet": "Jupiter",
+      "fall_planet": "keine",
+      "opposite_sign": "sagittarius",
+      "keywords": [
+        "Ich denke",
+        "Kommunikation",
+        "Neugier",
+        "Vielseitigkeit",
+        "Dualität",
+        "Botschaft"
+      ],
+      "personality_positive": [
+        "intelligent",
+        "kommunikativ",
+        "witzig",
+        "anpassungsfähig",
+        "neugierig",
+        "vielseitig",
+        "charmant",
+        "spielerisch",
+        "flexibel",
+        "belesen"
+      ],
+      "personality_negative": [
+        "unbeständig",
+        "oberflächlich",
+        "sprunghaft",
+        "unentschlossen",
+        "nervös",
+        "manipulativ",
+        "unzuverlässig",
+        "geschwätzig"
+      ],
+      "personality_long": "Zwillinge sind das erste Luftzeichen und tragen die Energie der Kommunikation, des Austauschs und der geistigen Beweglichkeit. Zwillinge sind die 'ewigen Studenten' des Tierkreises — immer neugierig, immer lernend, immer im Gespräch. Ihr Geist arbeitet schnell, ihre Zunge noch schneller. Sie können mit jedem über alles reden. Die Dualität ist ihr Kern: Sie sehen immer beide Seiten, was sie zu großartigen Journalisten, Vermittlern und Erzählern macht. Die Schattenseite: Sie können sich in Ideen verzetteln, nichts wirklich vertiefen, und emotional oberflächlich wirken.",
+      "career_matches": [
+        "Journalismus",
+        "Lehre",
+        "Verkauf",
+        "Kommunikation",
+        "Autorenschaft",
+        "Übersetzung",
+        "PR",
+        "Marketing",
+        "Radio/Podcast",
+        "Tour-Guide",
+        "Comedian"
+      ],
+      "career_avoid": [
+        "Repetitive Fließbandarbeit",
+        "sehr einsame Berufe",
+        "physisch anspruchsvolle Routine"
+      ],
+      "love_style": "Zwillinge lieben mit dem Kopf. Sie brauchen einen Partner, der geistig ebenbürtig ist, viel reden kann und Freiraum lässt. Emotionale Klammern schrecken sie ab. Sie flirten gerne, auch in Beziehung.",
+      "friendship_style": "Viele Bekannte, wenige tiefe Freunde. Zwillinge sind der Kitt sozialer Gruppen, kennen alle und verbinden alle. Bei ehrlichen Gefühlen wird's schwierig.",
+      "health_focus": [
+        "Lunge",
+        "Arme",
+        "Hände",
+        "Schultern",
+        "Nervensystem"
+      ],
+      "health_risks": "Atemwegserkrankungen, Verletzungen an Händen/Armen, Nervosität, Schlaflosigkeit",
+      "health_advice": "Atemübungen, Meditation zum Beruhigen, Handarbeit als Entspannung",
+      "colors": [
+        "gelb",
+        "hellblau",
+        "silber"
+      ],
+      "gemstones": [
+        "Achat",
+        "Citrin",
+        "Aquamarin",
+        "Tigerauge"
+      ],
+      "metals": [
+        "Quecksilber"
+      ],
+      "numbers": [
+        5,
+        7
+      ],
+      "day": "Mittwoch",
+      "flowers": [
+        "Maiglöckchen",
+        "Lavendel",
+        "Farn"
+      ],
+      "plants": [
+        "Fenchel",
+        "Kümmel",
+        "Petersilie"
+      ],
+      "body_part": "Lunge, Arme, Hände",
+      "tarot_card": "Die Liebenden",
+      "chakra": "Halschakra",
+      "famous_personalities": [
+        "Marilyn Monroe",
+        "Bob Dylan",
+        "Johnny Depp",
+        "Angelina Jolie",
+        "Kanye West",
+        "Donald Trump"
+      ],
+      "myth": "Zwillinge repräsentieren Kastor und Pollux — die Dioskuren, Brüder von Helena. Kastor war sterblich, Pollux unsterblich. Als Kastor starb, teilte Pollux seine Unsterblichkeit mit ihm, sodass sie abwechselnd im Olymp und im Hades leben. Symbol für Dualität, Bruderschaft, Verbindung von Himmel und Erde.",
+      "shadow_work": "Zwilling muss lernen zu vertiefen — Ideen, Beziehungen, Projekte. Der innere Trickster muss zum weisen Botschafter werden."
+    },
+    "cancer": {
+      "id": 4,
+      "name_de": "Krebs",
+      "name_en": "Cancer",
+      "symbol": "♋",
+      "period": "21. Juni – 22. Juli",
+      "element": "water",
+      "quality": "kardinal",
+      "polarity": "weiblich / negativ / passiv",
+      "ruling_planet": "Mond",
+      "exalted_planet": "Jupiter",
+      "detriment_planet": "Saturn",
+      "fall_planet": "Mars",
+      "opposite_sign": "capricorn",
+      "keywords": [
+        "Ich fühle",
+        "Heimat",
+        "Familie",
+        "Intuition",
+        "Nährung",
+        "Gefühle"
+      ],
+      "personality_positive": [
+        "mitfühlend",
+        "beschützend",
+        "intuitiv",
+        "warmherzig",
+        "loyal",
+        "häuslich",
+        "kreativ",
+        "empathisch",
+        "nährend",
+        "verletzlich"
+      ],
+      "personality_negative": [
+        "launisch",
+        "übersensibel",
+        "manipulativ (emotional)",
+        "besitzergreifend",
+        "nachtragend",
+        "pessimistisch",
+        "klammernd",
+        "melancholisch"
+      ],
+      "personality_long": "Der Krebs ist das erste Wasserzeichen und trägt die Urenergie des Fühlens, Nährens und Beschützens. Krebse sind die Mütter (und Väter) des Tierkreises — sie sorgen für alle, kochen für alle, fühlen mit allen. Ihr Zuhause ist ihr Heiligtum, ihre Familie (bio oder gewählt) ihr Zentrum. Ihre Intuition ist außergewöhnlich, ihre Empathie tief. Sie tragen ihre Verletzlichkeit in einem harten Panzer versteckt — nur wer eingelassen wird, sieht die weiche Seele darin. Die Schattenseite: Sie können in Emotionen ertrinken, Vergangenheit nicht loslassen, und andere emotional erpressen.",
+      "career_matches": [
+        "Pflege",
+        "Pädagogik (besonders Kindergarten)",
+        "Sozialarbeit",
+        "Psychotherapie",
+        "Gastronomie",
+        "Immobilien",
+        "Familienrecht",
+        "Ernährungsberatung",
+        "Innendesign",
+        "Antiquitäten"
+      ],
+      "career_avoid": [
+        "Kalte Umgebungen",
+        "sehr aggressive Verhandlungen",
+        "chaotische Wechselberufe"
+      ],
+      "love_style": "Sehr tief, treu, häuslich. Krebs will Familie gründen, Zuhause bauen, ein Nest schaffen. Braucht viel Zärtlichkeit und Bestätigung. Wird bei Ablehnung sehr verletzt und zieht sich in den Panzer zurück.",
+      "friendship_style": "Wenige, aber lebenslange Freunde. Krebs sammelt Freunde wie andere Erinnerungsstücke — hält sie fest, kocht für sie, erinnert sich an jeden Geburtstag.",
+      "health_focus": [
+        "Brust",
+        "Magen",
+        "Verdauung",
+        "Uterus (Frauen)"
+      ],
+      "health_risks": "Verdauungsprobleme durch Emotionen, Brustprobleme, hormonelle Ungleichgewichte, Übergewicht durch emotionales Essen",
+      "health_advice": "Emotionale Regulation, Wassernähe, Familientherapie bei alten Wunden, Bewegung",
+      "colors": [
+        "silber",
+        "weiß",
+        "meerblau"
+      ],
+      "gemstones": [
+        "Mondstein",
+        "Perle",
+        "Rubin",
+        "Selenit"
+      ],
+      "metals": [
+        "Silber"
+      ],
+      "numbers": [
+        2,
+        7
+      ],
+      "day": "Montag",
+      "flowers": [
+        "Wasserlilie",
+        "Jasmin",
+        "Weiße Rose"
+      ],
+      "plants": [
+        "Aloe Vera",
+        "Melisse",
+        "Gurke"
+      ],
+      "body_part": "Brust, Magen, Uterus",
+      "tarot_card": "Der Wagen",
+      "chakra": "Sakralchakra + Herzchakra",
+      "famous_personalities": [
+        "Prinzessin Diana",
+        "Meryl Streep",
+        "Tom Hanks",
+        "Ariana Grande",
+        "Elon Musk",
+        "Nelson Mandela"
+      ],
+      "myth": "Krebs repräsentiert die Riesenkrabbe Karkinos, die Hera schickte, um Herakles beim Kampf gegen die Hydra zu behindern. Zwar wurde die Krabbe getötet, aber Hera ehrte ihren Mut mit einem Platz am Himmel — Symbol für treuen Dienst, mütterliche Loyalität und die Sicherheit des Panzers.",
+      "shadow_work": "Krebs muss lernen, den Panzer zu öffnen, Vergangenheit loszulassen und emotionale Erpressung zu unterlassen. Die innere Mutter muss zur weisen Nährerin werden, ohne sich selbst zu verlieren."
+    },
+    "leo": {
+      "id": 5,
+      "name_de": "Löwe",
+      "name_en": "Leo",
+      "symbol": "♌",
+      "period": "23. Juli – 22. August",
+      "element": "fire",
+      "quality": "fix",
+      "polarity": "männlich / positiv / aktiv",
+      "ruling_planet": "Sonne",
+      "exalted_planet": "keine spezifische",
+      "detriment_planet": "Uranus, Saturn",
+      "fall_planet": "keine",
+      "opposite_sign": "aquarius",
+      "keywords": [
+        "Ich will",
+        "Kreativität",
+        "Selbstausdruck",
+        "Bühne",
+        "Herz",
+        "Königlichkeit"
+      ],
+      "personality_positive": [
+        "großzügig",
+        "warmherzig",
+        "charismatisch",
+        "kreativ",
+        "mutig",
+        "führungsstark",
+        "loyal",
+        "spielerisch",
+        "stolz",
+        "ausdrucksstark"
+      ],
+      "personality_negative": [
+        "arrogant",
+        "dominant",
+        "eitel",
+        "eigensinnig",
+        "dramatisch",
+        "faul (wenn nicht bewundert)",
+        "narzisstisch",
+        "eifersüchtig auf Aufmerksamkeit"
+      ],
+      "personality_long": "Der Löwe ist das zweite Feuerzeichen und trägt die königliche Energie der Sonne. Löwen sind geboren für die Bühne — buchstäblich oder metaphorisch. Sie brauchen Anerkennung wie Pflanzen die Sonne. Sie sind großzügig, warmherzig und großmütig zu allen, die sie lieben. Ihr Herz ist groß, ihre Loyalität legendär. Sie sind natürliche Führer — nicht durch Kalkül, sondern durch Präsenz. Kinder lieben Löwen, weil Löwen selbst kindliches Spiel und Freude nie verlieren. Die Schattenseite: Sie können arrogant werden, andere übersehen, dramatisieren und wenn ihr Ego verletzt wird, langfristig grollen.",
+      "career_matches": [
+        "Schauspiel",
+        "Musik",
+        "Regie",
+        "Politik",
+        "Führung",
+        "Unternehmertum",
+        "Show-Business",
+        "Lehre",
+        "Coaching",
+        "Kindergarten (spielerisch)"
+      ],
+      "career_avoid": [
+        "Anonyme Arbeit ohne Anerkennung",
+        "sehr detaillierte Backoffice-Berufe",
+        "streng hierarchische Unterordnung"
+      ],
+      "love_style": "Sehr romantisch, dramatisch, großzügig mit Geschenken. Löwen wollen bewundert und gebraucht werden. Sie sind treu, solange sie sich als 'der König/die Königin des Herzens' des Partners fühlen. Untreue verzeihen sie nie.",
+      "friendship_style": "Der Löwe hält Hof — hat viele Freunde, ist der Mittelpunkt der Runde. Ehrlich, direkt, großzügig, aber erwartet Loyalität und Bewunderung im Gegenzug.",
+      "health_focus": [
+        "Herz",
+        "Rücken",
+        "Wirbelsäule"
+      ],
+      "health_risks": "Herz-Kreislauf-Erkrankungen, Rückenprobleme, Übergewicht durch Genuss, hoher Blutdruck",
+      "health_advice": "Regelmäßiges Herz-Kreislauf-Training, Yoga für Wirbelsäule, Sonnenbäder (moderat), Freude im Alltag",
+      "colors": [
+        "gold",
+        "orange",
+        "purpurrot",
+        "sonnengelb"
+      ],
+      "gemstones": [
+        "Rubin",
+        "Bernstein",
+        "Citrin",
+        "Tigerauge",
+        "Onyx"
+      ],
+      "metals": [
+        "Gold"
+      ],
+      "numbers": [
+        1,
+        5,
+        9
+      ],
+      "day": "Sonntag",
+      "flowers": [
+        "Sonnenblume",
+        "Ringelblume",
+        "Löwenzahn"
+      ],
+      "plants": [
+        "Safran",
+        "Kamille",
+        "Zimt"
+      ],
+      "body_part": "Herz, Wirbelsäule",
+      "tarot_card": "Die Kraft",
+      "chakra": "Herzchakra + Solarplexus",
+      "famous_personalities": [
+        "Napoleon Bonaparte",
+        "Barack Obama",
+        "Madonna",
+        "Whitney Houston",
+        "Jennifer Lopez",
+        "Coco Chanel"
+      ],
+      "myth": "Der Löwe repräsentiert den Nemeischen Löwen, den Herakles in seiner ersten Arbeit tötete. Dieser Löwe hatte ein undurchdringliches Fell — Herakles konnte ihn nur durch pures Erwürgen bezwingen. Symbol für unbezwingbaren Mut, natürliche Kraft und die Notwendigkeit, dem Ego mit Weisheit zu begegnen.",
+      "shadow_work": "Löwe muss lernen, andere zu sehen und nicht immer im Mittelpunkt stehen zu müssen. Der innere König/die innere Königin muss zum weisen Herrscher werden, der dient statt herrscht."
+    },
+    "virgo": {
+      "id": 6,
+      "name_de": "Jungfrau",
+      "name_en": "Virgo",
+      "symbol": "♍",
+      "period": "23. August – 22. September",
+      "element": "earth",
+      "quality": "veränderlich",
+      "polarity": "weiblich / negativ / passiv",
+      "ruling_planet": "Merkur",
+      "exalted_planet": "Merkur",
+      "detriment_planet": "Jupiter, Neptun",
+      "fall_planet": "Venus",
+      "opposite_sign": "pisces",
+      "keywords": [
+        "Ich analysiere",
+        "Perfektion",
+        "Dienst",
+        "Details",
+        "Gesundheit",
+        "Reinheit"
+      ],
+      "personality_positive": [
+        "analytisch",
+        "hilfsbereit",
+        "detailorientiert",
+        "praktisch",
+        "fleißig",
+        "gewissenhaft",
+        "bescheiden",
+        "gesundheitsbewusst",
+        "loyal",
+        "klug"
+      ],
+      "personality_negative": [
+        "kritisch",
+        "perfektionistisch",
+        "besserwisserisch",
+        "ängstlich",
+        "sturr in Prinzipien",
+        "hypochondrisch",
+        "penibel",
+        "selbstkritisch"
+      ],
+      "personality_long": "Die Jungfrau ist das zweite Erdzeichen und trägt die Energie des Analysierens, Verfeinerns und Dienens. Jungfrauen sind die 'Handwerker der Präzision' — sie sehen jedes Detail, jeden Fehler, jede Optimierungsmöglichkeit. Sie dienen aus Liebe, arbeiten aus Sinn und suchen die Perfektion in kleinen Dingen. Ihre Loyalität ist zurückhaltend, aber tief. Sie sagen selten 'ich liebe dich', aber putzen dir die Wohnung, kochen dir Suppe wenn du krank bist, und merken sich jedes Detail deines Lebens. Die Schattenseite: Sie können extrem kritisch werden — mit anderen und noch mehr mit sich selbst. Perfektionismus wird zur Falle. Angst vor Fehlern lähmt.",
+      "career_matches": [
+        "Medizin",
+        "Pflege",
+        "Analytik",
+        "Buchhaltung",
+        "Programmierung",
+        "Editorat",
+        "Qualitätssicherung",
+        "Ernährungsberatung",
+        "Kritiker/Rezensent",
+        "Forschung"
+      ],
+      "career_avoid": [
+        "Chaotische Wechselberufe",
+        "sehr abstrakte Kreativität ohne Struktur",
+        "sehr improvisationsbasierte Berufe"
+      ],
+      "love_style": "Jungfrau liebt durch Tat, nicht durch Worte. Zuverlässig, treu, aufmerksam für Bedürfnisse des Partners. Braucht Zeit, um Vertrauen zu fassen. Kritik am Partner ist keine Ablehnung, sondern der jungfräuliche Weg der Sorge.",
+      "friendship_style": "Wenige, aber sehr treue Freundschaften. Jungfrau ist der Freund, der sich immer erinnert, immer verlässlich ist und praktisch hilft. Verzeiht Enttäuschungen schwer.",
+      "health_focus": [
+        "Verdauung",
+        "Darm",
+        "Milz",
+        "Bauchspeicheldrüse"
+      ],
+      "health_risks": "Verdauungsprobleme durch Stress, Reizdarm, Nervosität, psychosomatische Beschwerden, Hypochondrie",
+      "health_advice": "Achtsamkeit über Perfektionismus, Verdauungsförderung, Entspannungstechniken, Naturaufenthalte",
+      "colors": [
+        "marineblau",
+        "grau",
+        "beige",
+        "salbeigrün"
+      ],
+      "gemstones": [
+        "Saphir",
+        "Jade",
+        "Karneol",
+        "Peridot"
+      ],
+      "metals": [
+        "Quecksilber",
+        "Platin"
+      ],
+      "numbers": [
+        5,
+        3,
+        8
+      ],
+      "day": "Mittwoch",
+      "flowers": [
+        "Chrysantheme",
+        "Aster",
+        "Winde"
+      ],
+      "plants": [
+        "Fenchel",
+        "Dill",
+        "Rosmarin"
+      ],
+      "body_part": "Darm, Verdauungssystem",
+      "tarot_card": "Der Eremit",
+      "chakra": "Solarplexus",
+      "famous_personalities": [
+        "Mother Teresa",
+        "Michael Jackson",
+        "Beyoncé",
+        "Keanu Reeves",
+        "Freddie Mercury",
+        "Agatha Christie"
+      ],
+      "myth": "Die Jungfrau repräsentiert die Göttin Astraea, die Göttin der Gerechtigkeit und Reinheit. Sie war die letzte Göttin, die die Menschen im Goldenen Zeitalter verließ, als die Welt korrupt wurde. Symbol für Rein­heit, Dienst am Höheren, und die Sehnsucht nach einer besseren Welt.",
+      "shadow_work": "Jungfrau muss lernen, Fehler zu akzeptieren — bei anderen und sich selbst. Der innere Perfektionist muss zum weisen Diener reifen, der Excellence anstrebt ohne von Angst getrieben zu sein."
+    },
+    "libra": {
+      "id": 7,
+      "name_de": "Waage",
+      "name_en": "Libra",
+      "symbol": "♎",
+      "period": "23. September – 22. Oktober",
+      "element": "air",
+      "quality": "kardinal",
+      "polarity": "männlich / positiv / aktiv",
+      "ruling_planet": "Venus",
+      "exalted_planet": "Saturn",
+      "detriment_planet": "Mars",
+      "fall_planet": "Sonne",
+      "opposite_sign": "aries",
+      "keywords": [
+        "Ich wäge ab",
+        "Balance",
+        "Partnerschaft",
+        "Gerechtigkeit",
+        "Schönheit",
+        "Harmonie"
+      ],
+      "personality_positive": [
+        "diplomatisch",
+        "charmant",
+        "ästhetisch",
+        "fair",
+        "friedliebend",
+        "kooperativ",
+        "kultiviert",
+        "sozial",
+        "romantisch",
+        "gerecht"
+      ],
+      "personality_negative": [
+        "unentschlossen",
+        "konfliktscheu",
+        "oberflächlich",
+        "gefallsüchtig",
+        "abhängig",
+        "wankelmütig",
+        "zu diplomatisch (nicht klar)",
+        "selbstlos zum eigenen Nachteil"
+      ],
+      "personality_long": "Die Waage ist das zweite Luftzeichen und trägt die Energie der Balance, der Beziehung und der Ästhetik. Waagen sind die geborenen Diplomaten, Vermittler und Ästheten. Sie sehen immer beide Seiten, wollen alles harmonisch, hassen Konflikt und Ungerechtigkeit. Ihre Schönheitsliebe ist tief — sie umgeben sich mit schönen Dingen, kultivierten Menschen, gepflegter Sprache. Sie brauchen Partner: In Beziehung fühlen sie sich vollständig. Alleine fühlen sie sich halb. Die Schattenseite: Sie können in Unentschlossenheit versinken (jede Entscheidung ist ein Verlust der anderen Option), oberflächlich Harmonie um jeden Preis suchen und sich in Abhängigkeit von Partnern verlieren.",
+      "career_matches": [
+        "Recht",
+        "Diplomatie",
+        "Design",
+        "Mode",
+        "Kunsthandel",
+        "Beratung",
+        "Coaching",
+        "PR",
+        "Hochzeitsplanung",
+        "Innenarchitektur"
+      ],
+      "career_avoid": [
+        "Grobheit",
+        "einsame technische Berufe ohne soziale Interaktion",
+        "sehr aggressive Verhandlungen"
+      ],
+      "love_style": "Sehr romantisch, ästhetisch, kultiviert. Waage will die perfekte Partnerschaft — Rosen, Candle-light, tiefe Gespräche. Braucht Harmonie und wird bei Konflikt sehr unglücklich.",
+      "friendship_style": "Waagen haben große soziale Kreise, sind charmant zu allen, aber emotional wählen sie sorgfältig. Ihre Freundschaften sind kultiviert und schön.",
+      "health_focus": [
+        "Nieren",
+        "Blase",
+        "untere Wirbelsäule",
+        "Haut"
+      ],
+      "health_risks": "Nierenprobleme, Rückenschmerzen unten, Hautprobleme durch emotionale Anspannung, Zucker-Ungleichgewicht",
+      "health_advice": "Balance in allem, ausreichend Wasser, Yoga für Rücken, ästhetische Umgebung als Heilung",
+      "colors": [
+        "rosa",
+        "hellblau",
+        "lavendel",
+        "pastell"
+      ],
+      "gemstones": [
+        "Opal",
+        "Rosenquarz",
+        "Aquamarin",
+        "Jade",
+        "Lapislazuli"
+      ],
+      "metals": [
+        "Kupfer"
+      ],
+      "numbers": [
+        6,
+        4,
+        9
+      ],
+      "day": "Freitag",
+      "flowers": [
+        "Rose",
+        "Hortensie",
+        "Kirschblüte"
+      ],
+      "plants": [
+        "Minze",
+        "Estragon",
+        "Weinrebe"
+      ],
+      "body_part": "Nieren, untere Wirbelsäule",
+      "tarot_card": "Gerechtigkeit",
+      "chakra": "Herzchakra",
+      "famous_personalities": [
+        "Mahatma Gandhi",
+        "John Lennon",
+        "Kim Kardashian",
+        "Will Smith",
+        "Vladimir Putin",
+        "Bruno Mars"
+      ],
+      "myth": "Die Waage ist das einzige nicht-lebende Symbol im Tierkreis — sie repräsentiert die Waage der Themis, der griechischen Göttin der Gerechtigkeit. Sie wägt die Seelen ab, wägt Recht und Unrecht. Symbol für Gerechtigkeit, göttliches Gleichgewicht und die Kunst der Balance in einer unbalancierten Welt.",
+      "shadow_work": "Waage muss lernen, Entscheidungen zu treffen und mit Konflikten umzugehen. Der innere Diplomat muss zum weisen Richter reifen, der klar entscheidet, ohne Harmonie zu opfern."
+    },
+    "scorpio": {
+      "id": 8,
+      "name_de": "Skorpion",
+      "name_en": "Scorpio",
+      "symbol": "♏",
+      "period": "23. Oktober – 21. November",
+      "element": "water",
+      "quality": "fix",
+      "polarity": "weiblich / negativ / passiv",
+      "ruling_planet": "Pluto (klassisch: Mars)",
+      "exalted_planet": "Uranus",
+      "detriment_planet": "Venus",
+      "fall_planet": "Mond",
+      "opposite_sign": "taurus",
+      "keywords": [
+        "Ich verwandle",
+        "Intensität",
+        "Geheimnis",
+        "Sexualität",
+        "Tod & Wiedergeburt",
+        "Macht"
+      ],
+      "personality_positive": [
+        "intensiv",
+        "leidenschaftlich",
+        "loyal",
+        "mutig",
+        "durchdringend",
+        "willensstark",
+        "magnetisch",
+        "tiefgründig",
+        "wahrhaftig",
+        "transformativ"
+      ],
+      "personality_negative": [
+        "nachtragend",
+        "eifersüchtig",
+        "misstrauisch",
+        "kontrollierend",
+        "manipulativ",
+        "besitzergreifend",
+        "verletzend (wenn provoziert)",
+        "geheimnistuerisch"
+      ],
+      "personality_long": "Der Skorpion ist das zweite Wasserzeichen und trägt die dunkle, transformierende Energie der Tiefen. Skorpione sind die Alchemisten des Tierkreises — sie sehen unter die Oberfläche, in die Schatten, in die verborgenen Motive. Ihre Intensität schreckt manche ab und zieht andere magnetisch an. Sie lieben tief, hassen tief, leben tief. Halbherzigkeit kennen sie nicht. Sexualität ist für sie kein Sport, sondern Sakrament — vollständige Verschmelzung. Die Schattenseite: Sie können nachtragend werden über Jahrzehnte, manipulieren durch emotionale Macht, kontrollieren aus Angst vor Verletzlichkeit. Verletzt reagieren sie mit chirurgischer Präzision.",
+      "career_matches": [
+        "Psychotherapie",
+        "Chirurgie",
+        "Forensik",
+        "Detektivarbeit",
+        "Okkultwissenschaften",
+        "Sexualtherapie",
+        "Trauerbegleitung",
+        "Journalismus (Investigativ)",
+        "Vermögensverwaltung",
+        "Bestattung"
+      ],
+      "career_avoid": [
+        "Oberflächliche Verkäuferrollen",
+        "sehr leichte Small-Talk-Berufe",
+        "Bereiche ohne Tiefe"
+      ],
+      "love_style": "Alles oder nichts. Skorpione lieben mit ihrer ganzen Seele. Sind unglaublich treu, wenn Vertrauen aufgebaut ist. Untreue verzeihen sie nie. Sexualität ist Verschmelzung, nicht Sport.",
+      "friendship_style": "Wenige, aber lebenslange Freunde. Skorpion ist der Freund, der bei dir bleibt in den dunkelsten Stunden. Verrat verzeiht er nie.",
+      "health_focus": [
+        "Fortpflanzungsorgane",
+        "Blase",
+        "Ausscheidungsorgane"
+      ],
+      "health_risks": "Fortpflanzungsprobleme, Harnwegsinfektionen, hormonelle Ungleichgewichte, unterdrückte Emotionen als Krankheit",
+      "health_advice": "Emotionsarbeit, Schattenarbeit, Sexualität als Heilung ernst nehmen, Wasser-Detox",
+      "colors": [
+        "dunkelrot",
+        "schwarz",
+        "burgunder",
+        "tiefes lila"
+      ],
+      "gemstones": [
+        "Obsidian",
+        "Granat",
+        "Rubin",
+        "Turmalin",
+        "Topas"
+      ],
+      "metals": [
+        "Eisen",
+        "Plutonium (symbolisch)"
+      ],
+      "numbers": [
+        8,
+        9,
+        4
+      ],
+      "day": "Dienstag",
+      "flowers": [
+        "Chrysantheme",
+        "Geranie",
+        "Rhododendron"
+      ],
+      "plants": [
+        "Chili",
+        "Knoblauch",
+        "Wildkräuter"
+      ],
+      "body_part": "Fortpflanzungsorgane, Ausscheidungsorgane",
+      "tarot_card": "Der Tod (Transformation)",
+      "chakra": "Sakralchakra",
+      "famous_personalities": [
+        "Marie Curie",
+        "Pablo Picasso",
+        "Bill Gates",
+        "Julia Roberts",
+        "Leonardo DiCaprio",
+        "Katy Perry"
+      ],
+      "myth": "Der Skorpion repräsentiert das Wesen, das Orion tötete — den Jäger, der prahlte, alle Tiere jagen zu können. Gaia schickte einen Skorpion, um ihn zur Demut zu bringen. Skorpion und Orion stehen sich am Himmel gegenüber — der eine geht auf, wenn der andere untergeht. Symbol für Tod als Lehrer, Demut vor der Tiefe, und die Wiedergeburt durch Verwandlung.",
+      "shadow_work": "Skorpion muss lernen zu vergeben und Kontrolle loszulassen. Der innere Alchemist muss zum weisen Phönix werden, der die eigene Verletzlichkeit als Kraft nutzt."
+    },
+    "sagittarius": {
+      "id": 9,
+      "name_de": "Schütze",
+      "name_en": "Sagittarius",
+      "symbol": "♐",
+      "period": "22. November – 21. Dezember",
+      "element": "fire",
+      "quality": "veränderlich",
+      "polarity": "männlich / positiv / aktiv",
+      "ruling_planet": "Jupiter",
+      "exalted_planet": "Südknoten",
+      "detriment_planet": "Merkur",
+      "fall_planet": "keine",
+      "opposite_sign": "gemini",
+      "keywords": [
+        "Ich sehe",
+        "Wahrheit",
+        "Reise",
+        "Philosophie",
+        "Expansion",
+        "Freiheit"
+      ],
+      "personality_positive": [
+        "abenteuerlustig",
+        "optimistisch",
+        "ehrlich",
+        "freidenkend",
+        "großzügig",
+        "philosophisch",
+        "humorvoll",
+        "unabhängig",
+        "kulturbegeistert",
+        "wachstumsorientiert"
+      ],
+      "personality_negative": [
+        "unbeständig",
+        "taktlos",
+        "übermütig",
+        "unverbindlich",
+        "übertreibend",
+        "unverantwortlich",
+        "voreilig",
+        "moralisierend"
+      ],
+      "personality_long": "Der Schütze ist das dritte Feuerzeichen und trägt die Energie der Weite, der Suche und der philosophischen Expansion. Schützen sind die geborenen Weltreisenden, Philosophen und Suchenden. Ihr Pfeil zielt immer weiter — auf den Horizont, auf Wahrheit, auf mehr. Sie brauchen Freiheit wie andere brauchen Luft. Kulturen, Sprachen, Religionen, Philosophien — alles interessiert sie. Sie sind großzügig, humorvoll und optimistisch. Ihre Ehrlichkeit ist berüchtigt — manchmal brutal ehrlich, ohne Rücksicht auf Gefühle. Die Schattenseite: Sie können unverbindlich werden, versprechen mehr als sie halten, moralisieren und nie wirklich anpacken.",
+      "career_matches": [
+        "Reisebranche",
+        "Publikation",
+        "Universität/Lehre",
+        "Philosophie",
+        "Religion",
+        "Sport (professionell)",
+        "Anwaltschaft",
+        "Auslandskorrespondenz",
+        "Kulturmanagement",
+        "Verlagswesen"
+      ],
+      "career_avoid": [
+        "Sehr routinierte Bürojobs",
+        "eingesperrt in einem Ort",
+        "sehr detaillierte Verwaltung"
+      ],
+      "love_style": "Schütze braucht Freiheit in der Liebe. Sucht Partner für Abenteuer, geistige Erweiterung, gemeinsame Reisen. Bindung kann ihn erschrecken. Wenn er sich bindet, dann aus voller Überzeugung.",
+      "friendship_style": "Freunde in aller Welt, verschiedene Kulturen. Schütze bringt Weite in Freundschaften, verbindet Menschen aus verschiedenen Welten.",
+      "health_focus": [
+        "Hüfte",
+        "Oberschenkel",
+        "Leber"
+      ],
+      "health_risks": "Hüftprobleme, Leber-Ungleichgewicht durch Genuss, Übergewicht durch Übermut beim Essen, Sportverletzungen",
+      "health_advice": "Regelmäßige Bewegung im Freien, Leberpflege, Maß im Genuss",
+      "colors": [
+        "türkis",
+        "purpur",
+        "dunkelblau"
+      ],
+      "gemstones": [
+        "Türkis",
+        "Amethyst",
+        "Lapislazuli",
+        "Topas"
+      ],
+      "metals": [
+        "Zinn"
+      ],
+      "numbers": [
+        3,
+        5,
+        7
+      ],
+      "day": "Donnerstag",
+      "flowers": [
+        "Nelke",
+        "Iris",
+        "Narzisse"
+      ],
+      "plants": [
+        "Salbei",
+        "Muskatnuss",
+        "Zitrusbäume"
+      ],
+      "body_part": "Hüfte, Oberschenkel, Leber",
+      "tarot_card": "Mäßigkeit",
+      "chakra": "Solarplexus + Kronenchakra",
+      "famous_personalities": [
+        "Walt Disney",
+        "Winston Churchill",
+        "Steven Spielberg",
+        "Taylor Swift",
+        "Frank Sinatra",
+        "Jane Austen"
+      ],
+      "myth": "Der Schütze repräsentiert den weisen Zentauren Chiron — halb Mensch, halb Pferd. Chiron war der Lehrer der Helden (Asklepios, Achill, Iason) und der weiseste Heiler. Er starb an einer unheilbaren Wunde, die er sich freiwillig zufügte, um Prometheus zu befreien. Symbol für Weisheit, Lehrertum, und den 'verwundeten Heiler' — man heilt andere von dem, was man selbst durchlitten hat.",
+      "shadow_work": "Schütze muss lernen, sich zu binden ohne Freiheit zu verlieren. Der innere Sucher muss zum weisen Wanderer werden, der auch bleibt, um andere mit zu tragen."
+    },
+    "capricorn": {
+      "id": 10,
+      "name_de": "Steinbock",
+      "name_en": "Capricorn",
+      "symbol": "♑",
+      "period": "22. Dezember – 19. Januar",
+      "element": "earth",
+      "quality": "kardinal",
+      "polarity": "weiblich / negativ / passiv",
+      "ruling_planet": "Saturn",
+      "exalted_planet": "Mars",
+      "detriment_planet": "Mond",
+      "fall_planet": "Jupiter",
+      "opposite_sign": "cancer",
+      "keywords": [
+        "Ich nutze",
+        "Struktur",
+        "Karriere",
+        "Disziplin",
+        "Meisterschaft",
+        "Verantwortung"
+      ],
+      "personality_positive": [
+        "diszipliniert",
+        "ehrgeizig",
+        "verantwortungsvoll",
+        "geduldig",
+        "praktisch",
+        "loyal",
+        "traditionell",
+        "strategisch",
+        "zuverlässig",
+        "reif"
+      ],
+      "personality_negative": [
+        "pessimistisch",
+        "kontrollsüchtig",
+        "kalt",
+        "starr",
+        "arbeitssüchtig",
+        "materialistisch",
+        "hart (zu sich und anderen)",
+        "melancholisch"
+      ],
+      "personality_long": "Der Steinbock ist das dritte Erdzeichen und trägt die Energie der Struktur, der Meisterschaft und des Aufstiegs. Steinböcke sind die geborenen Bauherren — von Karrieren, Unternehmen, Familien-Vermögen. Ihr Pfad ist der lange Weg: langsam, stetig, unbeirrbar. Wo andere aufgeben, machen Steinböcke weiter. Ihre Disziplin ist beeindruckend, ihr Verantwortungsgefühl tief. Sie werden im Alter oft schöner und stärker — während andere altern, blühen sie auf. Die Schattenseite: Sie können in Arbeitssucht versinken, emotional kalt werden und materiellen Erfolg mit Lebensglück verwechseln.",
+      "career_matches": [
+        "Management",
+        "Politik",
+        "Finanzen",
+        "Recht",
+        "Bau",
+        "Verwaltung",
+        "Militär",
+        "Bergbau",
+        "Uhrmacherei",
+        "Traditionelle Handwerke"
+      ],
+      "career_avoid": [
+        "Sehr chaotische Kreativberufe",
+        "improvisatorische Rollen ohne Struktur",
+        "sehr emotionale Beratung ohne System"
+      ],
+      "love_style": "Steinbock liebt langsam und verbindlich. Braucht Sicherheit, will Familie aufbauen, denkt in Jahrzehnten. Emotionsscheu, aber tief loyal wenn Vertrauen gefasst wurde.",
+      "friendship_style": "Wenige, aber lebenslange Freunde. Steinbock hilft praktisch, ist verlässlich, gibt kluge Ratschläge. Emotionaler Support ist nicht seine Stärke, aber er wird immer da sein.",
+      "health_focus": [
+        "Knochen",
+        "Gelenke",
+        "Zähne",
+        "Haut",
+        "Knie"
+      ],
+      "health_risks": "Gelenkprobleme (besonders Knie), Osteoporose im Alter, Zahnprobleme, chronische Rückenschmerzen, Depression durch Überarbeitung",
+      "health_advice": "Regelmäßige Pausen, Freude einbauen, Bewegung an frischer Luft, Kalzium und Vitamin D, emotionaler Ausdruck",
+      "colors": [
+        "schwarz",
+        "dunkelbraun",
+        "grau",
+        "tannengrün"
+      ],
+      "gemstones": [
+        "Onyx",
+        "Granat",
+        "Obsidian",
+        "Rauchquarz"
+      ],
+      "metals": [
+        "Blei"
+      ],
+      "numbers": [
+        8,
+        4,
+        3
+      ],
+      "day": "Samstag",
+      "flowers": [
+        "Pansy",
+        "Efeu",
+        "Mistel"
+      ],
+      "plants": [
+        "Beinwell",
+        "Weißdorn",
+        "Ginseng"
+      ],
+      "body_part": "Knochen, Knie, Haut",
+      "tarot_card": "Der Teufel (Materialisierung)",
+      "chakra": "Wurzelchakra",
+      "famous_personalities": [
+        "Martin Luther King Jr.",
+        "Michelle Obama",
+        "Elvis Presley",
+        "David Bowie",
+        "Isaac Newton",
+        "Muhammad Ali"
+      ],
+      "myth": "Der Steinbock repräsentiert Pan, der halb Ziege, halb Fisch war — er verwandelte sich beim Fluss Nil in einen Fisch, um dem Ungeheuer Typhon zu entkommen. Symbol für Anpassungsfähigkeit im Angesicht der Krise, die Fähigkeit sowohl den Berg zu erklimmen (Ziege) als auch in die Tiefen einzutauchen (Fisch).",
+      "shadow_work": "Steinbock muss lernen, Kontrolle loszulassen und emotional zu leben. Der innere Bauherr muss zum weisen Ältesten reifen, der Erfolg mit Freude teilt."
+    },
+    "aquarius": {
+      "id": 11,
+      "name_de": "Wassermann",
+      "name_en": "Aquarius",
+      "symbol": "♒",
+      "period": "20. Januar – 18. Februar",
+      "element": "air",
+      "quality": "fix",
+      "polarity": "männlich / positiv / aktiv",
+      "ruling_planet": "Uranus (klassisch: Saturn)",
+      "exalted_planet": "keine",
+      "detriment_planet": "Sonne",
+      "fall_planet": "keine",
+      "opposite_sign": "leo",
+      "keywords": [
+        "Ich weiß",
+        "Innovation",
+        "Freiheit",
+        "Menschheit",
+        "Vision",
+        "Rebellion"
+      ],
+      "personality_positive": [
+        "innovativ",
+        "originell",
+        "humanitär",
+        "freidenkend",
+        "unabhängig",
+        "intellektuell",
+        "fortschrittlich",
+        "visionär",
+        "sozial engagiert",
+        "tolerant"
+      ],
+      "personality_negative": [
+        "distanziert",
+        "eigensinnig",
+        "provokativ",
+        "emotional unerreichbar",
+        "unpraktisch",
+        "rebellisch ohne Grund",
+        "kalt",
+        "unberechenbar"
+      ],
+      "personality_long": "Der Wassermann ist das dritte Luftzeichen und trägt die Energie der Zukunft, der Revolution und des Menschheitsgeistes. Wassermänner sind die Visionäre, die Rebellen, die Erfinder. Sie denken in Systemen, in Menschheiten, in Jahrhunderten. Individuen können sie manchmal überfordern, aber die Menschheit als ganze lieben sie. Ihre Freiheit ist heilig — Beziehungen, die einengen, brechen sie. Sie sind oft ihrer Zeit voraus, was einsam macht. Die Schattenseite: Sie können emotional distanziert werden, in Ideen leben statt in Beziehungen, und aus Prinzip rebellieren, ohne konstruktiv zu sein.",
+      "career_matches": [
+        "Technologie",
+        "Wissenschaft",
+        "Forschung",
+        "Umweltarbeit",
+        "Menschenrechte",
+        "Gemeinnützige Organisationen",
+        "Astronomie",
+        "Programmierung",
+        "Zukunftsforschung",
+        "Kollektive Kunst"
+      ],
+      "career_avoid": [
+        "Sehr traditionelle Hierarchien",
+        "sehr emotional geladene Berufe",
+        "starre konservative Umgebungen"
+      ],
+      "love_style": "Wassermann liebt in Freundschaft. Braucht Freiraum, geistigen Austausch, gemeinsame Visionen. Emotionale Ausbrüche schrecken ab. Bindung geschieht spät, aber dann lebenslang und ungewöhnlich.",
+      "friendship_style": "Sehr breiter Freundeskreis über alle Milieus hinweg. Der Wassermann verbindet Menschen, die sich sonst nie treffen würden. Freundschaften über Kontinente hinweg.",
+      "health_focus": [
+        "Waden",
+        "Knöchel",
+        "Kreislauf"
+      ],
+      "health_risks": "Kreislaufprobleme, Krampfadern, Verletzungen der Knöchel, Nervensystem-Überreizung",
+      "health_advice": "Regelmäßige Bewegung (Yoga, Radfahren), Achtsamkeit für Erdung, Meditation, digital detox",
+      "colors": [
+        "elektrisches blau",
+        "türkis",
+        "silber",
+        "neon"
+      ],
+      "gemstones": [
+        "Amethyst",
+        "Aquamarin",
+        "Labradorit",
+        "Sugilith"
+      ],
+      "metals": [
+        "Uran (symbolisch)",
+        "Platin"
+      ],
+      "numbers": [
+        4,
+        7,
+        11,
+        22
+      ],
+      "day": "Samstag",
+      "flowers": [
+        "Orchidee",
+        "Löwenzahn",
+        "Bird-of-Paradise"
+      ],
+      "plants": [
+        "Kaktus",
+        "Sukkulente",
+        "seltene exotische Pflanzen"
+      ],
+      "body_part": "Waden, Knöchel, Kreislauf",
+      "tarot_card": "Der Stern",
+      "chakra": "Halschakra + Kronenchakra",
+      "famous_personalities": [
+        "Charles Darwin",
+        "Abraham Lincoln",
+        "Oprah Winfrey",
+        "Bob Marley",
+        "Wolfgang Amadeus Mozart",
+        "Ellen DeGeneres"
+      ],
+      "myth": "Der Wassermann repräsentiert Ganymed, den schönen Jüngling, den Zeus zum Olymp entführte, um Mundschenk der Götter zu werden. Er goss den nährenden Trank an alle Götter aus — Symbol für den Diener der Menschheit, der Weisheit und Nahrung für alle bringt.",
+      "shadow_work": "Wassermann muss lernen, Individuen zu sehen (nicht nur Gruppen) und emotional präsent zu sein. Der innere Visionär muss zum weisen Wegbereiter werden, der auch nährt statt nur revolutioniert."
+    },
+    "pisces": {
+      "id": 12,
+      "name_de": "Fische",
+      "name_en": "Pisces",
+      "symbol": "♓",
+      "period": "19. Februar – 20. März",
+      "element": "water",
+      "quality": "veränderlich",
+      "polarity": "weiblich / negativ / passiv",
+      "ruling_planet": "Neptun (klassisch: Jupiter)",
+      "exalted_planet": "Venus",
+      "detriment_planet": "Merkur",
+      "fall_planet": "Merkur",
+      "opposite_sign": "virgo",
+      "keywords": [
+        "Ich glaube",
+        "Auflösung",
+        "Mitgefühl",
+        "Spiritualität",
+        "Traum",
+        "Verschmelzung"
+      ],
+      "personality_positive": [
+        "mitfühlend",
+        "intuitiv",
+        "künstlerisch",
+        "spirituell",
+        "sanft",
+        "einfühlsam",
+        "kreativ",
+        "träumerisch",
+        "opferbereit",
+        "musikalisch"
+      ],
+      "personality_negative": [
+        "realitätsfern",
+        "wankelmütig",
+        "opferrolle",
+        "manipulativ (durch Mitleid)",
+        "suchtgefährdet",
+        "grenzenlos",
+        "melancholisch",
+        "unentschlossen"
+      ],
+      "personality_long": "Die Fische sind das dritte Wasserzeichen und trägt die Energie der Auflösung, Verschmelzung und spirituellen Rückkehr. Fische sind die Mystiker, Künstler und Heiler des Tierkreises. Sie fühlen mit allem — der Stimmung im Raum, dem Schmerz eines Fremden, der Schönheit einer Melodie. Ihre Intuition ist außergewöhnlich, ihre Verbindung zum Kollektiven Unbewussten tief. Sie brauchen Rückzug, um sich zu erholen. Die Schattenseite: Sie können in Fantasie flüchten, Suchtmittel nutzen um mit der Sensibilität umzugehen, sich in Opferrollen verlieren, oder anderen die Verantwortung für ihr Leben übertragen.",
+      "career_matches": [
+        "Kunst",
+        "Musik",
+        "Poesie",
+        "Spiritualität",
+        "Heilberufe",
+        "Meeresforschung",
+        "Fotografie",
+        "Film",
+        "Meditation-Lehre",
+        "Wohltätigkeit"
+      ],
+      "career_avoid": [
+        "Sehr harte Verhandlungen",
+        "kalte technische Berufe ohne Sinn",
+        "sehr aggressive Umgebungen"
+      ],
+      "love_style": "Sehr romantisch, symbiotisch, opferbereit. Fische verschmelzen mit dem Partner. Braucht sensiblen, sanften Partner. Grobheit oder Härte verletzt tief.",
+      "friendship_style": "Sehr tiefe, verstehende Freundschaften. Fische ist der Freund, der dich fühlt, bevor du sprichst. Kann sich aber auch in falscher Loyalität verlieren.",
+      "health_focus": [
+        "Füße",
+        "Lymphsystem",
+        "Immunsystem"
+      ],
+      "health_risks": "Fußprobleme, Lymphstau, Suchtneigung (Alkohol, Drogen), Immunschwäche durch Erschöpfung, Depression",
+      "health_advice": "Schwimmen als Therapie, Meditation, Grenzen setzen lernen, Erdung durch praktisches Tun",
+      "colors": [
+        "meergrün",
+        "türkis",
+        "seeblau",
+        "violett"
+      ],
+      "gemstones": [
+        "Aquamarin",
+        "Amethyst",
+        "Mondstein",
+        "Fluorit"
+      ],
+      "metals": [
+        "Zinn",
+        "Platin"
+      ],
+      "numbers": [
+        3,
+        7,
+        12
+      ],
+      "day": "Donnerstag",
+      "flowers": [
+        "Wasserlilie",
+        "Vergissmeinnicht",
+        "Jasmin"
+      ],
+      "plants": [
+        "Algen",
+        "Seetang",
+        "Lotus"
+      ],
+      "body_part": "Füße, Lymphsystem",
+      "tarot_card": "Der Mond",
+      "chakra": "Kronenchakra + drittes Auge",
+      "famous_personalities": [
+        "Albert Einstein",
+        "Michelangelo",
+        "George Washington",
+        "Rihanna",
+        "Steve Jobs",
+        "Kurt Cobain"
+      ],
+      "myth": "Die Fische repräsentieren Aphrodite und ihren Sohn Eros, die sich in Fische verwandelten, um dem Ungeheuer Typhon zu entkommen. Sie waren durch ein Band aneinandergebunden, um sich nicht zu verlieren. Symbol für tiefe Liebe, die Verwandlung im Angesicht der Bedrohung, und die Verbindung zum göttlichen Feminin.",
+      "shadow_work": "Fische muss lernen, Grenzen zu setzen und in der Realität zu leben. Der innere Mystiker muss zum weisen Heiler reifen, der die spirituelle Weisheit erdet."
+    }
+  },
+  "planets": {
+    "sun": {
+      "name_de": "Sonne",
+      "symbol": "☉",
+      "domain": "Kernidentität, Ich-Bewusstsein, Vitalität, Lebenszweck, Vater-Prinzip",
+      "cycle": "365 Tage / 1 Jahr",
+      "rules_sign": "leo",
+      "keywords": [
+        "Selbst",
+        "Wille",
+        "Ich",
+        "Bewusstsein",
+        "Vitalität"
+      ],
+      "in_signs_brief": {
+        "aries": "Kämpferisches Ich, mutig, führend",
+        "taurus": "Stabiles Ich, sinnenorientiert, geerdet",
+        "gemini": "Kommunikatives Ich, vielseitig",
+        "cancer": "Fühlendes Ich, häuslich, sensibel",
+        "leo": "Königliches Ich, ausdrucksstark",
+        "virgo": "Analytisches Ich, dienend",
+        "libra": "Harmonisierendes Ich, diplomatisch",
+        "scorpio": "Intensives Ich, transformierend",
+        "sagittarius": "Suchendes Ich, philosophisch",
+        "capricorn": "Diszipliniertes Ich, aufstrebend",
+        "aquarius": "Innovatives Ich, visionär",
+        "pisces": "Träumendes Ich, mitfühlend"
+      }
+    },
+    "moon": {
+      "name_de": "Mond",
+      "symbol": "☽",
+      "domain": "Emotionen, Instinkt, Unterbewusstsein, Kindheit, Mutter-Prinzip, tägliche Bedürfnisse",
+      "cycle": "~28 Tage",
+      "rules_sign": "cancer",
+      "keywords": [
+        "Gefühle",
+        "Zuhause",
+        "Familie",
+        "Instinkte",
+        "Rhythmen"
+      ],
+      "in_signs_brief": {
+        "aries": "Impulsive Gefühle, spontan",
+        "taurus": "Stabile Gefühle, brauchen Sicherheit",
+        "gemini": "Wechselnde Gefühle, kommunikativ",
+        "cancer": "Tiefe Gefühle, sehr familiär",
+        "leo": "Dramatische Gefühle, brauchen Anerkennung",
+        "virgo": "Kontrollierte Gefühle, dienend",
+        "libra": "Harmonisierende Gefühle, partnerbezogen",
+        "scorpio": "Intensive Gefühle, tiefgründig",
+        "sagittarius": "Weite Gefühle, freiheitsliebend",
+        "capricorn": "Zurückhaltende Gefühle, verantwortlich",
+        "aquarius": "Distanzierte Gefühle, freundschaftlich",
+        "pisces": "Grenzenlose Gefühle, empathisch"
+      }
+    },
+    "mercury": {
+      "name_de": "Merkur",
+      "symbol": "☿",
+      "domain": "Kommunikation, Denken, Lernen, Sprache, kurze Reisen, Geschwister",
+      "cycle": "~88 Tage",
+      "rules_signs": [
+        "gemini",
+        "virgo"
+      ],
+      "keywords": [
+        "Denken",
+        "Sprechen",
+        "Lernen",
+        "Verbindung",
+        "Handel"
+      ],
+      "in_signs_brief": {
+        "aries": "Schnelles Denken, direkt",
+        "taurus": "Langsames Denken, gründlich",
+        "gemini": "Vielseitiges Denken, neugierig",
+        "cancer": "Emotionales Denken, intuitiv",
+        "leo": "Kreatives Denken, dramatisch",
+        "virgo": "Analytisches Denken, detailliert",
+        "libra": "Diplomatisches Denken, ausgewogen",
+        "scorpio": "Tiefes Denken, forschend",
+        "sagittarius": "Philosophisches Denken, weit",
+        "capricorn": "Strukturiertes Denken, praktisch",
+        "aquarius": "Innovatives Denken, originell",
+        "pisces": "Intuitives Denken, poetisch"
+      }
+    },
+    "venus": {
+      "name_de": "Venus",
+      "symbol": "♀",
+      "domain": "Liebe, Beziehungen, Schönheit, Kunst, Werte, Vergnügen, Geld",
+      "cycle": "~225 Tage",
+      "rules_signs": [
+        "taurus",
+        "libra"
+      ],
+      "keywords": [
+        "Liebe",
+        "Schönheit",
+        "Harmonie",
+        "Genuss",
+        "Werte"
+      ],
+      "in_signs_brief": {
+        "aries": "Impulsive Liebe, jägerisch",
+        "taurus": "Sinnliche Liebe, treu",
+        "gemini": "Kommunikative Liebe, flirty",
+        "cancer": "Nährende Liebe, häuslich",
+        "leo": "Dramatische Liebe, großzügig",
+        "virgo": "Praktische Liebe, dienend",
+        "libra": "Harmonische Liebe, partnerbezogen",
+        "scorpio": "Intensive Liebe, verschmelzend",
+        "sagittarius": "Freie Liebe, abenteuerlich",
+        "capricorn": "Ernste Liebe, traditionell",
+        "aquarius": "Freundschaftliche Liebe, unkonventionell",
+        "pisces": "Mystische Liebe, symbiotisch"
+      }
+    },
+    "mars": {
+      "name_de": "Mars",
+      "symbol": "♂",
+      "domain": "Willen, Aggression, Sexualität, Kampf, Energie, Tatkraft",
+      "cycle": "~687 Tage / 2 Jahre",
+      "rules_sign": "aries",
+      "keywords": [
+        "Wille",
+        "Kampf",
+        "Energie",
+        "Antrieb",
+        "Sexualität"
+      ],
+      "in_signs_brief": {
+        "aries": "Direkter Wille, kämpferisch",
+        "taurus": "Stabile Kraft, geduldig",
+        "gemini": "Verstreute Energie, kommunikativer Kampf",
+        "cancer": "Emotionale Kraft, schützend",
+        "leo": "Dramatische Kraft, führend",
+        "virgo": "Präzise Kraft, dienend",
+        "libra": "Diplomatische Kraft, ausgewogen",
+        "scorpio": "Intensive Kraft, tiefgehend",
+        "sagittarius": "Abenteuerliche Kraft, weit",
+        "capricorn": "Strategische Kraft, ehrgeizig",
+        "aquarius": "Rebellische Kraft, innovativ",
+        "pisces": "Passive Kraft, hingebungsvoll"
+      }
+    },
+    "jupiter": {
+      "name_de": "Jupiter",
+      "symbol": "♃",
+      "domain": "Expansion, Wachstum, Weisheit, Glück, Philosophie, Bildung, Fernreisen",
+      "cycle": "~12 Jahre (1 Zeichen pro Jahr)",
+      "rules_signs": [
+        "sagittarius",
+        "pisces"
+      ],
+      "keywords": [
+        "Wachstum",
+        "Weisheit",
+        "Glück",
+        "Fülle",
+        "Expansion"
+      ],
+      "in_signs_brief": {
+        "aries": "Wachstum durch Mut",
+        "taurus": "Wachstum durch Beständigkeit",
+        "gemini": "Wachstum durch Lernen",
+        "cancer": "Wachstum durch Familie",
+        "leo": "Wachstum durch Ausdruck",
+        "virgo": "Wachstum durch Dienst",
+        "libra": "Wachstum durch Partnerschaft",
+        "scorpio": "Wachstum durch Transformation",
+        "sagittarius": "Wachstum durch Suche",
+        "capricorn": "Wachstum durch Struktur",
+        "aquarius": "Wachstum durch Vision",
+        "pisces": "Wachstum durch Spiritualität"
+      }
+    },
+    "saturn": {
+      "name_de": "Saturn",
+      "symbol": "♄",
+      "domain": "Struktur, Grenzen, Verantwortung, Zeit, Karma, Reife, Meisterschaft",
+      "cycle": "~29 Jahre (Saturn Return)",
+      "rules_sign": "capricorn",
+      "keywords": [
+        "Grenzen",
+        "Zeit",
+        "Struktur",
+        "Karma",
+        "Meisterschaft"
+      ],
+      "in_signs_brief": {
+        "aries": "Lernen von Geduld",
+        "taurus": "Lernen von Loslassen",
+        "gemini": "Lernen von Tiefe",
+        "cancer": "Lernen von Abgrenzung",
+        "leo": "Lernen von Bescheidenheit",
+        "virgo": "Lernen von Perfektion",
+        "libra": "Lernen von Selbstbehauptung",
+        "scorpio": "Lernen von Vertrauen",
+        "sagittarius": "Lernen von Fokus",
+        "capricorn": "Lernen von Meisterschaft",
+        "aquarius": "Lernen von Verbindung",
+        "pisces": "Lernen von Erdung"
+      }
+    },
+    "uranus": {
+      "name_de": "Uranus",
+      "symbol": "♅",
+      "domain": "Revolution, Innovation, plötzliche Veränderung, Freiheit, Genialität, Technologie",
+      "cycle": "~84 Jahre (7 Jahre pro Zeichen)",
+      "rules_sign": "aquarius",
+      "keywords": [
+        "Revolution",
+        "Freiheit",
+        "Innovation",
+        "Erwachen"
+      ],
+      "generational_influence": "Prägt ganze Generationen (7-Jahre-Zyklen)"
+    },
+    "neptune": {
+      "name_de": "Neptun",
+      "symbol": "♆",
+      "domain": "Spiritualität, Auflösung, Illusion, Träume, Kunst, Mitgefühl, Verwirrung",
+      "cycle": "~165 Jahre (14 Jahre pro Zeichen)",
+      "rules_sign": "pisces",
+      "keywords": [
+        "Spiritualität",
+        "Auflösung",
+        "Illusion",
+        "Träume"
+      ],
+      "generational_influence": "Prägt kollektive Bewusstseinszustände"
+    },
+    "pluto": {
+      "name_de": "Pluto",
+      "symbol": "♇",
+      "domain": "Transformation, Macht, Tod & Wiedergeburt, Tabus, Kollektives Unbewusstes",
+      "cycle": "~248 Jahre (12-32 Jahre pro Zeichen)",
+      "rules_sign": "scorpio",
+      "keywords": [
+        "Transformation",
+        "Macht",
+        "Wiedergeburt",
+        "Schatten"
+      ],
+      "generational_influence": "Prägt kollektive Transformationsthemen"
+    }
+  },
+  "houses": {
+    "1st_house": {
+      "name": "1. Haus (Selbst)",
+      "cusp": "Aszendent (AC)",
+      "natural_sign": "aries",
+      "natural_ruler": "Mars",
+      "domain": "Persönlichkeit, Auftreten, Selbstbild, körperliches Erscheinen, Lebensbeginn",
+      "keywords": [
+        "Ich",
+        "Auftreten",
+        "Körper",
+        "Persönlichkeit"
+      ],
+      "planets_here": "Planeten im 1. Haus werden sehr sichtbar in der Persönlichkeit"
+    },
+    "2nd_house": {
+      "name": "2. Haus (Werte & Besitz)",
+      "natural_sign": "taurus",
+      "natural_ruler": "Venus",
+      "domain": "Geld, Besitz, Werte, Selbstwert, materielle Sicherheit, Talente",
+      "keywords": [
+        "Werte",
+        "Besitz",
+        "Geld",
+        "Selbstwert"
+      ]
+    },
+    "3rd_house": {
+      "name": "3. Haus (Kommunikation)",
+      "natural_sign": "gemini",
+      "natural_ruler": "Merkur",
+      "domain": "Kommunikation, Geschwister, Nachbarn, kurze Reisen, Lernen, tägliches Denken",
+      "keywords": [
+        "Kommunikation",
+        "Geschwister",
+        "Schule",
+        "Nachbarn"
+      ]
+    },
+    "4th_house": {
+      "name": "4. Haus (Zuhause & Familie)",
+      "cusp": "Imum Coeli (IC)",
+      "natural_sign": "cancer",
+      "natural_ruler": "Mond",
+      "domain": "Zuhause, Familie, Wurzeln, Vergangenheit, ein Elternteil (traditionell Mutter), inneres Fundament",
+      "keywords": [
+        "Zuhause",
+        "Familie",
+        "Wurzeln",
+        "Sicherheit"
+      ]
+    },
+    "5th_house": {
+      "name": "5. Haus (Kreativität & Kinder)",
+      "natural_sign": "leo",
+      "natural_ruler": "Sonne",
+      "domain": "Kreativität, Kinder, Romantik, Spiel, Hobbys, Selbstausdruck, Vergnügen",
+      "keywords": [
+        "Kreativität",
+        "Kinder",
+        "Romantik",
+        "Spiel"
+      ]
+    },
+    "6th_house": {
+      "name": "6. Haus (Arbeit & Gesundheit)",
+      "natural_sign": "virgo",
+      "natural_ruler": "Merkur",
+      "domain": "Alltagsarbeit, Gesundheit, Dienst, Routine, Haustiere, Kollegen",
+      "keywords": [
+        "Arbeit",
+        "Gesundheit",
+        "Dienst",
+        "Routine"
+      ]
+    },
+    "7th_house": {
+      "name": "7. Haus (Partnerschaft)",
+      "cusp": "Deszendent (DC)",
+      "natural_sign": "libra",
+      "natural_ruler": "Venus",
+      "domain": "Ehe, feste Partnerschaften, Verträge, offene Feinde, das Gegenüber",
+      "keywords": [
+        "Partner",
+        "Ehe",
+        "Verträge",
+        "Andere"
+      ]
+    },
+    "8th_house": {
+      "name": "8. Haus (Transformation & Tabu)",
+      "natural_sign": "scorpio",
+      "natural_ruler": "Pluto/Mars",
+      "domain": "Tod, Sexualität, Erbe, andere's Geld, Tabus, Transformation, Okkultes, Krisen",
+      "keywords": [
+        "Sex",
+        "Tod",
+        "Erbe",
+        "Krisen"
+      ]
+    },
+    "9th_house": {
+      "name": "9. Haus (Philosophie & Fernreisen)",
+      "natural_sign": "sagittarius",
+      "natural_ruler": "Jupiter",
+      "domain": "Höhere Bildung, Philosophie, Religion, Fernreisen, Ausland, Recht, Weltanschauung",
+      "keywords": [
+        "Philosophie",
+        "Reisen",
+        "Universität",
+        "Religion"
+      ]
+    },
+    "10th_house": {
+      "name": "10. Haus (Karriere & Berufung)",
+      "cusp": "Medium Coeli (MC)",
+      "natural_sign": "capricorn",
+      "natural_ruler": "Saturn",
+      "domain": "Karriere, Ruf, öffentliche Stellung, Berufung, ein Elternteil (traditionell Vater), Autorität",
+      "keywords": [
+        "Karriere",
+        "Ruf",
+        "Autorität",
+        "Berufung"
+      ]
+    },
+    "11th_house": {
+      "name": "11. Haus (Freunde & Ziele)",
+      "natural_sign": "aquarius",
+      "natural_ruler": "Uranus/Saturn",
+      "domain": "Freunde, Gruppen, Ideale, langfristige Ziele, Hoffnungen, Netzwerke",
+      "keywords": [
+        "Freunde",
+        "Gruppen",
+        "Ziele",
+        "Ideale"
+      ]
+    },
+    "12th_house": {
+      "name": "12. Haus (Unterbewusstes & Rückzug)",
+      "natural_sign": "pisces",
+      "natural_ruler": "Neptun/Jupiter",
+      "domain": "Unterbewusstsein, verstecktes, Rückzug, Spiritualität, Karma, Krankenhaus, Klöster, geheime Feinde",
+      "keywords": [
+        "Unterbewusst",
+        "Rückzug",
+        "Karma",
+        "Spiritualität"
+      ]
+    }
+  },
+  "aspects": {
+    "conjunction": {
+      "symbol": "☌",
+      "degree": 0,
+      "orb": 8,
+      "quality": "neutral/verstärkend",
+      "meaning": "Verschmelzung. Planeten wirken zusammen, verstärken sich gegenseitig. Nature abhängig von den Planeten."
+    },
+    "opposition": {
+      "symbol": "☍",
+      "degree": 180,
+      "orb": 8,
+      "quality": "herausfordernd",
+      "meaning": "Spannung, Konflikt, Bewusstwerdung. Zwei Kräfte polarisieren — braucht Integration."
+    },
+    "trine": {
+      "symbol": "△",
+      "degree": 120,
+      "orb": 8,
+      "quality": "harmonisch/leicht",
+      "meaning": "Fluss, Talent, Leichtigkeit. Kräfte fließen harmonisch zusammen. Manchmal zu selbstverständlich."
+    },
+    "square": {
+      "symbol": "□",
+      "degree": 90,
+      "orb": 8,
+      "quality": "herausfordernd",
+      "meaning": "Reibung, Krise, Motivation. Erzeugt Bewegung durch Konflikt. Wichtig für Wachstum."
+    },
+    "sextile": {
+      "symbol": "⚹",
+      "degree": 60,
+      "orb": 6,
+      "quality": "harmonisch/motivierend",
+      "meaning": "Chance, Talent das genutzt werden will. Weniger stark als Trigon, aber aktiver."
+    }
+  },
+  "ascendant_rising_signs": {
+    "description": "Der Aszendent ist das Zeichen, das im Moment der Geburt am östlichen Horizont aufsteigt. Er zeigt das Auftreten, die Persönlichkeit im ersten Eindruck, den 'Körper' der Seele.",
+    "importance": "Der Aszendent ist gleich wichtig wie das Sonnenzeichen. Er formt Erscheinung und Auftreten.",
+    "signs": {
+      "aries": "Auftreten: dynamisch, direkt, oft rötlich. Sportlich, spontan. Erster Eindruck: mutig, energisch.",
+      "taurus": "Auftreten: solide, sinnlich, ruhig. Angenehme Stimme. Erster Eindruck: verlässlich, geerdet.",
+      "gemini": "Auftreten: schlank, wach, kommunikativ. Schnelle Bewegungen. Erster Eindruck: neugierig, gesprächig.",
+      "cancer": "Auftreten: rund, weich, mütterlich/väterlich. Erster Eindruck: fürsorglich, sensibel.",
+      "leo": "Auftreten: königlich, stolz, oft üppiges Haar. Erster Eindruck: charismatisch, dramatisch.",
+      "virgo": "Auftreten: gepflegt, präzise, oft schlank. Erster Eindruck: intelligent, akribisch.",
+      "libra": "Auftreten: attraktiv, harmonisch, elegant. Erster Eindruck: charmant, diplomatisch.",
+      "scorpio": "Auftreten: intensiv, magnetisch, oft dunkler Blick. Erster Eindruck: mysteriös, tiefgründig.",
+      "sagittarius": "Auftreten: groß, offen, oft breit lächelnd. Erster Eindruck: abenteuerlustig, offen.",
+      "capricorn": "Auftreten: reserviert, ernst, oft älter wirkend als junger. Erster Eindruck: verantwortungsvoll, streng.",
+      "aquarius": "Auftreten: originell, oft ungewöhnlich, distanziert. Erster Eindruck: innovativ, kühl.",
+      "pisces": "Auftreten: träumerisch, weich, oft große Augen. Erster Eindruck: sensibel, spirituell."
+    }
+  },
+  "compatibility_matrix_144": {
+    "aries_aries": {
+      "sign1": "aries",
+      "sign2": "aries",
+      "score_1_to_10": 7,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer — sehr leidenschaftlich, sehr konfliktreich. Kann brennen oder verbrennen."
+    },
+    "aries_taurus": {
+      "sign1": "aries",
+      "sign2": "taurus",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Feuer trifft Erde. Widder ungeduldig, Stier langsam. Braucht viel Anpassung."
+    },
+    "aries_gemini": {
+      "sign1": "aries",
+      "sign2": "gemini",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Feuer und Luft — sehr belebend, intellektuell und körperlich anregend. Guter Fit."
+    },
+    "aries_cancer": {
+      "sign1": "aries",
+      "sign2": "cancer",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Feuer trifft Wasser. Widder verletzt Krebs unbeabsichtigt. Herausfordernd."
+    },
+    "aries_leo": {
+      "sign1": "aries",
+      "sign2": "leo",
+      "score_1_to_10": 8,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer, ergänzend — Widder Initiator, Löwe Darsteller. Sehr dynamisches Paar."
+    },
+    "aries_virgo": {
+      "sign1": "aries",
+      "sign2": "virgo",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Feuer trifft Erde-Merkur. Widder ungeduldig, Jungfrau kritisch. Kompliziert."
+    },
+    "aries_libra": {
+      "sign1": "aries",
+      "sign2": "libra",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Gegensätzliche Zeichen — Anziehung. Widder direkt, Waage diplomatisch. Ergänzt sich."
+    },
+    "aries_scorpio": {
+      "sign1": "aries",
+      "sign2": "scorpio",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Beide Mars-regiert. Sehr intensiv, sehr sexuell, aber auch sehr konfliktreich."
+    },
+    "aries_sagittarius": {
+      "sign1": "aries",
+      "sign2": "sagittarius",
+      "score_1_to_10": 8,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer, sehr harmonisch. Abenteuer und Freiheit. Klassisches Traumpaar."
+    },
+    "aries_capricorn": {
+      "sign1": "aries",
+      "sign2": "capricorn",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Feuer trifft Erde-Saturn. Widder ungeduldig, Steinbock langsam. Machtkämpfe."
+    },
+    "aries_aquarius": {
+      "sign1": "aries",
+      "sign2": "aquarius",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Feuer und Luft — Freundschaft plus Feuer. Sehr unabhängig, gutes Match."
+    },
+    "aries_pisces": {
+      "sign1": "aries",
+      "sign2": "pisces",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Feuer trifft Wasser-Neptun. Widder verletzt Fische leicht. Sehr sensibel."
+    },
+    "taurus_aries": {
+      "sign1": "taurus",
+      "sign2": "aries",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Feuer trifft Erde. Widder ungeduldig, Stier langsam. Braucht viel Anpassung."
+    },
+    "taurus_taurus": {
+      "sign1": "taurus",
+      "sign2": "taurus",
+      "score_1_to_10": 7,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Venus — sehr stabil, sehr sinnlich, aber wenig Bewegung."
+    },
+    "taurus_gemini": {
+      "sign1": "taurus",
+      "sign2": "gemini",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Erde trifft Luft. Stier langsam, Zwilling schnell. Braucht Verständnis."
+    },
+    "taurus_cancer": {
+      "sign1": "taurus",
+      "sign2": "cancer",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Erde und Wasser — sehr fruchtbar, sehr nährend. Klassisches Familienpaar."
+    },
+    "taurus_leo": {
+      "sign1": "taurus",
+      "sign2": "leo",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Erde-Venus trifft Feuer-Sonne. Beide fix — sturr gegen sturr."
+    },
+    "taurus_virgo": {
+      "sign1": "taurus",
+      "sign2": "virgo",
+      "score_1_to_10": 8,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Zeichen. Sehr praktisch, sehr stabil. Möglicherweise trocken."
+    },
+    "taurus_libra": {
+      "sign1": "taurus",
+      "sign2": "libra",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Beide Venus-regiert. Sehr harmonisch, ästhetisch, sinnlich."
+    },
+    "taurus_scorpio": {
+      "sign1": "taurus",
+      "sign2": "scorpio",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Gegensätzliche Zeichen. Sehr magnetisch. Stier stabil, Skorpion transformierend."
+    },
+    "taurus_sagittarius": {
+      "sign1": "taurus",
+      "sign2": "sagittarius",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Erde trifft Feuer-Jupiter. Stier bleibt, Schütze reist. Konflikte."
+    },
+    "taurus_capricorn": {
+      "sign1": "taurus",
+      "sign2": "capricorn",
+      "score_1_to_10": 8,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Zeichen. Sehr stabil, sehr materiell erfolgreich."
+    },
+    "taurus_aquarius": {
+      "sign1": "taurus",
+      "sign2": "aquarius",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Erde und Luft. Stier traditionell, Wassermann rebellisch. Schwer."
+    },
+    "taurus_pisces": {
+      "sign1": "taurus",
+      "sign2": "pisces",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Erde und Wasser. Sehr romantisch, sehr sinnlich. Klassisches Traumpaar."
+    },
+    "gemini_aries": {
+      "sign1": "gemini",
+      "sign2": "aries",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Feuer und Luft — sehr belebend, intellektuell und körperlich anregend. Guter Fit."
+    },
+    "gemini_taurus": {
+      "sign1": "gemini",
+      "sign2": "taurus",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Erde trifft Luft. Stier langsam, Zwilling schnell. Braucht Verständnis."
+    },
+    "gemini_gemini": {
+      "sign1": "gemini",
+      "sign2": "gemini",
+      "score_1_to_10": 7,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Merkur. Sehr viel Reden, wenig Tiefe. Intellektuell brillant."
+    },
+    "gemini_cancer": {
+      "sign1": "gemini",
+      "sign2": "cancer",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Luft und Wasser. Zwilling zu leicht, Krebs zu tief. Herausfordernd."
+    },
+    "gemini_leo": {
+      "sign1": "gemini",
+      "sign2": "leo",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Luft nährt Feuer. Sehr belebend, sehr sozial, gutes Match."
+    },
+    "gemini_virgo": {
+      "sign1": "gemini",
+      "sign2": "virgo",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Beide Merkur-regiert. Intellektuell brillant, aber emotionale Distanz."
+    },
+    "gemini_libra": {
+      "sign1": "gemini",
+      "sign2": "libra",
+      "score_1_to_10": 8,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Zeichen. Sehr harmonisch, ästhetisch, kommunikativ."
+    },
+    "gemini_scorpio": {
+      "sign1": "gemini",
+      "sign2": "scorpio",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Luft und Wasser. Zwilling leicht, Skorpion intensiv. Schwer."
+    },
+    "gemini_sagittarius": {
+      "sign1": "gemini",
+      "sign2": "sagittarius",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Gegensätzliche Zeichen. Zwilling Details, Schütze Weite. Ergänzt."
+    },
+    "gemini_capricorn": {
+      "sign1": "gemini",
+      "sign2": "capricorn",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Luft und Erde. Zwilling spontan, Steinbock strukturiert. Konflikte."
+    },
+    "gemini_aquarius": {
+      "sign1": "gemini",
+      "sign2": "aquarius",
+      "score_1_to_10": 8,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Zeichen. Sehr innovativ, freundschaftlich, cool."
+    },
+    "gemini_pisces": {
+      "sign1": "gemini",
+      "sign2": "pisces",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Luft und Wasser-Neptun. Zwilling rational, Fische intuitiv. Schwer."
+    },
+    "cancer_aries": {
+      "sign1": "cancer",
+      "sign2": "aries",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Feuer trifft Wasser. Widder verletzt Krebs unbeabsichtigt. Herausfordernd."
+    },
+    "cancer_taurus": {
+      "sign1": "cancer",
+      "sign2": "taurus",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Erde und Wasser — sehr fruchtbar, sehr nährend. Klassisches Familienpaar."
+    },
+    "cancer_gemini": {
+      "sign1": "cancer",
+      "sign2": "gemini",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Luft und Wasser. Zwilling zu leicht, Krebs zu tief. Herausfordernd."
+    },
+    "cancer_cancer": {
+      "sign1": "cancer",
+      "sign2": "cancer",
+      "score_1_to_10": 7,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser-Mond. Sehr emotional, sehr häuslich, aber auch klammernd."
+    },
+    "cancer_leo": {
+      "sign1": "cancer",
+      "sign2": "leo",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Wasser und Feuer. Krebs nährt Löwe. Aber Löwe braucht Bewunderung."
+    },
+    "cancer_virgo": {
+      "sign1": "cancer",
+      "sign2": "virgo",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Wasser und Erde. Sehr fürsorglich, sehr praktisch. Gutes Elternteam."
+    },
+    "cancer_libra": {
+      "sign1": "cancer",
+      "sign2": "libra",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Wasser und Luft. Krebs emotional, Waage rational. Kompliziert."
+    },
+    "cancer_scorpio": {
+      "sign1": "cancer",
+      "sign2": "scorpio",
+      "score_1_to_10": 8,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser. Sehr tief, sehr intensiv, sehr transformativ."
+    },
+    "cancer_sagittarius": {
+      "sign1": "cancer",
+      "sign2": "sagittarius",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Wasser und Feuer. Krebs häuslich, Schütze frei. Sehr schwer."
+    },
+    "cancer_capricorn": {
+      "sign1": "cancer",
+      "sign2": "capricorn",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Gegensätzliche Zeichen. Sehr komplementär — häusliche + Karriere."
+    },
+    "cancer_aquarius": {
+      "sign1": "cancer",
+      "sign2": "aquarius",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Wasser und Luft. Krebs sehr emotional, Wassermann distanziert."
+    },
+    "cancer_pisces": {
+      "sign1": "cancer",
+      "sign2": "pisces",
+      "score_1_to_10": 8,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser. Sehr symbiotisch, sehr romantisch, klassisches Traumpaar."
+    },
+    "leo_aries": {
+      "sign1": "leo",
+      "sign2": "aries",
+      "score_1_to_10": 8,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer, ergänzend — Widder Initiator, Löwe Darsteller. Sehr dynamisches Paar."
+    },
+    "leo_taurus": {
+      "sign1": "leo",
+      "sign2": "taurus",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Erde-Venus trifft Feuer-Sonne. Beide fix — sturr gegen sturr."
+    },
+    "leo_gemini": {
+      "sign1": "leo",
+      "sign2": "gemini",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Luft nährt Feuer. Sehr belebend, sehr sozial, gutes Match."
+    },
+    "leo_cancer": {
+      "sign1": "leo",
+      "sign2": "cancer",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Wasser und Feuer. Krebs nährt Löwe. Aber Löwe braucht Bewunderung."
+    },
+    "leo_leo": {
+      "sign1": "leo",
+      "sign2": "leo",
+      "score_1_to_10": 7,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer-Sonne. Sehr dramatisch, sehr großzügig, oder sehr konkurrierend."
+    },
+    "leo_virgo": {
+      "sign1": "leo",
+      "sign2": "virgo",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Feuer und Erde-Merkur. Löwe stolz, Jungfrau kritisch. Schwer."
+    },
+    "leo_libra": {
+      "sign1": "leo",
+      "sign2": "libra",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Feuer und Luft-Venus. Sehr harmonisch, sehr ästhetisch, sozial brillant."
+    },
+    "leo_scorpio": {
+      "sign1": "leo",
+      "sign2": "scorpio",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Feuer und Wasser. Zwei fix — sehr intensiv, sehr konfliktreich."
+    },
+    "leo_sagittarius": {
+      "sign1": "leo",
+      "sign2": "sagittarius",
+      "score_1_to_10": 8,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer. Sehr belebend, abenteuerlich, philosophisch."
+    },
+    "leo_capricorn": {
+      "sign1": "leo",
+      "sign2": "capricorn",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Feuer und Erde. Löwe spontan, Steinbock strategisch. Machtkämpfe."
+    },
+    "leo_aquarius": {
+      "sign1": "leo",
+      "sign2": "aquarius",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Gegensätzliche Zeichen. Löwe individuell, Wassermann kollektiv. Ergänzt."
+    },
+    "leo_pisces": {
+      "sign1": "leo",
+      "sign2": "pisces",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Feuer und Wasser. Löwe braucht Anerkennung, Fische spirituell. Schwer."
+    },
+    "virgo_aries": {
+      "sign1": "virgo",
+      "sign2": "aries",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Feuer trifft Erde-Merkur. Widder ungeduldig, Jungfrau kritisch. Kompliziert."
+    },
+    "virgo_taurus": {
+      "sign1": "virgo",
+      "sign2": "taurus",
+      "score_1_to_10": 8,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Zeichen. Sehr praktisch, sehr stabil. Möglicherweise trocken."
+    },
+    "virgo_gemini": {
+      "sign1": "virgo",
+      "sign2": "gemini",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Beide Merkur-regiert. Intellektuell brillant, aber emotionale Distanz."
+    },
+    "virgo_cancer": {
+      "sign1": "virgo",
+      "sign2": "cancer",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Wasser und Erde. Sehr fürsorglich, sehr praktisch. Gutes Elternteam."
+    },
+    "virgo_leo": {
+      "sign1": "virgo",
+      "sign2": "leo",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Feuer und Erde-Merkur. Löwe stolz, Jungfrau kritisch. Schwer."
+    },
+    "virgo_virgo": {
+      "sign1": "virgo",
+      "sign2": "virgo",
+      "score_1_to_10": 7,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Merkur. Sehr analytisch, sehr praktisch. Manchmal zu kritisch."
+    },
+    "virgo_libra": {
+      "sign1": "virgo",
+      "sign2": "libra",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Erde-Merkur und Luft-Venus. Jungfrau kritisch, Waage harmoniesüchtig. Schwer."
+    },
+    "virgo_scorpio": {
+      "sign1": "virgo",
+      "sign2": "scorpio",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Erde und Wasser. Sehr tief, sehr analytisch, sehr forschend."
+    },
+    "virgo_sagittarius": {
+      "sign1": "virgo",
+      "sign2": "sagittarius",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Erde und Feuer. Jungfrau Details, Schütze Weite. Konflikte."
+    },
+    "virgo_capricorn": {
+      "sign1": "virgo",
+      "sign2": "capricorn",
+      "score_1_to_10": 8,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Zeichen. Sehr praktisch, sehr strukturiert. Karrierepaar."
+    },
+    "virgo_aquarius": {
+      "sign1": "virgo",
+      "sign2": "aquarius",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Erde und Luft. Beide mental, aber Jungfrau praktisch, Wassermann abstract."
+    },
+    "virgo_pisces": {
+      "sign1": "virgo",
+      "sign2": "pisces",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Gegensätzliche Zeichen. Sehr komplementär — Details + Vision."
+    },
+    "libra_aries": {
+      "sign1": "libra",
+      "sign2": "aries",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Gegensätzliche Zeichen — Anziehung. Widder direkt, Waage diplomatisch. Ergänzt sich."
+    },
+    "libra_taurus": {
+      "sign1": "libra",
+      "sign2": "taurus",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Beide Venus-regiert. Sehr harmonisch, ästhetisch, sinnlich."
+    },
+    "libra_gemini": {
+      "sign1": "libra",
+      "sign2": "gemini",
+      "score_1_to_10": 8,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Zeichen. Sehr harmonisch, ästhetisch, kommunikativ."
+    },
+    "libra_cancer": {
+      "sign1": "libra",
+      "sign2": "cancer",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Wasser und Luft. Krebs emotional, Waage rational. Kompliziert."
+    },
+    "libra_leo": {
+      "sign1": "libra",
+      "sign2": "leo",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Feuer und Luft-Venus. Sehr harmonisch, sehr ästhetisch, sozial brillant."
+    },
+    "libra_virgo": {
+      "sign1": "libra",
+      "sign2": "virgo",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Erde-Merkur und Luft-Venus. Jungfrau kritisch, Waage harmoniesüchtig. Schwer."
+    },
+    "libra_libra": {
+      "sign1": "libra",
+      "sign2": "libra",
+      "score_1_to_10": 7,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Venus. Sehr harmonisch, ästhetisch, aber niemand entscheidet."
+    },
+    "libra_scorpio": {
+      "sign1": "libra",
+      "sign2": "scorpio",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Luft und Wasser. Waage harmoniesüchtig, Skorpion intensiv. Schwer."
+    },
+    "libra_sagittarius": {
+      "sign1": "libra",
+      "sign2": "sagittarius",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Luft und Feuer. Sehr belebend, sozial, philosophisch."
+    },
+    "libra_capricorn": {
+      "sign1": "libra",
+      "sign2": "capricorn",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Luft und Erde. Waage Beziehung, Steinbock Karriere. Kompliziert."
+    },
+    "libra_aquarius": {
+      "sign1": "libra",
+      "sign2": "aquarius",
+      "score_1_to_10": 8,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Zeichen. Sehr harmonisch, intellektuell, ideenreich."
+    },
+    "libra_pisces": {
+      "sign1": "libra",
+      "sign2": "pisces",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Luft und Wasser. Sehr romantisch, künstlerisch, aber realitätsfern."
+    },
+    "scorpio_aries": {
+      "sign1": "scorpio",
+      "sign2": "aries",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Beide Mars-regiert. Sehr intensiv, sehr sexuell, aber auch sehr konfliktreich."
+    },
+    "scorpio_taurus": {
+      "sign1": "scorpio",
+      "sign2": "taurus",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Gegensätzliche Zeichen. Sehr magnetisch. Stier stabil, Skorpion transformierend."
+    },
+    "scorpio_gemini": {
+      "sign1": "scorpio",
+      "sign2": "gemini",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Luft und Wasser. Zwilling leicht, Skorpion intensiv. Schwer."
+    },
+    "scorpio_cancer": {
+      "sign1": "scorpio",
+      "sign2": "cancer",
+      "score_1_to_10": 8,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser. Sehr tief, sehr intensiv, sehr transformativ."
+    },
+    "scorpio_leo": {
+      "sign1": "scorpio",
+      "sign2": "leo",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Feuer und Wasser. Zwei fix — sehr intensiv, sehr konfliktreich."
+    },
+    "scorpio_virgo": {
+      "sign1": "scorpio",
+      "sign2": "virgo",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Erde und Wasser. Sehr tief, sehr analytisch, sehr forschend."
+    },
+    "scorpio_libra": {
+      "sign1": "scorpio",
+      "sign2": "libra",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Luft und Wasser. Waage harmoniesüchtig, Skorpion intensiv. Schwer."
+    },
+    "scorpio_scorpio": {
+      "sign1": "scorpio",
+      "sign2": "scorpio",
+      "score_1_to_10": 7,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser-Pluto. Sehr intensiv, sehr transformativ, oder sehr zerstörend."
+    },
+    "scorpio_sagittarius": {
+      "sign1": "scorpio",
+      "sign2": "sagittarius",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Wasser und Feuer. Skorpion Tiefe, Schütze Weite. Herausfordernd."
+    },
+    "scorpio_capricorn": {
+      "sign1": "scorpio",
+      "sign2": "capricorn",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Wasser und Erde. Sehr strategisch, sehr mächtig. Karrierepaar."
+    },
+    "scorpio_aquarius": {
+      "sign1": "scorpio",
+      "sign2": "aquarius",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Wasser und Luft. Skorpion emotional, Wassermann distanziert. Schwer."
+    },
+    "scorpio_pisces": {
+      "sign1": "scorpio",
+      "sign2": "pisces",
+      "score_1_to_10": 8,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser. Sehr symbiotisch, sehr spirituell, sehr transformativ."
+    },
+    "sagittarius_aries": {
+      "sign1": "sagittarius",
+      "sign2": "aries",
+      "score_1_to_10": 8,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer, sehr harmonisch. Abenteuer und Freiheit. Klassisches Traumpaar."
+    },
+    "sagittarius_taurus": {
+      "sign1": "sagittarius",
+      "sign2": "taurus",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Erde trifft Feuer-Jupiter. Stier bleibt, Schütze reist. Konflikte."
+    },
+    "sagittarius_gemini": {
+      "sign1": "sagittarius",
+      "sign2": "gemini",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Gegensätzliche Zeichen. Zwilling Details, Schütze Weite. Ergänzt."
+    },
+    "sagittarius_cancer": {
+      "sign1": "sagittarius",
+      "sign2": "cancer",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Wasser und Feuer. Krebs häuslich, Schütze frei. Sehr schwer."
+    },
+    "sagittarius_leo": {
+      "sign1": "sagittarius",
+      "sign2": "leo",
+      "score_1_to_10": 8,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer. Sehr belebend, abenteuerlich, philosophisch."
+    },
+    "sagittarius_virgo": {
+      "sign1": "sagittarius",
+      "sign2": "virgo",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Erde und Feuer. Jungfrau Details, Schütze Weite. Konflikte."
+    },
+    "sagittarius_libra": {
+      "sign1": "sagittarius",
+      "sign2": "libra",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Luft und Feuer. Sehr belebend, sozial, philosophisch."
+    },
+    "sagittarius_scorpio": {
+      "sign1": "sagittarius",
+      "sign2": "scorpio",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Wasser und Feuer. Skorpion Tiefe, Schütze Weite. Herausfordernd."
+    },
+    "sagittarius_sagittarius": {
+      "sign1": "sagittarius",
+      "sign2": "sagittarius",
+      "score_1_to_10": 7,
+      "element_1": "fire",
+      "element_2": "fire",
+      "description": "Zwei Feuer-Jupiter. Sehr abenteuerlich, sehr frei. Vielleicht zu frei."
+    },
+    "sagittarius_capricorn": {
+      "sign1": "sagittarius",
+      "sign2": "capricorn",
+      "score_1_to_10": 6,
+      "element_1": "fire",
+      "element_2": "earth",
+      "description": "Feuer und Erde. Schütze Freiheit, Steinbock Struktur. Schwer."
+    },
+    "sagittarius_aquarius": {
+      "sign1": "sagittarius",
+      "sign2": "aquarius",
+      "score_1_to_10": 9,
+      "element_1": "fire",
+      "element_2": "air",
+      "description": "Feuer und Luft. Sehr innovativ, sehr frei, sehr philosophisch."
+    },
+    "sagittarius_pisces": {
+      "sign1": "sagittarius",
+      "sign2": "pisces",
+      "score_1_to_10": 4,
+      "element_1": "fire",
+      "element_2": "water",
+      "description": "Feuer und Wasser-Jupiter. Beide Jupiter-berührt. Spirituell verbunden."
+    },
+    "capricorn_aries": {
+      "sign1": "capricorn",
+      "sign2": "aries",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Feuer trifft Erde-Saturn. Widder ungeduldig, Steinbock langsam. Machtkämpfe."
+    },
+    "capricorn_taurus": {
+      "sign1": "capricorn",
+      "sign2": "taurus",
+      "score_1_to_10": 8,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Zeichen. Sehr stabil, sehr materiell erfolgreich."
+    },
+    "capricorn_gemini": {
+      "sign1": "capricorn",
+      "sign2": "gemini",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Luft und Erde. Zwilling spontan, Steinbock strukturiert. Konflikte."
+    },
+    "capricorn_cancer": {
+      "sign1": "capricorn",
+      "sign2": "cancer",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Gegensätzliche Zeichen. Sehr komplementär — häusliche + Karriere."
+    },
+    "capricorn_leo": {
+      "sign1": "capricorn",
+      "sign2": "leo",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Feuer und Erde. Löwe spontan, Steinbock strategisch. Machtkämpfe."
+    },
+    "capricorn_virgo": {
+      "sign1": "capricorn",
+      "sign2": "virgo",
+      "score_1_to_10": 8,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Zeichen. Sehr praktisch, sehr strukturiert. Karrierepaar."
+    },
+    "capricorn_libra": {
+      "sign1": "capricorn",
+      "sign2": "libra",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Luft und Erde. Waage Beziehung, Steinbock Karriere. Kompliziert."
+    },
+    "capricorn_scorpio": {
+      "sign1": "capricorn",
+      "sign2": "scorpio",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Wasser und Erde. Sehr strategisch, sehr mächtig. Karrierepaar."
+    },
+    "capricorn_sagittarius": {
+      "sign1": "capricorn",
+      "sign2": "sagittarius",
+      "score_1_to_10": 6,
+      "element_1": "earth",
+      "element_2": "fire",
+      "description": "Feuer und Erde. Schütze Freiheit, Steinbock Struktur. Schwer."
+    },
+    "capricorn_capricorn": {
+      "sign1": "capricorn",
+      "sign2": "capricorn",
+      "score_1_to_10": 7,
+      "element_1": "earth",
+      "element_2": "earth",
+      "description": "Zwei Erd-Saturn. Sehr strukturiert, sehr ambitious, aber emotional trocken."
+    },
+    "capricorn_aquarius": {
+      "sign1": "capricorn",
+      "sign2": "aquarius",
+      "score_1_to_10": 5,
+      "element_1": "earth",
+      "element_2": "air",
+      "description": "Erde und Luft. Beide Saturn-berührt. Steinbock traditionell, Wassermann rebellisch."
+    },
+    "capricorn_pisces": {
+      "sign1": "capricorn",
+      "sign2": "pisces",
+      "score_1_to_10": 9,
+      "element_1": "earth",
+      "element_2": "water",
+      "description": "Erde und Wasser. Steinbock realistisch, Fische träumerisch. Komplementär."
+    },
+    "aquarius_aries": {
+      "sign1": "aquarius",
+      "sign2": "aries",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Feuer und Luft — Freundschaft plus Feuer. Sehr unabhängig, gutes Match."
+    },
+    "aquarius_taurus": {
+      "sign1": "aquarius",
+      "sign2": "taurus",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Erde und Luft. Stier traditionell, Wassermann rebellisch. Schwer."
+    },
+    "aquarius_gemini": {
+      "sign1": "aquarius",
+      "sign2": "gemini",
+      "score_1_to_10": 8,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Zeichen. Sehr innovativ, freundschaftlich, cool."
+    },
+    "aquarius_cancer": {
+      "sign1": "aquarius",
+      "sign2": "cancer",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Wasser und Luft. Krebs sehr emotional, Wassermann distanziert."
+    },
+    "aquarius_leo": {
+      "sign1": "aquarius",
+      "sign2": "leo",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Gegensätzliche Zeichen. Löwe individuell, Wassermann kollektiv. Ergänzt."
+    },
+    "aquarius_virgo": {
+      "sign1": "aquarius",
+      "sign2": "virgo",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Erde und Luft. Beide mental, aber Jungfrau praktisch, Wassermann abstract."
+    },
+    "aquarius_libra": {
+      "sign1": "aquarius",
+      "sign2": "libra",
+      "score_1_to_10": 8,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Zeichen. Sehr harmonisch, intellektuell, ideenreich."
+    },
+    "aquarius_scorpio": {
+      "sign1": "aquarius",
+      "sign2": "scorpio",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Wasser und Luft. Skorpion emotional, Wassermann distanziert. Schwer."
+    },
+    "aquarius_sagittarius": {
+      "sign1": "aquarius",
+      "sign2": "sagittarius",
+      "score_1_to_10": 9,
+      "element_1": "air",
+      "element_2": "fire",
+      "description": "Feuer und Luft. Sehr innovativ, sehr frei, sehr philosophisch."
+    },
+    "aquarius_capricorn": {
+      "sign1": "aquarius",
+      "sign2": "capricorn",
+      "score_1_to_10": 5,
+      "element_1": "air",
+      "element_2": "earth",
+      "description": "Erde und Luft. Beide Saturn-berührt. Steinbock traditionell, Wassermann rebellisch."
+    },
+    "aquarius_aquarius": {
+      "sign1": "aquarius",
+      "sign2": "aquarius",
+      "score_1_to_10": 7,
+      "element_1": "air",
+      "element_2": "air",
+      "description": "Zwei Luft-Uranus. Sehr innovativ, sehr freundschaftlich, aber emotional kühl."
+    },
+    "aquarius_pisces": {
+      "sign1": "aquarius",
+      "sign2": "pisces",
+      "score_1_to_10": 6,
+      "element_1": "air",
+      "element_2": "water",
+      "description": "Luft und Wasser. Wassermann visionär, Fische mystisch. Kompliziert."
+    },
+    "pisces_aries": {
+      "sign1": "pisces",
+      "sign2": "aries",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Feuer trifft Wasser-Neptun. Widder verletzt Fische leicht. Sehr sensibel."
+    },
+    "pisces_taurus": {
+      "sign1": "pisces",
+      "sign2": "taurus",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Erde und Wasser. Sehr romantisch, sehr sinnlich. Klassisches Traumpaar."
+    },
+    "pisces_gemini": {
+      "sign1": "pisces",
+      "sign2": "gemini",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Luft und Wasser-Neptun. Zwilling rational, Fische intuitiv. Schwer."
+    },
+    "pisces_cancer": {
+      "sign1": "pisces",
+      "sign2": "cancer",
+      "score_1_to_10": 8,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser. Sehr symbiotisch, sehr romantisch, klassisches Traumpaar."
+    },
+    "pisces_leo": {
+      "sign1": "pisces",
+      "sign2": "leo",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Feuer und Wasser. Löwe braucht Anerkennung, Fische spirituell. Schwer."
+    },
+    "pisces_virgo": {
+      "sign1": "pisces",
+      "sign2": "virgo",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Gegensätzliche Zeichen. Sehr komplementär — Details + Vision."
+    },
+    "pisces_libra": {
+      "sign1": "pisces",
+      "sign2": "libra",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Luft und Wasser. Sehr romantisch, künstlerisch, aber realitätsfern."
+    },
+    "pisces_scorpio": {
+      "sign1": "pisces",
+      "sign2": "scorpio",
+      "score_1_to_10": 8,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser. Sehr symbiotisch, sehr spirituell, sehr transformativ."
+    },
+    "pisces_sagittarius": {
+      "sign1": "pisces",
+      "sign2": "sagittarius",
+      "score_1_to_10": 4,
+      "element_1": "water",
+      "element_2": "fire",
+      "description": "Feuer und Wasser-Jupiter. Beide Jupiter-berührt. Spirituell verbunden."
+    },
+    "pisces_capricorn": {
+      "sign1": "pisces",
+      "sign2": "capricorn",
+      "score_1_to_10": 9,
+      "element_1": "water",
+      "element_2": "earth",
+      "description": "Erde und Wasser. Steinbock realistisch, Fische träumerisch. Komplementär."
+    },
+    "pisces_aquarius": {
+      "sign1": "pisces",
+      "sign2": "aquarius",
+      "score_1_to_10": 6,
+      "element_1": "water",
+      "element_2": "air",
+      "description": "Luft und Wasser. Wassermann visionär, Fische mystisch. Kompliziert."
+    },
+    "pisces_pisces": {
+      "sign1": "pisces",
+      "sign2": "pisces",
+      "score_1_to_10": 7,
+      "element_1": "water",
+      "element_2": "water",
+      "description": "Zwei Wasser-Neptun. Sehr symbiotisch, sehr spirituell, aber realitätsfern."
+    }
+  },
+  "chinese_zodiac": {
+    "meta": {
+      "description": "Chinesische Astrologie basiert auf dem Sheng Xiao (生肖) - 12 Tiere in einem 12-Jahres-Zyklus, kombiniert mit 5 Elementen zum 60-Jahres-Zyklus. Berechnungen basieren auf dem chinesischen Mondkalender.",
+      "cycle_length": "60 Jahre (12 Tiere × 5 Elemente)",
+      "new_year_note": "Das chinesische Neujahr beginnt zwischen dem 21. Januar und 20. Februar. Personen im Januar/Februar-Bereich sollten das Datum prüfen."
+    },
+    "animals": {
+      "rat": {
+        "id": 1,
+        "name_de": "Ratte",
+        "name_cn": "鼠 Shǔ",
+        "years": [
+          1924,
+          1936,
+          1948,
+          1960,
+          1972,
+          1984,
+          1996,
+          2008,
+          2020,
+          2032
+        ],
+        "hours": "23:00 - 01:00 (Zi 子)",
+        "element_fixed": "water",
+        "yin_yang": "yang",
+        "direction": "Norden",
+        "season": "Winter",
+        "personality_positive": [
+          "intelligent",
+          "anpassungsfähig",
+          "charmant",
+          "gesellig",
+          "einfallsreich",
+          "wachsam",
+          "witzig",
+          "sparsam",
+          "ambitious"
+        ],
+        "personality_negative": [
+          "opportunistisch",
+          "manipulativ",
+          "geizig",
+          "misstrauisch",
+          "kritisch",
+          "gerissen"
+        ],
+        "personality_long": "Die Ratte ist das erste Tier des chinesischen Tierkreises und trägt die Energie des Beginns und der Schlauheit. Ratten sind clevere Überlebenskünstler mit außergewöhnlicher Intuition und Anpassungsfähigkeit. Sie sind hervorragend darin, Chancen zu wittern und Ressourcen zu sammeln. Ihre Fähigkeit, Menschen zu lesen, ist unübertroffen. In der Familie sind sie fürsorglich und großzügig, im Beruf strategisch und ambitious.",
+        "career": [
+          "Wirtschaft",
+          "Finanzen",
+          "Handel",
+          "Journalismus",
+          "Verwaltung",
+          "Politik"
+        ],
+        "love_matches": [
+          "dragon",
+          "monkey",
+          "ox"
+        ],
+        "love_challenges": [
+          "horse",
+          "rabbit"
+        ],
+        "lucky_numbers": [
+          2,
+          3
+        ],
+        "lucky_colors": [
+          "blau",
+          "gold",
+          "grün"
+        ],
+        "unlucky_colors": [
+          "gelb",
+          "braun"
+        ],
+        "lucky_flowers": [
+          "Lilie",
+          "Afrikanisches Veilchen"
+        ],
+        "compatible_workers": [
+          "dragon",
+          "monkey"
+        ],
+        "famous": [
+          "Prince Charles",
+          "William Shakespeare",
+          "Mozart"
+        ]
+      },
+      "ox": {
+        "id": 2,
+        "name_de": "Büffel/Ochse",
+        "name_cn": "牛 Niú",
+        "years": [
+          1925,
+          1937,
+          1949,
+          1961,
+          1973,
+          1985,
+          1997,
+          2009,
+          2021,
+          2033
+        ],
+        "hours": "01:00 - 03:00 (Chou 丑)",
+        "element_fixed": "earth",
+        "yin_yang": "yin",
+        "direction": "Nord-Nordost",
+        "season": "Winter/Frühjahr",
+        "personality_positive": [
+          "fleißig",
+          "verlässlich",
+          "geduldig",
+          "methodisch",
+          "loyal",
+          "ehrlich",
+          "besonnen",
+          "ausdauernd"
+        ],
+        "personality_negative": [
+          "sturr",
+          "konservativ",
+          "langsam zu ändern",
+          "sturr, dickköpfig",
+          "unnahbar"
+        ],
+        "personality_long": "Der Büffel ist das zweite Tier und repräsentiert Beständigkeit, harte Arbeit und Verlässlichkeit. Büffel sind das Rückgrat der Gesellschaft - still, verlässlich, unglaublich ausdauernd. Sie brauchen keine Anerkennung, machen ihre Arbeit still und gründlich. In Beziehungen sind sie treu bis ins Mark, verlassen sich auf Traditionen und lange Verbindungen.",
+        "career": [
+          "Landwirtschaft",
+          "Bau",
+          "Handwerk",
+          "Verwaltung",
+          "Immobilien",
+          "Politik"
+        ],
+        "love_matches": [
+          "snake",
+          "rooster",
+          "rat"
+        ],
+        "love_challenges": [
+          "sheep",
+          "horse"
+        ],
+        "lucky_numbers": [
+          1,
+          4
+        ],
+        "lucky_colors": [
+          "weiß",
+          "gelb",
+          "grün"
+        ],
+        "famous": [
+          "Barack Obama",
+          "Napoleon",
+          "Van Gogh"
+        ]
+      },
+      "tiger": {
+        "id": 3,
+        "name_de": "Tiger",
+        "name_cn": "虎 Hǔ",
+        "years": [
+          1926,
+          1938,
+          1950,
+          1962,
+          1974,
+          1986,
+          1998,
+          2010,
+          2022,
+          2034
+        ],
+        "hours": "03:00 - 05:00 (Yin 寅)",
+        "element_fixed": "wood",
+        "yin_yang": "yang",
+        "direction": "Ost-Nordost",
+        "season": "Frühling",
+        "personality_positive": [
+          "mutig",
+          "leidenschaftlich",
+          "unabhängig",
+          "energisch",
+          "abenteuerlustig",
+          "charismatisch",
+          "großzügig",
+          "risikofreudig"
+        ],
+        "personality_negative": [
+          "ungeduldig",
+          "impulsiv",
+          "aggressiv",
+          "rebellisch",
+          "kritisch",
+          "schwer zu kontrollieren"
+        ],
+        "personality_long": "Der Tiger ist Symbol der Kraft, des Mutes und der Rebellion. Tiger-Menschen sind natürliche Führer mit magnetischer Präsenz. Sie handeln aus dem Instinkt heraus, sind großzügig zu Verbündeten und rücksichtslos zu Feinden. Sie brauchen Freiheit wie andere Luft brauchen.",
+        "career": [
+          "Militär",
+          "Sport",
+          "Unternehmertum",
+          "Krisenmanagement",
+          "Politik",
+          "Aktivismus"
+        ],
+        "love_matches": [
+          "horse",
+          "dog",
+          "pig"
+        ],
+        "love_challenges": [
+          "monkey",
+          "snake"
+        ],
+        "lucky_numbers": [
+          1,
+          3,
+          4
+        ],
+        "lucky_colors": [
+          "blau",
+          "grau",
+          "orange"
+        ],
+        "famous": [
+          "Marilyn Monroe",
+          "Tom Cruise",
+          "Queen Elizabeth II"
+        ]
+      },
+      "rabbit": {
+        "id": 4,
+        "name_de": "Hase/Kaninchen",
+        "name_cn": "兔 Tù",
+        "years": [
+          1927,
+          1939,
+          1951,
+          1963,
+          1975,
+          1987,
+          1999,
+          2011,
+          2023,
+          2035
+        ],
+        "hours": "05:00 - 07:00 (Mao 卯)",
+        "element_fixed": "wood",
+        "yin_yang": "yin",
+        "direction": "Osten",
+        "season": "Frühling",
+        "personality_positive": [
+          "diplomatisch",
+          "elegant",
+          "sanft",
+          "künstlerisch",
+          "vorsichtig",
+          "einfühlsam",
+          "friedliebend",
+          "beliebt"
+        ],
+        "personality_negative": [
+          "oberflächlich",
+          "konfliktscheu",
+          "unentschlossen",
+          "sensibel bis Übertreibung",
+          "manipulativ (subtil)"
+        ],
+        "personality_long": "Der Hase repräsentiert Eleganz, Diplomatie und feine Kultur. Hasen sind sanfte Diplomaten und Ästheten. Sie suchen Harmonie, meiden Konflikte, umgeben sich mit Schönheit. In Beziehungen sind sie romantisch und aufmerksam, aber emotional schwer zu greifen.",
+        "career": [
+          "Kunst",
+          "Diplomatie",
+          "Journalismus",
+          "Recht",
+          "Beratung",
+          "Innendesign"
+        ],
+        "love_matches": [
+          "sheep",
+          "pig",
+          "dog"
+        ],
+        "love_challenges": [
+          "rooster",
+          "dragon"
+        ],
+        "lucky_numbers": [
+          3,
+          4,
+          6
+        ],
+        "lucky_colors": [
+          "rot",
+          "rosa",
+          "lila"
+        ],
+        "famous": [
+          "Albert Einstein",
+          "Angelina Jolie",
+          "Frank Sinatra"
+        ]
+      },
+      "dragon": {
+        "id": 5,
+        "name_de": "Drache",
+        "name_cn": "龙 Lóng",
+        "years": [
+          1928,
+          1940,
+          1952,
+          1964,
+          1976,
+          1988,
+          2000,
+          2012,
+          2024,
+          2036
+        ],
+        "hours": "07:00 - 09:00 (Chen 辰)",
+        "element_fixed": "earth",
+        "yin_yang": "yang",
+        "direction": "Ost-Südost",
+        "season": "Frühling",
+        "personality_positive": [
+          "charismatisch",
+          "energisch",
+          "selbstsicher",
+          "intelligent",
+          "innovativ",
+          "großzügig",
+          "leidenschaftlich",
+          "geboren zu führen"
+        ],
+        "personality_negative": [
+          "arrogant",
+          "ungeduldig",
+          "kritisch",
+          "unrealistisch",
+          "dominant",
+          "ungeduldig"
+        ],
+        "personality_long": "Der Drache ist das einzige mystische Wesen des chinesischen Tierkreises und Symbol für Macht, Glück und außerordentliche Fähigkeiten. Drachen sind natürliche Führer mit magnetischer Präsenz und großen Träumen. Ihre Energie ist unerschöpflich, ihre Visionen groß. Sie werden von anderen bewundert und beneidet.",
+        "career": [
+          "Führung",
+          "Politik",
+          "Kunst (visionär)",
+          "Unternehmertum",
+          "Öffentlichkeit"
+        ],
+        "love_matches": [
+          "monkey",
+          "rat",
+          "rooster"
+        ],
+        "love_challenges": [
+          "dog",
+          "rabbit"
+        ],
+        "lucky_numbers": [
+          1,
+          6,
+          7
+        ],
+        "lucky_colors": [
+          "gold",
+          "silber",
+          "grauweiß"
+        ],
+        "famous": [
+          "John Lennon",
+          "Bruce Lee",
+          "Sigmund Freud"
+        ]
+      },
+      "snake": {
+        "id": 6,
+        "name_de": "Schlange",
+        "name_cn": "蛇 Shé",
+        "years": [
+          1929,
+          1941,
+          1953,
+          1965,
+          1977,
+          1989,
+          2001,
+          2013,
+          2025,
+          2037
+        ],
+        "hours": "09:00 - 11:00 (Si 巳)",
+        "element_fixed": "fire",
+        "yin_yang": "yin",
+        "direction": "Süd-Südost",
+        "season": "Frühling/Sommer",
+        "personality_positive": [
+          "weise",
+          "intuitiv",
+          "elegant",
+          "geheimnisvoll",
+          "philosophisch",
+          "leidenschaftlich",
+          "raffiniert",
+          "attraktiv"
+        ],
+        "personality_negative": [
+          "misstrauisch",
+          "eifersüchtig",
+          "besitzergreifend",
+          "nachtragend",
+          "manipulativ",
+          "einsam"
+        ],
+        "personality_long": "Die Schlange ist das Symbol der Weisheit, der Verwandlung und der geheimen Wahrheiten. Schlangen sind tiefsinnige Denker mit außergewöhnlicher Intuition. Sie beobachten mehr als sie sprechen, sammeln Wissen und Ressourcen langsam und geduldig. Ihre Sinnlichkeit ist legendär, ihre Anziehung magnetisch.",
+        "career": [
+          "Forschung",
+          "Philosophie",
+          "Psychologie",
+          "Astrologie",
+          "Kunst",
+          "Finanzen"
+        ],
+        "love_matches": [
+          "ox",
+          "rooster",
+          "monkey"
+        ],
+        "love_challenges": [
+          "tiger",
+          "pig"
+        ],
+        "lucky_numbers": [
+          2,
+          8,
+          9
+        ],
+        "lucky_colors": [
+          "schwarz",
+          "rot",
+          "gelb"
+        ],
+        "famous": [
+          "Mahatma Gandhi",
+          "John F. Kennedy",
+          "Audrey Hepburn"
+        ]
+      },
+      "horse": {
+        "id": 7,
+        "name_de": "Pferd",
+        "name_cn": "马 Mǎ",
+        "years": [
+          1930,
+          1942,
+          1954,
+          1966,
+          1978,
+          1990,
+          2002,
+          2014,
+          2026,
+          2038
+        ],
+        "hours": "11:00 - 13:00 (Wu 午)",
+        "element_fixed": "fire",
+        "yin_yang": "yang",
+        "direction": "Süden",
+        "season": "Sommer",
+        "personality_positive": [
+          "frei",
+          "energisch",
+          "warmherzig",
+          "sozial",
+          "unabhängig",
+          "witzig",
+          "abenteuerlustig",
+          "optimistisch"
+        ],
+        "personality_negative": [
+          "ungeduldig",
+          "impulsiv",
+          "unbeständig",
+          "eigensinnig",
+          "spontan zum eigenen Nachteil"
+        ],
+        "personality_long": "Das Pferd symbolisiert Freiheit, Bewegung und lebensbejahende Energie. Pferde sind gesellige Wesen mit ansteckender Begeisterung. Sie brauchen Freiraum, hassen Käfige und langweilen sich schnell. Ihre Ehrlichkeit ist erfrischend, ihre Energie mitreißend.",
+        "career": [
+          "Vertrieb",
+          "Sport",
+          "Reisebranche",
+          "Journalismus",
+          "Unternehmertum"
+        ],
+        "love_matches": [
+          "tiger",
+          "dog",
+          "sheep"
+        ],
+        "love_challenges": [
+          "rat",
+          "ox"
+        ],
+        "lucky_numbers": [
+          2,
+          3,
+          7
+        ],
+        "lucky_colors": [
+          "gelb",
+          "grün"
+        ],
+        "famous": [
+          "Nelson Mandela",
+          "Chopin",
+          "Kevin Costner"
+        ]
+      },
+      "sheep": {
+        "id": 8,
+        "name_de": "Ziege/Schaf",
+        "name_cn": "羊 Yáng",
+        "years": [
+          1931,
+          1943,
+          1955,
+          1967,
+          1979,
+          1991,
+          2003,
+          2015,
+          2027,
+          2039
+        ],
+        "hours": "13:00 - 15:00 (Wei 未)",
+        "element_fixed": "earth",
+        "yin_yang": "yin",
+        "direction": "Süd-Südwest",
+        "season": "Sommer",
+        "personality_positive": [
+          "mitfühlend",
+          "künstlerisch",
+          "sanft",
+          "kreativ",
+          "elegant",
+          "einfühlsam",
+          "spirituell",
+          "friedlich"
+        ],
+        "personality_negative": [
+          "pessimistisch",
+          "sensibel",
+          "abhängig",
+          "unentschlossen",
+          "materiell unpraktisch",
+          "opferrolle"
+        ],
+        "personality_long": "Die Ziege/Schaf symbolisiert Mitgefühl, Kunst und sanfte Weisheit. Diese Menschen sind Künstler und Mystiker, geboren für Schönheit und Frieden. Sie sind zutiefst empathisch, was Segen und Bürde zugleich ist. In der richtigen Umgebung blühen sie auf, in harten Welten leiden sie.",
+        "career": [
+          "Kunst",
+          "Musik",
+          "Pflege",
+          "Therapie",
+          "Innendesign",
+          "Spiritualität"
+        ],
+        "love_matches": [
+          "rabbit",
+          "pig",
+          "horse"
+        ],
+        "love_challenges": [
+          "ox",
+          "dog"
+        ],
+        "lucky_numbers": [
+          3,
+          4,
+          9
+        ],
+        "lucky_colors": [
+          "rot",
+          "lila",
+          "grün"
+        ],
+        "famous": [
+          "Michelangelo",
+          "Julia Roberts",
+          "Rudolph Valentino"
+        ]
+      },
+      "monkey": {
+        "id": 9,
+        "name_de": "Affe",
+        "name_cn": "猴 Hóu",
+        "years": [
+          1932,
+          1944,
+          1956,
+          1968,
+          1980,
+          1992,
+          2004,
+          2016,
+          2028,
+          2040
+        ],
+        "hours": "15:00 - 17:00 (Shen 申)",
+        "element_fixed": "metal",
+        "yin_yang": "yang",
+        "direction": "Westen",
+        "season": "Herbst",
+        "personality_positive": [
+          "schlau",
+          "witzig",
+          "vielseitig",
+          "clever",
+          "kreativ",
+          "lebendig",
+          "innovativ",
+          "opportunistisch (positiv)"
+        ],
+        "personality_negative": [
+          "arrogant",
+          "manipulativ",
+          "unehrlich",
+          "eifersüchtig",
+          "gerissen",
+          "unzuverlässig"
+        ],
+        "personality_long": "Der Affe symbolisiert Cleverness, Neugier und Wandlungsfähigkeit. Affen sind die Innovatoren und Erfinder — schnell, adaptiv, mit spitzem Humor. Sie langweilen sich leicht und brauchen ständige Stimulation.",
+        "career": [
+          "Technologie",
+          "Wissenschaft",
+          "Comedy",
+          "Vertrieb",
+          "Beratung",
+          "Kreativität"
+        ],
+        "love_matches": [
+          "dragon",
+          "rat",
+          "snake"
+        ],
+        "love_challenges": [
+          "tiger",
+          "pig"
+        ],
+        "lucky_numbers": [
+          1,
+          7,
+          8
+        ],
+        "lucky_colors": [
+          "weiß",
+          "gold",
+          "blau"
+        ],
+        "famous": [
+          "Leonardo da Vinci",
+          "Diana Ross",
+          "Tom Hanks"
+        ]
+      },
+      "rooster": {
+        "id": 10,
+        "name_de": "Hahn",
+        "name_cn": "鸡 Jī",
+        "years": [
+          1933,
+          1945,
+          1957,
+          1969,
+          1981,
+          1993,
+          2005,
+          2017,
+          2029,
+          2041
+        ],
+        "hours": "17:00 - 19:00 (You 酉)",
+        "element_fixed": "metal",
+        "yin_yang": "yin",
+        "direction": "Westen",
+        "season": "Herbst",
+        "personality_positive": [
+          "ehrlich",
+          "mutig",
+          "energisch",
+          "punktlich",
+          "gesellig",
+          "beobachtend",
+          "loyal",
+          "detailorientiert"
+        ],
+        "personality_negative": [
+          "kritisch",
+          "prahlerisch",
+          "eitel",
+          "selbstgerecht",
+          "über-detailorientiert",
+          "streitsüchtig"
+        ],
+        "personality_long": "Der Hahn symbolisiert Pünktlichkeit, Ehrlichkeit und detaillierte Beobachtung. Hähne sind selbstbewusste Denker mit scharfem Auge für Details und starkem Sinn für Gerechtigkeit. Sie sagen die Wahrheit auch wenn es weh tut.",
+        "career": [
+          "Militär",
+          "Recht",
+          "Journalismus",
+          "Buchhaltung",
+          "Chirurgie",
+          "Verwaltung"
+        ],
+        "love_matches": [
+          "ox",
+          "snake",
+          "dragon"
+        ],
+        "love_challenges": [
+          "rabbit",
+          "dog"
+        ],
+        "lucky_numbers": [
+          5,
+          7,
+          8
+        ],
+        "lucky_colors": [
+          "gelb",
+          "braun",
+          "gold"
+        ],
+        "famous": [
+          "Beyoncé",
+          "Prince",
+          "Jennifer Aniston"
+        ]
+      },
+      "dog": {
+        "id": 11,
+        "name_de": "Hund",
+        "name_cn": "狗 Gǒu",
+        "years": [
+          1934,
+          1946,
+          1958,
+          1970,
+          1982,
+          1994,
+          2006,
+          2018,
+          2030,
+          2042
+        ],
+        "hours": "19:00 - 21:00 (Xu 戌)",
+        "element_fixed": "earth",
+        "yin_yang": "yang",
+        "direction": "West-Nordwest",
+        "season": "Herbst",
+        "personality_positive": [
+          "loyal",
+          "ehrlich",
+          "warmherzig",
+          "beschützerisch",
+          "verantwortungsbewusst",
+          "gerecht",
+          "mutig"
+        ],
+        "personality_negative": [
+          "misstrauisch",
+          "kritisch",
+          "pessimistisch",
+          "sensibel",
+          "sorgen-anfällig"
+        ],
+        "personality_long": "Der Hund symbolisiert Loyalität, Ehrlichkeit und Gerechtigkeit. Hunde sind die Wächter der Werte, die Anwälte der Schwachen. Ihre Loyalität ist legendär, ihre Gerechtigkeitssinn tief. In der Familie sind sie fürsorglich, im Beruf verantwortungsbewusst.",
+        "career": [
+          "Recht",
+          "Aktivismus",
+          "Pflege",
+          "Militär",
+          "Polizei",
+          "Sozialarbeit"
+        ],
+        "love_matches": [
+          "tiger",
+          "rabbit",
+          "horse"
+        ],
+        "love_challenges": [
+          "dragon",
+          "rooster"
+        ],
+        "lucky_numbers": [
+          3,
+          4,
+          9
+        ],
+        "lucky_colors": [
+          "grün",
+          "rot",
+          "lila"
+        ],
+        "famous": [
+          "Winston Churchill",
+          "Mother Teresa",
+          "Michael Jackson"
+        ]
+      },
+      "pig": {
+        "id": 12,
+        "name_de": "Schwein",
+        "name_cn": "猪 Zhū",
+        "years": [
+          1935,
+          1947,
+          1959,
+          1971,
+          1983,
+          1995,
+          2007,
+          2019,
+          2031,
+          2043
+        ],
+        "hours": "21:00 - 23:00 (Hai 亥)",
+        "element_fixed": "water",
+        "yin_yang": "yin",
+        "direction": "Nord-Nordwest",
+        "season": "Herbst/Winter",
+        "personality_positive": [
+          "großzügig",
+          "warmherzig",
+          "ehrlich",
+          "friedliebend",
+          "genussvoll",
+          "loyal",
+          "fleißig",
+          "zuverlässig"
+        ],
+        "personality_negative": [
+          "naiv",
+          "leicht zu täuschen",
+          "genusssüchtig",
+          "materialistisch",
+          "unentschlossen"
+        ],
+        "personality_long": "Das Schwein symbolisiert Fülle, Warmherzigkeit und Genuss. Schweine sind großzügige Menschen mit tiefer Liebe zur Familie und zum guten Leben. Sie sind ehrlich manchmal bis zur Naivität, aber ihre Herzlichkeit gewinnt sie viele Freunde.",
+        "career": [
+          "Gastronomie",
+          "Kunst",
+          "Pflege",
+          "Landwirtschaft",
+          "Hotelmanagement",
+          "Wohltätigkeit"
+        ],
+        "love_matches": [
+          "rabbit",
+          "sheep",
+          "tiger"
+        ],
+        "love_challenges": [
+          "snake",
+          "monkey"
+        ],
+        "lucky_numbers": [
+          2,
+          5,
+          8
+        ],
+        "lucky_colors": [
+          "gelb",
+          "grau",
+          "braun",
+          "gold"
+        ],
+        "famous": [
+          "Ronald Reagan",
+          "Hillary Clinton",
+          "Elton John"
+        ]
+      }
+    },
+    "five_elements": {
+      "wood": {
+        "years_end": [
+          4,
+          5
+        ],
+        "personality": "kreativ, wachstumsorientiert, sozial, idealistisch"
+      },
+      "fire": {
+        "years_end": [
+          6,
+          7
+        ],
+        "personality": "leidenschaftlich, dynamisch, führungsstark, unruhig"
+      },
+      "earth": {
+        "years_end": [
+          8,
+          9
+        ],
+        "personality": "stabil, praktisch, verlässlich, gemütlich"
+      },
+      "metal": {
+        "years_end": [
+          0,
+          1
+        ],
+        "personality": "diszipliniert, klar, streng, entschlossen"
+      },
+      "water": {
+        "years_end": [
+          2,
+          3
+        ],
+        "personality": "intuitiv, wandelbar, emotional, tief"
+      }
+    },
+    "sixty_year_cycle": {
+      "description": "Der volle chinesische Zyklus ist 60 Jahre: 12 Tiere × 5 Elemente. Jede Kombination hat einen eigenen Charakter.",
+      "how_to_calculate": "Endziffer des Geburtsjahres bestimmt Element (siehe five_elements.years_end). Zusammen mit dem Tier ergibt sich die Kombination.",
+      "example_combinations": {
+        "wood_rat": "Kreativer Charmeur, gutes Netzwerk, ideenreich",
+        "fire_dragon": "Charismatischer Führer, sehr ambitious, magnetisch",
+        "metal_ox": "Sehr diszipliniert, sturr, aber verlässlich",
+        "water_tiger": "Intuitiver Kämpfer, emotional und mutig",
+        "earth_horse": "Bodenständiger Wanderer, verlässlich"
+      }
+    }
+  },
+  "vedic_nakshatras": {
+    "meta": {
+      "description": "Die 27 Nakshatras (मन्दिर) sind Mondhäuser der vedischen Astrologie (Jyotish). Jede Nakshatra umfasst 13°20' des Tierkreises. Sie zeigen die Mond-Position bei Geburt und deuten auf tiefere Persönlichkeitsschichten.",
+      "importance": "In der vedischen Tradition wichtiger als das Sternzeichen für viele Deutungen."
+    },
+    "list": {
+      "1_ashwini": {
+        "deity": "Ashwins (Zwillinge)",
+        "symbol": "Pferdekopf",
+        "range": "Widder 0°-13°20'",
+        "traits": "Heiler, Pionier, schnell, mutig"
+      },
+      "2_bharani": {
+        "deity": "Yama (Tod)",
+        "symbol": "Yoni",
+        "range": "Widder 13°20'-26°40'",
+        "traits": "Transformation, Geburt/Tod, Kreativität"
+      },
+      "3_krittika": {
+        "deity": "Agni (Feuer)",
+        "symbol": "Rasiermesser",
+        "range": "Widder 26°40' - Stier 10°",
+        "traits": "Schneidend klar, spirituell, kritisch"
+      },
+      "4_rohini": {
+        "deity": "Brahma",
+        "symbol": "Wagen",
+        "range": "Stier 10°-23°20'",
+        "traits": "Schönheit, Sinnlichkeit, Wohlstand, Kunst"
+      },
+      "5_mrigashira": {
+        "deity": "Soma (Mond)",
+        "symbol": "Hirschkopf",
+        "range": "Stier 23°20' - Zwillinge 6°40'",
+        "traits": "Suchend, neugierig, wechselhaft"
+      },
+      "6_ardra": {
+        "deity": "Rudra (Sturmgott)",
+        "symbol": "Träne",
+        "range": "Zwillinge 6°40'-20°",
+        "traits": "Transformativ, stürmisch, tief"
+      },
+      "7_punarvasu": {
+        "deity": "Aditi (Mutter Erde)",
+        "symbol": "Köcher",
+        "range": "Zwillinge 20° - Krebs 3°20'",
+        "traits": "Erneuerung, Rückkehr, Schutz"
+      },
+      "8_pushya": {
+        "deity": "Brihaspati (Jupiter)",
+        "symbol": "Kuh-Euter",
+        "range": "Krebs 3°20'-16°40'",
+        "traits": "Nährend, weise, spirituell, beliebtestes Nakshatra"
+      },
+      "9_ashlesha": {
+        "deity": "Nagas (Schlangen)",
+        "symbol": "Schlange",
+        "range": "Krebs 16°40' - Löwe 0°",
+        "traits": "Mystisch, hypnotisch, transformativ"
+      },
+      "10_magha": {
+        "deity": "Pitris (Ahnen)",
+        "symbol": "Königsthron",
+        "range": "Löwe 0°-13°20'",
+        "traits": "Königlich, Ahnen-Verbindung, würdevoll"
+      },
+      "11_purva_phalguni": {
+        "deity": "Bhaga",
+        "symbol": "Vorderteil einer Bank",
+        "range": "Löwe 13°20'-26°40'",
+        "traits": "Genuss, Kreativität, Wohlstand"
+      },
+      "12_uttara_phalguni": {
+        "deity": "Aryaman",
+        "symbol": "Hinterteil einer Bank",
+        "range": "Löwe 26°40' - Jungfrau 10°",
+        "traits": "Partnerschaft, Ehe, Vertrag"
+      },
+      "13_hasta": {
+        "deity": "Savitr (Sonne)",
+        "symbol": "Hand",
+        "range": "Jungfrau 10°-23°20'",
+        "traits": "Geschickt, handwerklich, präzise"
+      },
+      "14_chitra": {
+        "deity": "Vishvakarma (Architekt)",
+        "symbol": "Perle",
+        "range": "Jungfrau 23°20' - Waage 6°40'",
+        "traits": "Kreativ, schön, ästhetisch"
+      },
+      "15_swati": {
+        "deity": "Vayu (Wind)",
+        "symbol": "junger Trieb",
+        "range": "Waage 6°40'-20°",
+        "traits": "Unabhängig, wandelbar, diplomatisch"
+      },
+      "16_vishakha": {
+        "deity": "Indra-Agni",
+        "symbol": "Torbogen",
+        "range": "Waage 20° - Skorpion 3°20'",
+        "traits": "Zielorientiert, ambitious, transformativ"
+      },
+      "17_anuradha": {
+        "deity": "Mitra (Freund)",
+        "symbol": "Lotusblüte",
+        "range": "Skorpion 3°20'-16°40'",
+        "traits": "Freundschaft, Erfolg im Ausland, spirituell"
+      },
+      "18_jyeshtha": {
+        "deity": "Indra",
+        "symbol": "Ohrring/Regenschirm",
+        "range": "Skorpion 16°40'-30°",
+        "traits": "Ältester, weise, verantwortungsvoll"
+      },
+      "19_mula": {
+        "deity": "Nirriti",
+        "symbol": "Wurzel",
+        "range": "Schütze 0°-13°20'",
+        "traits": "Wurzeln finden, spirituell tief, kritisch"
+      },
+      "20_purva_ashadha": {
+        "deity": "Apas (Wasser)",
+        "symbol": "Ventilator/Fächer",
+        "range": "Schütze 13°20'-26°40'",
+        "traits": "Unbesiegbar, energisch, philosophisch"
+      },
+      "21_uttara_ashadha": {
+        "deity": "Vishvedeva",
+        "symbol": "Elefantenstoßzahn",
+        "range": "Schütze 26°40' - Steinbock 10°",
+        "traits": "Ausdauer, universaler Sieg, weise"
+      },
+      "22_shravana": {
+        "deity": "Vishnu",
+        "symbol": "Ohr",
+        "range": "Steinbock 10°-23°20'",
+        "traits": "Hörend, weise, gelehrt, spirituell"
+      },
+      "23_dhanishta": {
+        "deity": "8 Vasus",
+        "symbol": "Trommel",
+        "range": "Steinbock 23°20' - Wassermann 6°40'",
+        "traits": "Reich, musikalisch, ambitious"
+      },
+      "24_shatabhisha": {
+        "deity": "Varuna",
+        "symbol": "leerer Kreis",
+        "range": "Wassermann 6°40'-20°",
+        "traits": "Heilend, mystisch, philosophisch"
+      },
+      "25_purva_bhadrapada": {
+        "deity": "Aja Ekapada",
+        "symbol": "Schwert/Doppelgesicht",
+        "range": "Wassermann 20° - Fische 3°20'",
+        "traits": "Feuriger Seher, transformativ, extrem"
+      },
+      "26_uttara_bhadrapada": {
+        "deity": "Ahirbudhnya",
+        "symbol": "Zwillinge",
+        "range": "Fische 3°20'-16°40'",
+        "traits": "Weise, tief, spirituell reif"
+      },
+      "27_revati": {
+        "deity": "Pushan",
+        "symbol": "Fisch",
+        "range": "Fische 16°40'-30°",
+        "traits": "Schutz, Reisen, spirituelle Vollendung"
+      }
+    }
+  },
+  "moon_phases": {
+    "description": "Der Mond durchläuft 8 Phasen in ~29,5 Tagen. In welcher Phase jemand geboren wurde, prägt seinen Grundton.",
+    "phases": {
+      "new_moon": {
+        "name": "Neumond",
+        "keywords": [
+          "Neuanfang",
+          "Instinkt",
+          "spontan"
+        ],
+        "personality": "Initiatoren, oft ohne klare Karte, aber mit starkem Instinkt"
+      },
+      "crescent": {
+        "name": "zunehmende Sichel",
+        "keywords": [
+          "Aufbauen",
+          "Kampf",
+          "Vision"
+        ],
+        "personality": "Kämpfer mit Vision, müssen für ihre Ideen kämpfen"
+      },
+      "first_quarter": {
+        "name": "erstes Viertel",
+        "keywords": [
+          "Aktion",
+          "Entscheidung",
+          "Krise"
+        ],
+        "personality": "Aktivisten, ziehen aus Krisen die Kraft zum Handeln"
+      },
+      "gibbous": {
+        "name": "zunehmender Mond",
+        "keywords": [
+          "Verfeinerung",
+          "Analyse"
+        ],
+        "personality": "Perfektionisten, sehen was noch besser gemacht werden kann"
+      },
+      "full_moon": {
+        "name": "Vollmond",
+        "keywords": [
+          "Erfüllung",
+          "Objektivität",
+          "Beziehung"
+        ],
+        "personality": "Vollendete Naturen, brauchen andere um zu leuchten"
+      },
+      "disseminating": {
+        "name": "abnehmender Mond",
+        "keywords": [
+          "Teilen",
+          "Lehren"
+        ],
+        "personality": "Lehrer und Vermittler, teilen ihr Wissen"
+      },
+      "last_quarter": {
+        "name": "letztes Viertel",
+        "keywords": [
+          "Revision",
+          "Krise",
+          "Loslassen"
+        ],
+        "personality": "Revolutionäre, brechen alte Strukturen auf"
+      },
+      "balsamic": {
+        "name": "abnehmende Sichel",
+        "keywords": [
+          "Loslassen",
+          "Vollendung",
+          "Karma"
+        ],
+        "personality": "Seelen am Ende eines Zyklus, oft alte Seelen"
+      }
+    }
+  },
+  "career_matches_by_sign": {
+    "aries": {
+      "ideal_careers": [
+        "Unternehmer",
+        "CEO",
+        "Militäroffizier",
+        "Feuerwehrmann",
+        "Chirurg",
+        "Vertriebsleiter",
+        "Krisenmanager",
+        "Sportler",
+        "Rennfahrer",
+        "Personal Trainer"
+      ],
+      "career_values": [
+        "Herausforderung",
+        "Autonomie",
+        "schnelle Ergebnisse",
+        "physische Aktivität"
+      ],
+      "leadership_style": "Direkt, mutig, initiativstark. Führt von vorne, nicht vom Schreibtisch.",
+      "workplace_avoid": [
+        "repetitive Bürojobs",
+        "sehr strikte Hierarchien",
+        "langsame Prozesse"
+      ]
+    },
+    "taurus": {
+      "ideal_careers": [
+        "Banker",
+        "Immobilienmakler",
+        "Koch",
+        "Sänger",
+        "Bildhauer",
+        "Landwirt",
+        "Buchhalter",
+        "Antiquitätenhändler",
+        "Winzer",
+        "Innendesigner"
+      ],
+      "career_values": [
+        "Sicherheit",
+        "Qualität",
+        "Beständigkeit",
+        "materielle Belohnung"
+      ],
+      "leadership_style": "Beständig, verlässlich, langsame aber sichere Entscheidungen.",
+      "workplace_avoid": [
+        "ständige Reisen",
+        "instabile Startups",
+        "sehr schnelle Änderungen"
+      ]
+    },
+    "gemini": {
+      "ideal_careers": [
+        "Journalist",
+        "Autor",
+        "Lehrer",
+        "Verkäufer",
+        "Übersetzer",
+        "PR-Manager",
+        "Radiomoderator",
+        "Podcaster",
+        "Tour Guide",
+        "Comedian"
+      ],
+      "career_values": [
+        "Abwechslung",
+        "Kommunikation",
+        "Netzwerke",
+        "geistige Stimulation"
+      ],
+      "leadership_style": "Kommunikativ, vernetzt, ideenreich. Führt durch Ideen und Verbindungen.",
+      "workplace_avoid": [
+        "einsame Berufe",
+        "sehr repetitive Aufgaben",
+        "keine Kommunikation"
+      ]
+    },
+    "cancer": {
+      "ideal_careers": [
+        "Krankenpfleger",
+        "Erzieherin",
+        "Sozialarbeiter",
+        "Psychotherapeut",
+        "Koch/Restaurantbesitzer",
+        "Immobilienmakler (Familien)",
+        "Familienanwalt",
+        "Ernährungsberater",
+        "Innenarchitekt",
+        "Antiquitätenhändler"
+      ],
+      "career_values": [
+        "Fürsorge",
+        "Familie",
+        "emotionale Verbindung",
+        "Sicherheit"
+      ],
+      "leadership_style": "Fürsorglich, empathisch, mütterlich/väterlich. Führt durch emotionale Bindung.",
+      "workplace_avoid": [
+        "kalte Umgebungen",
+        "harte Verhandlungen",
+        "chaotische Wechselberufe"
+      ]
+    },
+    "leo": {
+      "ideal_careers": [
+        "Schauspieler",
+        "Regisseur",
+        "Musiker",
+        "Politiker",
+        "Marketing-Direktor",
+        "CEO",
+        "Motivations-Speaker",
+        "Kinderarzt",
+        "Modedesigner",
+        "Zirkusartist"
+      ],
+      "career_values": [
+        "Anerkennung",
+        "Kreativität",
+        "Bühne",
+        "Führungsverantwortung"
+      ],
+      "leadership_style": "Charismatisch, dramatisch, inspirierend. Führt durch Präsenz.",
+      "workplace_avoid": [
+        "anonyme Backoffice-Berufe",
+        "sehr detaillierte Verwaltung"
+      ]
+    },
+    "virgo": {
+      "ideal_careers": [
+        "Arzt",
+        "Analyst",
+        "Buchhalter",
+        "Programmierer",
+        "Editor",
+        "Qualitätsprüfer",
+        "Ernährungsberater",
+        "Kritiker",
+        "Forscher",
+        "Statistiker"
+      ],
+      "career_values": [
+        "Präzision",
+        "Nutzen",
+        "Verbesserung",
+        "Ordnung"
+      ],
+      "leadership_style": "Analytisch, detailorientiert, dienend. Führt durch Fach-Kompetenz.",
+      "workplace_avoid": [
+        "chaotische Umgebungen",
+        "abstrakte Kunst ohne Struktur"
+      ]
+    },
+    "libra": {
+      "ideal_careers": [
+        "Anwalt",
+        "Diplomat",
+        "Designer",
+        "Modedesigner",
+        "Kunsthändler",
+        "Berater",
+        "Hochzeitsplaner",
+        "Innenarchitekt",
+        "PR-Spezialist",
+        "Mediator"
+      ],
+      "career_values": [
+        "Schönheit",
+        "Harmonie",
+        "Partnerschaft",
+        "Gerechtigkeit"
+      ],
+      "leadership_style": "Diplomatisch, ausgleichend, kultiviert. Führt durch Konsens.",
+      "workplace_avoid": [
+        "grobe Verkaufsjobs",
+        "einsame technische Berufe"
+      ]
+    },
+    "scorpio": {
+      "ideal_careers": [
+        "Psychotherapeut",
+        "Chirurg",
+        "Forensiker",
+        "Detektiv",
+        "Okkult-Berater",
+        "Sexualtherapeut",
+        "Trauerbegleiter",
+        "Investigativjournalist",
+        "Vermögensverwalter",
+        "Bestatter"
+      ],
+      "career_values": [
+        "Tiefe",
+        "Wahrheit",
+        "Transformation",
+        "Macht"
+      ],
+      "leadership_style": "Intensiv, strategisch, transformativ. Führt durch tiefe Einsicht.",
+      "workplace_avoid": [
+        "oberflächliche Vertriebsrollen",
+        "Small-Talk-Berufe"
+      ]
+    },
+    "sagittarius": {
+      "ideal_careers": [
+        "Anwalt",
+        "Universitätsprofessor",
+        "Verleger",
+        "Reisebranche",
+        "Philosoph",
+        "Sport-Profi",
+        "Auslandskorrespondent",
+        "Kulturmanager",
+        "Priester",
+        "Trainer"
+      ],
+      "career_values": [
+        "Wachstum",
+        "Freiheit",
+        "Bildung",
+        "Sinn"
+      ],
+      "leadership_style": "Visionär, philosophisch, breit denkend. Führt durch Vision.",
+      "workplace_avoid": [
+        "repetitive Bürojobs",
+        "sehr eingesperrt in einem Ort"
+      ]
+    },
+    "capricorn": {
+      "ideal_careers": [
+        "CEO",
+        "Politiker",
+        "Bank-Manager",
+        "Anwalt",
+        "Bau-Ingenieur",
+        "Verwaltungschef",
+        "Militärgeneral",
+        "Bergarbeiter",
+        "Uhrmacher",
+        "Historiker"
+      ],
+      "career_values": [
+        "Verantwortung",
+        "Autorität",
+        "Karriere-Aufstieg",
+        "Meisterschaft"
+      ],
+      "leadership_style": "Strategisch, verantwortungsvoll, ernst. Führt durch Kompetenz und Ausdauer.",
+      "workplace_avoid": [
+        "chaotische Kreativberufe",
+        "improvisatorische Rollen"
+      ]
+    },
+    "aquarius": {
+      "ideal_careers": [
+        "Software-Entwickler",
+        "Wissenschaftler",
+        "Astronom",
+        "Umweltaktivist",
+        "Menschenrechts-Anwalt",
+        "NGO-Direktor",
+        "Zukunftsforscher",
+        "Kollektiv-Künstler",
+        "Erfinder",
+        "Sozial-Innovator"
+      ],
+      "career_values": [
+        "Innovation",
+        "Gemeinschaft",
+        "Vision",
+        "Freiheit"
+      ],
+      "leadership_style": "Innovativ, egalitär, visionär. Führt durch Ideen und Teamgeist.",
+      "workplace_avoid": [
+        "traditionelle Hierarchien",
+        "starre konservative Umgebungen"
+      ]
+    },
+    "pisces": {
+      "ideal_careers": [
+        "Künstler",
+        "Musiker",
+        "Poet",
+        "Spiritueller Lehrer",
+        "Heilpraktiker",
+        "Meeresforscher",
+        "Fotograf",
+        "Filmemacher",
+        "Meditation-Lehrer",
+        "Wohltätigkeits-Arbeiter"
+      ],
+      "career_values": [
+        "Sinn",
+        "Mitgefühl",
+        "Kreativität",
+        "Spiritualität"
+      ],
+      "leadership_style": "Empathisch, inspirierend, dienend. Führt durch Mitgefühl.",
+      "workplace_avoid": [
+        "kalte technische Berufe",
+        "aggressive Verhandlungen"
+      ]
+    }
+  },
+  "health_by_sign": {
+    "aries": {
+      "body_parts": [
+        "Kopf",
+        "Gehirn",
+        "Augen",
+        "Zähne"
+      ],
+      "risks": [
+        "Migräne",
+        "Bluthochdruck",
+        "Verletzungen durch Impulsivität"
+      ],
+      "advice": "Sport, ausreichend Schlaf, Meditation"
+    },
+    "taurus": {
+      "body_parts": [
+        "Hals",
+        "Schilddrüse",
+        "Stimme"
+      ],
+      "risks": [
+        "Halsentzündungen",
+        "Schilddrüse",
+        "Übergewicht"
+      ],
+      "advice": "Balance zwischen Genuss und Bewegung, Singen"
+    },
+    "gemini": {
+      "body_parts": [
+        "Lunge",
+        "Arme",
+        "Hände",
+        "Nerven"
+      ],
+      "risks": [
+        "Atemwegserkrankungen",
+        "Nervosität",
+        "Schlaflosigkeit"
+      ],
+      "advice": "Atemübungen, Meditation, Handarbeit"
+    },
+    "cancer": {
+      "body_parts": [
+        "Brust",
+        "Magen",
+        "Verdauung"
+      ],
+      "risks": [
+        "Verdauungsprobleme",
+        "Übergewicht durch emotionales Essen"
+      ],
+      "advice": "Emotionale Regulation, Wassernähe"
+    },
+    "leo": {
+      "body_parts": [
+        "Herz",
+        "Rücken",
+        "Wirbelsäule"
+      ],
+      "risks": [
+        "Herz-Kreislauf",
+        "Rückenprobleme"
+      ],
+      "advice": "Herz-Kreislauf-Training, Yoga"
+    },
+    "virgo": {
+      "body_parts": [
+        "Verdauung",
+        "Darm",
+        "Milz"
+      ],
+      "risks": [
+        "Reizdarm",
+        "Nervosität",
+        "Hypochondrie"
+      ],
+      "advice": "Achtsamkeit, Entspannungstechniken"
+    },
+    "libra": {
+      "body_parts": [
+        "Nieren",
+        "Blase",
+        "Rücken"
+      ],
+      "risks": [
+        "Nierenprobleme",
+        "Rückenschmerzen"
+      ],
+      "advice": "Ausreichend Wasser, Yoga, Balance"
+    },
+    "scorpio": {
+      "body_parts": [
+        "Fortpflanzungsorgane",
+        "Blase"
+      ],
+      "risks": [
+        "Hormonelle Ungleichgewichte",
+        "unterdrückte Emotionen"
+      ],
+      "advice": "Emotionsarbeit, Schattenarbeit"
+    },
+    "sagittarius": {
+      "body_parts": [
+        "Hüfte",
+        "Oberschenkel",
+        "Leber"
+      ],
+      "risks": [
+        "Hüftprobleme",
+        "Leberprobleme",
+        "Sportverletzungen"
+      ],
+      "advice": "Bewegung im Freien, Leberpflege"
+    },
+    "capricorn": {
+      "body_parts": [
+        "Knochen",
+        "Gelenke",
+        "Zähne",
+        "Haut",
+        "Knie"
+      ],
+      "risks": [
+        "Osteoporose",
+        "Depression durch Überarbeitung"
+      ],
+      "advice": "Pausen, Freude, Vitamin D"
+    },
+    "aquarius": {
+      "body_parts": [
+        "Waden",
+        "Knöchel",
+        "Kreislauf"
+      ],
+      "risks": [
+        "Kreislauf",
+        "Nervensystem-Überreizung"
+      ],
+      "advice": "Yoga, Radfahren, Meditation"
+    },
+    "pisces": {
+      "body_parts": [
+        "Füße",
+        "Lymphsystem",
+        "Immunsystem"
+      ],
+      "risks": [
+        "Suchtneigung",
+        "Depression",
+        "Immunschwäche"
+      ],
+      "advice": "Schwimmen, Grenzen setzen, Meditation"
+    }
+  },
+  "money_by_sign": {
+    "aries": "Verdient impulsiv, gibt schnell aus. Muss Sparen lernen. Erfolg durch Unternehmertum und Risiko.",
+    "taurus": "Klassischer Sparer. Baut Vermögen langsam auf. Immobilien und stabile Investments.",
+    "gemini": "Vielseitige Einkommensquellen. Muss Fokus behalten. Kommunikations-Business.",
+    "cancer": "Sparsam für die Familie. Immobilien. Emotionale Verbindung zu Geld.",
+    "leo": "Verdient großzügig, gibt königlich aus. Show-Business, Luxus. Muss Budgets akzeptieren.",
+    "virgo": "Sehr durchdacht, plant genau. Kann in Perfektionismus versinken. Konservativ investiert.",
+    "libra": "Ausgewogen, aber gibt für Schönheit viel aus. Kunst, Mode, Partner-Business.",
+    "scorpio": "Sehr strategisch mit Geld. Investment-Genie. Vermögensverwaltung.",
+    "sagittarius": "Optimistisch mit Geld, manchmal zu risikofreudig. Auslandsgeschäfte, Bildung.",
+    "capricorn": "Der klassische Vermögensaufbauer. Langfristig, strategisch. Corporate.",
+    "aquarius": "Ungewöhnliche Geldwege. Innovation, Tech, kollektive Wirtschaft. Spendet gerne.",
+    "pisces": "Emotional mit Geld, oft verschenkt. Muss Grenzen lernen. Kunst, Heilberufe."
+  },
+  "compound_rules_zodiac": {
+    "description": "Kombinationsregeln für die App - berücksichtigen Sonne, Mond, Aszendent, chinesisches Jahr.",
+    "sun_moon_combos_examples": {
+      "aries_taurus_moon": "Sonne im Widder, Mond im Stier: kämpferischer Kopf, aber gemütliches Herz. Handelt impulsiv, will aber Sicherheit.",
+      "leo_scorpio_moon": "Sonne im Löwen, Mond im Skorpion: dramatisch nach außen, intensiv nach innen. Sehr magnetisch.",
+      "gemini_pisces_moon": "Sonne in Zwilling, Mond in Fische: kommunikativ, aber emotional träumerisch. Poet.",
+      "capricorn_cancer_moon": "Sonne im Steinbock, Mond im Krebs: Karriere nach außen, Familie nach innen. Klassisches Doppelleben.",
+      "aquarius_leo_moon": "Sonne im Wassermann, Mond im Löwen: kollektiv nach außen, individuell nach innen. Bühnen-Revolutionär.",
+      "virgo_pisces_moon": "Sonne Jungfrau, Mond Fische: praktisch nach außen, mystisch nach innen. Heiler.",
+      "sagittarius_capricorn_moon": "Sonne Schütze, Mond Steinbock: philosophisch nach außen, verantwortungsvoll nach innen. Ernstes Wachstum."
+    },
+    "sun_ascendant_combos": {
+      "aries_libra_asc": "Widder-Sonne mit Waage-Aszendent: kämpferisch, aber diplomatisch verpackt. Sanfte Kraft.",
+      "leo_virgo_asc": "Löwe-Sonne mit Jungfrau-Aszendent: dramatisch drinnen, akribisch draußen. Perfektionierter Star.",
+      "scorpio_taurus_asc": "Skorpion-Sonne mit Stier-Aszendent: intensiv drinnen, ruhig draußen. Stiller Alchemist."
+    },
+    "east_west_combos": {
+      "aries_dragon": "Doppelt aktive Energie, sehr ambitious, kann verbrennen",
+      "taurus_rooster": "Stabil und kritisch, sehr detailorientiert",
+      "gemini_monkey": "Doppelt clever, sehr wandelbar, aber unbeständig",
+      "cancer_pig": "Sehr nährend, familienorientiert, warm",
+      "leo_dragon": "Königlich, magnetisch, sehr charismatisch, aber egoistisch",
+      "scorpio_snake": "Doppelt mystisch, sehr geheimnisvoll und tief",
+      "capricorn_ox": "Doppelt diszipliniert, extrem verantwortungsvoll, aber trocken",
+      "pisces_sheep": "Sehr sensibel, künstlerisch, spirituell tief"
+    },
+    "life_phase_rules": {
+      "0_12_years": "Kindheit — Mond dominiert (Emotionen, Familie)",
+      "12_25_years": "Jugend — Sonne dominiert (Ich-Findung)",
+      "25_35_years": "Junge Erwachsene — Mars und Venus (Karriere, Liebe)",
+      "35_50_years": "Reife — Jupiter (Weisheit, Expansion)",
+      "50_65_years": "Späte Reife — Saturn (Meisterschaft, Rückblick)",
+      "65plus_years": "Weisheit — Uranus/Neptun (Transzendenz)"
+    },
+    "app_rules_examples": [
+      "IF sun_sign='leo' AND moon_sign='cancer' → 'Königliches Ich mit weichem Kern — brauchst Bühne UND Familie.'",
+      "IF ascendant='scorpio' AND sun='pisces' → 'Nach außen intensiv-magnetisch, nach innen träumerisch-mitfühlend.'",
+      "IF chinese_year='dragon' AND western_sun='leo' → 'Doppelte Königlichkeit — magnetisch, aber Bühne nötig.'",
+      "IF nakshatra='rohini' AND sun='taurus' → 'Klassisches Ideal für Kunst, Sinnlichkeit, Wohlstand.'",
+      "IF moon_phase='full_moon' AND sun_sign='cancer' → 'Sehr emotional, oft in Beziehungen komplett.'"
+    ]
+  },
+  "app_workflow": {
+    "description": "Empfohlener Aufbau für die Sternzeichen-App-Integration",
+    "input_needed": [
+      "Geburtsdatum (Pflicht)",
+      "Geburtszeit (empfohlen für Mond und Aszendent)",
+      "Geburtsort (für Aszendent und Zeitzone)"
+    ],
+    "computation_layers": {
+      "layer_1_sun_sign": "Aus Geburtsdatum berechnen (einfach, siehe Datumsranges)",
+      "layer_2_moon_sign": "Braucht Ephemeriden-Tabelle (ephem library in Python, Swisseph)",
+      "layer_3_ascendant": "Braucht Geburtszeit + Ort (Swisseph Berechnungslibrary)",
+      "layer_4_planets": "Alle 10 Planeten via Swisseph berechnen",
+      "layer_5_houses": "Häuser-System wählen (Placidus, Whole Sign, Equal)",
+      "layer_6_aspects": "Winkel zwischen Planeten berechnen",
+      "layer_7_chinese_animal": "Aus Geburtsjahr, chinesisches Neujahr beachten",
+      "layer_8_nakshatra": "Aus Mond-Position (Vedic)"
+    },
+    "recommended_libraries": {
+      "python": [
+        "pyswisseph",
+        "flatlib",
+        "kerykeion",
+        "astropy"
+      ],
+      "javascript": [
+        "ephemeris.js",
+        "astronomy-engine",
+        "moshier"
+      ],
+      "swift": [
+        "SwiftAA (Astronomical Algorithms)"
+      ],
+      "kotlin": [
+        "astro4j (via JVM)"
+      ]
+    },
+    "output_layers": {
+      "quick_summary": "Sun sign + brief traits",
+      "personality_report": "Sun + Moon + Ascendant integriert",
+      "compatibility": "Zwei Personen vergleichen (144 pairs)",
+      "career_guidance": "Basierend auf Sun + Ascendant",
+      "current_transits": "Aktuelle Planeten-Bewegungen und deren Wirkung",
+      "yearly_forecast": "Basierend auf Jupiter/Saturn Zyklen"
+    },
+    "llm_integration": "Nutze GPT/Claude für personalisierte Reports aus den berechneten Features. Prompt-Template: 'Persona: {sun_sign} Sun, {moon_sign} Moon, {ascendant} Ascendant. Chinese: {animal}. Nakshatra: {nak}. Generate a personalized report focused on {current_focus}.'"
+  },
+  "ethics_disclaimers": {
+    "user_facing_disclaimer_de": "Diese App bietet astrologische Deutungen im Kontext westlicher Astrologie, chinesischer Astrologie und vedischer Jyotish zum Zweck der Unterhaltung und Selbstreflexion. Die Aussagen sind nicht wissenschaftlich validiert. Astrologie ist als traditionelles Symbolsystem zu verstehen, nicht als Vorhersage-Instrument. Sie ersetzt keine medizinische, psychologische, finanzielle oder juristische Beratung.",
+    "avoid_topics": [
+      "Vorhersagen des Sterbedatums",
+      "Konkrete Krankheits-Diagnosen",
+      "Konkrete Vermögens-Vorhersagen",
+      "Aussagen über Partner-Untreue",
+      "Rassistische, sexistische oder herkunftsbezogene Bewertungen"
+    ],
+    "mental_health_safeguards": "Bei Deutungen zu Depression, Isolation, Suizid IMMER Verweis auf Krisenhilfe (Deutschland: 0800 111 0 111, Österreich: 142, Schweiz: 143)",
+    "app_store_compliance": {
+      "apple": "Als 'Entertainment' klassifizieren, klare Zweckangabe",
+      "google": "Astrologie-Apps müssen klar als Unterhaltung gekennzeichnet sein",
+      "gdpr": "Geburtsdatum ist personenbezogenes Datum, ausdrückliche Einwilligung"
+    }
+  },
+  "_final_stats": {
+    "total_keys": 16,
+    "estimated_use_cases": [
+      "Sternzeichen-App",
+      "Kompatibilitäts-App",
+      "Coaching-Tools",
+      "Personalisiertes Horoskop"
+    ]
+  }
+}
