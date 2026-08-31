@@ -1,11 +1,20 @@
 import base64
 import json
 import os
+from io import BytesIO
 from pathlib import Path
 
 from flask import Flask, jsonify, render_template, request
+from PIL import Image, ImageOps, UnidentifiedImageError
 
 import anthropic
+
+try:
+    from pillow_heif import register_heif_opener
+
+    register_heif_opener()
+except ImportError:
+    pass
 
 from chiro_engine import RuleEngine
 from chiro_engine.rule_engine import RuleDefinition
@@ -392,8 +401,27 @@ def build_physiognomy_output(extracted: dict, age: int | None) -> dict:
     }
 
 
-def analyze_face_image(client: anthropic.Anthropic, image_bytes: bytes, media_type: str) -> dict:
-    image_data = base64.standard_b64encode(image_bytes).decode("utf-8")
+def normalize_image(image_bytes: bytes) -> bytes:
+    """Handy-Fotos kommen in allen moeglichen Formen: HEIC (iPhone-Standard), falsch
+    rotiert (EXIF-Orientierung wird von Kamera-Apps oft nur als Metadaten-Flag statt
+    gedrehter Pixel gespeichert), WEBP, RGBA/CMYK-Farbmodi. Ohne Normalisierung sieht
+    das Vision-Modell teils ein unlesbares oder seitlich verdrehtes Bild und faellt
+    dann bei mehreren Personen auf aehnliche generische Schaetzwerte zurueck. Deshalb
+    wird jedes Foto serverseitig auf ein aufrecht stehendes RGB-JPEG normalisiert."""
+    try:
+        image = Image.open(BytesIO(image_bytes))
+        image = ImageOps.exif_transpose(image)
+        if image.mode != "RGB":
+            image = image.convert("RGB")
+    except UnidentifiedImageError as err:
+        raise ValueError("Foto konnte nicht gelesen werden. Bitte ein JPEG- oder PNG-Foto verwenden.") from err
+    buffer = BytesIO()
+    image.save(buffer, format="JPEG", quality=90)
+    return buffer.getvalue()
+
+
+def analyze_face_image(client: anthropic.Anthropic, image_bytes: bytes) -> dict:
+    image_data = base64.standard_b64encode(normalize_image(image_bytes)).decode("utf-8")
     response = client.messages.create(
         model=MODEL,
         max_tokens=2000,
@@ -401,7 +429,7 @@ def analyze_face_image(client: anthropic.Anthropic, image_bytes: bytes, media_ty
             {
                 "role": "user",
                 "content": [
-                    {"type": "image", "source": {"type": "base64", "media_type": media_type, "data": image_data}},
+                    {"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": image_data}},
                     {"type": "text", "text": EXTRACTION_PROMPT_FACE},
                 ],
             }
@@ -412,8 +440,8 @@ def analyze_face_image(client: anthropic.Anthropic, image_bytes: bytes, media_ty
     return json.loads(text)
 
 
-def analyze_hand_image(client: anthropic.Anthropic, image_bytes: bytes, media_type: str) -> dict:
-    image_data = base64.standard_b64encode(image_bytes).decode("utf-8")
+def analyze_hand_image(client: anthropic.Anthropic, image_bytes: bytes) -> dict:
+    image_data = base64.standard_b64encode(normalize_image(image_bytes)).decode("utf-8")
     response = client.messages.create(
         model=MODEL,
         max_tokens=1500,
@@ -421,7 +449,7 @@ def analyze_hand_image(client: anthropic.Anthropic, image_bytes: bytes, media_ty
             {
                 "role": "user",
                 "content": [
-                    {"type": "image", "source": {"type": "base64", "media_type": media_type, "data": image_data}},
+                    {"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": image_data}},
                     {"type": "text", "text": EXTRACTION_PROMPT},
                 ],
             }
@@ -459,8 +487,7 @@ def analyze():
             if not file or not file.filename:
                 continue
             image_bytes = file.read()
-            media_type = file.content_type or "image/jpeg"
-            extracted = analyze_hand_image(client, image_bytes, media_type)
+            extracted = analyze_hand_image(client, image_bytes)
             features = build_features(extracted)
             matches = ENGINE.evaluate(features)
             grouped = {}
@@ -478,6 +505,8 @@ def analyze():
                 "grouped": grouped,
                 "rule_count": len(RULES),
             }
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
     except anthropic.AuthenticationError:
         return jsonify({"error": "API-Key ungueltig oder abgelehnt."}), 401
     except anthropic.RateLimitError:
@@ -525,8 +554,9 @@ def analyze_face():
 
     try:
         image_bytes = face_file.read()
-        media_type = face_file.content_type or "image/jpeg"
-        extracted = analyze_face_image(client, image_bytes, media_type)
+        extracted = analyze_face_image(client, image_bytes)
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
     except anthropic.AuthenticationError:
         return jsonify({"error": "API-Key ungueltig oder abgelehnt."}), 401
     except anthropic.RateLimitError:
