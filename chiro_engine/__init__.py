@@ -20,6 +20,9 @@ from .numerology_engine import (
     numerology_compatibility,
     build_numerology_report,
 )
+from .iching_engine import cast_lines, build_reading
+from .journal_engine import detect_crisis, auto_insights, days_until_birthday, build_analysis_prompt
+from .impulse_engine import pick_message, seasonal_message, birthday_message, build_impulse_feed
 
 __all__ = [
     "parse_condition",
@@ -44,4 +47,14 @@ __all__ = [
     "life_path_number",
     "numerology_compatibility",
     "build_numerology_report",
+    "cast_lines",
+    "build_reading",
+    "detect_crisis",
+    "auto_insights",
+    "days_until_birthday",
+    "build_analysis_prompt",
+    "pick_message",
+    "seasonal_message",
+    "birthday_message",
+    "build_impulse_feed",
 ]

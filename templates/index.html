@@ -38,6 +38,15 @@
     --numerology: #6FA88C;
     --numerology-strong: #92CBAE;
     --numerology-soft: rgba(111, 168, 140, 0.14);
+    --iching: #B0472E;
+    --iching-strong: #D96B4C;
+    --iching-soft: rgba(176, 71, 46, 0.14);
+    --journal: #C08BA0;
+    --journal-strong: #DDAEBE;
+    --journal-soft: rgba(192, 139, 160, 0.14);
+    --impulse: #C99A45;
+    --impulse-strong: #E3BA6E;
+    --impulse-soft: rgba(201, 154, 69, 0.14);
     --danger: #C97562;
     --danger-soft: rgba(201, 117, 98, 0.14);
   }
@@ -124,6 +133,9 @@
   .tab-btn.moon-tab[aria-selected="true"] { color: var(--moonlight-strong); border-bottom-color: var(--moonlight); }
   .tab-btn.tarot-tab[aria-selected="true"] { color: var(--tarot-strong); border-bottom-color: var(--tarot); }
   .tab-btn.numerology-tab[aria-selected="true"] { color: var(--numerology-strong); border-bottom-color: var(--numerology); }
+  .tab-btn.iching-tab[aria-selected="true"] { color: var(--iching-strong); border-bottom-color: var(--iching); }
+  .tab-btn.journal-tab[aria-selected="true"] { color: var(--journal-strong); border-bottom-color: var(--journal); }
+  .tab-btn.impulse-tab[aria-selected="true"] { color: var(--impulse-strong); border-bottom-color: var(--impulse); }
 
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
@@ -151,6 +163,9 @@
   .tab-moon h2.group-title { color: var(--moonlight-strong); }
   .tab-tarot h2.group-title { color: var(--tarot-strong); }
   .tab-numerology h2.group-title { color: var(--numerology-strong); }
+  .tab-iching h2.group-title { color: var(--iching-strong); }
+  .tab-journal h2.group-title { color: var(--journal-strong); }
+  .tab-impulse h2.group-title { color: var(--impulse-strong); }
 
   .field { margin-bottom: 1.15rem; }
   .field:last-child { margin-bottom: 0; }
@@ -162,12 +177,21 @@
     background: var(--bg-sunken); border: 1px solid var(--line);
     border-radius: 0.3rem; padding: 0.7rem 0.85rem; min-height: 2.7rem;
   }
+  textarea {
+    width: 100%; font: inherit; font-size: 0.9rem; color: var(--ink);
+    background: var(--bg-sunken); border: 1px solid var(--line);
+    border-radius: 0.3rem; padding: 0.7rem 0.85rem; min-height: 7rem; resize: vertical;
+  }
   input:focus { outline: none; border-color: var(--gold); }
+  textarea:focus { outline: none; border-color: var(--gold); }
   .tab-face input:focus { border-color: var(--violet); }
   .tab-zodiac input:focus { border-color: var(--celestial); }
   .tab-moon input:focus { border-color: var(--moonlight); }
   .tab-tarot input:focus, .tab-tarot select:focus { border-color: var(--tarot); }
   .tab-numerology input:focus { border-color: var(--numerology); }
+  .tab-iching input:focus { border-color: var(--iching); }
+  .tab-journal input:focus, .tab-journal textarea:focus, .tab-journal select:focus { border-color: var(--journal); }
+  .tab-impulse input:focus { border-color: var(--impulse); }
 
   select {
     width: 100%; font: inherit; font-size: 0.9rem; color: var(--ink);
@@ -211,6 +235,9 @@
   button.evaluate.moon-btn { background: linear-gradient(180deg, var(--moonlight-strong), var(--moonlight)); color: #10151C; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(143, 163, 189, 0.55); }
   button.evaluate.tarot-btn { background: linear-gradient(180deg, var(--tarot-strong), var(--tarot)); color: #200D12; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(181, 86, 107, 0.55); }
   button.evaluate.numerology-btn { background: linear-gradient(180deg, var(--numerology-strong), var(--numerology)); color: #0D1F17; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(111, 168, 140, 0.55); }
+  button.evaluate.iching-btn { background: linear-gradient(180deg, var(--iching-strong), var(--iching)); color: #240D06; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(176, 71, 46, 0.55); }
+  button.evaluate.journal-btn { background: linear-gradient(180deg, var(--journal-strong), var(--journal)); color: #22121A; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(192, 139, 160, 0.55); }
+  button.evaluate.impulse-btn { background: linear-gradient(180deg, var(--impulse-strong), var(--impulse)); color: #201404; box-shadow: 0 0.5rem 1.5rem -0.6rem rgba(201, 154, 69, 0.55); }
 
   .button-row { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
   .button-row .evaluate { margin-top: 0; flex: 2; }
@@ -227,6 +254,9 @@
   .tab-moon button.reset:hover { border-color: var(--moonlight); color: var(--moonlight-strong); }
   .tab-tarot button.reset:hover { border-color: var(--tarot); color: var(--tarot-strong); }
   .tab-numerology button.reset:hover { border-color: var(--numerology); color: var(--numerology-strong); }
+  .tab-iching button.reset:hover { border-color: var(--iching); color: var(--iching-strong); }
+  .tab-journal button.reset:hover { border-color: var(--journal); color: var(--journal-strong); }
+  .tab-impulse button.reset:hover { border-color: var(--impulse); color: var(--impulse-strong); }
 
   .results .summary {
     font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--ink-faint);
@@ -298,6 +328,23 @@
   .direct-card.moon .direct-label { color: var(--moonlight-strong); }
   .direct-card.tarot .direct-label { color: var(--tarot-strong); }
   .direct-card.numerology .direct-label { color: var(--numerology-strong); }
+  .direct-card.iching .direct-label { color: var(--iching-strong); }
+  .direct-card.journal .direct-label { color: var(--journal-strong); }
+  .direct-card.impulse .direct-label { color: var(--impulse-strong); }
+
+  .hexagram-lines { display: flex; flex-direction: column-reverse; gap: 0.35rem; margin: 0.8rem 0 1rem; max-width: 12rem; }
+  .hexagram-line { height: 0.6rem; border-radius: 0.1rem; background: var(--iching-strong); position: relative; }
+  .hexagram-line.yin { background: transparent; display: flex; justify-content: space-between; }
+  .hexagram-line.yin::before, .hexagram-line.yin::after { content: ""; width: 44%; height: 100%; background: var(--iching-strong); border-radius: 0.1rem; }
+  .hexagram-line.changing { background: var(--impulse-strong); }
+  .hexagram-line.yin.changing::before, .hexagram-line.yin.changing::after { background: var(--impulse-strong); }
+
+  .crisis-box {
+    border: 1px solid var(--danger); background: var(--danger-soft);
+    border-radius: 0.4rem; padding: 1rem 1.2rem; margin-bottom: 1rem;
+    color: var(--ink);
+  }
+  .crisis-box .direct-label { color: var(--danger); font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
 
   .tarot-card-block { border: 1px solid var(--line); border-radius: 0.4rem; padding: 1rem; margin-top: 0.8rem; background: var(--bg-sunken); }
   .tarot-card-name { font-family: 'Cinzel', Georgia, serif; font-size: 1.05rem; color: var(--tarot-strong); margin-bottom: 0.2rem; }
@@ -356,8 +403,8 @@
   <header class="masthead">
     <p class="eyebrow"><span class="glyph">✦</span>&nbsp; Regel-Engine &middot; KI-Foto-Analyse &nbsp;<span class="glyph">✦</span></p>
     <h1>Lese-Konsole</h1>
-    <p class="lede">Chiromantie, Physiognomik, Astrologie, Mondkalender, Tarot und Numerologie — Foto, Geburtsdatum oder Name genügen, Claude bzw. die Regel-Engines befragen die Wissensdatenbanken.</p>
-    <p class="notice">Fotos werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert. Astrologie, Mondkalender, Tarot und Numerologie laufen rein lokal, ohne Foto oder KI.</p>
+    <p class="lede">Chiromantie, Physiognomik, Astrologie, Mondkalender, Tarot, Numerologie, I Ging, Journal und Tages-Impulse — Foto, Geburtsdatum, Name oder ein paar Zeilen Text genügen, Claude bzw. die Regel-Engines befragen die Wissensdatenbanken.</p>
+    <p class="notice">Fotos und Journal-Texte werden zur Auswertung an die Anthropic-API gesendet und nicht gespeichert. Astrologie, Mondkalender, Tarot, Numerologie, I Ging und Tages-Impulse laufen rein lokal, ohne Foto oder KI.</p>
   </header>
 
   <div class="tabs" role="tablist">
@@ -367,6 +414,9 @@
     <button class="tab-btn moon-tab" id="tab-btn-moon" role="tab" aria-selected="false" aria-controls="tab-moon">Mondkalender<span class="tab-sub">Datum</span></button>
     <button class="tab-btn tarot-tab" id="tab-btn-tarot" role="tab" aria-selected="false" aria-controls="tab-tarot">Tarot<span class="tab-sub">Kartenlegung</span></button>
     <button class="tab-btn numerology-tab" id="tab-btn-numerology" role="tab" aria-selected="false" aria-controls="tab-numerology">Numerologie<span class="tab-sub">Name &amp; Datum</span></button>
+    <button class="tab-btn iching-tab" id="tab-btn-iching" role="tab" aria-selected="false" aria-controls="tab-iching">I Ging<span class="tab-sub">Orakel</span></button>
+    <button class="tab-btn journal-tab" id="tab-btn-journal" role="tab" aria-selected="false" aria-controls="tab-journal">Journal<span class="tab-sub">Reflexion</span></button>
+    <button class="tab-btn impulse-tab" id="tab-btn-impulse" role="tab" aria-selected="false" aria-controls="tab-impulse">Tages-Impulse<span class="tab-sub">Feed</span></button>
   </div>
 
   <div class="tab-panel active" id="tab-hand" role="tabpanel" aria-labelledby="tab-btn-hand">
@@ -584,13 +634,128 @@
     </main>
   </div>
 
+  <div class="tab-panel tab-iching" id="tab-iching" role="tabpanel" aria-labelledby="tab-btn-iching">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Frage</h2>
+          <div class="field">
+            <label class="field-label" for="iching_question">Deine Frage (optional)</label>
+            <input type="text" id="iching_question" placeholder="Worüber möchtest du Klarheit?">
+            <p class="field-hint">Digitaler Münzwurf: 6 Linien, klassische Wahrscheinlichkeiten (6/9 = wandelnd, je 12,5 %; 7/8 = stabil, je 37,5 %). Bei wandelnden Linien entsteht ein zweites Hexagramm.</p>
+          </div>
+        </section>
+
+        <div class="button-row">
+          <button class="evaluate iching-btn" id="run-iching">Hexagramm werfen</button>
+          <button class="reset" id="reset-iching" type="button">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="iching-output">
+            <p class="placeholder-text">Optional eine Frage eingeben und „Hexagramm werfen“ drücken.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="tab-panel tab-journal" id="tab-journal" role="tabpanel" aria-labelledby="tab-btn-journal">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Eintrag</h2>
+          <div class="field">
+            <label class="field-label" for="journal_category">Kategorie (optional)</label>
+            <select id="journal_category">
+              <option value="">— frei schreiben —</option>
+              <option value="morning_reflection">Morgen-Reflexion</option>
+              <option value="evening_reflection">Abend-Reflexion</option>
+              <option value="dream_journal">Traumtagebuch</option>
+              <option value="emotion_release">Gefühle loslassen</option>
+              <option value="gratitude_practice">Dankbarkeit</option>
+              <option value="intention_setting">Intentionen setzen</option>
+              <option value="shadow_work">Schattenarbeit</option>
+              <option value="relationship_reflection">Beziehungs-Reflexion</option>
+              <option value="creativity_flow">Kreativität</option>
+              <option value="body_awareness">Körperwahrnehmung</option>
+            </select>
+            <p class="field-hint" id="journal_category_hint"></p>
+          </div>
+          <div class="field">
+            <label class="field-label" for="journal_text">Dein Eintrag</label>
+            <textarea id="journal_text" placeholder="Schreib frei drauflos …"></textarea>
+          </div>
+          <div class="field">
+            <label class="field-label" for="journal_birth_date">Geburtsdatum (optional)</label>
+            <input type="date" id="journal_birth_date">
+            <p class="field-hint">Für Sternzeichen-, Lebenszahl- und Personal-Year-Bezug in der Reflexion.</p>
+          </div>
+          <div class="field">
+            <label class="field-label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+              <input type="checkbox" id="journal_use_ai" checked style="width:auto; min-height:auto;">
+              KI-Reflexion nutzen (sendet den Text an Claude)
+            </label>
+          </div>
+        </section>
+
+        <div class="button-row">
+          <button class="evaluate journal-btn" id="run-journal">Eintrag auswerten</button>
+          <button class="reset" id="reset-journal" type="button">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="journal-output">
+            <p class="placeholder-text">Text schreiben und „Eintrag auswerten“ drücken. Kein Verlauf, keine Speicherung — jeder Eintrag wird nur einmalig ausgewertet.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="tab-panel tab-impulse" id="tab-impulse" role="tabpanel" aria-labelledby="tab-btn-impulse">
+    <main>
+      <div class="controls">
+        <section class="panel">
+          <h2 class="group-title">Heute</h2>
+          <div class="field">
+            <label class="field-label" for="impulse_birth_date">Geburtsdatum (optional)</label>
+            <input type="date" id="impulse_birth_date">
+            <p class="field-hint">Für einen Sternzeichen- und Geburtstags-Impuls. Echte Push-Benachrichtigungen (mit fester Uhrzeit, Abo, Server-Versand) sind hier nicht umgesetzt — das ist derselbe Inhalt, direkt zum Nachlesen.</p>
+          </div>
+        </section>
+
+        <div class="button-row">
+          <button class="evaluate impulse-btn" id="run-impulse">Heutigen Feed zeigen</button>
+          <button class="reset" id="reset-impulse" type="button">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <div class="results">
+        <section class="panel">
+          <h2 class="group-title">Ergebnis</h2>
+          <div id="impulse-output">
+            <p class="placeholder-text">„Heutigen Feed zeigen“ drücken.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
   <footer class="note">
     <span class="glyph">✦</span><br><br>
     Diese Deutungen sind traditionell (Mian Xiang, Samudrika Shastra, westliche Chiromantie/Physiognomik, westliche
-    und chinesische Astrologie, Mondkalender, Tarot, Numerologie) und
+    und chinesische Astrologie, Mondkalender, Tarot, Numerologie, I Ging) und
     wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion, nicht als medizinischer,
     psychologischer oder finanzieller Rat. Sie erlauben keine Rückschlüsse auf Herkunft, Ethnie oder Charakter-Urteile
-    über Dritte.
+    über Dritte. Das Journal speichert nichts dauerhaft und ist keine Therapie — bei Krisen zeigt die App
+    Hilfsangebote statt einer KI-Auswertung.
   </footer>
 </div>
 
@@ -606,6 +771,27 @@
     creativity: "Reserviere dir feste wöchentliche Zeit für ein kreatives Projekt, statt auf Inspiration zu warten.",
     health: "Nimm anhaltende körperliche Signale ernst und sprich mit einer Ärztin oder einem Arzt — diese Deutung ersetzt keine Diagnose.",
   };
+
+  const JOURNAL_PROMPTS = {
+    morning_reflection: ["Wie fühlst du dich heute morgen?", "Wovon hast du heute Nacht geträumt?", "Was ist deine wichtigste Aufgabe heute?", "Für was bist du heute dankbar?", "Was möchtest du heute loslassen?"],
+    evening_reflection: ["Wie war dein Tag emotional?", "Was war dein größter Moment heute?", "Was hat dich heute herausgefordert?", "Was hast du heute gelernt?", "Was möchtest du morgen anders machen?"],
+    dream_journal: ["Beschreibe deinen Traum so detailliert wie möglich", "Welche Emotionen hast du im Traum gefühlt?", "Welche Symbole waren besonders auffällig?", "Wer war in deinem Traum?", "Was war die Grundstimmung?"],
+    emotion_release: ["Was fühlst du gerade wirklich?", "Wo im Körper spürst du das Gefühl?", "Was löst dieses Gefühl aus?", "Was möchte dieses Gefühl dir sagen?"],
+    gratitude_practice: ["Nenne 3 Dinge für die du dankbar bist", "Wer hat heute etwas Gutes für dich getan?", "Was war heute schön anzuschauen?", "Was in deinem Leben ist gerade gut?"],
+    intention_setting: ["Was möchtest du in diesem Monat manifestieren?", "Was ist deine tiefe Absicht für dieses Jahr?", "Welche Person möchtest du werden?", "Was ist dein größter Wunsch?"],
+    shadow_work: ["Was regt dich an anderen am meisten auf?", "Welche Eigenschaft an dir magst du am wenigsten?", "Wovor hast du am meisten Angst?", "Welches Muster wiederholt sich in deinem Leben?", "Was hast du deiner Familie noch nicht verziehen?"],
+    relationship_reflection: ["Wie geht es dir mit [Person]?", "Was schätzt du an dieser Person?", "Was fehlt in dieser Beziehung?", "Was möchtest du besprechen?"],
+    creativity_flow: ["Welche Idee ist heute in dir entstanden?", "Was möchtest du erschaffen?", "Was inspiriert dich gerade?"],
+    body_awareness: ["Wie fühlt sich dein Körper heute an?", "Wo hast du Anspannung?", "Was braucht dein Körper?", "Wie war dein Schlaf, deine Ernährung, Bewegung?"],
+  };
+
+  const journalCategorySelect = document.getElementById("journal_category");
+  const journalCategoryHint = document.getElementById("journal_category_hint");
+  function updateJournalHint() {
+    const prompts = JOURNAL_PROMPTS[journalCategorySelect.value];
+    journalCategoryHint.textContent = prompts ? "Impulse: " + prompts.join(" · ") : "";
+  }
+  journalCategorySelect.addEventListener("change", updateJournalHint);
 
   function wireUpload(inputId, boxId, placeholderId) {
     const input = document.getElementById(inputId);
@@ -663,6 +849,9 @@
       { btn: document.getElementById("tab-btn-moon"), panel: document.getElementById("tab-moon") },
       { btn: document.getElementById("tab-btn-tarot"), panel: document.getElementById("tab-tarot") },
       { btn: document.getElementById("tab-btn-numerology"), panel: document.getElementById("tab-numerology") },
+      { btn: document.getElementById("tab-btn-iching"), panel: document.getElementById("tab-iching") },
+      { btn: document.getElementById("tab-btn-journal"), panel: document.getElementById("tab-journal") },
+      { btn: document.getElementById("tab-btn-impulse"), panel: document.getElementById("tab-impulse") },
     ];
     tabs.forEach((tab) => {
       tab.btn.addEventListener("click", () => {
@@ -896,6 +1085,108 @@
       html += '<h3 class="section-heading">Kompatibilität</h3>';
       html += `<div class="compat-card" style="border-left-color:var(--numerology); background:var(--numerology-soft);"><div class="compat-score" style="color:var(--numerology-strong);">${data.life_path.number} &amp; ${data.partner_life_path}</div><div>${escapeHtml(data.compatibility)}</div></div>`;
     }
+
+    html += `<details class="raw"><summary>Rohdaten</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data, null, 2))}</pre></details>`;
+    return html;
+  }
+
+  function renderIching(data) {
+    let html = "";
+    if (data.question) {
+      html += `<p class="summary">Frage: „${escapeHtml(data.question)}“</p>`;
+    }
+    html += '<div class="hexagram-lines">';
+    data.lines.forEach((l) => {
+      const cls = "hexagram-line" + (l.yang ? "" : " yin") + (l.changing ? " changing" : "");
+      html += `<div class="${cls}" title="Linie ${l.value}${l.changing ? " (wandelnd)" : ""}"></div>`;
+    });
+    html += "</div>";
+
+    const h = data.hexagram;
+    if (h) {
+      html += `<h3 class="hand-title">${data.hexagram_number}. ${escapeHtml(h.name_de)}${h.name_cn ? " — " + escapeHtml(h.name_cn) : ""}</h3>`;
+      if (h.judgment) html += `<p style="margin:0 0 0.6rem;"><em>${escapeHtml(h.judgment)}</em></p>`;
+      if (h.image) html += `<p style="margin:0 0 0.6rem;">${escapeHtml(h.image)}</p>`;
+      if (h.meaning) html += `<div class="direct-card iching"><div class="direct-label">Bedeutung</div><div>${escapeHtml(h.meaning)}</div></div>`;
+      if (h.advice) html += `<div class="direct-card iching"><div class="direct-label">Rat</div><div>${escapeHtml(h.advice)}</div></div>`;
+      if (h.love) html += `<div class="direct-card iching"><div class="direct-label">Liebe</div><div>${escapeHtml(h.love)}</div></div>`;
+      if (h.career) html += `<div class="direct-card iching"><div class="direct-label">Beruf</div><div>${escapeHtml(h.career)}</div></div>`;
+      if (h.spiritual) html += `<div class="direct-card iching"><div class="direct-label">Spirituell</div><div>${escapeHtml(h.spiritual)}</div></div>`;
+    } else {
+      html += '<p class="placeholder-text">Kein Hexagramm gefunden.</p>';
+    }
+
+    if (data.changing_lines && data.changing_lines.length) {
+      html += '<h3 class="section-heading">Wandelnde Linien</h3>';
+      data.changing_lines.forEach((c) => {
+        html += `<div class="direct-card iching"><div class="direct-label">Linie ${c.position}</div><div>${escapeHtml(c.text)}</div></div>`;
+      });
+    }
+
+    if (data.resulting_hexagram) {
+      const r = data.resulting_hexagram;
+      html += '<h3 class="section-heading">Wandelt zu</h3>';
+      html += `<h4 class="domain-name">${data.resulting_hexagram_number}. ${escapeHtml(r.name_de)}</h4>`;
+      if (r.meaning) html += `<div class="direct-card iching"><div class="direct-label">Bedeutung</div><div>${escapeHtml(r.meaning)}</div></div>`;
+      if (r.advice) html += `<div class="direct-card iching"><div class="direct-label">Rat</div><div>${escapeHtml(r.advice)}</div></div>`;
+    }
+
+    html += `<details class="raw"><summary>Rohdaten</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data, null, 2))}</pre></details>`;
+    return html;
+  }
+
+  function renderJournal(data) {
+    let html = "";
+    if (data.crisis_detected) {
+      html += `<div class="crisis-box"><div class="direct-label">Wichtiger Hinweis</div><div>${escapeHtml(data.crisis_response)}</div><div style="margin-top:0.6rem;">Diese App ist keine Therapie. Bitte wende dich an eine Fachperson oder eine Krisen-Hotline.</div></div>`;
+    }
+    const facts = [];
+    if (data.sun_sign) facts.push("Sternzeichen: " + data.sun_sign);
+    if (data.life_path !== null && data.life_path !== undefined) facts.push("Lebenszahl: " + data.life_path);
+    if (data.personal_year !== null && data.personal_year !== undefined) facts.push("Personal Year: " + data.personal_year);
+    facts.push("Mondphase: " + data.moon_phase);
+    html += `<p class="summary">${escapeHtml(facts.join(" · "))}</p>`;
+
+    if (data.auto_insights && data.auto_insights.length) {
+      html += '<h3 class="section-heading">Automatische Hinweise</h3>';
+      data.auto_insights.forEach((i) => {
+        html += `<div class="direct-card journal"><div class="direct-label">Hinweis</div><div>${escapeHtml(i)}</div></div>`;
+      });
+    }
+
+    if (data.ai_reflection) {
+      html += '<h3 class="section-heading">KI-Reflexion</h3>';
+      html += `<div class="tip-card" style="border-color:var(--journal); color:var(--journal-strong);"><div>${escapeHtml(data.ai_reflection).replace(/\n/g, "<br>")}</div></div>`;
+    } else if (!data.crisis_detected) {
+      html += '<p class="placeholder-text">Keine KI-Reflexion (deaktiviert oder kein API-Key hinterlegt).</p>';
+    }
+
+    html += `<details class="raw"><summary>Rohdaten</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data, null, 2))}</pre></details>`;
+    return html;
+  }
+
+  function renderImpulse(data) {
+    let html = "";
+    html += `<p class="summary">${escapeHtml(data.date)} · Mondphase: ${escapeHtml(data.moon_phase)}${data.zodiac_sign ? " · Sternzeichen: " + escapeHtml(data.zodiac_sign) : ""}</p>`;
+
+    const items = [
+      ["Mond", data.moon_impulse],
+      ["Sternzeichen", data.zodiac_impulse],
+      ["Tarot", data.tarot_impulse],
+      ["I Ging", data.iching_impulse],
+      ["Numerologie", data.numerology_impulse],
+      ["Journal", data.journal_impulse],
+      ["Saison", data.seasonal_impulse],
+      ["Geburtstag", data.birthday_impulse],
+    ];
+    let any = false;
+    items.forEach(([label, text]) => {
+      if (text) {
+        any = true;
+        html += `<div class="direct-card impulse"><div class="direct-label">${escapeHtml(label)}</div><div>${escapeHtml(text)}</div></div>`;
+      }
+    });
+    if (!any) html += '<p class="placeholder-text">Für heute sind keine Impulse hinterlegt.</p>';
 
     html += `<details class="raw"><summary>Rohdaten</summary><pre class="raw-json">${escapeHtml(JSON.stringify(data, null, 2))}</pre></details>`;
     return html;
@@ -1142,6 +1433,123 @@
     document.getElementById("numerology_partner_birth_date").value = "";
     document.getElementById("numerology-output").innerHTML =
       '<p class="placeholder-text">Name und Geburtsdatum eingeben und „Berechnen“ drücken.</p>';
+  });
+
+  document.getElementById("run-iching").addEventListener("click", async () => {
+    const button = document.getElementById("run-iching");
+    const output = document.getElementById("iching-output");
+    const question = document.getElementById("iching_question").value.trim();
+
+    const formData = new FormData();
+    if (question) formData.append("question", question);
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Wirft Münzen …';
+    output.innerHTML = '<p class="placeholder-text">Hexagramm wird geworfen …</p>';
+    scrollToOutput(output);
+
+    try {
+      const res = await fetch("/api/iching", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      output.innerHTML = renderIching(data);
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Hexagramm werfen";
+    }
+  });
+
+  document.getElementById("reset-iching").addEventListener("click", () => {
+    document.getElementById("iching_question").value = "";
+    document.getElementById("iching-output").innerHTML =
+      '<p class="placeholder-text">Optional eine Frage eingeben und „Hexagramm werfen“ drücken.</p>';
+  });
+
+  document.getElementById("run-journal").addEventListener("click", async () => {
+    const button = document.getElementById("run-journal");
+    const output = document.getElementById("journal-output");
+    const category = document.getElementById("journal_category").value;
+    const text = document.getElementById("journal_text").value.trim();
+    const birthDate = document.getElementById("journal_birth_date").value;
+    const useAi = document.getElementById("journal_use_ai").checked;
+
+    if (!text) { output.innerHTML = '<div class="error-box">Bitte einen Journal-Text schreiben.</div>'; return; }
+
+    const formData = new FormData();
+    formData.append("entry_text", text);
+    if (category) formData.append("category", category);
+    if (birthDate) formData.append("birth_date", birthDate);
+    formData.append("use_ai", useAi ? "true" : "false");
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Wertet aus …';
+    output.innerHTML = '<p class="placeholder-text">Eintrag wird ausgewertet …</p>';
+    scrollToOutput(output);
+
+    try {
+      const res = await fetch("/api/journal", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      output.innerHTML = renderJournal(data);
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Eintrag auswerten";
+    }
+  });
+
+  document.getElementById("reset-journal").addEventListener("click", () => {
+    document.getElementById("journal_category").value = "";
+    document.getElementById("journal_text").value = "";
+    document.getElementById("journal_birth_date").value = "";
+    document.getElementById("journal_use_ai").checked = true;
+    journalCategoryHint.textContent = "";
+    document.getElementById("journal-output").innerHTML =
+      '<p class="placeholder-text">Text schreiben und „Eintrag auswerten“ drücken. Kein Verlauf, keine Speicherung — jeder Eintrag wird nur einmalig ausgewertet.</p>';
+  });
+
+  document.getElementById("run-impulse").addEventListener("click", async () => {
+    const button = document.getElementById("run-impulse");
+    const output = document.getElementById("impulse-output");
+    const birthDate = document.getElementById("impulse_birth_date").value;
+
+    const formData = new FormData();
+    if (birthDate) formData.append("birth_date", birthDate);
+
+    button.disabled = true;
+    button.innerHTML = '<span class="spinner"></span>Lädt …';
+    output.innerHTML = '<p class="placeholder-text">Feed wird geladen …</p>';
+    scrollToOutput(output);
+
+    try {
+      const res = await fetch("/api/impulse", { method: "POST", body: formData });
+      const data = await res.json();
+      if (!res.ok) {
+        output.innerHTML = `<div class="error-box">${escapeHtml(data.error || "Unbekannter Fehler")}</div>`;
+        return;
+      }
+      output.innerHTML = renderImpulse(data);
+    } catch (err) {
+      output.innerHTML = `<div class="error-box">Netzwerkfehler: ${escapeHtml(err.message)}</div>`;
+    } finally {
+      button.disabled = false;
+      button.textContent = "Heutigen Feed zeigen";
+    }
+  });
+
+  document.getElementById("reset-impulse").addEventListener("click", () => {
+    document.getElementById("impulse_birth_date").value = "";
+    document.getElementById("impulse-output").innerHTML =
+      '<p class="placeholder-text">„Heutigen Feed zeigen“ drücken.</p>';
   });
 })();
 </script>

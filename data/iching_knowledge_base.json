@@ -1,0 +1,1563 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "language": "de",
+    "description": "Master-Wissensdatenbank für I Ching (Buch der Wandlungen). Alle 64 Hexagramme mit Bagua-Trigrammen, Deutungen für alle Lebensbereiche, wandelnde Linien-System.",
+    "hexagrams_total": 64,
+    "trigrams_total": 8,
+    "disclaimer": "I Ching-Deutungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Unterhaltung und Selbstreflexion.",
+    "history": "Das I Ching (易經, Yìjīng) ist ~3000 Jahre alt und eines der ältesten Bücher der Menschheit. Ursprünglich Orakel, später von Konfuzius und Laozi philosophisch vertieft. In Europa durch Wilhelm Richard und C.G. Jung populär geworden."
+  },
+  "system_basics": {
+    "philosophy": "Alles im Universum besteht aus Yin (dunkel, weiblich, empfangend) und Yang (hell, männlich, aktiv). Diese Kräfte sind ständig in Bewegung. Das I Ching zeigt in 64 Bildern (Hexagrammen) alle möglichen Zustände zwischen Yin und Yang.",
+    "structure": {
+      "line": "Yin (—— ——) oder Yang (———)",
+      "trigram": "3 Linien = 1 Trigramm (Bagua). 8 mögliche Trigramme.",
+      "hexagram": "6 Linien = 1 Hexagramm (2 Trigramme übereinander). 64 mögliche Hexagramme (8×8).",
+      "changing_lines": "Wenn eine Linie 'alt' ist (bei Münzwurf drei gleiche Seiten), verwandelt sie sich ins Gegenteil — daraus entsteht ein zweites Hexagramm, das die Entwicklung zeigt."
+    },
+    "consultation_methods": {
+      "coin_method": {
+        "name": "Münz-Methode",
+        "description": "Klassische einfache Methode. 3 Münzen 6 mal werfen.",
+        "rules": [
+          "Zahl (Rückseite) = 2, Bild (Kopf) = 3",
+          "3 Zahlen (2+2+2 = 6) = alte Yin-Linie (wandelnd)",
+          "3 Bilder (3+3+3 = 9) = alte Yang-Linie (wandelnd)",
+          "2 Zahlen + 1 Bild (2+2+3 = 7) = junge Yang-Linie",
+          "1 Zahl + 2 Bilder (2+3+3 = 8) = junge Yin-Linie",
+          "Baue Hexagramm von unten nach oben auf"
+        ]
+      },
+      "yarrow_stalk_method": {
+        "name": "Schafgarben-Stiel-Methode",
+        "description": "Traditionell mit 50 Schafgarben-Stielen. Aufwändig, aber tief.",
+        "note": "Für die App: Münz-Methode als 'digitaler Münzwurf' implementieren."
+      },
+      "app_method": {
+        "name": "App-Methode",
+        "description": "User schüttelt Handy 6× (oder tippt) → App generiert 6 Werte 6-9 → Hexagramm wird gebaut",
+        "code_hint": "Random Wert 6, 7, 8, oder 9 mit gewichteten Wahrscheinlichkeiten wie im Münzwurf"
+      }
+    }
+  },
+  "bagua_8_trigrams": {
+    "1_qian_heaven": {
+      "name_de": "Der Himmel",
+      "name_cn": "乾 Qián",
+      "structure": "☰ (3 Yang-Linien)",
+      "binary": "111",
+      "element": "Metall",
+      "attribute": "kreative Kraft",
+      "family": "Vater",
+      "direction": "Nordwest",
+      "season": "Spätherbst",
+      "body": "Kopf",
+      "animal": "Pferd",
+      "keywords": [
+        "Kreativität",
+        "Führung",
+        "Aktivität",
+        "Himmel",
+        "Vater-Prinzip"
+      ]
+    },
+    "2_kun_earth": {
+      "name_de": "Die Erde",
+      "name_cn": "坤 Kūn",
+      "structure": "☷ (3 Yin-Linien)",
+      "binary": "000",
+      "element": "Erde",
+      "attribute": "empfangende Kraft",
+      "family": "Mutter",
+      "direction": "Südwest",
+      "season": "Spätsommer",
+      "body": "Bauch",
+      "animal": "Kuh",
+      "keywords": [
+        "Empfangen",
+        "Nährung",
+        "Passivität",
+        "Erde",
+        "Mutter-Prinzip"
+      ]
+    },
+    "3_zhen_thunder": {
+      "name_de": "Der Donner",
+      "name_cn": "震 Zhèn",
+      "structure": "☳",
+      "binary": "001",
+      "element": "Holz",
+      "attribute": "Erregung",
+      "family": "Ältester Sohn",
+      "direction": "Osten",
+      "season": "Frühlingsanfang",
+      "body": "Fuß",
+      "animal": "Drache",
+      "keywords": [
+        "Aufbruch",
+        "Bewegung",
+        "Erschütterung",
+        "Neuanfang"
+      ]
+    },
+    "4_xun_wind": {
+      "name_de": "Der Wind (auch: Holz)",
+      "name_cn": "巽 Xùn",
+      "structure": "☴",
+      "binary": "110",
+      "element": "Holz",
+      "attribute": "Sanftheit",
+      "family": "Älteste Tochter",
+      "direction": "Südost",
+      "season": "Frühsommer",
+      "body": "Oberschenkel",
+      "animal": "Hahn",
+      "keywords": [
+        "Sanfte Durchdringung",
+        "Anpassung",
+        "Flexibilität",
+        "Einfluss"
+      ]
+    },
+    "5_kan_water": {
+      "name_de": "Das Wasser",
+      "name_cn": "坎 Kǎn",
+      "structure": "☵",
+      "binary": "010",
+      "element": "Wasser",
+      "attribute": "Gefahr",
+      "family": "Mittlerer Sohn",
+      "direction": "Norden",
+      "season": "Winter",
+      "body": "Ohr",
+      "animal": "Schwein",
+      "keywords": [
+        "Gefahr",
+        "Tiefe",
+        "Fluss",
+        "Prüfung"
+      ]
+    },
+    "6_li_fire": {
+      "name_de": "Das Feuer",
+      "name_cn": "離 Lí",
+      "structure": "☲",
+      "binary": "101",
+      "element": "Feuer",
+      "attribute": "Klarheit, Haftung",
+      "family": "Mittlere Tochter",
+      "direction": "Süden",
+      "season": "Sommer",
+      "body": "Auge",
+      "animal": "Fasan",
+      "keywords": [
+        "Klarheit",
+        "Licht",
+        "Bewusstsein",
+        "Sichtbarkeit"
+      ]
+    },
+    "7_gen_mountain": {
+      "name_de": "Der Berg",
+      "name_cn": "艮 Gèn",
+      "structure": "☶",
+      "binary": "100",
+      "element": "Erde",
+      "attribute": "Stille, Ruhe",
+      "family": "Jüngster Sohn",
+      "direction": "Nordost",
+      "season": "Winterende",
+      "body": "Hand",
+      "animal": "Hund",
+      "keywords": [
+        "Stille",
+        "Grenze",
+        "Meditation",
+        "Beharrlichkeit"
+      ]
+    },
+    "8_dui_lake": {
+      "name_de": "Der See",
+      "name_cn": "兌 Duì",
+      "structure": "☱",
+      "binary": "011",
+      "element": "Metall",
+      "attribute": "Freude, Heiterkeit",
+      "family": "Jüngste Tochter",
+      "direction": "Westen",
+      "season": "Herbst",
+      "body": "Mund",
+      "animal": "Schaf",
+      "keywords": [
+        "Freude",
+        "Kommunikation",
+        "Fülle",
+        "Genuss"
+      ]
+    }
+  },
+  "hexagrams_64": {
+    "1": {
+      "number": 1,
+      "name_de": "Das Schöpferische",
+      "name_cn": "乾 Qián",
+      "upper_trigram": "Himmel",
+      "lower_trigram": "Himmel",
+      "keywords": [
+        "Schöpferkraft",
+        "Führung",
+        "Erfolg",
+        "Männlichkeit",
+        "Beginn"
+      ],
+      "judgment": "Das Schöpferische wirkt erhabenen Erfolg, fördernd durch Beharrlichkeit.",
+      "image": "Der Himmel bewegt sich in kraftvoller Ausdauer. So macht der Edle sich stark und unermüdlich.",
+      "meaning": "Reinste Yang-Energie. Zeit für Führung, Initiative, Neuanfang mit voller Kraft. Der Himmel selbst — kreative Urkraft. Alles ist möglich. Handle groß.",
+      "advice": "Nutze diese Zeit für ambitionierte Vorhaben. Sei ein Führer, aber mit Weisheit. Die Kraft ist da, wenn du sie ethisch einsetzt.",
+      "love": "Neue Liebe möglich mit starker Person. In Beziehung: du bist der/die aktive Partner/in.",
+      "career": "Karriere-Höhepunkt möglich. Führungsposition, eigenes Unternehmen, Durchbruch.",
+      "spiritual": "Verbindung zum göttlichen Schöpferprinzip. Meditation über das männliche Prinzip.",
+      "changing_lines": {
+        "1": "Verborgener Drache. Handle noch nicht.",
+        "2": "Erscheinender Drache. Es fördert einen großen Mann zu sehen.",
+        "3": "Der Edle wirkt schöpferisch bis zum Abend. Warnung vor Ermüdung.",
+        "4": "Ein Schwanken über dem Abgrund. Prüfung erforderlich.",
+        "5": "Fliegender Drache am Himmel. Höhepunkt erreicht.",
+        "6": "Überheblicher Drache — Reue. Zu weit gegangen."
+      }
+    },
+    "2": {
+      "number": 2,
+      "name_de": "Das Empfangende",
+      "name_cn": "坤 Kūn",
+      "upper_trigram": "Erde",
+      "lower_trigram": "Erde",
+      "keywords": [
+        "Empfänglichkeit",
+        "Nährung",
+        "Hingabe",
+        "Weiblichkeit",
+        "Erde"
+      ],
+      "judgment": "Das Empfangende wirkt Erfolg. Fördernd durch die Beharrlichkeit einer Stute.",
+      "image": "Der Zustand der Erde ist die hingebende Fügsamkeit. So trägt der Edle mit Weite alle Dinge.",
+      "meaning": "Reinste Yin-Energie. Zeit für Empfangen, Nährung, Geduld, Hingabe. Die Erde nimmt alles auf und nährt es. Sei empfänglich, nicht führend jetzt.",
+      "advice": "Folge der Zeit statt sie zu führen. Sei nährend, geduldig. Die Umstände tragen dich, wenn du dich hingibst.",
+      "love": "Sanfte, nährende Liebe. Empfangen statt jagen. Klassisch die weibliche Rolle.",
+      "career": "Erfolg durch Unterstützung anderer. Team-Rolle statt Führung. Nährende Berufe.",
+      "spiritual": "Verbindung zur Erde. Meditation über das weibliche Prinzip, das Empfangen.",
+      "changing_lines": {
+        "1": "Auf Reif tritt man — Eis nicht fern. Achtung vor Anfängen.",
+        "2": "Gerade, viereckig, groß. Ohne Absicht.",
+        "3": "Verborgene Linien. Man kann beständig sein.",
+        "4": "Zugebundener Sack. Kein Tadel, kein Lob.",
+        "5": "Gelbes Unterkleid — höchstes Heil.",
+        "6": "Drachen kämpfen auf der Weide. Grenze überschritten."
+      }
+    },
+    "3": {
+      "number": 3,
+      "name_de": "Die Anfangsschwierigkeit",
+      "name_cn": "屯 Zhūn",
+      "upper_trigram": "Wasser",
+      "lower_trigram": "Donner",
+      "keywords": [
+        "Anfang",
+        "Schwierigkeit",
+        "Chaos",
+        "Geburt"
+      ],
+      "judgment": "Die Anfangsschwierigkeit wirkt erhabenen Erfolg — durch Beharrlichkeit.",
+      "image": "Wolken und Donner: Bild der Anfangsschwierigkeit. So ordnet der Edle.",
+      "meaning": "Ein schwieriger Anfang. Chaos vor der Ordnung. Wie die Geburt — schmerzhaft, aber notwendig. Habe Geduld.",
+      "advice": "Nicht sofort agieren. Erst helfen, ordnen. Wähle die richtigen Verbündeten.",
+      "love": "Beziehung im schwierigen Anfang. Braucht Zeit zu wachsen.",
+      "career": "Startup-Phase, schwieriger Anfang. Nicht aufgeben.",
+      "spiritual": "Geburt einer neuen spirituellen Phase.",
+      "changing_lines": {
+        "1": "Zögern und Hindernis. Es fördert, sich Helfer zu erwerben.",
+        "2": "Schwierigkeiten türmen sich. Verlobung auflösen.",
+        "3": "Wer Rehe jagt ohne Wildhüter. Der Edle merkt es.",
+        "4": "Pferd und Wagen wenden sich ab.",
+        "5": "Schwierigkeiten beim Segnen.",
+        "6": "Pferd und Wagen wenden sich ab. Blutige Tränen fließen."
+      }
+    },
+    "4": {
+      "number": 4,
+      "name_de": "Die Jugendtorheit",
+      "name_cn": "蒙 Méng",
+      "upper_trigram": "Berg",
+      "lower_trigram": "Wasser",
+      "keywords": [
+        "Anfängerschaft",
+        "Lernen",
+        "Torheit",
+        "Bildung"
+      ],
+      "judgment": "Die Jugendtorheit hat Gelingen. Nicht ich suche den jungen Toren, der junge Tor sucht mich.",
+      "image": "Am Fuß des Berges entspringt eine Quelle. So pflegt der Edle seinen Charakter durch Entschiedenheit.",
+      "meaning": "Anfängerschaft. Bildung ist nötig. Der Lehrer wartet — du musst zu ihm gehen. Suche Weisheit.",
+      "advice": "Sei bescheiden. Frage. Lerne. Nicht alles wissen zu wollen ist Weisheit.",
+      "love": "In Beziehung viel zu lernen. Bescheidenheit hilft.",
+      "career": "Praktikum, Lehre, Bildung. Erfahrenen zuhören.",
+      "spiritual": "Beginn der spirituellen Suche. Guru finden.",
+      "changing_lines": {
+        "1": "Den Toren zu lösen fördert.",
+        "2": "Torheit ertragen. Frauen nehmen.",
+        "3": "Nimm nicht dieses Mädchen.",
+        "4": "Verstricktes Töricht. Beschämung.",
+        "5": "Kindliche Torheit bringt Heil.",
+        "6": "Bei Bestrafung des Törichten fördert nicht, Unrecht zu tun."
+      }
+    },
+    "5": {
+      "number": 5,
+      "name_de": "Das Warten",
+      "name_cn": "需 Xū",
+      "upper_trigram": "Wasser",
+      "lower_trigram": "Himmel",
+      "keywords": [
+        "Geduld",
+        "Warten",
+        "Vorbereitung",
+        "Vertrauen"
+      ],
+      "judgment": "Das Warten. Wenn du wahrhaftig bist, hast du Licht und Gelingen.",
+      "image": "Wolken steigen am Himmel: das Bild des Wartens. So essen und trinken die Edlen und sind heiter.",
+      "meaning": "Zeit des Wartens. Handle nicht — es ist noch nicht die Zeit. Genieße das Warten. Sammle Kraft.",
+      "advice": "Geduld. Vertrauen. Der Moment kommt. Erzwinge nichts.",
+      "love": "In Liebe warten. Nicht drängen. Der/die Richtige kommt.",
+      "career": "Karriere-Wende steht bevor, aber noch nicht. Vorbereiten.",
+      "spiritual": "Meditation. Geduld ist spirituelle Praxis.",
+      "changing_lines": {
+        "1": "Warten auf dem Anger. Es fördert die Beständigkeit.",
+        "2": "Warten am Sand. Kleines Gerede.",
+        "3": "Warten im Schlamm. Räuber kommen.",
+        "4": "Warten im Blut. Aus der Grube kommen.",
+        "5": "Warten bei Speise und Trank. Beständig heilvoll.",
+        "6": "In die Grube fallen. Drei ungebetene Gäste kommen."
+      }
+    },
+    "6": {
+      "number": 6,
+      "name_de": "Der Streit",
+      "name_cn": "訟 Sòng",
+      "upper_trigram": "Himmel",
+      "lower_trigram": "Wasser",
+      "keywords": [
+        "Konflikt",
+        "Streit",
+        "Rechtsstreit",
+        "Vorsicht"
+      ],
+      "judgment": "Der Streit. Du bist wahrhaftig und wirst gehindert.",
+      "image": "Himmel und Wasser gehen auseinander: das Bild des Streits. So bedenkt der Edle bei allen Geschäften den Anfang.",
+      "meaning": "Konflikt. Rechtsstreit. Auseinandersetzung. Manchmal ist Nachgeben besser als kämpfen.",
+      "advice": "Wenn möglich, Konflikt vermeiden. Mediation suchen. Der Streit lohnt oft nicht.",
+      "love": "Beziehungsstreit. Klärung nötig. Nicht auf Recht bestehen.",
+      "career": "Rechtsstreit möglich. Vertragsproblem. Auf Kompromiss achten.",
+      "spiritual": "Innerer Konflikt. Meditation zur Klärung.",
+      "changing_lines": {
+        "1": "Nicht ewig die Sache betreiben.",
+        "2": "Man kann nicht streiten. Man kehrt heim.",
+        "3": "Von der Kraft der alten Tugend leben.",
+        "4": "Man kann nicht streiten.",
+        "5": "Streiten vor ihm bringt großes Heil.",
+        "6": "Man verleiht ihm einen Ledergürtel."
+      }
+    },
+    "7": {
+      "number": 7,
+      "name_de": "Das Heer",
+      "name_cn": "師 Shī",
+      "upper_trigram": "Erde",
+      "lower_trigram": "Wasser",
+      "keywords": [
+        "Diszipliniert",
+        "Organisation",
+        "Führung",
+        "Krieg"
+      ],
+      "judgment": "Das Heer bedarf der Beharrlichkeit und eines starken Mannes.",
+      "image": "Inmitten der Erde ist Wasser: das Bild des Heeres. So nährt der Edle das Volk.",
+      "meaning": "Diszipliniertes Vorgehen. Zeit zum Organisieren, zum Führen. Krieg möglich — aber nur zum Wohl aller.",
+      "advice": "Klare Struktur schaffen. Führung übernehmen mit Verantwortung.",
+      "love": "Beziehung braucht Struktur. Rollen klären.",
+      "career": "Team führen, Projekt organisieren. Militärische Präzision.",
+      "spiritual": "Diszipliniertes Üben. Meditation als Disziplin.",
+      "changing_lines": {
+        "1": "Ein Heer muss mit Ordnung ausziehen.",
+        "2": "Inmitten des Heeres: Heil.",
+        "3": "Das Heer führt Leichen im Wagen.",
+        "4": "Das Heer weicht zurück.",
+        "5": "Wild ist im Feld: es fördert, es zu ergreifen.",
+        "6": "Der große Fürst erlässt Befehle."
+      }
+    },
+    "8": {
+      "number": 8,
+      "name_de": "Das Zusammenhalten",
+      "name_cn": "比 Bǐ",
+      "upper_trigram": "Wasser",
+      "lower_trigram": "Erde",
+      "keywords": [
+        "Verbindung",
+        "Union",
+        "Gemeinschaft",
+        "Zusammenhalt"
+      ],
+      "judgment": "Zusammenhalten bringt Heil. Erforsche das Orakel.",
+      "image": "Auf der Erde ist Wasser: das Bild des Zusammenhaltens. So haben die früheren Könige die einzelnen Staaten belehnt.",
+      "meaning": "Vereinigung. Gemeinschaft. Zusammenkommen. Zeit für Bündnisse, Team-Bildung.",
+      "advice": "Verbindungen pflegen. Die richtigen Menschen an sich ziehen.",
+      "love": "Verbindung stärken. Ehe möglich. Sich einlassen.",
+      "career": "Team-Bildung, Netzwerk. Partnerschaften eingehen.",
+      "spiritual": "Verbindung mit spiritueller Gemeinschaft (Sangha).",
+      "changing_lines": {
+        "1": "Halte wahrhaftig zusammen. Kein Tadel.",
+        "2": "Zusammenhalten mit Innen. Beständigkeit bringt Heil.",
+        "3": "Du hältst mit Menschen zusammen, die nicht die rechten sind.",
+        "4": "Auch nach außen halte man zusammen.",
+        "5": "Offenbarung des Zusammenhaltens.",
+        "6": "Zusammenhalten ohne Kopf bringt Unheil."
+      }
+    },
+    "9": {
+      "number": 9,
+      "name_de": "Des Kleinen Zähmungskraft",
+      "name_cn": "小畜 Xiǎo Xù",
+      "upper_trigram": "Wind",
+      "lower_trigram": "Himmel",
+      "keywords": [
+        "Zurückhaltung",
+        "kleine Fortschritte",
+        "Warten auf richtigen Moment"
+      ],
+      "judgment": "Des Kleinen Zähmungskraft hat Gelingen. Dichte Wolken, kein Regen.",
+      "image": "Der Wind fährt am Himmel: das Bild der Zähmungskraft des Kleinen.",
+      "meaning": "Kleine Kraft zähmt Große. Bewusste Zurückhaltung nötig. Wolken sammeln sich, aber der Regen kommt noch nicht.",
+      "advice": "Nicht mit Gewalt vorwärts. Kleine, geduldige Schritte. Timing beachten.",
+      "love": "Beziehung in Wartezeit. Nicht drängen.",
+      "career": "Kleine Fortschritte. Geduld, große Ergebnisse kommen.",
+      "spiritual": "Innere Zurückhaltung, Übung.",
+      "changing_lines": {
+        "1": "Rückkehr zum eigenen Weg.",
+        "2": "Er lässt sich zur Rückkehr bringen.",
+        "3": "Speichen springen aus dem Rad.",
+        "4": "Wenn du wahrhaftig bist, weicht das Blut.",
+        "5": "Wenn du wahrhaftig und anhänglich bist.",
+        "6": "Der Regen kommt, die Ruhe stellt sich ein."
+      }
+    },
+    "10": {
+      "number": 10,
+      "name_de": "Das Auftreten",
+      "name_cn": "履 Lǚ",
+      "upper_trigram": "Himmel",
+      "lower_trigram": "See",
+      "keywords": [
+        "Verhalten",
+        "Auftreten",
+        "Höflichkeit",
+        "Vorsicht"
+      ],
+      "judgment": "Auftreten auf dem Schwanz des Tigers. Er beißt den Menschen nicht.",
+      "image": "Oben Himmel, unten See: das Bild des Auftretens.",
+      "meaning": "Wie man mit gefährlichen Situationen umgeht. Höflichkeit und Vorsicht bringen sicher durch.",
+      "advice": "Sorgfalt in allen Handlungen. Nicht die Machtvollen provozieren.",
+      "love": "Beziehung mit starker Persönlichkeit. Respekt zeigen.",
+      "career": "Mit Vorgesetzten geschickt umgehen. Diplomatie.",
+      "spiritual": "Klar aber respektvoll auftreten.",
+      "changing_lines": {
+        "1": "Einfaches Auftreten.",
+        "2": "Er tritt auf ebenem, geradem Weg.",
+        "3": "Ein Einäugiger kann sehen.",
+        "4": "Er tritt auf dem Schwanz des Tigers.",
+        "5": "Entschiedenes Auftreten.",
+        "6": "Sieh dein Auftreten und untersuche günstige Zeichen."
+      }
+    },
+    "11": {
+      "number": 11,
+      "name_de": "Der Friede",
+      "name_cn": "泰 Tài",
+      "upper_trigram": "Erde",
+      "lower_trigram": "Himmel",
+      "keywords": [
+        "Harmonie",
+        "Frieden",
+        "Fluss",
+        "goldene Zeit"
+      ],
+      "judgment": "Der Friede. Das Kleine geht dahin, das Große kommt.",
+      "image": "Himmel und Erde vereinigen sich: das Bild des Friedens.",
+      "meaning": "Zeit des Friedens. Yin und Yang in Harmonie. Golden age. Genieße es und nutze es weise.",
+      "advice": "Ausbalancieren, harmonisieren. Der/die Friedensstiftende sein.",
+      "love": "Harmonische Beziehung. Klassisch die glückliche Ehe.",
+      "career": "Golden Zeit im Business. Alles fließt.",
+      "spiritual": "Innere Harmonie erreicht. Spirituelle Balance.",
+      "changing_lines": {
+        "1": "Wenn man Riedgras auszieht, kommen die Wurzeln mit.",
+        "2": "Rohe verträgt der Fluss.",
+        "3": "Es gibt keine Ebene, der nicht ein Abhang folgt.",
+        "4": "Er flattert hinunter.",
+        "5": "Der Herrscher I gibt seine Tochter zur Ehe.",
+        "6": "Die Mauer fällt in den Graben."
+      }
+    },
+    "12": {
+      "number": 12,
+      "name_de": "Die Stockung",
+      "name_cn": "否 Pǐ",
+      "upper_trigram": "Himmel",
+      "lower_trigram": "Erde",
+      "keywords": [
+        "Stagnation",
+        "Trennung",
+        "Rückzug",
+        "schwere Zeit"
+      ],
+      "judgment": "Die Stockung: böse Menschen. Nicht fördernd für die Beharrlichkeit.",
+      "image": "Himmel und Erde vereinigen sich nicht: das Bild der Stockung.",
+      "meaning": "Yin und Yang trennen sich. Stagnation. Schwere Zeit. Rückzug ist besser als Kampf.",
+      "advice": "Nicht handeln. Rückzug. Warten auf bessere Zeiten. Werte bewahren.",
+      "love": "Beziehung in Krise. Trennung möglich.",
+      "career": "Karriere stagniert. Nicht aufregen — warten.",
+      "spiritual": "Innerer Rückzug, Reflektion.",
+      "changing_lines": {
+        "1": "Riedgras.",
+        "2": "Die Ertragenden gilt es.",
+        "3": "Sie tragen die Schmach.",
+        "4": "Wer handelt nach dem Höchsten, dem ist kein Tadel.",
+        "5": "Stockung lässt nach.",
+        "6": "Umkippen der Stockung."
+      }
+    },
+    "13": {
+      "number": 13,
+      "name_de": "Die Gemeinschaft mit Menschen",
+      "name_cn": "同人 Tóng Rén",
+      "upper_trigram": "Himmel",
+      "lower_trigram": "Feuer",
+      "keywords": [
+        "Gemeinschaft",
+        "Freundschaft",
+        "Bündnis",
+        "gemeinsames Ziel"
+      ],
+      "judgment": "Gemeinschaft mit Menschen im Freien. Gelingen.",
+      "image": "Himmel und Feuer: das Bild der Gemeinschaft.",
+      "meaning": "Gemeinschaft, offen und ehrlich. Gemeinsame Ziele. Nicht Cliquen — offene Bündnisse.",
+      "advice": "Verbindungen im Großen. Offen sein für Bündnisse.",
+      "love": "Beziehung als Partnerschaft, nicht Symbiose.",
+      "career": "Team-Erfolg, Kooperationen.",
+      "spiritual": "Spirituelle Gemeinschaft.",
+      "changing_lines": {
+        "1": "Gemeinschaft mit Menschen in der Tür.",
+        "2": "Gemeinschaft mit Menschen im Klan.",
+        "3": "Er verbirgt Waffen im Dickicht.",
+        "4": "Er besteigt seine Mauer.",
+        "5": "Die Gemeinschaft erst weinen und klagen.",
+        "6": "Gemeinschaft mit Menschen auf der Weide."
+      }
+    },
+    "14": {
+      "number": 14,
+      "name_de": "Der Besitz von Großem",
+      "name_cn": "大有 Dà Yǒu",
+      "upper_trigram": "Feuer",
+      "lower_trigram": "Himmel",
+      "keywords": [
+        "Fülle",
+        "Reichtum",
+        "Erfolg",
+        "Segen"
+      ],
+      "judgment": "Der Besitz von Großem: erhabenes Gelingen.",
+      "image": "Feuer über dem Himmel: das Bild des Besitzes von Großem.",
+      "meaning": "Große Fülle. Erfolg. Reichtum. Aber Verantwortung wächst mit.",
+      "advice": "Fülle mit Verantwortung nutzen. Teilen. Nicht überheblich werden.",
+      "love": "Beziehung voller Fülle. Aber nicht faul werden.",
+      "career": "Karriere-Erfolg, materieller Wohlstand.",
+      "spiritual": "Spirituelle Fülle — mit Demut.",
+      "changing_lines": {
+        "1": "Kein Umgang mit Schädlichem.",
+        "2": "Ein großer Wagen zum Laden.",
+        "3": "Ein Fürst opfert dem Sohn des Himmels.",
+        "4": "Er unterscheidet nicht von seinem Nächsten.",
+        "5": "Seine Wahrhaftigkeit ist zugänglich.",
+        "6": "Vom Himmel her wird ihm Segen."
+      }
+    },
+    "15": {
+      "number": 15,
+      "name_de": "Die Bescheidenheit",
+      "name_cn": "謙 Qiān",
+      "upper_trigram": "Erde",
+      "lower_trigram": "Berg",
+      "keywords": [
+        "Demut",
+        "Bescheidenheit",
+        "Reduktion",
+        "Weisheit"
+      ],
+      "judgment": "Bescheidenheit schafft Gelingen. Der Edle bringt es zu Ende.",
+      "image": "Inmitten der Erde ist ein Berg: das Bild der Bescheidenheit.",
+      "meaning": "Wahre Größe ist Bescheidenheit. Der weise Mensch versteckt seine Kräfte. Zeit für Demut.",
+      "advice": "Bescheiden bleiben trotz Erfolg. Andere heben, sich selbst nicht überhöhen.",
+      "love": "Bescheidene, tiefe Beziehung.",
+      "career": "Ohne Prahlerei arbeiten. Erfolg durch Substanz.",
+      "spiritual": "Spirituelle Bescheidenheit ist die höchste Meisterschaft.",
+      "changing_lines": {
+        "1": "Ein Edler von Bescheidenheit auf Bescheidenheit.",
+        "2": "Sich äußernde Bescheidenheit.",
+        "3": "Ein verdienstvoller Edler von Bescheidenheit.",
+        "4": "Nichts, was der Bescheidenheit nicht förderlich wäre.",
+        "5": "Nicht mit Reichtum prahlen.",
+        "6": "Sich äußernde Bescheidenheit. Es fördert Heere marschieren zu lassen."
+      }
+    },
+    "16": {
+      "number": 16,
+      "name_de": "Die Begeisterung",
+      "name_cn": "豫 Yù",
+      "upper_trigram": "Donner",
+      "lower_trigram": "Erde",
+      "keywords": [
+        "Begeisterung",
+        "Enthusiasmus",
+        "Vorbereitung",
+        "Musik"
+      ],
+      "judgment": "Die Begeisterung. Es fördert, Fürsten einzusetzen und Heere zu bewegen.",
+      "image": "Donner kommt hervor mit Erregung aus der Erde: das Bild der Begeisterung.",
+      "meaning": "Zeit der Begeisterung, des Enthusiasmus. Alle sind mitgerissen. Nutze diese Energie.",
+      "advice": "Führe mit Begeisterung. Aber Vorsicht vor Rausch.",
+      "love": "Beziehung mit Leidenschaft.",
+      "career": "Team mit Enthusiasmus mitreißen.",
+      "spiritual": "Freude in der Praxis, Musik, Tanz als spirituelle Ausdrucksform.",
+      "changing_lines": {
+        "1": "Begeisterung, die sich äußert. Unheil.",
+        "2": "Fester als ein Fels.",
+        "3": "Aufblickende Begeisterung.",
+        "4": "Die Quelle der Begeisterung.",
+        "5": "Ständig krank und stirbt doch nicht.",
+        "6": "Verblendende Begeisterung."
+      }
+    },
+    "17": {
+      "number": 17,
+      "name_de": "Die Nachfolge",
+      "name_cn": "隨 Suí",
+      "upper_trigram": "See",
+      "lower_trigram": "Donner",
+      "keywords": [
+        "Folgen",
+        "Anpassung",
+        "Fluss",
+        "Anschluss"
+      ],
+      "judgment": "Die Nachfolge. Erhabenes Gelingen, fördernd durch Beharrlichkeit.",
+      "image": "Inmitten des Sees ist Donner: das Bild der Nachfolge.",
+      "meaning": "Zeit zu folgen — der Zeit, dem Fluss, weisen Führern. Nicht widerstehen.",
+      "advice": "Wisse, wem und wann zu folgen. Anpassung ist Weisheit.",
+      "love": "Sich einlassen, nachfolgen können.",
+      "career": "Guten Vorbildern folgen. Mentor finden.",
+      "spiritual": "Der Meister zeigt den Weg. Folge!",
+      "changing_lines": {
+        "1": "Die Verhältnisse wechseln.",
+        "2": "Man schließt sich dem Kind an.",
+        "3": "Man schließt sich dem starken Mann an.",
+        "4": "Nachfolge hat Fang.",
+        "5": "Wahrhaftig im Guten.",
+        "6": "Er findet festen Anhalt."
+      }
+    },
+    "18": {
+      "number": 18,
+      "name_de": "Die Arbeit am Verdorbenen",
+      "name_cn": "蠱 Gǔ",
+      "upper_trigram": "Berg",
+      "lower_trigram": "Wind",
+      "keywords": [
+        "Reparatur",
+        "Verderbtes reinigen",
+        "Alte Fehler"
+      ],
+      "judgment": "Die Arbeit am Verdorbenen hat erhabenes Gelingen.",
+      "image": "Unten am Berge weht der Wind: das Bild des Verderbens.",
+      "meaning": "Etwas ist verdorben. Alte Muster, Familienfluch, Firma in Krise. Zeit zur Reparatur.",
+      "advice": "Die Wurzel suchen. Alte Fehler korrigieren. Familien-Karma bearbeiten.",
+      "love": "Alte Beziehungsmuster durchbrechen.",
+      "career": "Firma sanieren, altes Projekt reparieren.",
+      "spiritual": "Karma-Arbeit, Ahnen-Heilung.",
+      "changing_lines": {
+        "1": "Zurechtstellen des Verdorbenen des Vaters.",
+        "2": "Zurechtstellen des Verdorbenen der Mutter.",
+        "3": "Zurechtstellen des Verdorbenen des Vaters.",
+        "4": "Duldsam sein gegen das Verdorbene des Vaters.",
+        "5": "Zurechtstellen des Verdorbenen des Vaters.",
+        "6": "Er dient nicht Königen und Fürsten."
+      }
+    },
+    "19": {
+      "number": 19,
+      "name_de": "Die Annäherung",
+      "name_cn": "臨 Lín",
+      "upper_trigram": "Erde",
+      "lower_trigram": "See",
+      "keywords": [
+        "Annäherung",
+        "Wachstum",
+        "Frühling",
+        "Zunahme"
+      ],
+      "judgment": "Die Annäherung hat erhabenes Gelingen.",
+      "image": "Über dem See ist die Erde: das Bild der Annäherung.",
+      "meaning": "Zeit der Annäherung, des Wachstums. Etwas Gutes nähert sich. Frühling der Seele.",
+      "advice": "Nutze die Zeit. Handle jetzt, bevor der Sommer der Möglichkeit vergeht.",
+      "love": "Neue Liebe nähert sich.",
+      "career": "Karriere-Chance nähert sich. Handeln!",
+      "spiritual": "Spirituelles Erwachen naht.",
+      "changing_lines": {
+        "1": "Gemeinsame Annäherung.",
+        "2": "Gemeinsame Annäherung.",
+        "3": "Angenehme Annäherung.",
+        "4": "Vollkommene Annäherung.",
+        "5": "Weise Annäherung.",
+        "6": "Großmütige Annäherung."
+      }
+    },
+    "20": {
+      "number": 20,
+      "name_de": "Die Betrachtung",
+      "name_cn": "觀 Guān",
+      "upper_trigram": "Wind",
+      "lower_trigram": "Erde",
+      "keywords": [
+        "Betrachtung",
+        "Meditation",
+        "Beobachtung",
+        "Vorbild"
+      ],
+      "judgment": "Die Betrachtung: die Waschung ist geschehen, aber das Opfer noch nicht dargebracht.",
+      "image": "Der Wind weht über die Erde: das Bild der Betrachtung.",
+      "meaning": "Zeit zu beobachten, nicht zu handeln. Meditieren, betrachten. Verstehe die Muster.",
+      "advice": "Zurücktreten und Beobachten. Weisheit durch Betrachtung.",
+      "love": "In Beziehung: Verstehen bevor Reagieren.",
+      "career": "Karriere-Muster erkennen. Marktbeobachtung.",
+      "spiritual": "Meditation. Zeugenschaft.",
+      "changing_lines": {
+        "1": "Knabenhafte Betrachtung.",
+        "2": "Betrachtung durch die Ritze.",
+        "3": "Betrachtung meines Lebens.",
+        "4": "Betrachtung des Lichts.",
+        "5": "Betrachtung meines Lebens.",
+        "6": "Betrachtung seines Lebens."
+      }
+    },
+    "21": {
+      "number": 21,
+      "name_de": "Das Durchbeißen",
+      "name_cn": "噬嗑 Shì Hé",
+      "upper_trigram": "Feuer",
+      "lower_trigram": "Donner",
+      "keywords": [
+        "Durchsetzen",
+        "Hindernis überwinden",
+        "Gerechtigkeit"
+      ],
+      "meaning": "Ein Hindernis muss beseitigt werden. Wie beim Beißen durch harte Nahrung — es braucht Kraft.",
+      "advice": "Hindernisse nicht ignorieren, sondern durch sie hindurchbeißen. Klare Konsequenzen.",
+      "love": "Konflikt lösen, nicht umgehen.",
+      "career": "Hindernis in Karriere überwinden.",
+      "spiritual": "Blockade auflösen durch klare Aktion."
+    },
+    "22": {
+      "number": 22,
+      "name_de": "Die Anmut",
+      "name_cn": "賁 Bì",
+      "upper_trigram": "Berg",
+      "lower_trigram": "Feuer",
+      "keywords": [
+        "Schönheit",
+        "Form",
+        "Anmut",
+        "Ästhetik"
+      ],
+      "meaning": "Zeit für Schönheit und Form. Aber Substanz ist wichtiger als Schein.",
+      "advice": "Ästhetik nutzen ohne Substanz zu vernachlässigen.",
+      "love": "Romantik, Schönheit in der Beziehung.",
+      "career": "Marketing, Design, Präsentation wichtig.",
+      "spiritual": "Schönheit als spiritueller Ausdruck."
+    },
+    "23": {
+      "number": 23,
+      "name_de": "Die Zersplitterung",
+      "name_cn": "剝 Bō",
+      "upper_trigram": "Berg",
+      "lower_trigram": "Erde",
+      "keywords": [
+        "Zerfall",
+        "Ende",
+        "Verlust",
+        "Zusammenbruch"
+      ],
+      "meaning": "Zeit des Zerfalls. Nicht widerstehen — nach dem Ende kommt der Neuanfang.",
+      "advice": "Loslassen was fällt. Bewahre was wertvoll ist.",
+      "love": "Beziehung endet vielleicht.",
+      "career": "Karriere in Auflösungsphase.",
+      "spiritual": "Loslassen als spirituelle Praxis."
+    },
+    "24": {
+      "number": 24,
+      "name_de": "Die Wiederkehr",
+      "name_cn": "復 Fù",
+      "upper_trigram": "Erde",
+      "lower_trigram": "Donner",
+      "keywords": [
+        "Neubeginn",
+        "Wiederkehr",
+        "Winter-Sonnenwende",
+        "Umkehr"
+      ],
+      "meaning": "Die Wiederkehr des Lichts. Nach dem Ende der Neuanfang. Kleiner Same in dunkler Zeit.",
+      "advice": "Auf das kleine Licht achten. Kraft sammeln.",
+      "love": "Neue Liebe kehrt zurück.",
+      "career": "Karriere-Neuanfang.",
+      "spiritual": "Spirituelles Erwachen nach langer Nacht."
+    },
+    "25": {
+      "number": 25,
+      "name_de": "Die Unschuld",
+      "name_cn": "無妄 Wú Wàng",
+      "upper_trigram": "Himmel",
+      "lower_trigram": "Donner",
+      "keywords": [
+        "Unschuld",
+        "Natürlichkeit",
+        "Authentizität",
+        "im Fluss sein"
+      ],
+      "meaning": "Handeln aus reiner Absicht, ohne Berechnung. Natürlich sein.",
+      "advice": "Nicht kalkulieren. Handle spontan und aufrichtig.",
+      "love": "Ehrliche, unverstellte Liebe.",
+      "career": "Authentische Karriere-Wahl.",
+      "spiritual": "Zurück zum ursprünglichen Selbst."
+    },
+    "26": {
+      "number": 26,
+      "name_de": "Des Großen Zähmungskraft",
+      "name_cn": "大畜 Dà Xù",
+      "upper_trigram": "Berg",
+      "lower_trigram": "Himmel",
+      "keywords": [
+        "Kraft sammeln",
+        "große Zurückhaltung",
+        "Vorbereitung"
+      ],
+      "meaning": "Große Energie wird gesammelt und zurückgehalten. Nutze diese Zeit für Vorbereitung.",
+      "advice": "Kraft aufbauen. Nicht verpuffen. Für Großes.",
+      "love": "Beziehung stärkt sich intern.",
+      "career": "Reserven aufbauen, große Pläne vorbereiten.",
+      "spiritual": "Spirituelle Kraft ansammeln."
+    },
+    "27": {
+      "number": 27,
+      "name_de": "Die Ernährung",
+      "name_cn": "頤 Yí",
+      "upper_trigram": "Berg",
+      "lower_trigram": "Donner",
+      "keywords": [
+        "Nährung",
+        "Ernährung",
+        "Fürsorge",
+        "geistige Nahrung"
+      ],
+      "meaning": "Wichtig, was du zu dir nimmst — Nahrung, Worte, Ideen, Menschen.",
+      "advice": "Sorgfältig wählen was du nährst und was dich nährt.",
+      "love": "In der Liebe: pflegen was Freude bringt.",
+      "career": "Investiere in was dich nährt.",
+      "spiritual": "Geistige Nahrung wichtig."
+    },
+    "28": {
+      "number": 28,
+      "name_de": "Des Großen Übergewicht",
+      "name_cn": "大過 Dà Guò",
+      "upper_trigram": "See",
+      "lower_trigram": "Wind",
+      "keywords": [
+        "Zu viel",
+        "Krise",
+        "Belastung",
+        "Umbruch"
+      ],
+      "meaning": "Übermäßige Last. Dinge sind aus dem Gleichgewicht. Radikaler Eingriff nötig.",
+      "advice": "Handeln jetzt, sonst bricht alles.",
+      "love": "Beziehung überlastet — Krise.",
+      "career": "Firma in Schieflage — radikale Änderung.",
+      "spiritual": "Krise als Chance zur Transformation."
+    },
+    "29": {
+      "number": 29,
+      "name_de": "Das Abgründige",
+      "name_cn": "坎 Kǎn",
+      "upper_trigram": "Wasser",
+      "lower_trigram": "Wasser",
+      "keywords": [
+        "Gefahr",
+        "Prüfung",
+        "Durchhalten",
+        "Tiefe"
+      ],
+      "meaning": "Wasser über Wasser — verdoppelte Gefahr. Aber Gefahr macht groß.",
+      "advice": "Nicht aufgeben. Kontinuität ist Rettung.",
+      "love": "Beziehungsprobleme — durchstehen.",
+      "career": "Schwere Zeit im Beruf — durchhalten.",
+      "spiritual": "Prüfung als spirituelles Wachstum."
+    },
+    "30": {
+      "number": 30,
+      "name_de": "Das Haftende",
+      "name_cn": "離 Lí",
+      "upper_trigram": "Feuer",
+      "lower_trigram": "Feuer",
+      "keywords": [
+        "Klarheit",
+        "Licht",
+        "Anhaftung",
+        "Bewusstsein"
+      ],
+      "meaning": "Feuer über Feuer — doppelte Klarheit. Verbunden sein mit etwas Höherem.",
+      "advice": "Bewusst leuchten. An das Höhere haften.",
+      "love": "Klare, feurige Liebe.",
+      "career": "Klarheit in Vision und Ziel.",
+      "spiritual": "Bewusstseins-Klarheit."
+    },
+    "31": {
+      "number": 31,
+      "name_de": "Die Einwirkung",
+      "name_cn": "咸 Xián",
+      "upper_trigram": "See",
+      "lower_trigram": "Berg",
+      "keywords": [
+        "Anziehung",
+        "Werbung",
+        "Verlobung",
+        "Verlockung"
+      ],
+      "meaning": "Anziehung zwischen zwei Menschen. Beginn einer Beziehung.",
+      "advice": "Empfange. Sei anziehend durch Bescheidenheit.",
+      "love": "Verlobung, neue Liebe.",
+      "career": "Neue Kunden anziehen.",
+      "spiritual": "Anziehung des Höheren."
+    },
+    "32": {
+      "number": 32,
+      "name_de": "Die Dauer",
+      "name_cn": "恆 Héng",
+      "upper_trigram": "Donner",
+      "lower_trigram": "Wind",
+      "keywords": [
+        "Beständigkeit",
+        "Dauer",
+        "Kontinuität"
+      ],
+      "meaning": "Beständigkeit ist die Kraft, die trägt. Nicht schnell, aber lang.",
+      "advice": "Dranbleiben. Kontinuität ist Erfolg.",
+      "love": "Langfristige Beziehung.",
+      "career": "Karriere durch Ausdauer.",
+      "spiritual": "Tägliche Praxis."
+    },
+    "33": {
+      "number": 33,
+      "name_de": "Der Rückzug",
+      "name_cn": "遯 Dùn",
+      "upper_trigram": "Himmel",
+      "lower_trigram": "Berg",
+      "keywords": [
+        "Rückzug",
+        "Weisheit im Zurückweichen",
+        "Timing"
+      ],
+      "meaning": "Zeit sich zurückzuziehen. Nicht Feigheit — Weisheit.",
+      "advice": "Rechtzeitig gehen. Nicht kämpfen wo verloren ist.",
+      "love": "Beziehung endet — würdevoll gehen.",
+      "career": "Karriere-Rückzug für neue Chance.",
+      "spiritual": "Rückzug für Meditation."
+    },
+    "34": {
+      "number": 34,
+      "name_de": "Des Großen Macht",
+      "name_cn": "大壯 Dà Zhuàng",
+      "upper_trigram": "Donner",
+      "lower_trigram": "Himmel",
+      "keywords": [
+        "Macht",
+        "Kraft",
+        "Vorwärts",
+        "Sieg"
+      ],
+      "meaning": "Große Macht ist da. Aber nutze sie weise, nicht brutal.",
+      "advice": "Macht mit Rechtschaffenheit einsetzen.",
+      "love": "Starke Persönlichkeit in der Liebe.",
+      "career": "Karriere-Höhepunkt, mächtige Position.",
+      "spiritual": "Große spirituelle Kraft."
+    },
+    "35": {
+      "number": 35,
+      "name_de": "Der Fortschritt",
+      "name_cn": "晉 Jìn",
+      "upper_trigram": "Feuer",
+      "lower_trigram": "Erde",
+      "keywords": [
+        "Fortschritt",
+        "Aufstieg",
+        "Belohnung",
+        "Anerkennung"
+      ],
+      "meaning": "Zeit des Aufstiegs. Belohnung für harte Arbeit. Sonnenaufgang.",
+      "advice": "Weiter aufsteigen. Anerkennung annehmen.",
+      "love": "Beziehung wird öffentlich.",
+      "career": "Beförderung, Anerkennung.",
+      "spiritual": "Aufstieg im Bewusstsein."
+    },
+    "36": {
+      "number": 36,
+      "name_de": "Die Verfinsterung des Lichts",
+      "name_cn": "明夷 Míng Yí",
+      "upper_trigram": "Erde",
+      "lower_trigram": "Feuer",
+      "keywords": [
+        "Verfinsterung",
+        "schwere Zeit",
+        "Licht verbergen"
+      ],
+      "meaning": "Zeit der Verfinsterung. Licht ist bedroht. Verbirg das Licht, aber halte es am Leben.",
+      "advice": "In schwerer Zeit still bleiben, Kraft bewahren.",
+      "love": "Beziehung schwierig — Geduld.",
+      "career": "Karriere-Rückschlag — durchhalten.",
+      "spiritual": "Innere Kraft im Verborgenen bewahren."
+    },
+    "37": {
+      "number": 37,
+      "name_de": "Die Sippe",
+      "name_cn": "家人 Jiā Rén",
+      "upper_trigram": "Wind",
+      "lower_trigram": "Feuer",
+      "keywords": [
+        "Familie",
+        "Zuhause",
+        "Sippe",
+        "innere Ordnung"
+      ],
+      "meaning": "Ordnung in der Familie. Rollen klar. Zuhause als Fundament.",
+      "advice": "Familie pflegen. Ordnung schaffen.",
+      "love": "Familienleben, Ehe.",
+      "career": "Familienunternehmen, Team wie Familie.",
+      "spiritual": "Innere Ordnung als spirituelle Praxis."
+    },
+    "38": {
+      "number": 38,
+      "name_de": "Der Gegensatz",
+      "name_cn": "睽 Kuí",
+      "upper_trigram": "Feuer",
+      "lower_trigram": "See",
+      "keywords": [
+        "Gegensatz",
+        "Missverständnis",
+        "Isolation",
+        "Andersartigkeit"
+      ],
+      "meaning": "Menschen driften auseinander. Missverständnisse häufen sich.",
+      "advice": "Kleine Dinge angehen. Große Kämpfe vermeiden.",
+      "love": "Beziehung in Missverständnis.",
+      "career": "Team gespalten.",
+      "spiritual": "Isolation als Zeit zur Rückkehr zum Selbst."
+    },
+    "39": {
+      "number": 39,
+      "name_de": "Das Hemmnis",
+      "name_cn": "蹇 Jiǎn",
+      "upper_trigram": "Wasser",
+      "lower_trigram": "Berg",
+      "keywords": [
+        "Hindernis",
+        "Verzögerung",
+        "Innehalten"
+      ],
+      "meaning": "Ein Hindernis blockiert den Weg. Klug ist innezuhalten und zu warten.",
+      "advice": "Nicht mit Kopf durch die Wand. Anderen Weg suchen oder warten.",
+      "love": "Beziehung stockt.",
+      "career": "Karriere-Hindernis.",
+      "spiritual": "Hindernis als Lehrer."
+    },
+    "40": {
+      "number": 40,
+      "name_de": "Die Befreiung",
+      "name_cn": "解 Xiè",
+      "upper_trigram": "Donner",
+      "lower_trigram": "Wasser",
+      "keywords": [
+        "Erleichterung",
+        "Befreiung",
+        "Lösung",
+        "Vergebung"
+      ],
+      "meaning": "Nach der Krise die Befreiung. Der Knoten löst sich. Vergebung.",
+      "advice": "Loslassen was befreit. Vergeben.",
+      "love": "Beziehungs-Klärung, Vergebung.",
+      "career": "Karriere befreit sich.",
+      "spiritual": "Karma löst sich."
+    },
+    "41": {
+      "number": 41,
+      "name_de": "Die Minderung",
+      "name_cn": "損 Sǔn",
+      "upper_trigram": "Berg",
+      "lower_trigram": "See",
+      "keywords": [
+        "Verzicht",
+        "Reduktion",
+        "Opfer",
+        "Weisheit im Weniger"
+      ],
+      "meaning": "Weniger ist mehr. Freiwilliger Verzicht bringt langfristigen Gewinn.",
+      "advice": "Reduziere freiwillig. Opfere Kurzfristiges für Langfristiges.",
+      "love": "In der Beziehung: geben.",
+      "career": "Reduktion, Sparen bringt Wachstum.",
+      "spiritual": "Askese als Weg."
+    },
+    "42": {
+      "number": 42,
+      "name_de": "Die Mehrung",
+      "name_cn": "益 Yì",
+      "upper_trigram": "Wind",
+      "lower_trigram": "Donner",
+      "keywords": [
+        "Wachstum",
+        "Mehrung",
+        "Segen",
+        "Fülle"
+      ],
+      "meaning": "Zeit der Mehrung. Investieren, wachsen, geben und empfangen.",
+      "advice": "Investiere in Wachstum. Andere fördern.",
+      "love": "Beziehung wächst.",
+      "career": "Karriere expandiert.",
+      "spiritual": "Spirituelles Wachstum."
+    },
+    "43": {
+      "number": 43,
+      "name_de": "Der Durchbruch",
+      "name_cn": "夬 Guài",
+      "upper_trigram": "See",
+      "lower_trigram": "Himmel",
+      "keywords": [
+        "Durchbruch",
+        "Entschluss",
+        "Klarheit",
+        "Krise überwinden"
+      ],
+      "meaning": "Entscheidender Durchbruch. Alles klar aussprechen. Konfrontation nötig.",
+      "advice": "Klar entscheiden. Nicht mehr zögern.",
+      "love": "Beziehungs-Klärung — jetzt oder nie.",
+      "career": "Karriere-Durchbruch.",
+      "spiritual": "Ego-Durchbruch."
+    },
+    "44": {
+      "number": 44,
+      "name_de": "Das Entgegenkommen",
+      "name_cn": "姤 Gòu",
+      "upper_trigram": "Himmel",
+      "lower_trigram": "Wind",
+      "keywords": [
+        "Verlockung",
+        "Begegnung",
+        "Vorsicht"
+      ],
+      "meaning": "Eine kleine Kraft kommt entgegen. Vorsicht — kann verlocken oder korrumpieren.",
+      "advice": "Aufmerksam sein. Nicht in Versuchung geraten.",
+      "love": "Neue Anziehung — aber Vorsicht.",
+      "career": "Neue Angebote — kritisch prüfen.",
+      "spiritual": "Versuchung erkennen."
+    },
+    "45": {
+      "number": 45,
+      "name_de": "Die Sammlung",
+      "name_cn": "萃 Cuì",
+      "upper_trigram": "See",
+      "lower_trigram": "Erde",
+      "keywords": [
+        "Versammlung",
+        "Gemeinschaft",
+        "Zusammenkunft"
+      ],
+      "meaning": "Menschen versammeln sich. Führer werden gebraucht.",
+      "advice": "Sich sammeln. Andere mit-nehmen. Führen.",
+      "love": "Familienfeier, Beziehung feiern.",
+      "career": "Team-Meeting, Vereinigung.",
+      "spiritual": "Spirituelle Gemeinschaft."
+    },
+    "46": {
+      "number": 46,
+      "name_de": "Das Empordringen",
+      "name_cn": "升 Shēng",
+      "upper_trigram": "Erde",
+      "lower_trigram": "Wind",
+      "keywords": [
+        "Aufsteigen",
+        "Wachstum",
+        "langsamer Aufstieg"
+      ],
+      "meaning": "Sanftes Aufsteigen — wie eine Pflanze aus der Erde. Geduldig aber sicher.",
+      "advice": "Kleine Schritte, aber stetig aufwärts.",
+      "love": "Beziehung wächst langsam.",
+      "career": "Karriere-Aufstieg.",
+      "spiritual": "Wachstum durch Praxis."
+    },
+    "47": {
+      "number": 47,
+      "name_de": "Die Bedrängnis",
+      "name_cn": "困 Kùn",
+      "upper_trigram": "See",
+      "lower_trigram": "Wasser",
+      "keywords": [
+        "Erschöpfung",
+        "Enge",
+        "Bedrängnis",
+        "Krise"
+      ],
+      "meaning": "Zeit der Bedrängnis. Erschöpfung. Aber der weise Mensch bleibt heiter.",
+      "advice": "Nicht aufgeben. Innere Kraft finden.",
+      "love": "Beziehungs-Krise.",
+      "career": "Berufliche Enge.",
+      "spiritual": "Krise als Läuterung."
+    },
+    "48": {
+      "number": 48,
+      "name_de": "Der Brunnen",
+      "name_cn": "井 Jǐng",
+      "upper_trigram": "Wasser",
+      "lower_trigram": "Wind",
+      "keywords": [
+        "Quelle",
+        "Nährung",
+        "Grundlage",
+        "unerschöpflich"
+      ],
+      "meaning": "Der Brunnen — nährt alle, unerschöpflich, wenn gut gepflegt. Kern der Gemeinschaft.",
+      "advice": "Was nährt dich, was nährst du?",
+      "love": "Beziehung als gemeinsame Quelle.",
+      "career": "Berufung als Quelle für andere.",
+      "spiritual": "Innere Quelle finden."
+    },
+    "49": {
+      "number": 49,
+      "name_de": "Die Umwälzung",
+      "name_cn": "革 Gé",
+      "upper_trigram": "See",
+      "lower_trigram": "Feuer",
+      "keywords": [
+        "Revolution",
+        "Wandel",
+        "Umwälzung",
+        "radikaler Change"
+      ],
+      "meaning": "Zeit für radikale Veränderung. Revolution — wenn nötig.",
+      "advice": "Mut zur radikalen Änderung.",
+      "love": "Beziehung revolutionieren.",
+      "career": "Karriere-Revolution.",
+      "spiritual": "Radikale spirituelle Wandlung."
+    },
+    "50": {
+      "number": 50,
+      "name_de": "Der Tiegel",
+      "name_cn": "鼎 Dǐng",
+      "upper_trigram": "Feuer",
+      "lower_trigram": "Wind",
+      "keywords": [
+        "Transformation",
+        "Kochen",
+        "Ritual",
+        "spirituelle Nahrung"
+      ],
+      "meaning": "Der Ritual-Tiegel. Zutaten werden transformiert. Kultur, Kunst, Spiritualität.",
+      "advice": "Etwas Neues erschaffen aus alten Elementen.",
+      "love": "Beziehung transformiert.",
+      "career": "Kreatives Projekt.",
+      "spiritual": "Alchemie des Selbst."
+    },
+    "51": {
+      "number": 51,
+      "name_de": "Das Erregende",
+      "name_cn": "震 Zhèn",
+      "upper_trigram": "Donner",
+      "lower_trigram": "Donner",
+      "keywords": [
+        "Schock",
+        "Erschütterung",
+        "Erwachen"
+      ],
+      "meaning": "Doppelter Donner — großer Schock. Aber der Weise bleibt ruhig.",
+      "advice": "Ruhig bleiben im Schock. Erwachen.",
+      "love": "Beziehungs-Schock.",
+      "career": "Karriere-Erschütterung.",
+      "spiritual": "Spirituelles Erwachen durch Schock."
+    },
+    "52": {
+      "number": 52,
+      "name_de": "Das Stillhalten",
+      "name_cn": "艮 Gèn",
+      "upper_trigram": "Berg",
+      "lower_trigram": "Berg",
+      "keywords": [
+        "Meditation",
+        "Stille",
+        "Ruhen",
+        "Innehalten"
+      ],
+      "meaning": "Zweifach Berg — absolute Stille. Meditation. Ruhen.",
+      "advice": "Innehalten. Nicht handeln. Meditieren.",
+      "love": "Beziehungs-Pause.",
+      "career": "Karriere-Pause.",
+      "spiritual": "Meditation, Rückzug."
+    },
+    "53": {
+      "number": 53,
+      "name_de": "Die Entwicklung (allmähliche)",
+      "name_cn": "漸 Jiàn",
+      "upper_trigram": "Wind",
+      "lower_trigram": "Berg",
+      "keywords": [
+        "Langsamer Fortschritt",
+        "Entwicklung",
+        "Reife"
+      ],
+      "meaning": "Wie ein Baum wächst — langsam, aber unaufhaltsam. Reife durch Zeit.",
+      "advice": "Nichts überstürzen. Reifezeit respektieren.",
+      "love": "Beziehung wächst langsam zur Reife.",
+      "career": "Karriere reift.",
+      "spiritual": "Spirituelle Reife durch Zeit."
+    },
+    "54": {
+      "number": 54,
+      "name_de": "Das heiratende Mädchen",
+      "name_cn": "歸妹 Guī Mèi",
+      "upper_trigram": "Donner",
+      "lower_trigram": "See",
+      "keywords": [
+        "Untergeordnete Rolle",
+        "Verantwortung",
+        "Kompromiss"
+      ],
+      "meaning": "Eine Position, wo man nicht führen kann. Untergeordnete Rolle akzeptieren.",
+      "advice": "Bescheiden bleiben in der zweiten Reihe.",
+      "love": "Beziehung mit klaren Rollen.",
+      "career": "Junior-Rolle akzeptieren.",
+      "spiritual": "Diener statt Meister."
+    },
+    "55": {
+      "number": 55,
+      "name_de": "Die Fülle",
+      "name_cn": "豐 Fēng",
+      "upper_trigram": "Donner",
+      "lower_trigram": "Feuer",
+      "keywords": [
+        "Fülle",
+        "Höhepunkt",
+        "Mittag"
+      ],
+      "meaning": "Zeit der Fülle. Mittagssonne. Aber nach dem Höhepunkt kommt der Abstieg.",
+      "advice": "Fülle genießen und nutzen — aber wissen: Zenit ist kurz.",
+      "love": "Beziehungs-Höhepunkt.",
+      "career": "Karriere-Höhepunkt.",
+      "spiritual": "Erleuchtungs-Erfahrung."
+    },
+    "56": {
+      "number": 56,
+      "name_de": "Der Wanderer",
+      "name_cn": "旅 Lǚ",
+      "upper_trigram": "Feuer",
+      "lower_trigram": "Berg",
+      "keywords": [
+        "Reisen",
+        "Fremde",
+        "Bewegung"
+      ],
+      "meaning": "Wanderer in fremdem Land. Nichts ist Zuhause. Anpassung nötig.",
+      "advice": "Als Reisender bescheiden sein. Nicht auffallen.",
+      "love": "Beziehung unterwegs.",
+      "career": "Reise-Karriere.",
+      "spiritual": "Spirituelle Reise, Pilgerschaft."
+    },
+    "57": {
+      "number": 57,
+      "name_de": "Das Sanfte",
+      "name_cn": "巽 Xùn",
+      "upper_trigram": "Wind",
+      "lower_trigram": "Wind",
+      "keywords": [
+        "Sanftes Eindringen",
+        "Einfluss",
+        "Anpassung"
+      ],
+      "meaning": "Doppelter Wind — sanftes stetiges Eindringen. Kleine Kraft, große Wirkung durch Konsequenz.",
+      "advice": "Sanft aber stetig einwirken.",
+      "love": "Sanfte Beziehung.",
+      "career": "Sanfter Einfluss im Team.",
+      "spiritual": "Sanfte spirituelle Praxis."
+    },
+    "58": {
+      "number": 58,
+      "name_de": "Das Heitere",
+      "name_cn": "兌 Duì",
+      "upper_trigram": "See",
+      "lower_trigram": "See",
+      "keywords": [
+        "Freude",
+        "Heiterkeit",
+        "Genuss"
+      ],
+      "meaning": "Doppelter See — Freude. Aber wahre Freude kommt von innen.",
+      "advice": "Freude teilen. Aber Substanz vor Oberfläche.",
+      "love": "Freudige Beziehung.",
+      "career": "Positives Arbeitsklima.",
+      "spiritual": "Freude als spirituelle Praxis."
+    },
+    "59": {
+      "number": 59,
+      "name_de": "Die Auflösung",
+      "name_cn": "渙 Huàn",
+      "upper_trigram": "Wind",
+      "lower_trigram": "Wasser",
+      "keywords": [
+        "Auflösung",
+        "Zerstreuung",
+        "Sammlung"
+      ],
+      "meaning": "Alles löst sich auf. Aber im Chaos liegt die Chance für neue Ordnung.",
+      "advice": "Sammle was zerstreut ist.",
+      "love": "Beziehung droht sich aufzulösen — sammeln.",
+      "career": "Team droht auseinander — sammeln.",
+      "spiritual": "Ego-Auflösung."
+    },
+    "60": {
+      "number": 60,
+      "name_de": "Die Beschränkung",
+      "name_cn": "節 Jié",
+      "upper_trigram": "Wasser",
+      "lower_trigram": "See",
+      "keywords": [
+        "Grenzen",
+        "Disziplin",
+        "Beschränkung"
+      ],
+      "meaning": "Grenzen sind nötig. Freiheit durch Struktur.",
+      "advice": "Sich beschränken hilft. Ressourcen bewahren.",
+      "love": "Beziehung mit Grenzen.",
+      "career": "Budget einhalten.",
+      "spiritual": "Disziplin als Weg."
+    },
+    "61": {
+      "number": 61,
+      "name_de": "Die innere Wahrheit",
+      "name_cn": "中孚 Zhōng Fú",
+      "upper_trigram": "Wind",
+      "lower_trigram": "See",
+      "keywords": [
+        "Wahrheit",
+        "Aufrichtigkeit",
+        "Herzensglaube"
+      ],
+      "meaning": "Innere Wahrheit strahlt aus. Aufrichtigkeit gewinnt.",
+      "advice": "Wahrhaft bleiben. Auch das Herz von Tieren gewinnt Wahrheit.",
+      "love": "Ehrliche Beziehung.",
+      "career": "Ehrliche Karriere.",
+      "spiritual": "Innere Wahrheit finden."
+    },
+    "62": {
+      "number": 62,
+      "name_de": "Des Kleinen Übergewicht",
+      "name_cn": "小過 Xiǎo Guò",
+      "upper_trigram": "Donner",
+      "lower_trigram": "Berg",
+      "keywords": [
+        "Klein bleiben",
+        "kleine Details",
+        "Bescheidenheit"
+      ],
+      "meaning": "Kleine Dinge machen — nicht Großes. Bescheiden bleiben.",
+      "advice": "Klein anfangen. Nicht groß tun.",
+      "love": "Kleine Gesten in Liebe.",
+      "career": "Kleine Aufgaben sorgfältig.",
+      "spiritual": "Klein-Sein als Weg."
+    },
+    "63": {
+      "number": 63,
+      "name_de": "Nach der Vollendung",
+      "name_cn": "既濟 Jì Jì",
+      "upper_trigram": "Wasser",
+      "lower_trigram": "Feuer",
+      "keywords": [
+        "Vollendet",
+        "Ordnung",
+        "Höhepunkt",
+        "Wachsamkeit"
+      ],
+      "meaning": "Alles ist am Platz. Aber nach der Vollendung kommt der Zerfall — bleib wachsam.",
+      "advice": "Wach bleiben trotz Erfolg. Kontinuität pflegen.",
+      "love": "Beziehung vollendet — nicht faul werden.",
+      "career": "Karriere-Höhepunkt — wachsam bleiben.",
+      "spiritual": "Erleuchtung ist nicht Endstation."
+    },
+    "64": {
+      "number": 64,
+      "name_de": "Vor der Vollendung",
+      "name_cn": "未濟 Wèi Jì",
+      "upper_trigram": "Feuer",
+      "lower_trigram": "Wasser",
+      "keywords": [
+        "Noch nicht",
+        "Übergang",
+        "Chaos vor Ordnung"
+      ],
+      "meaning": "Noch nicht am Ziel. Alles noch in Bewegung. Aber die Vollendung ist nah.",
+      "advice": "Weitermachen. Das Ziel ist in Reichweite.",
+      "love": "Beziehung noch nicht vollendet — dranbleiben.",
+      "career": "Karriere noch nicht ganz — weiter.",
+      "spiritual": "Weg noch nicht am Ende — weiter praktizieren."
+    }
+  },
+  "app_workflow": {
+    "consultation_flow": [
+      "1. User stellt Frage (Journal-Eintrag oder direkt)",
+      "2. User schüttelt Handy 6× ODER klickt 'Ziehen'",
+      "3. App generiert 6 Werte (6, 7, 8, oder 9) für die 6 Linien",
+      "4. App baut Hexagramm von unten nach oben",
+      "5. Bei wandelnden Linien (6 oder 9): zweites Hexagramm generieren",
+      "6. Deutung anzeigen mit Bezug zur Frage"
+    ],
+    "coin_probabilities": {
+      "6 (alte Yin, wandelnd)": "12.5% (1/8)",
+      "7 (junge Yang)": "37.5% (3/8)",
+      "8 (junge Yin)": "37.5% (3/8)",
+      "9 (alte Yang, wandelnd)": "12.5% (1/8)"
+    },
+    "code_javascript": "function throwLine() { const r = Math.random(); if (r < 0.125) return {value: 6, type: 'yin', changing: true}; if (r < 0.5) return {value: 7, type: 'yang', changing: false}; if (r < 0.875) return {value: 8, type: 'yin', changing: false}; return {value: 9, type: 'yang', changing: true}; } function buildHexagram() { const lines = []; for (let i = 0; i < 6; i++) lines.push(throwLine()); return lines; }",
+    "code_python": "import random\ndef throw_line():\n  r = random.random()\n  if r < 0.125: return {'value': 6, 'type': 'yin', 'changing': True}\n  if r < 0.5: return {'value': 7, 'type': 'yang', 'changing': False}\n  if r < 0.875: return {'value': 8, 'type': 'yin', 'changing': False}\n  return {'value': 9, 'type': 'yang', 'changing': True}\ndef build_hexagram(): return [throw_line() for _ in range(6)]",
+    "features_recommended": [
+      "Digitale Münzwurf-Animation",
+      "Hexagramm-Bibliothek zum Nachlesen",
+      "Fragen-Historie",
+      "Journal-Integration (Frage + Deutung speichern)",
+      "Push-Notification 'Ziehe dein Hexagramm des Tages'",
+      "Wandelnde Linien mit Übergangsdeutung"
+    ]
+  },
+  "ethics": {
+    "disclaimer": "I Ching-Deutungen sind traditionell und wissenschaftlich nicht validiert. Sie dienen der Reflexion, nicht der Vorhersage.",
+    "note": "Das I Ching lehrt seit 3000 Jahren, dass Wandel die einzige Konstante ist."
+  }
+}

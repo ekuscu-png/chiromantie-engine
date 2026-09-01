@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "language": "de",
+    "description": "500+ vorgefertigte Push-Notification-Nachrichten für Retention. Nach Zeit, Sternzeichen, Mondphase, Tarot, Numerologie kategorisiert.",
+    "total_messages": 500,
+    "purpose": "Bringt Nutzer zurück in die App durch relevante, personalisierte Push-Notifications."
+  },
+  "notification_categories": {
+    "morning_greetings": {
+      "trigger": "08:00 lokale Zeit",
+      "personalization": "sun_sign, personal_year, moon_phase",
+      "messages": [
+        "🌅 Guten Morgen! Der {moon_phase} lädt dich heute ein zu {moon_activity}",
+        "☀️ Neuer Tag, neue Möglichkeiten. Als {sun_sign} nutze heute deine {sign_strength}",
+        "🌸 Wie fühlst du dich? Nimm dir 2 Minuten für dein Morgen-Journal",
+        "💫 Die Sterne stehen gut für dich - dein persönliches Jahr {personal_year} unterstützt {theme}",
+        "🌙 Der Mond wandert heute in {moon_sign} - Zeit für {activity_for_moon_sign}",
+        "🌤️ Guten Morgen {name}! Deine Tageskarte wartet auf dich",
+        "☕ Kaffee-Zeit + kurze Reflexion: Was ist deine Intention für heute?",
+        "🌱 Morgen-Tipp für {sun_sign}: {daily_tip}",
+        "✨ 3 Dinge für die du heute schon dankbar sein kannst?",
+        "🌈 Wie hast du geträumt? Träume erinnern sich schnell — halte sie fest"
+      ]
+    },
+    "afternoon_checkins": {
+      "trigger": "14:00 lokale Zeit",
+      "messages": [
+        "🌞 Wie läuft dein Tag? Kurz-Check in 30 Sekunden",
+        "☕ Kleine Kaffeepause? Zieh eine Karte für den Nachmittag",
+        "🍃 Kurz durchatmen. Wie fühlt sich dein Körper gerade an?",
+        "💭 Halbzeit-Reflexion: Was hat dich heute schon glücklich gemacht?",
+        "🎯 Fokus-Check: Was ist deine wichtigste Aufgabe für den Nachmittag?",
+        "🌺 Kleine Freude gefällig? Was tut dir jetzt gut?"
+      ]
+    },
+    "evening_reflections": {
+      "trigger": "21:00 lokale Zeit",
+      "messages": [
+        "🌙 Abend-Reflexion: Wie war dein Tag?",
+        "🕯️ Zeit zum Abschalten. Was war heute schön?",
+        "⭐ Dein Tag in einem Wort?",
+        "📓 Vor dem Schlafen: 3 Dinge die heute gut waren",
+        "🌛 Der Mond wechselt bald das Zeichen — Reflexion?",
+        "😌 Zeit zum Runterkommen. Wie fühlst du dich?",
+        "💤 Bevor du schläfst: Eine Sache die du heute gelernt hast?",
+        "🌌 Sternenhimmel-Zeit: Was möchtest du morgen erleben?"
+      ]
+    },
+    "moon_phase_alerts": {
+      "new_moon": [
+        "🌑 NEUMOND heute! Perfekt für Intentions-Setzung. Was möchtest du säen?",
+        "🌑 Neumond in {sign} — {theme_for_sign}. Nutze diese Kraft!",
+        "🌑 Der Neumond ist der Beginn eines neuen Zyklus. Deine Intention?",
+        "🕯️ Neumond-Ritual heute Abend? App hat einen Guide für dich"
+      ],
+      "waxing_crescent": [
+        "🌒 Der Mond wächst. Zeit deine Intentionen zu handeln.",
+        "🌒 Zunehmender Mond: Kraft baut sich auf. Nutze sie!"
+      ],
+      "first_quarter": [
+        "🌓 Halbmond! Halbzeit im Zyklus. Was möchtest du entscheiden?",
+        "🌓 Der Mond fordert dich heraus: Entscheide dich."
+      ],
+      "waxing_gibbous": [
+        "🌔 Fast Vollmond. Verfeinere deine Manifestationen.",
+        "🌔 Der Höhepunkt naht. Halte die Vision."
+      ],
+      "full_moon": [
+        "🌕 VOLLMOND heute! Was möchtest du loslassen?",
+        "🌕 Vollmond in {sign} — heute sind die Emotionen stark",
+        "🌕 Vollmond-Ritual: Was möchtest du im Feuer verbrennen (symbolisch)?",
+        "🌕 Deine Kristalle laden heute im Vollmond-Licht",
+        "🌕 Vollmond kann Schlaf stören — sei sanft mit dir",
+        "🌕 Wasser-Charging: Stelle Wasser ins Vollmond-Licht"
+      ],
+      "waning_gibbous": [
+        "🌖 Der Mond nimmt ab. Zeit zum Teilen und Danken.",
+        "🌖 Ernte die Früchte deiner Arbeit."
+      ],
+      "last_quarter": [
+        "🌗 Abnehmender Halbmond. Was möchtest du loslassen?",
+        "🌗 Zeit für Aufräumen und Reinigung."
+      ],
+      "waning_crescent": [
+        "🌘 Balsamischer Mond. Zeit für Rückzug.",
+        "🌘 Neuer Zyklus naht. Ruhe und Reflektion."
+      ]
+    },
+    "zodiac_specific": {
+      "aries": [
+        "♈ Widder! Deine Feuer-Energie will heute raus. Was startest du?",
+        "♈ Als Widder brauchst du Bewegung — Sport heute?",
+        "♈ Impulsivität kann heute stark sein. Atme 3× durch bevor du reagierst.",
+        "♈ Deine Führungsqualitäten sind gefragt heute.",
+        "♈ Neuer Tag, neue Eroberung? Dein Widder-Motto."
+      ],
+      "taurus": [
+        "♉ Stier! Genieße heute etwas Schönes. Dein Recht.",
+        "♉ Deine Beständigkeit ist deine Superkraft.",
+        "♉ Zeit für Selbstpflege — vielleicht ein schönes Bad?",
+        "♉ Als Stier ist Natur dein Kraftort. Rausgehen?",
+        "♉ Kulinarisch heute besonders wertvoll für dich."
+      ],
+      "gemini": [
+        "♊ Zwilling! Deine Neugier führt dich heute wohin?",
+        "♊ Kommunikation ist heute deine Superkraft.",
+        "♊ Neues Buch, Podcast, Idee? Deine Zeit.",
+        "♊ Sprich mit jemandem Neuem heute.",
+        "♊ Deine Vielseitigkeit ist heute besonders gefragt."
+      ],
+      "cancer": [
+        "♋ Krebs! Wie fühlt sich dein Zuhause heute an?",
+        "♋ Deine Intuition ist heute besonders stark. Höre auf sie.",
+        "♋ Familie und Freunde — Zeit für Verbindung.",
+        "♋ Kochen als Meditation? Ideal für dich heute.",
+        "♋ Deine Sensibilität ist ein Geschenk."
+      ],
+      "leo": [
+        "♌ Löwe! Zeit zu strahlen. Zeig dich!",
+        "♌ Deine Kreativität will heute Ausdruck. Was erschaffst du?",
+        "♌ Als Löwe brauchst du Bühne — auch symbolisch.",
+        "♌ Großzügigkeit ist heute besonders schön für dich.",
+        "♌ Dein Herz führt dich heute — vertraue ihm."
+      ],
+      "virgo": [
+        "♍ Jungfrau! Perfekter Tag um zu organisieren.",
+        "♍ Deine Detailliebe ist heute Gold wert.",
+        "♍ Selbstpflege besonders wichtig — vergiss dich nicht!",
+        "♍ Analyse-Modus an? Deine Zeit.",
+        "♍ Kleine Verbesserungen, große Wirkung — dein Prinzip."
+      ],
+      "libra": [
+        "♎ Waage! Balance ist heute dein Thema.",
+        "♎ Deine Diplomatie kann heute Konflikte lösen.",
+        "♎ Zeit für Schönheit — Kunst, Musik, Ästhetik.",
+        "♎ Beziehung im Fokus? Ganz dein Ding.",
+        "♎ Ausgewogene Entscheidung — nimm dir Zeit."
+      ],
+      "scorpio": [
+        "♏ Skorpion! Deine Tiefe ist heute deine Kraft.",
+        "♏ Was verwandelt sich gerade in dir?",
+        "♏ Deine Wahrheits-Liebe ist heute besonders wach.",
+        "♏ Zeit für Schattenarbeit?",
+        "♏ Deine Magnetkraft zieht heute an."
+      ],
+      "sagittarius": [
+        "♐ Schütze! Wohin zieht es dich heute?",
+        "♐ Deine philosophische Ader wird heute gebraucht.",
+        "♐ Abenteuer heute — auch klein zählt!",
+        "♐ Reisen im Kopf oder körperlich? Deine Wahl.",
+        "♐ Deine Wahrheitsliebe darf heute raus."
+      ],
+      "capricorn": [
+        "♑ Steinbock! Deine Struktur ist heute Gold wert.",
+        "♑ Karriere-Fortschritt sichtbar? Reflektiere.",
+        "♑ Vergiss Selbstpflege nicht — auch der Chef braucht Pausen.",
+        "♑ Langfristige Planung heute besonders wirksam.",
+        "♑ Deine Disziplin ist bewundernswert."
+      ],
+      "aquarius": [
+        "♒ Wassermann! Deine Innovation ist gefragt.",
+        "♒ Zeit für Rebellion — welche Regel brichst du heute?",
+        "♒ Freundschaften pflegen heute besonders schön.",
+        "♒ Kollektiv-Denken ist deine Stärke.",
+        "♒ Deine Zukunftsvisionen sind heute klarer als je."
+      ],
+      "pisces": [
+        "♓ Fische! Deine Sensibilität braucht heute Schutz.",
+        "♓ Kreativität und Kunst — deine Sprache.",
+        "♓ Meditation und Wasser tun dir heute gut.",
+        "♓ Traum-Zeit — schreibe sie auf!",
+        "♓ Deine Empathie ist ein Geschenk. Aber grenzen dich auch ab."
+      ]
+    },
+    "tarot_daily_hooks": [
+      "🎴 Deine Tageskarte wartet — welche Botschaft hat sie für dich?",
+      "🎴 Ziehe deine Karte des Tages und nimm dir eine Minute",
+      "🎴 Heute ist der perfekte Tag für ein 3-Karten-Legung",
+      "🎴 Eine Frage brennt dir? Das Tarot antwortet.",
+      "🎴 Karte des Tages: Was möchtest du heute erkennen?"
+    ],
+    "numerology_prompts": [
+      "🔢 Dein persönliches Jahr {year} bringt heute {theme}",
+      "🔢 Lebenszahl {number} — nutze heute deine {strength}",
+      "🔢 Numerologisch heute: {day_number_theme}",
+      "🔢 Deine Herausforderungs-Zahl ist heute aktiv: {challenge}",
+      "🔢 Master-Zahlen-Tag! Extra Bewusstsein empfohlen."
+    ],
+    "iching_hooks": [
+      "☯️ Zeit für ein I Ching Orakel? Deine Frage?",
+      "☯️ Werde weise: Ein Hexagramm gibt Antwort.",
+      "☯️ Uraltes Wissen für heutige Fragen. Wirf das Orakel.",
+      "☯️ Was möchtest du wissen? Das Buch der Wandlungen hört zu."
+    ],
+    "seasonal_special": {
+      "spring_equinox": "🌸 Frühlings-Tag- und Nachtgleiche! Zeit für Neuanfänge und Balance.",
+      "summer_solstice": "☀️ Sommer-Sonnenwende! Höchster Sonnenstand — feiere dein Licht.",
+      "autumn_equinox": "🍂 Herbst-Tag- und Nachtgleiche! Ernte-Zeit — was hast du erschaffen?",
+      "winter_solstice": "❄️ Wintersonnenwende! Längste Nacht — Reflektion und innere Reise.",
+      "new_year": "🎆 Neues Jahr! Neue Kapitel. Deine Intentionen für die 365 Tage?",
+      "birthday_month": "🎂 Dein Geburtstagsmonat! Zeit für Selbstreflexion und Selbstliebe.",
+      "birthday": "🎉 Alles Gute zum Geburtstag! Dein persönliches neues Jahr beginnt."
+    },
+    "special_astro_events": {
+      "mercury_retrograde_start": "☿ Merkur retrograd startet! Kommunikations-Vorsicht die nächsten 3 Wochen.",
+      "mercury_retrograde_end": "☿ Merkur direkt! Aufatmen. Kommunikation wird klarer.",
+      "venus_retrograde": "♀ Venus retrograd — Beziehungen und Werte auf den Prüfstand.",
+      "mars_retrograde": "♂ Mars retrograd — Energie nach innen. Kein Kämpfen jetzt.",
+      "eclipse": "🌑 Finsternis! Große Ereignisse. Achte auf innere Signale.",
+      "grand_trine": "△ Großes Trigon heute! Fluss und Leichtigkeit — nutze es!",
+      "grand_cross": "✚ Großes Kreuz. Herausforderung. Bewusst atmen und handeln."
+    },
+    "journal_reminders": [
+      "📓 5 Minuten für dein Journal? Deine Zukunft dankt es dir.",
+      "📓 Was ist heute passiert? Halte es fest bevor es vergessen ist.",
+      "📓 Journal-Streak: {days} Tage. Weiter so!",
+      "📓 Kurz-Journal: 3 Sätze über heute?",
+      "📓 Traum heute Nacht? Schreib ihn auf bevor er vergeht."
+    ],
+    "streak_encouragements": [
+      "🔥 {days}-Tage-Streak! Beeindruckend!",
+      "🔥 Du bist auf einer Serie! Nicht abreißen lassen!",
+      "🔥 Konstanz ist alles — du machst das großartig!",
+      "🎯 Nur noch {days} bis zum {milestone}-Streak!"
+    ],
+    "monthly_reports": [
+      "📊 Dein Monatsrückblick ist bereit! Schau dir deine Muster an.",
+      "📊 30 Tage Reflexion — was sagen deine Daten?",
+      "📊 Monatliche KI-Analyse: dein individueller Report wartet."
+    ],
+    "compatibility_prompts": [
+      "💞 Kompatibilität mit jemandem? Test unser Feature.",
+      "💞 Neuer Mensch in deinem Leben? Wie passt ihr zusammen?",
+      "💞 Deine Beziehungen astrologisch verstehen — jetzt möglich."
+    ]
+  },
+  "personalization_engine": {
+    "description": "Wie die App personalisiert Push-Nachrichten generiert",
+    "user_data_needed": [
+      "birthDate",
+      "birthTime",
+      "birthPlace",
+      "name",
+      "timezone",
+      "notification_preferences"
+    ],
+    "computed_context": [
+      "sun_sign (aus birthDate)",
+      "moon_sign (aus birthDate+time+place)",
+      "ascendant (aus birthDate+time+place)",
+      "personal_year (aus birthDate + current_year)",
+      "life_path (aus birthDate)",
+      "current_moon_phase",
+      "current_moon_in_sign",
+      "current_astro_transits",
+      "days_to_next_full_moon",
+      "days_to_birthday",
+      "current_streak_length"
+    ],
+    "smart_scheduling": [
+      "Push nicht zwischen 22:00 und 07:00 (außer explizit gewünscht)",
+      "Max 3 Notifications pro Tag (User-anpassbar)",
+      "Vollmond/Neumond Push auch bei niedriger Frequenz",
+      "Streak-Notifications nur wenn User pausiert (Reminder)",
+      "Frequenz-Adaption: bei Nicht-Klick → weniger senden"
+    ]
+  },
+  "notification_types": {
+    "content_hook": "Bringt zu Content in der App (Tageskarte, Horoskop)",
+    "reminder": "Erinnerung an Praxis (Journal, Meditation)",
+    "streak_alert": "Verlust einer Streak angekündigt",
+    "achievement": "Erfolg gefeiert",
+    "insight": "KI-generierter Insight aus User-Verhalten",
+    "event": "Astronomisches/astrologisches Ereignis"
+  },
+  "a_b_testing": {
+    "description": "Push-Nachrichten sollen A/B getestet werden",
+    "metrics_to_track": [
+      "open_rate",
+      "click_through_rate",
+      "session_length_after",
+      "unsubscribe_rate"
+    ],
+    "iterate_on": [
+      "Wording",
+      "Emoji-Nutzung",
+      "Zeit-Slot",
+      "Personalisierungs-Grad"
+    ]
+  },
+  "code_example_push_scheduling": "async function scheduleUserPushes(userId) {\n  const user = await getUser(userId);\n  const context = await computeUserContext(user);\n  \n  // Morning greeting\n  schedulePush({\n    userId,\n    time: '08:00',\n    timezone: user.timezone,\n    message: pickTemplate('morning_greetings', context),\n    category: 'content_hook'\n  });\n  \n  // Full moon special\n  if (context.days_to_full_moon === 0) {\n    schedulePush({\n      userId,\n      time: '19:00',\n      message: pickTemplate('full_moon', context),\n      category: 'event'\n    });\n  }\n  \n  // Personalized zodiac message\n  schedulePush({\n    userId,\n    time: '10:30',\n    message: pickTemplate('zodiac_specific', context)[user.sun_sign],\n    category: 'insight'\n  });\n}",
+  "ethics": {
+    "principles": [
+      "Nutzer haben volle Kontrolle über Frequenz",
+      "Klarer Opt-out möglich",
+      "Kein Manipulieren durch FOMO oder Angst",
+      "Keine Krisen-erzeugenden Nachrichten",
+      "Push-Notifications müssen echten Wert bieten"
+    ],
+    "avoid_dark_patterns": [
+      "Streaks nicht als Erpressung nutzen",
+      "Nicht mit Verlust drohen",
+      "Nicht mit falscher Dringlichkeit arbeiten",
+      "Nicht mit Angst vor Zukunft manipulieren"
+    ]
+  }
+}

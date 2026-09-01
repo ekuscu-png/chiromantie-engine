@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "language": "de",
+    "description": "Journal-System für KI-gestützte Reflexion. Kombiniert klassische Tagebuchpraxis mit LLM-Analyse und Verknüpfung zu Astrologie, Numerologie, Mondkalender.",
+    "purpose": "Retention-Killer für die App. Nutzer schreibt täglich → App analysiert → verknüpft mit anderen Systemen → personalisiertes Feedback."
+  },
+  "journal_categories": {
+    "morning_reflection": {
+      "name_de": "Morgen-Reflexion",
+      "prompts": [
+        "Wie fühlst du dich heute morgen?",
+        "Wovon hast du heute Nacht geträumt?",
+        "Was ist deine wichtigste Aufgabe heute?",
+        "Für was bist du heute dankbar?",
+        "Was möchtest du heute loslassen?"
+      ],
+      "suggested_time": "07:00-09:00",
+      "estimated_duration": "5 Minuten",
+      "keywords_track": [
+        "mood",
+        "dream",
+        "intention",
+        "gratitude"
+      ]
+    },
+    "evening_reflection": {
+      "name_de": "Abend-Reflexion",
+      "prompts": [
+        "Wie war dein Tag emotional?",
+        "Was war dein größter Moment heute?",
+        "Was hat dich heute herausgefordert?",
+        "Was hast du heute gelernt?",
+        "Was möchtest du morgen anders machen?"
+      ],
+      "suggested_time": "21:00-23:00",
+      "estimated_duration": "10 Minuten",
+      "keywords_track": [
+        "mood_review",
+        "achievement",
+        "challenge",
+        "learning"
+      ]
+    },
+    "dream_journal": {
+      "name_de": "Traumtagebuch",
+      "prompts": [
+        "Beschreibe deinen Traum so detailliert wie möglich",
+        "Welche Emotionen hast du im Traum gefühlt?",
+        "Welche Symbole waren besonders auffällig?",
+        "Wer war in deinem Traum?",
+        "Was war die Grundstimmung?"
+      ],
+      "suggested_time": "direkt nach dem Aufwachen",
+      "estimated_duration": "5-15 Minuten",
+      "keywords_track": [
+        "dream_symbols",
+        "dream_emotions",
+        "recurring_themes"
+      ]
+    },
+    "emotion_release": {
+      "name_de": "Emotions-Entladung",
+      "prompts": [
+        "Was fühlst du gerade wirklich?",
+        "Wo im Körper spürst du das Gefühl?",
+        "Was löst dieses Gefühl aus?",
+        "Was möchte dieses Gefühl dir sagen?"
+      ],
+      "when_to_use": "Bei starken Emotionen (Wut, Trauer, Angst)",
+      "keywords_track": [
+        "emotion_type",
+        "trigger",
+        "body_location"
+      ]
+    },
+    "gratitude_practice": {
+      "name_de": "Dankbarkeits-Praxis",
+      "prompts": [
+        "Nenne 3 Dinge für die du dankbar bist",
+        "Wer hat heute etwas Gutes für dich getan?",
+        "Was war heute schön anzuschauen?",
+        "Was in deinem Leben ist gerade gut?"
+      ],
+      "recommended_daily": true,
+      "keywords_track": [
+        "gratitude_targets"
+      ]
+    },
+    "intention_setting": {
+      "name_de": "Intentions-Setzung",
+      "prompts": [
+        "Was möchtest du in diesem Monat manifestieren?",
+        "Was ist deine tiefe Absicht für dieses Jahr?",
+        "Welche Person möchtest du werden?",
+        "Was ist dein größter Wunsch?"
+      ],
+      "recommended_at": "Neumond, Jahresanfang, Geburtstag",
+      "keywords_track": [
+        "intentions",
+        "goals",
+        "wishes"
+      ]
+    },
+    "shadow_work": {
+      "name_de": "Schattenarbeit",
+      "prompts": [
+        "Was regt dich an anderen am meisten auf?",
+        "Welche Eigenschaft an dir magst du am wenigsten?",
+        "Wovor hast du am meisten Angst?",
+        "Welches Muster wiederholt sich in deinem Leben?",
+        "Was hast du deiner Familie noch nicht verziehen?"
+      ],
+      "warning": "Anspruchsvoll - nicht täglich empfohlen",
+      "recommended_at": "Vollmond, Wintersonnenwende",
+      "keywords_track": [
+        "shadow_themes",
+        "patterns",
+        "fears"
+      ]
+    },
+    "relationship_reflection": {
+      "name_de": "Beziehungs-Reflexion",
+      "prompts": [
+        "Wie geht es dir mit [Person]?",
+        "Was schätzt du an dieser Person?",
+        "Was fehlt in dieser Beziehung?",
+        "Was möchtest du besprechen?"
+      ],
+      "keywords_track": [
+        "relationship_status",
+        "relationship_needs"
+      ]
+    },
+    "creativity_flow": {
+      "name_de": "Kreative Idee",
+      "prompts": [
+        "Welche Idee ist heute in dir entstanden?",
+        "Was möchtest du erschaffen?",
+        "Was inspiriert dich gerade?"
+      ],
+      "keywords_track": [
+        "ideas",
+        "creative_projects",
+        "inspiration"
+      ]
+    },
+    "body_awareness": {
+      "name_de": "Körper-Wahrnehmung",
+      "prompts": [
+        "Wie fühlt sich dein Körper heute an?",
+        "Wo hast du Anspannung?",
+        "Was braucht dein Körper?",
+        "Wie war dein Schlaf, deine Ernährung, Bewegung?"
+      ],
+      "keywords_track": [
+        "body_areas",
+        "physical_state",
+        "needs"
+      ]
+    }
+  },
+  "llm_analysis_prompts": {
+    "description": "Prompt-Templates für die LLM-Analyse der Journal-Einträge",
+    "single_entry_analysis": {
+      "prompt_template": "Du bist ein einfühlsamer, weiser Freund mit Wissen in Astrologie, Numerologie und Psychologie. Analysiere diesen Journal-Eintrag mit Wärme und ohne zu urteilen.\n\nJournal-Eintrag: '''{entry_text}'''\n\nUser-Kontext:\n- Sternzeichen: {sun_sign}\n- Mondzeichen: {moon_sign}\n- Lebenszahl: {life_path}\n- Persönliches Jahr: {personal_year}\n- Aktuelle Mondphase: {moon_phase}\n- Aktueller Mond in Zeichen: {moon_in_sign}\n\nBitte antworte in 3 Absätzen:\n1. Empathische Zusammenfassung dessen, was der User gerade durchlebt\n2. Verknüpfung mit astrologischem/numerologischem Kontext (falls sinnvoll)\n3. Sanfte Frage zur Selbstreflexion (KEIN direkter Rat)\n\nStil: warm, kein Fachjargon, wie ein weiser Freund. Maximum 200 Wörter."
+    },
+    "weekly_pattern_analysis": {
+      "prompt_template": "Analysiere die letzten 7 Journal-Einträge des Users und finde Muster.\n\nEinträge: '''{entries_json}'''\n\nUser-Kontext: {user_context}\n\nErkenne:\n1. Wiederkehrende Themen und Emotionen\n2. Positive Entwicklungen\n3. Bereiche, die Aufmerksamkeit brauchen\n4. Verknüpfungen zu Mondphase, Sternzeichen-Transiten\n\nAntworte in freundlicher, unterstützender Sprache. 300 Wörter maximum."
+    },
+    "dream_analysis": {
+      "prompt_template": "Du bist ein einfühlsamer Traum-Deuter mit Wissen aus Jung, Freud und indigenen Traditionen.\n\nTraum: '''{dream_text}'''\n\nUser: geboren als {sun_sign} mit Mond in {moon_sign}\n\nDeute den Traum sanft:\n1. Zentrale Symbole und ihre möglichen Bedeutungen\n2. Emotionale Grundstimmung\n3. Was könnte das Unterbewusste sagen wollen?\n4. Eine offene Frage zur Reflexion\n\nWichtig: Deutung als MÖGLICHKEIT anbieten, nicht als Wahrheit. Der Träumer weiß am besten was sein Traum bedeutet."
+    },
+    "monthly_summary": {
+      "prompt_template": "Erstelle eine Monats-Zusammenfassung für den User basierend auf seinen Journal-Einträgen.\n\nEinträge: {entries}\nMonat: {month}\nAstrologische Highlights des Monats: {transits}\n\nStruktur:\n1. Höhepunkte des Monats\n2. Herausforderungen und wie du sie gemeistert hast\n3. Wachstums-Themen\n4. Was du für den nächsten Monat mitnehmen kannst\n\nWarm, würdigend, empowernd. 400 Wörter."
+    }
+  },
+  "auto_insight_rules": {
+    "description": "Regel-basierte Insights ohne LLM (schnell und günstig)",
+    "rules": [
+      {
+        "id": "moon_emotion_correlation",
+        "condition": "user_writes_about_high_emotion AND moon_phase == 'full_moon'",
+        "insight": "Es ist Vollmond — deine emotionale Intensität ist verständlich. Vollmond verstärkt Gefühle bei vielen Menschen."
+      },
+      {
+        "id": "new_moon_intention",
+        "condition": "moon_phase == 'new_moon'",
+        "insight": "Heute ist Neumond — perfekter Tag für neue Intentionen. Was möchtest du in diesem Zyklus säen?"
+      },
+      {
+        "id": "mercury_retrograde",
+        "condition": "mercury_retrograde AND user_writes_about_communication_issue",
+        "insight": "Merkur ist gerade retrograd — Kommunikations-Missverständnisse sind häufiger. Nicht persönlich nehmen."
+      },
+      {
+        "id": "personal_year_9_completion",
+        "condition": "personal_year == 9 AND user_writes_about_endings",
+        "insight": "Du bist in einem 9er-Jahr — das Jahr der Vollendung. Loslassen ist jetzt Thema."
+      },
+      {
+        "id": "personal_year_1_beginning",
+        "condition": "personal_year == 1 AND user_writes_about_starting",
+        "insight": "1er-Jahr — perfekt für Neuanfänge. Alles was du jetzt beginnst, prägt die nächsten 9 Jahre."
+      },
+      {
+        "id": "birthday_approaching",
+        "condition": "days_to_birthday < 30",
+        "insight": "Dein Geburtstag naht — die Zeit der 'Solar Return'. Reflexion über das vergangene Jahr ist jetzt kraftvoll."
+      },
+      {
+        "id": "moon_in_own_sign",
+        "condition": "moon_in_sign == user_sun_sign",
+        "insight": "Der Mond ist heute in deinem Sternzeichen — dein persönlicher 'Tag'. Selbstpflege besonders wichtig."
+      },
+      {
+        "id": "recurring_pattern_detected",
+        "condition": "same_topic_written_3x_in_week",
+        "insight": "Du hast diese Woche mehrfach über {topic} geschrieben. Da will etwas gesehen werden."
+      },
+      {
+        "id": "gratitude_streak",
+        "condition": "gratitude_entries_7_days_in_row",
+        "insight": "7 Tage Dankbarkeits-Streak! Studien zeigen dass regelmäßige Dankbarkeit die Lebenszufriedenheit deutlich erhöht."
+      },
+      {
+        "id": "shadow_work_alert",
+        "condition": "user_writes_about_annoyance_at_others AND same_theme_repeated",
+        "insight": "Was uns an anderen stört, ist oft ein Spiegel unseres Schattens (C.G. Jung). Vielleicht Zeit für Schattenarbeit."
+      }
+    ]
+  },
+  "pattern_tracking": {
+    "description": "Was die App über Zeit tracken sollte, um Muster zu erkennen",
+    "trackables": {
+      "mood_score": {
+        "scale": "1-10",
+        "prompt": "Wie ist deine Stimmung? (1 sehr schlecht, 10 sehr gut)"
+      },
+      "energy_level": {
+        "scale": "1-10",
+        "prompt": "Wie viel Energie hast du?"
+      },
+      "sleep_quality": {
+        "scale": "1-10",
+        "prompt": "Wie war dein Schlaf?"
+      },
+      "gratitude_count": {
+        "type": "integer",
+        "prompt": "Wofür bist du dankbar?"
+      },
+      "primary_emotion": {
+        "type": "select",
+        "options": [
+          "Freude",
+          "Trauer",
+          "Wut",
+          "Angst",
+          "Überraschung",
+          "Ekel",
+          "Verachtung",
+          "Liebe",
+          "Frustration",
+          "Ruhe"
+        ]
+      },
+      "dream_intensity": {
+        "scale": "1-10",
+        "if_dream_entry": true
+      },
+      "physical_wellbeing": {
+        "scale": "1-10"
+      },
+      "social_connection": {
+        "scale": "1-10"
+      },
+      "purpose_alignment": {
+        "scale": "1-10",
+        "prompt": "Wie sehr fühlst du dich heute im Einklang mit deinem Sinn?"
+      }
+    },
+    "visualizations": [
+      "Mood-Verlauf über 30 Tage (Line Chart)",
+      "Korrelation Mood ↔ Mondphase (Heatmap)",
+      "Häufigste Emotionen (Pie Chart)",
+      "Dankbarkeits-Streak-Kalender",
+      "Traum-Häufigkeit über Zeit",
+      "Wörter-Cloud der häufigsten Themen"
+    ]
+  },
+  "gamification": {
+    "streaks": {
+      "morning_practice": "7-Tage-Streak für tägliche Morgen-Reflexion",
+      "gratitude_streak": "30-Tage-Streak für tägliche Dankbarkeit",
+      "dream_journal_streak": "10 Träume aufgezeichnet"
+    },
+    "achievements": [
+      {
+        "name": "Erste Woche",
+        "condition": "7 Tage in Folge geschrieben"
+      },
+      {
+        "name": "Traumforscher",
+        "condition": "10 Träume aufgezeichnet"
+      },
+      {
+        "name": "Dankbarer Mensch",
+        "condition": "30 Tage Dankbarkeit"
+      },
+      {
+        "name": "Vollmond-Ritualist",
+        "condition": "3 Vollmond-Rituale dokumentiert"
+      },
+      {
+        "name": "Schattenreisender",
+        "condition": "5 Schattenarbeit-Einträge"
+      },
+      {
+        "name": "Mondzyklus-Meister",
+        "condition": "Ein ganzer Mondzyklus dokumentiert (29 Tage)"
+      },
+      {
+        "name": "Jahres-Chronist",
+        "condition": "365 Tage dokumentiert"
+      }
+    ]
+  },
+  "privacy_and_security": {
+    "principle": "Journal-Einträge sind extrem privat. Höchste Datenschutz-Standards.",
+    "requirements": [
+      "Ende-zu-Ende-Verschlüsselung",
+      "Lokale Speicherung als Standard-Option",
+      "Optional: verschlüsselte Cloud-Sync",
+      "Biometrische Sperre (Face ID / Fingerprint)",
+      "PIN-Schutz zusätzlich möglich",
+      "Kein Teilen mit Dritten - JEMALS",
+      "Klar dokumentiert: was mit dem Text zur LLM-Analyse geschieht"
+    ],
+    "llm_privacy": {
+      "recommended": "Anthropic/OpenAI API mit Datenschutz-Vereinbarung (kein Training auf Nutzerdaten)",
+      "alternative": "Lokale LLMs (Llama, Mistral) für maximale Privatheit",
+      "user_choice": "User sollte wählen können ob LLM-Analyse überhaupt genutzt wird"
+    }
+  },
+  "app_workflow": {
+    "input_types": [
+      "Freitext (unstrukturiert)",
+      "Prompt-basiert (App gibt Frage vor)",
+      "Sprach-Notiz mit Transkription",
+      "Schnell-Emotions-Check (nur Emojis)",
+      "Foto + Text (Journaling mit Bild)"
+    ],
+    "processing_pipeline": [
+      "1. Journal-Eintrag empfangen",
+      "2. NLP-Vorverarbeitung: Emotionen, Themen, Personen erkennen",
+      "3. User-Kontext laden (Sternzeichen, Mondphase, Persönliches Jahr etc.)",
+      "4. Auto-Insights aus Regel-Engine",
+      "5. Optional: LLM-Analyse mit Prompt-Template",
+      "6. Trackables aktualisieren",
+      "7. Streaks/Achievements prüfen",
+      "8. Rückmeldung an User"
+    ],
+    "tech_stack": {
+      "frontend": "React Native / Flutter",
+      "backend": "FastAPI / Node.js",
+      "database": "SQLite (lokal) + optional PostgreSQL (Cloud)",
+      "encryption": "SQLCipher für lokale DB, AES-256 für Cloud",
+      "llm": "Anthropic Claude API oder OpenAI GPT-4",
+      "nlp": "spaCy für Vorverarbeitung, keyword extraction"
+    },
+    "code_example_journal_entry_processing": "async function processJournalEntry(text, userContext) {\n  // 1. Extract keywords\n  const keywords = await extractKeywords(text);\n  const emotions = detectEmotions(text);\n  \n  // 2. Load context\n  const moonPhase = getMoonPhase(new Date());\n  const personalYear = calculatePersonalYear(userContext.birthDate);\n  \n  // 3. Apply rules\n  const insights = applyAutoInsightRules({\n    emotions, moonPhase, personalYear, keywords\n  });\n  \n  // 4. LLM analysis (optional)\n  const llmAnalysis = userContext.enableLLM \n    ? await claudeAnalyze(text, userContext, moonPhase, personalYear)\n    : null;\n  \n  // 5. Save and update\n  await saveEntry(text, keywords, emotions);\n  await updateTrackables(userContext.userId, emotions);\n  \n  return { insights, llmAnalysis };\n}"
+  },
+  "monetization_ideas": [
+    "Free: 5 Einträge pro Monat, keine LLM-Analyse",
+    "Premium (4.99€/Monat): Unlimited Einträge, LLM-Analyse, Muster-Erkennung, Monats-Zusammenfassungen",
+    "Premium+ (9.99€/Monat): Alles + Schattenarbeit-Guides + Meditationen + Community"
+  ],
+  "ethics": {
+    "warnings": [
+      "Journal-Einträge können Krisen-Themen enthalten (Suizidgedanken, Selbstverletzung)",
+      "App muss klare Krisen-Detektion haben und Hilfsangebote anzeigen"
+    ],
+    "crisis_detection": {
+      "keywords_trigger_alert": [
+        "Selbstmord",
+        "Suizid",
+        "sterben will",
+        "beenden",
+        "nicht mehr leben",
+        "nichts mehr wert"
+      ],
+      "response": "Bei Detection: sanfte Nachricht + Krisenhilfe-Nummern (Telefonseelsorge 0800 111 0 111 in Deutschland)"
+    },
+    "not_therapy": "Klar kommunizieren: App ist Selbstreflexion, KEINE Therapie."
+  }
+}

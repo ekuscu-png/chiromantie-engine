@@ -26,9 +26,17 @@ from chiro_engine.physiognomy_engine import (
     load_compound_rules,
 )
 from chiro_engine.zodiac_engine import build_zodiac_report, compatibility_report, western_sign_for_date
-from chiro_engine.moon_engine import build_moon_report
+from chiro_engine.moon_engine import build_moon_report, moon_phase_for_date
 from chiro_engine.tarot_engine import draw_spread
-from chiro_engine.numerology_engine import build_numerology_report, numerology_compatibility
+from chiro_engine.numerology_engine import (
+    build_numerology_report,
+    life_path_number,
+    numerology_compatibility,
+    personal_year_number,
+)
+from chiro_engine.iching_engine import build_reading
+from chiro_engine.journal_engine import auto_insights, build_analysis_prompt, days_until_birthday, detect_crisis
+from chiro_engine.impulse_engine import build_impulse_feed
 
 BASE_DIR = Path(__file__).resolve().parent
 KB_PATH = BASE_DIR / "data" / "knowledge_base.json"
@@ -53,6 +61,15 @@ TAROT_KB = json.loads(TAROT_KB_PATH.read_text(encoding="utf-8"))
 
 NUMEROLOGY_KB_PATH = BASE_DIR / "data" / "numerology_knowledge_base.json"
 NUMEROLOGY_KB = json.loads(NUMEROLOGY_KB_PATH.read_text(encoding="utf-8"))
+
+ICHING_KB_PATH = BASE_DIR / "data" / "iching_knowledge_base.json"
+ICHING_KB = json.loads(ICHING_KB_PATH.read_text(encoding="utf-8"))
+
+JOURNAL_KB_PATH = BASE_DIR / "data" / "journal_knowledge_base.json"
+JOURNAL_KB = json.loads(JOURNAL_KB_PATH.read_text(encoding="utf-8"))
+
+IMPULSE_KB_PATH = BASE_DIR / "data" / "push_notifications_knowledge_base.json"
+IMPULSE_KB = json.loads(IMPULSE_KB_PATH.read_text(encoding="utf-8"))
 
 DOMAIN_LABELS = {
     "personality": "Persönlichkeit",
@@ -664,6 +681,117 @@ def numerology():
         )
 
     return jsonify(report)
+
+
+@app.post("/api/iching")
+def iching():
+    question = request.form.get("question", "").strip() or None
+    reading = build_reading(ICHING_KB, question=question)
+    return jsonify(reading)
+
+
+@app.post("/api/journal")
+def journal():
+    entry_text = request.form.get("entry_text", "").strip()
+    if not entry_text:
+        return jsonify({"error": "Bitte einen Journal-Text schreiben."}), 400
+
+    category = request.form.get("category", "").strip()
+    if category and category not in JOURNAL_KB["journal_categories"]:
+        return jsonify({"error": "Unbekannte Kategorie."}), 400
+
+    today = date.today()
+    moon_phase = moon_phase_for_date(today)
+    crisis = detect_crisis(entry_text, JOURNAL_KB)
+
+    sun_sign = None
+    life_path = None
+    personal_year = None
+    days_to_birthday = None
+
+    birth_raw = request.form.get("birth_date", "").strip()
+    if birth_raw:
+        try:
+            birth_date = date.fromisoformat(birth_raw)
+        except ValueError:
+            return jsonify({"error": "Ungueltiges Geburtsdatum."}), 400
+        sun_sign = western_sign_for_date(birth_date.month, birth_date.day)
+        life_path = life_path_number(birth_date)
+        personal_year = personal_year_number(birth_date, today.year)
+        days_to_birthday = days_until_birthday(birth_date, today)
+
+    result = {
+        "crisis_detected": crisis,
+        "crisis_response": JOURNAL_KB["ethics"]["crisis_detection"]["response"] if crisis else None,
+        "moon_phase": moon_phase,
+        "sun_sign": sun_sign,
+        "life_path": life_path,
+        "personal_year": personal_year,
+        "auto_insights": [] if crisis else auto_insights(
+            moon_phase=moon_phase, personal_year=personal_year, days_to_birthday=days_to_birthday
+        ),
+        "ai_reflection": None,
+    }
+
+    use_ai = request.form.get("use_ai", "true").strip().lower() != "false"
+    api_key = request.form.get("api_key", "").strip() or os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    if use_ai and api_key and not crisis:
+        client = anthropic.Anthropic(api_key=api_key)
+        prompt = build_analysis_prompt(
+            entry_text,
+            JOURNAL_KB,
+            sun_sign=sun_sign or "nicht angegeben",
+            moon_phase=moon_phase,
+            life_path=life_path if life_path is not None else "nicht angegeben",
+            personal_year=personal_year if personal_year is not None else "nicht angegeben",
+        )
+        try:
+            response = client.messages.create(
+                model=MODEL,
+                max_tokens=600,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            result["ai_reflection"] = next(b.text for b in response.content if b.type == "text")
+        except anthropic.AuthenticationError:
+            return jsonify({"error": "API-Key ungueltig oder abgelehnt."}), 401
+        except anthropic.RateLimitError:
+            return jsonify({"error": "Rate-Limit erreicht. Bitte spaeter erneut versuchen."}), 429
+        except anthropic.APIStatusError as e:
+            return jsonify({"error": f"API-Fehler: {e.message}"}), 502
+        except anthropic.APIConnectionError:
+            return jsonify({"error": "Keine Verbindung zur Anthropic-API. Internetverbindung pruefen."}), 502
+
+    return jsonify(result)
+
+
+@app.post("/api/impulse")
+def impulse():
+    date_raw = request.form.get("date", "").strip()
+    target_date = date.today()
+    if date_raw:
+        try:
+            target_date = date.fromisoformat(date_raw)
+        except ValueError:
+            return jsonify({"error": "Ungueltiges Datum."}), 400
+
+    moon_phase = moon_phase_for_date(target_date)
+
+    zodiac_sign = None
+    birth_date = None
+    birth_raw = request.form.get("birth_date", "").strip()
+    if birth_raw:
+        try:
+            birth_date = date.fromisoformat(birth_raw)
+        except ValueError:
+            return jsonify({"error": "Ungueltiges Geburtsdatum."}), 400
+        zodiac_sign = western_sign_for_date(birth_date.month, birth_date.day)
+
+    feed = build_impulse_feed(
+        target_date, IMPULSE_KB, moon_phase=moon_phase, zodiac_sign=zodiac_sign, birth_date=birth_date
+    )
+    feed["moon_phase"] = moon_phase
+    feed["zodiac_sign"] = zodiac_sign
+    return jsonify(feed)
 
 
 if __name__ == "__main__":
